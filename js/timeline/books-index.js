@@ -646,25 +646,41 @@ window.repositoryMap = {
     "@2024/": "https://yhnnd.github.io/timeline-2024/",
     "@2025/": "../"
 };
+window.htmlRepositoryMap = {
+    "@2023/": "https://yhnnd.github.io/timeline-public/docs/timeline-public/",
+    "@2024/": "https://yhnnd.github.io/timeline-2024/timeline-2024-public/",
+    "@2025/": "https://yhnnd.github.io/timeline-2025/timeline-2025-public/"
+};
 window.localRepositoryKey = "@2025/";
 
-window.parseFakeUrl = function (line, configs) {
-    let repository = "";
+window.getRepository = function (configs) {
+    let repositoryKey = "", repositoryValue = "";
+    const repositoryMap = window.repositoryMap, htmlRepositoryMap = window.htmlRepositoryMap;
     if (configs.fakeUrl) {
-        for (const [key, value] of Object.entries(window.repositoryMap)) {
+        for (const [key, value] of Object.entries(repositoryMap)) {
             if (configs.fakeUrl.startsWith(key)) {
-                repository = value;
+                repositoryKey = key;
+                repositoryValue = value;
                 break;
             }
         }
     } else if (configs.realUrl) {
-        for (const [key, value] of Object.entries(window.repositoryMap)) {
+        for (const [key, value] of Object.entries(repositoryMap)) {
             if (configs.realUrl.startsWith(value)) {
-                repository = value;
+                repositoryKey = key;
+                repositoryValue = value;
                 break;
             }
         }
     }
+    if (configs.isGetHtmlRepository) {
+        repositoryValue = htmlRepositoryMap[repositoryKey];
+    }
+    return repositoryValue;
+}
+
+window.parseFakeUrl = function (line, configs) {
+    const repository = window.getRepository(configs);
     if (!repository) {
         return line;
     }

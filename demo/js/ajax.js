@@ -25,6 +25,7 @@ function ajax(url, callback) {
 function openFile(filename, url) {
     if (url == undefined) {
         url = filename;
+        filename = url.split("/").pop();
     }
     const modal = document.getElementsByClassName("modal")[0];
     if (modal != undefined) {
@@ -37,7 +38,7 @@ function openFile(filename, url) {
         ajax(url, function (text) {
             let content = "";
             for (let line of text.split("\n")) {
-                let parsedLine = parseRichText(line);
+                let parsedLine = parseRichText(line, {realUrl: url});
                 if (parsedLine.startsWith("<img ") && window.parseFakeUrl) {
                     parsedLine = window.parseFakeUrl(parsedLine, {realUrl: url});
                 }

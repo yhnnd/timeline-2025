@@ -1,4 +1,4 @@
-function parseRichText(line) {
+function parseRichText(line, configs) {
     if (!line || !line.length) {
         return "";
     }
@@ -67,7 +67,12 @@ function parseRichText(line) {
                         labelInfo.attributes = {};
                         for (let i in labelInfo.ogAttributes) {
                             const pair = labelInfo.ogAttributes[i].split("=");
-                            labelInfo.attributes[pair[0]] = pair[1];
+                            const attrKey = pair.shift();
+                            let attrValue = pair.join("=");
+                            if (attrValue.startsWith("\"") && attrValue.endsWith("\"")) {
+                                attrValue = attrValue.substring(1, attrValue.length - 1);
+                            }
+                            labelInfo.attributes[attrKey] = attrValue;
                         }
                         let styleValue = "";
                         if (labelInfo.attributes.color) {
@@ -85,7 +90,22 @@ function parseRichText(line) {
                             labelInfo.attributesLine += "style=\"" + styleValue + "\"";
                         }
                         if (labelInfo.tagName == "link") {
-                            labelInfo.attributesLine += " class=\"openfile-link\" onclick=\"openFile('" + labelInfo.attributes.url + "')\"";
+                            let isBookReader = false;
+                            if (labelInfo.attributes.to.startsWith("book-reader.html?")) {
+                                isBookReader = true;
+                                labelInfo.attributes.to = labelInfo.attributes.to.split("src=")[1];
+                                labelInfo.attributes.to = labelInfo.attributes.to.split("&")[0];
+                            }
+                            if (labelInfo.attributes.to.startsWith("../") && window.parseFakeUrl) {
+                                labelInfo.attributes.to = window.parseFakeUrl(labelInfo.attributes.to, configs);
+                            } else if (!labelInfo.attributes.to.startsWith("https://") && !labelInfo.attributes.to.startsWith("http://") && window.getRepository) {
+                                labelInfo.attributes.to = window.getRepository({...configs, isGetHtmlRepository: true}) + labelInfo.attributes.to;
+                            }
+                            if (isBookReader) {
+                                labelInfo.attributesLine += " class=\"openfile-link\" onclick=\"openFile('" + labelInfo.attributes.to + "')\"";
+                            } else {
+                                labelInfo.attributesLine += " class=\"openfile-link\" onclick=\"window.open('" + labelInfo.attributes.to + "', '_self');\"";
+                            }
                         }
                     }
                 }

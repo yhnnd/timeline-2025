@@ -38,6 +38,9 @@ function openFile(filename, url) {
             let content = "";
             for (let line of text.split("\n")) {
                 let parsedLine = parseRichText(line);
+                if (parsedLine.startsWith("<img ") && window.parseFakeUrl) {
+                    parsedLine = window.parseFakeUrl(parsedLine, {realUrl: url});
+                }
                 if (parsedLine == "") {
                     parsedLine = "<br>";
                 }

@@ -1,0 +1,139 @@
+body {
+    --line-width: 512;
+    --line-width-px: 512px;
+}
+
+body[data-value-of-enable-line-width-560px="true"] {
+    --line-width: 560;
+    --line-width-px: 560px;
+}
+
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] {
+    --line-width: 608;
+    --line-width-px: 608px;
+}
+
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] {
+    --line-width: 656;
+    --line-width-px: 656px;
+}
+
+.outer-wrapper {
+    height: calc((var(--line-width) / 1000) * 500px);
+    position: relative;
+    background: rgba(0, 0, 0, .06);
+}
+
+.outer-wrapper .src-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.map-wrapper {
+    width: var(--line-width-px);
+    max-height: 100%;
+    position: absolute;
+}
+
+.map-wrapper.on {
+    position: fixed;
+    z-index: 100;
+    top: calc((100vh - 500px) / 2);
+}
+
+.map {
+    width: 1000px;
+    height: 500px;
+    transform: translateX(0) scale(calc(var(--line-width) / 1000));
+    transform-origin: top left;
+    transition: transform .03s linear;
+}
+
+.map-wrapper.on .map {
+    transform: translateX(calc((var(--line-width-px) - 1000px) / 2)) scale(1);
+    transform-origin: top left;
+}
+
+.map-wrapper.on .button-wrapper {
+    left: calc((1000px - var(--line-width-px)) / 2);
+}
+
+.button-wrapper {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: left .03s linear;
+}
+
+.button-wrapper button {
+    position: absolute;
+    right: 0;
+    border-radius: 0;
+    border-left-width: 1px;
+    border-bottom-width: 1px;
+    border-top-width: 1px;
+    border-right-width: 1px;
+    border-color: var(--studio-gray);
+    text-align: center;
+    padding: 4px 0;
+    width: 72px;
+    background-color: rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(3px);
+}
+
+.map-backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0);
+    transition: all .03s linear;
+}
+
+.map-backdrop.on {
+    background: rgba(0, 0, 0, 0.66);
+}
+
+body:has(.map-backdrop) {
+    overflow: hidden;
+}
+
+.toast {
+    background-color: rgba(255, 255, 255, 0.75);
+    width: fit-content;
+    margin-top: 4px;
+    margin-left: 4px;
+    position: relative;
+}
+
+.toast:first-child {
+    margin-top: 60px;
+}
+
+.toast .text-bg {
+    padding: 4px 6px;
+}
+
+.toast .time-left {
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    transition: width 5s linear;
+}
+
+.toast .time-left.started {
+    width: 0;
+}
+
+.toast .text {
+    padding: 4px 6px;
+    position: absolute;
+    left: 0;
+    top: 0;
+}

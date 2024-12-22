@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Places</title>
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/ios-button.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="../js/timeline/navbar.js"></script>
+    <script src="../js/timeline/ios-button-2024.js"></script>
+</head>
+<body>
+    <div class="search-backdrop">
+        <div class="search">
+            <div class="search-bar">
+                <div class="search-keyword"></div>
+                <button class="close-button" onclick="closeSearch(this)">close</button>
+            </div>
+            <div class="search-result"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div>
+            <input id="search" type="text">
+            <button id="searchbutton" onclick="searchInput(document.getElementById('search'))">
+                Search
+            </button>
+        </div>
+    </div>
+
+    <script>
+        if (window.location.href.startsWith("file://")) {
+            document.getElementById("search").setAttribute("disabled", true);
+            document.getElementById("searchbutton").setAttribute("disabled", true);
+        }
+    </script>
+
+    <div class="row single-col" style="margin-top: 10px;margin-bottom: 219px;">
+        <div class="col first">
+            <ul id="place-list"></ul>
+        </div>
+    </div>
+
+    <script src="../js/timeline/books-index.js"></script>
+    <script src="../js/timeline/people-names.js"></script>
+    <script src="../js/timeline/ajax.js"></script>
+    <script src="../js/timeline/search.js"></script>
+    <script src="../js/timeline/places.js"></script>
+    <script>
+        function isTime(segment) {
+            return segment.startsWith("19") || segment.startsWith("20");
+        }
+        function removeInvalidChars(text) {
+            return text.replace(/[^\p{L}\p{N}\p{P}\p{Z}^$\n]/gu, '');
+        }
+        const placeList = document.getElementById("place-list");
+        for (const [key, places] of Object.entries(window.places)) {
+            const listItem = document.createElement("li");
+            const lines = places.map(place => {
+                const segments = place.split(";");
+                const conditions = [];
+                let line = "";
+                for (let i = 0; i < segments.length; ++i) {
+                    const segment = segments[i];
+                    let delim = "、"
+                    if (isTime(segment) || (i > 0 && isTime(segments[i - 1]))) {
+                        delim = " ";
+                    }
+                    if (line.length) {
+                        line = line + delim + segment;
+                    } else {
+                        line = segment;
+                    }
+                    const particles = segment.replaceAll("(",";").replaceAll(")",";").split(";").filter(e => e.length); // split by Parentheses "(", ")"
+                    for (const particle of particles) {
+                        conditions.push({
+                            type: isTime(particle) ? "TIME" : "TEXT",
+                            value: removeInvalidChars(particle)
+                        });
+                    }
+                }
+                return "<div onclick='advancedSearch(" + JSON.stringify(conditions) + ")'>" + line + "</div>";
+            });
+            listItem.innerHTML = "<div>" + key + "</div><ul><li>" + lines.join("</li><li>") + "</li></ul>";
+            placeList.append(listItem);
+        }
+    </script>
+</body>
+</html>

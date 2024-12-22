@@ -1,0 +1,27 @@
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    max-width: 100%;
+}
+
+pre {
+    width: 512px;
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+pre:last-child {
+    margin-bottom: 120px;
+}
+
+img {
+    width: 512px;
+    max-width: 100%;
+}

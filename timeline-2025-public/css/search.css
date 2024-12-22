@@ -1,0 +1,204 @@
+.search-bar {
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    left: 0;
+    background: black;
+    width: calc(100% - 16px);
+    padding: 8px;
+    color: white;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar.on {
+    display: flex;
+}
+
+.search-bar>.search-keyword {
+    margin-left: auto;
+}
+
+.search-bar>.close-button {
+    margin-left: auto;
+    display: inline-block;
+    font-weight: 400;
+    text-align: center;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    border-radius: 3.2px;
+    transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    padding: 4px 8px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
+
+.search-backdrop {
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    color: black;
+    backdrop-filter: blur(2.5px);
+    display: none;
+}
+
+.search-backdrop.on {
+    display: flex;
+    justify-content: center;
+    overflow: scroll;
+}
+
+.search {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    height: fit-content;
+    overflow-x: hidden;
+    background: rgba(244,244,244,.5);
+    padding: 0 10px;
+}
+
+.search>.search-result {
+    margin-top: 80px;
+    width: 512px;
+    max-width: 100%;
+    padding-bottom: 320px;
+}
+
+body[data-value-of-enable-line-width-560px="true"] .search>.search-result {
+    width: 560px;
+}
+
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] .search>.search-result {
+    width: 608px;
+}
+
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] .search>.search-result {
+    width: 656px;
+}
+
+.search>.search-result>.link {
+    display: block;
+}
+
+.search>.search-result>.link>a {
+    background: white;
+}
+
+.search>.search-result>.link>.text {
+    display: block;
+    width: 100%;
+    height: 500px;
+    overflow-y: scroll;
+    background: rgba(222, 255, 222, .8);
+    color: black;
+    padding-left: .5rem;
+    padding-right: .5rem;
+}
+
+body[data-value-of-platform="MacIntel"] .search>.search-result>.link>.text {
+    width: calc(100% - 1rem);
+}
+
+.search>.search-result>.link>.text:hover {
+    box-shadow: 0 0 4px var(--studio-blue);
+}
+
+.search>.search-result>.link>.cover-wrapper {
+    position: relative;
+}
+
+.search>.search-result>.link>.cover-wrapper>.cover {
+    position: absolute;
+    z-index: 43;
+    width: calc(100% - 100px);
+    background: rgba(0, 0, 0, 0.05);
+    height: 500px;
+    cursor: pointer;
+}
+
+.search>.search-result>.link>.cover-wrapper>.cover:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.search>.search-result>.link::before {
+    display: block;
+    float: right;
+    margin-left: auto;
+    color: white;
+    background: green;
+    font-size: .8rem;
+    padding: .1rem .5rem;
+    border-radius: .5rem;
+    content: attr(data-times);
+}
+
+.search>.search-result>.link .folder {
+    color: var(--studio-red-60);
+}
+
+.modal-open {
+    overflow: hidden;
+}
+
+pre {
+    max-width: 100%;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-family: Menlo, Monaco, Consolas, "Courier New", "Microsoft YaHei", monospace;
+}
+
+.marker {
+    background-color: var(--studio-yellow-10);
+    outline: 2px solid var(--studio-red);
+    outline-offset: 2px;
+    outline-style: dashed;
+    font-style: normal;
+    font-family: Menlo, Monaco, Consolas, "Courier New", "Microsoft YaHei", monospace;
+    position: relative;
+    z-index: 32;
+}
+
+.marker-wrapper {
+    position: relative;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.marker-wrapper::before {
+    display: inline-block;
+    content: '';
+    position: absolute;
+    z-index: 31;
+    left: -2px;
+    top: 0;
+    width: calc(100% + 4px);
+    height: 23px;
+    background: var(--studio-yellow-10);
+}
+
+.search>.search-result>.link>.text .thumbnail,
+.search>.search-result>.link>.text img.thumbnail {
+    display: inline;
+    width: 100px;
+    min-width: 100px;
+    max-width: 100px;
+}
+
+.search>.search-result>.link>.text img,
+.search>.search-result>.link>.text .thumbnail-2x,
+.search>.search-result>.link>.text img.thumbnail-2x {
+    display: inline;
+    width: 200px;
+    min-width: 200px;
+    max-width: 200px;
+}

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/ios-button.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="../js/timeline/navbar.js"></script>
+    <script src="../js/timeline/ios-button-2024.js"></script>
+</head>
+<body>
+    <style>
+:root {
+    --gray: #F0F0F0;
+}
+    </style>
+    <div class="container">
+        <div class="row single-col" style="margin-top: 20px;margin-bottom: 200px;"></div>
+    </div>
+    <script src="../js/timeline/books-index.js"></script>
+    <script>
+function toggleBook(target, event) {
+    target.parentElement.querySelectorAll(".articles").forEach(articles => {
+        if (articles.style.display === "none") {
+            articles.style.display = null;
+        } else {
+            articles.style.display = "none";
+        }
+    })
+}
+
+window.onload = function() {
+    const container = document.querySelector('.container > .row');
+    for (const i in window.bookNames) {
+        const book = window.bookNames[i];
+        if (book) {
+            const bookDiv = document.createElement("div");
+            bookDiv.classList.add("col");
+            if (i === "1") {
+                bookDiv.classList.add("first");
+            }
+            bookDiv.style.width = "1000px";
+            const bookNameDiv = document.createElement("div");
+            bookNameDiv.innerHTML = "<div style='display: inline-block;min-width: 80px;margin-right: 20px;text-align: right;'>" + i + "</div><span style='background: yellow;outline: 2px solid yellow;'>" + book + "</span>";
+            bookNameDiv.style.padding = "20px";
+            bookNameDiv.style.backgroundColor = "var(--gray)";
+            bookNameDiv.setAttribute("onclick", "toggleBook(this, event);");
+            bookDiv.append(bookNameDiv);
+            const articlesDiv = document.createElement("div");
+            articlesDiv.classList.add("articles");
+            articlesDiv.style.paddingTop = "10px";
+            articlesDiv.style.paddingBottom = "20px";
+            articlesDiv.style.display = "none";
+            if (window.books[i].indexList) {
+                for (const j in window.books[i].indexList) {
+                    const article = window.books[i].indexList[j];
+                    const a = document.createElement("a");
+                    a.href = "book-reader.html?src=" + article.realUrl + "&fakeUrl=" + article.fakeUrl + "&from=index-articles.html";
+                    a.innerText = article.fakeUrl;
+                    const articleDiv = document.createElement("div");
+                    articleDiv.innerHTML = "<div style='display: inline-block;min-width: 80px;margin-right: 20px;text-align: right;'>" + (parseInt(j) + 1) + "</div>";
+                    articleDiv.style.paddingLeft = "20px";
+                    articleDiv.append(a);
+                    articlesDiv.append(articleDiv);
+                }
+            }
+            bookDiv.append(articlesDiv);
+            container.append(bookDiv);
+        }
+    }
+}
+    </script>
+</body>
+</html>

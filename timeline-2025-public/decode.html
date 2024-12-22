@@ -1,0 +1,129 @@
+<html>
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Decode</title>
+</head>
+
+<body>
+  <div style="display: flex; justify-content: center; margin-bottom: 200px;">
+    <pre style="width: 800px; font-size: 1.5rem; white-space: pre-wrap; word-break: break-all;" id="content"></pre>
+  </div>
+  <script>
+    function getParameter(name) {
+      let reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)", "i");
+      let temp = window.location.search.substr(1);
+      temp = temp.replaceAll("%0G", "(");
+      temp = temp.replaceAll("%0H", ")");
+      temp = temp.replaceAll("%0I", "'");
+      temp = temp.replaceAll("%0J", "!");
+      temp = temp.replaceAll("%0K", "*");
+      temp = temp.replaceAll("%0L", "~");
+      let r = temp.match(reg);
+      if (r) {
+        return decodeURIComponent(r[2]);
+      }
+      return null;
+    }
+
+    function decodeUtf(fragment) {
+      if (fragment.length) {
+        const segments = [];
+        let tempZh = "", tempEn = "", isInZh = false, isInEn = false;
+        for (let i = 0; i < fragment.length; ++i) {
+          const ch = fragment[i];
+          if (ch === "<") {
+            if (isInZh) {
+              segments.push({
+                text: tempZh,
+                isZh: true
+              });
+              tempZh = "";
+            }
+            isInEn = true;
+            isInZh = false;
+            tempEn = "";
+          } else if (ch === ">") {
+            if (isInEn) {
+              segments.push({
+                text: tempEn,
+                isEn: true
+              });
+              tempEn = "";
+            }
+            isInEn = false;
+            isInZh = true;
+            tempZh = "";
+          } else {
+            if (!isInEn && !isInZh) {
+              isInZh = true;
+              tempZh = ch;
+            } else if (isInZh) {
+              tempZh += ch;
+            } else if (isInEn) {
+              tempEn += ch;
+            }
+          }
+        }
+        if (tempZh.length) {
+          segments.push({
+            text: tempZh,
+            isZh: true
+          });
+        }
+        let result = "";
+        for (const segment of segments) {
+          if (segment.isEn) {
+            result += segment.text;
+          } else if (segment.isZh) {
+            result += (function (segment) {
+              const encodedZh = segment.text;
+              let handle = "";
+              for (let i = 0; i < encodedZh.length; ++i) {
+                if (i % 2 === 0) {
+                  handle += "%";
+                }
+                handle += encodedZh[i];
+              }
+              let decodedZh = "";
+              try {
+                decodedZh = decodeURIComponent(handle);
+              } catch {
+                return encodedZh;
+              }
+              return decodedZh;
+            })(segment);
+          }
+        }
+        return result;
+      }
+      return fragment;
+    }
+
+    function decodeBase64(text) {
+      return new TextDecoder().decode(Uint8Array.from(atob(text), (c) => c.charCodeAt(0)));
+    }
+
+    window.onload = function () {
+      let result = "";
+      let content = getParameter("content");
+      if (content) {
+        result = content.split("\n").map(decodeUtf).join("\n");
+      } else {
+        let base64 = getParameter("base64");
+        if (base64) {
+          result = base64.split("\n").map(decodeBase64).join("\n");
+        }
+      }
+      if (result.length) {
+        document.querySelector("#content").innerHTML = result;
+      }
+      let fontSize = getParameter("fontsize");
+      if (fontSize) {
+        document.querySelector("#content").style.fontSize = fontSize;
+      }
+    };
+  </script>
+</body>
+
+</html>

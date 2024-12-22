@@ -1,0 +1,242 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Encrypt</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <script src="../js/timeline/navbar.js"></script>
+</head>
+<body>
+  <div style="display: flex; justify-content: center; margin-bottom: 200px;">
+    <pre style="width: 800px;"><h1>Encrypt Tools</h1>
+
+Ignore Tokens: <input id="tokens">
+
+<textarea style="width: 100%; min-height: 400px; height: max-content;" id="editorA"></textarea>
+<div style="display: flex; gap: 10px;">
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="doEncodeUtf()">Encode UTF</button>
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="doEncodeBase64()">Encode Base64</button>
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="swap()">Swap</button>
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="decrypt()">Decrypt</button>
+</div>
+<textarea style="width: 100%; min-height: 400px; height: max-content;" id="editorB"></textarea>
+</pre>
+  </div>
+  <script>
+    tokens.value = "";
+    const puncts = ["%", "-", "+", ".", ",", "(", ")", "[", "]", "/", "?", "!", "'", "*", "|", "@", "#", "$", "^", "&", "~", "=", "`"];
+
+    function isLegal(fragment) {
+      for (const token of tokens.value) {
+        if (token.length && fragment.includes(token)) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    function isAlpha(ch) {
+      return /^[A-Z]$/i.test(ch);
+    }
+
+    function isDigit(str){
+        return /^\d+$/.test(str);
+    }
+
+    function isPunct(ch) {
+      return puncts.includes(ch);
+    }
+
+    function encode(fragment) { // split Zh and alpha/digit
+      const segments = [];
+      let tempZh = "", tempAlphaOrDigit = "";
+      let isInZh = false, isInAlphaOrDigit = false;
+      for (i = 0; i < fragment.length; ++ i) {
+        if (isAlpha(fragment[i]) || isDigit(fragment[i]) || isPunct(fragment[i])) {
+          if (isInZh) {
+            isInZh = false;
+            isInAlphaOrDigit = true;
+            segments.push({
+              text: tempZh,
+              isZh: true
+            });
+            tempZh = "";
+            tempAlphaOrDigit = fragment[i];
+          } else if (isInAlphaOrDigit) {
+            tempAlphaOrDigit += fragment[i];
+          } else { // just start
+            isInAlphaOrDigit = true;
+            tempAlphaOrDigit = fragment[i];
+          }
+        } else { // Zh
+          if (isInZh) {
+            tempZh += fragment[i];
+          } else if (isInAlphaOrDigit) {
+            isInAlphaOrDigit = false;
+            isInZh = true;
+            segments.push({
+              text: tempAlphaOrDigit,
+              isAlphaOrDigit: true
+            });
+            tempAlphaOrDigit = "";
+            tempZh = fragment[i];
+          } else { // just start
+            isInZh = true;
+            tempZh = fragment[i];
+          }
+        }
+      }
+      if (isInZh && tempZh.length) {
+        segments.push({
+          text: tempZh,
+          isZh: true
+        });
+        tempZh = "";
+      }
+      if (isInAlphaOrDigit && tempAlphaOrDigit.length) {
+        segments.push({
+          text: tempAlphaOrDigit,
+          isAlphaOrDigit: true
+        });
+        tempAlphaOrDigit = "";
+      }
+      let result = "";
+      for (segment of segments) {
+        if (segment.text) {
+          if (segment.isAlphaOrDigit) {
+            result += "<" + segment.text + ">";
+          } else if (segment.isZh) {
+            result += encodeURIComponent(segment.text).split("%").join("");
+          } else {
+            result += "<ERROR>";
+          }
+        } else {
+          result += "<NULL>";
+        }
+      }
+      return result;
+    }
+
+    function encodeBase64(text) {
+      return btoa(String.fromCharCode(...new TextEncoder().encode(text)));
+    }
+
+    function decodeBase64(text) {
+      return new TextDecoder().decode(Uint8Array.from(atob(text), (c) => c.charCodeAt(0)));
+    }
+
+    function doEncodeUtf() {
+      editorB.value = editorA.value.split('\n').map(line => {
+        return line.split(" ").map(fragment => {
+          if (isLegal(fragment) && encodeURIComponent(fragment) !== fragment) {
+            fragment = "@utf(\"" + encode(fragment) + "\");"
+          }
+          return fragment
+        }).join(" ")
+      }).join('\n')
+    }
+
+    function doEncodeBase64() {
+      editorB.value = editorA.value.split('\n').map(line => {
+        if (line.length) {
+          if (!isLegal(line)) {
+            return line;
+          }
+          return "@base64(\"" + encodeBase64(line) + "\");";
+        } else {
+          return "";
+        }
+      }).join('\n');
+    }
+
+    function swap() {
+      const tempA = editorA.value
+      editorA.value = editorB.value
+      editorB.value = tempA
+    }
+
+    function decrypt() {
+      editorB.value = editorA.value.split("\n").map(line => {
+        return line.split(" ").map(decode).join(" ");
+      }).join("\n");
+    }
+
+    function decode(fragment) {
+      if (fragment.startsWith("@utf(\"") && fragment.endsWith("\");")) {
+        fragment = fragment.substr("@utf(\"".length, fragment.length - "@utf(\"".length - "\");".length);
+        const segments = [];
+        let tempZh = "", tempEn = "", isInZh = false, isInEn = false;
+        for (let i = 0; i < fragment.length; ++i) {
+          const ch = fragment[i];
+          if (ch === "<") {
+            if (isInZh) {
+              segments.push({
+                text: tempZh,
+                isZh: true
+              });
+              tempZh = "";
+            }
+            isInEn = true;
+            isInZh = false;
+            tempEn = "";
+          } else if (ch === ">") {
+            if (isInEn) {
+              segments.push({
+                text: tempEn,
+                isEn: true
+              });
+              tempEn = "";
+            }
+            isInEn = false;
+            isInZh = true;
+            tempZh = "";
+          } else {
+            if (!isInEn && !isInZh) {
+              isInZh = true;
+              tempZh = ch;
+            } else if (isInZh) {
+              tempZh += ch;
+            } else if (isInEn) {
+              tempEn += ch;
+            }
+          }
+        }
+        if (tempZh.length) {
+          segments.push({
+            text: tempZh,
+            isZh: true
+          });
+        }
+        let result = "";
+        for (const segment of segments) {
+          if (segment.isEn) {
+            result += segment.text;
+          } else if (segment.isZh) {
+            result += (function (segment) {
+              const encodedZh = segment.text;
+              let handle = "";
+              for (let i = 0; i < encodedZh.length; ++i) {
+                if (i % 2 === 0) {
+                  handle += "%";
+                }
+                handle += encodedZh[i];
+              }
+              let decodedZh = "";
+              try {
+                decodedZh = decodeURIComponent(handle);
+              } catch {
+                return encodedZh;
+              }
+              return decodedZh;
+            })(segment);
+          }
+        }
+        return result;
+      } else if (fragment.startsWith("@base64(\"") && fragment.endsWith("\");")) {
+        fragment = fragment.substr("@base64(\"".length, fragment.length - "@base64(\"".length - "\");".length);
+        return decodeBase64(fragment);
+      }
+      return fragment;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Tools</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <script src="../js/timeline/navbar.js"></script>
+</head>
+<body>
+  <div style="display: flex; justify-content: center; margin-bottom: 200px;">
+    <pre style="width: 800px;"><h1>link</h1>
+
+a &lt;link&gt; tag will be translated to a &lt;div class="link" onclick="openLink(event)"&gt; tag.
+
+&lt;link to="book-reader.html?src=../folder/filename.txt" &gt; will be translated to
+
+&lt;div class="link" onclick="openLink(event)" to="book-reader.html?src=../folder/filename.txt" &gt;
+
+<h1>img</h1>
+
+a &lt;img src="../folder/filename.jpg"&gt; will be recognized as a html img tag.
+
+<h1>thumbnail row</h1>
+
+a &lt;div class="row"&gt; will be recognized as a html div tag.
+
+a &lt;div class="row"&gt; can wrap a list of &lt;img class="thumbnail"&gt; and will display a group of images in one line.
+
+<h1>border</h1>
+
+&lt;border&gt;
+&lt;/border&gt; will be translated to
+
+&lt;div class="border"&gt;
+&lt;/div&gt;
+
+<h1>video</h1>
+
+@video resources/35_1713060169.mp4
+
+will be translated to
+
+&lt;video width="100%" controls="" style="width: 100%;"&gt;
+  &lt;source src="resources/35_1713060169.mp4" type="video/mp4"&gt;
+&lt;/video&gt;
+
+<h1>Tools</h1>
+
+<h2>file list to html tags</h2><button onclick="toggleExample()">example</button>
+
+<div style="display: none;" id="example"><div style="position: relative;"><div style="position: absolute; top: 0; left: -49px;" onclick="toggleExample()"><img src="img/tools-example.png" style="width: 900px;"></div></div></div>
+
+<textarea style="width: 100%; min-height: 400px; height: max-content;" id="editorA"></textarea>
+<div style="display: flex; gap: 10px;">
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="generateLinks()">generate links</button>
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="generateImgs()">generate img tags</button>
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="generateImgs2()">generate img tags with number</button>
+  <button style="width: max-content; height: max-content; padding: 5px 10px;" onclick="generateThumbnailRow()">generate thumbnail row</button>
+</div>
+<textarea style="width: 100%; min-height: 400px; height: max-content;" id="editorB"></textarea>
+</pre>
+  </div>
+  <script>
+    function generateLinks() {
+      const fileList = editorA.value.replaceAll(' ', '\n').split('\n').filter(e => !!e)
+      editorB.value = fileList.map(line => '<link to="' + line + '"></link>').join('\n')
+    }
+
+    function generateImgs() {
+      const fileList = editorA.value.replaceAll(' ', '\n').split('\n').filter(e => !!e)
+      editorB.value = fileList.map(line => '<img src="../' + line + '" alt="">').join('\n')
+    }
+
+    function generateImgs2() {
+      const fileList = editorA.value.replaceAll(' ', '\n').split('\n').filter(e => !!e)
+      let i = 0;
+      editorB.value = fileList.map(line => ++i + '\n<img src="../' + line + '" alt="">\n').join('\n')
+    }
+
+    function generateThumbnailRow() {
+      const fileList = editorA.value.replaceAll(' ', '\n').split('\n').filter(e => !!e)
+      editorB.value = '<div class="row">\n' + fileList.map(line => '<img class="thumbnail" src="../' + line + '" alt="">').join('\n') + "\n</div>"
+    }
+
+    let isExampleVisible = false;
+
+    function toggleExample() {
+      example.style = isExampleVisible ? 'display: none;' : 'display: block; height: 0;'
+      isExampleVisible = !isExampleVisible
+    }
+  </script>
+</body>
+</html>

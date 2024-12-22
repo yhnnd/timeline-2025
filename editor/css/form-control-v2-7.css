@@ -1,0 +1,162 @@
+.form-control-v2-7 > .text-editable {
+  min-width: 100%;
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+  border: none !important;
+  box-shadow: none !important;
+  outline: .2rem solid transparent;
+}
+
+.form-control-v2-7 > .line.text-editable {
+  min-width: 1rem;
+  min-height: 1.5rem;
+  color: inherit;
+  position: relative;
+}
+
+.form-control-v2-7 > .text-editable[contenteditable="true"] {
+  outline-color: rgba(0, 123, 255, 0.15);
+}
+
+.form-control-v2-7 > .text-editable[contenteditable="true"]:last-of-type {
+  outline-color: rgba(0, 123, 255, 0.25);
+}
+
+.form-control-v2-7:has(>.line.text-editable) {
+  counter-reset: element;   
+  list-style: none;
+}
+
+.form-control-v2-7.show-line-number > .line.text-editable {
+  counter-increment: element;
+}
+
+.form-control-v2-7.show-line-number > .line.text-editable::before {
+  display: block;
+  content: counter(element);
+  color: transparent;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200px;
+  transform: translateX(-204px) scale(0.8);
+  text-align: right;
+  transition: color linear .1s;
+}
+
+.form-control-v2-7.show-line-number.focus > .line.text-editable::before {
+  color: rgba(128, 128, 128, 0.25);
+}
+
+.form-control-v2-7.show-line-number.focus > .line.text-editable:hover::before {
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.form-control-v2-7.show-line-number.focus > .line.text-editable[contenteditable="true"]::before {
+  color: rgba(128, 128, 128, 0.1);
+}
+
+.form-control-v2-7.show-line-number.focus > .line.text-editable[contenteditable="true"]:hover::before {
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.form-control-v2-7:is(.show-line-create-time,.show-line-hash) > .line.text-editable::after {
+  display: block;
+  color: transparent;
+  background: transparent;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 400px;
+  margin-right: -400px;
+  transform: translateX(-48px) scaleX(0.65) scaleY(0.8);
+  transition: color linear .1s;
+}
+
+.form-control-v2-7:is(.show-line-create-time) > .line.text-editable::after {
+  content: attr(data-create-time);
+}
+
+.form-control-v2-7:not(.show-line-create-time):is(.show-line-hash) > .line.text-editable::after {
+  content: attr(data-hash);
+}
+
+.form-control-v2-7.focus:is(.show-line-create-time,.show-line-hash) > .line.text-editable::after {
+  color:rgba(0, 0, 0, 0.05);
+}
+
+.form-control-v2-7.focus:is(.show-line-create-time,.show-line-hash) > .line.text-editable:hover::after,
+.form-control-v2-7.focus:is(.show-line-create-time,.show-line-hash) > .line.text-editable[contenteditable="true"]::after {
+  color:rgba(0, 0, 0, 0.5);
+}
+
+.form-control-v2-7.focus:is(.show-line-create-time) > .line.text-editable[contenteditable="true"]::after {
+  content: attr(data-create-time) " (" attr(data-create-date) ") ";
+}
+
+.form-control-v2-7.focus:is(.show-line-hash) > .line.text-editable[contenteditable="true"]::after {
+  content: attr(data-hash);
+}
+
+.form-control-v2-7.focus:is(.show-line-create-time.show-line-hash) > .line.text-editable[contenteditable="true"]::after {
+  content: attr(data-create-time) " (" attr(data-create-date) ") " attr(data-hash);
+}
+
+.form-control-v2-7.focus > .text-editable.hover-shadow:hover {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8) !important;
+}
+
+.form-control-v2-7 {
+  min-height: 158px;
+  /* 如果不设置 height, 则高度将会随内容增加而变得无限大 */
+  height: 158px;
+  /* 如果仅设置了 height, 则超出的部分将会溢出 */
+  overflow: visible;
+  position: relative !important;
+}
+
+.form-control-v2-7::before {
+  content: "NEW";
+  position: absolute !important;
+  top: 0;
+  right: 0;
+  background-color: darkgreen;
+  color: white;
+  border-radius: 0 0.25rem 0 0;
+  display: block;
+  padding: 0.25rem 0.5rem;
+  transition: all ease 0.3s;
+}
+
+.form-control-v2-7.focus::before {
+  background-color: rgba(31, 206, 54, 0.5);
+  color: rgba(255, 255, 255, 0.25);
+  transform: scale(1.2) translate(-0.28rem, 0.18rem);
+  border-radius: 0 0 0 0.2rem;
+}
+
+.form-control-v2-7.focus {
+  color: #495057;
+  background-color: #fff;
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.form-control-v2-7 .card-image.card-image-wrapper {
+  width: 100%;
+  height: 60%;
+  min-height: 60px;
+  max-height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-control-v2-7 .card-image.card-image-wrapper > img {
+  width: auto;
+  height: auto;
+  max-height: 100px;
+}

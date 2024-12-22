@@ -1,0 +1,34 @@
+/* iOS BUTTON */
+.ios-button {
+    display: inline-block;
+    height: 28px;
+    width: 56px;
+    transition: height 0.3s ease-in, width 0.3s ease-in, background-color 0.4s ease;
+    background-color: lightgray;
+    box-shadow: rgb(0 0 0 / 33%) 0px 0px 3px inset;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.ios-button-circle {
+    width: 0;
+    height: 0;
+    margin-left: 0px;
+    border: 14px solid white;
+    border-radius: 14px;
+    box-shadow: 0 0 2px dimgray;
+    transition: transform 0.3s ease, margin 0.3s ease, border 1s ease;
+}
+
+.ios-button[data-value="true"] {
+    background-color: limegreen;
+}
+
+.ios-button[data-value="true"]>.ios-button-circle {
+    margin-left: 28px;
+}
+
+.settings .ios-button {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}

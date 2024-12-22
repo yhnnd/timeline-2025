@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Names</title>
+    <link rel="stylesheet" href="css/colors.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/ios-button.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <script src="../js/timeline/navbar.js"></script>
+    <script src="../js/timeline/ios-button-2024.js"></script>
+</head>
+
+<body>
+    <div class="search-backdrop">
+        <div class="search">
+            <div class="search-bar">
+                <div class="search-keyword"></div>
+                <button class="close-button" onclick="closeSearch(this)">close</button>
+            </div>
+            <div class="search-result"></div>
+        </div>
+    </div>
+
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <div>
+            <input id="search" type="text">
+            <button id="searchbutton" onclick="searchInput(document.getElementById('search'))">
+                Search
+            </button>
+        </div>
+    </div>
+
+    <script>
+        if (window.location.href.startsWith("file://")) {
+            document.getElementById("search").setAttribute("disabled", true);
+            document.getElementById("searchbutton").setAttribute("disabled", true);
+        }
+    </script>
+
+    <div class="row double-col" style="margin-top: 10px;margin-bottom: 219px;">
+        <div class="col">
+            <ul>
+                <li>
+                    男
+                    <ul id="male-list">
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="col">
+            <ul>
+                <li>
+                    女
+                    <ul id="female-list">
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="../js/timeline/male-names-alphabet-map.js"></script>
+    <script src="../js/timeline/female-names-alphabet-map.js"></script>
+    <script src="../js/timeline/books-index.js"></script>
+    <script src="../js/timeline/people-names.js"></script>
+    <script src="../js/timeline/ajax.js"></script>
+    <script src="../js/timeline/search.js"></script>
+    <script>
+        function getAlias(name) {
+            name = name.split("(")[0];
+            for (const list of window.peoplesNames) {
+                const pureList = list.map(item => item.split(";")[0]);
+                if (pureList.includes(name)) {
+                    return {
+                        html: list.map(item => {
+                            if (item.split(";")[0] === name) {
+                                return "<span class=highlight-green onclick=searchKeywords(['" + item.split(";")[0] + "'])>" + item + "</span>";
+                            } else {
+                                return "<span class=has-outline onclick=searchKeywords(['" + item.split(";")[0] + "'])>" + item + "</span>";
+                            }
+                        }),
+                        pure: pureList
+                    };
+                }
+            }
+            return { html: [], pure: [name] };
+        }
+
+        const notFound = '<span class=highlight-red>Not Found</span>';
+        const maleList = document.getElementById("male-list");
+        for (const [key, names] of Object.entries(window.malePeopleNamesAlphabetMap)) {
+            const listItem = document.createElement("li");
+            const lines = names.map(name => {
+                const alias = getAlias(name);
+                const majorName = "<span onclick='searchKeywords(" + JSON.stringify(alias.pure) + ")'>" + name + "</span>";
+                return "<div>" + majorName + ": " + (alias.html.join(",") || notFound) + "</div>";
+            });
+            listItem.innerHTML = "<div>" + key + "</div><ul><li>" + lines.join("</li><li>") + "</li></ul>";
+            maleList.append(listItem);
+        }
+
+        const femaleList = document.getElementById("female-list");
+        for (const [key, names] of Object.entries(window.femalePeopleNamesAlphabetMap)) {
+            const listItem = document.createElement("li");
+            const lines = names.map(name => {
+                const alias = getAlias(name);
+                const majorName = "<span onclick='searchKeywords(" + JSON.stringify(alias.pure) + ")'>" + name + "</span>";
+                return "<div>" + majorName + ": " + (alias.html.join(",") || notFound) + "</div>";
+            });
+            listItem.innerHTML = "<div>" + key + "</div><ul><li>" + lines.join("</li><li>") + "</li></ul>";
+            femaleList.append(listItem);
+        }
+    </script>
+</body>
+
+</html>

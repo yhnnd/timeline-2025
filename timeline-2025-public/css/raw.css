@@ -1,0 +1,42 @@
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    max-width: 100%;
+}
+
+@media screen and (max-width:1200px) {
+    .container {
+        flex-direction: column;
+    }
+}
+
+.col {
+    width: 512px;
+    max-width: 100%;
+}
+
+.dial {
+    padding-top: 40px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}
+
+.dial>* {
+    display: inline-block;
+    width: 48px;
+    margin: 8px 4px;
+    text-align: right;
+}
+
+.number {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+img {
+    width: 100%;
+}

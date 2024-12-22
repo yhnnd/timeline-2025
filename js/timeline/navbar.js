@@ -747,6 +747,7 @@ document.addEventListener("DOMContentLoaded", function () {
         btn.disabled = true;
         btn.style.backgroundColor = "var(--studio-gray-50)";
         btn.style.borderColor = "var(--studio-gray-10)";
+        btn.style.marginLeft = "auto";
         document.querySelector(".settings-2").parentElement.style.display = "none";
     }
 });

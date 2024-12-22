@@ -447,7 +447,7 @@ window.books[16].indexList = [
     "@2023/yhnnd.wordpress.com/16-letters-from-patrick-wang-王震來信/2024.05.16-16-清明小长假最后一天.txt", /* 16 */
     "@2023/yhnnd.wordpress.com/16-letters-from-patrick-wang-王震來信/2024.05.16-17-搬到七组第二天.txt", /* 17 */
     "@2023/yhnnd.wordpress.com/16-letters-from-patrick-wang-王震來信/2024.06.10-18-一天假期过后.txt", /* 18 */
-    "@2023/yhnnd.wordpress.com/16-letters-from-patrick-wang-王震來信/2024.06.30-19-将悉三月四月寄到西安的信.txt" /* 19 */
+    "@2023/yhnnd.wordpress.com/16-letters-from-patrick-wang-王震來信/2024.06.30-19-得悉三月四月寄到西安的信.txt" /* 19 */
 ];
 
 // 17《出路 4》

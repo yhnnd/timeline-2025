@@ -625,6 +625,7 @@ window.books[21].indexList = [
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2020.02.28.txt",
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2023.10.09.txt",
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2023.10.25.txt",
+    "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2023.10.26.txt",
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2023.10.27.txt",
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2023.10.28.txt",
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2023.10.30.txt",

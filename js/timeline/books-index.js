@@ -635,7 +635,9 @@ window.books[21].indexList = [
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2024.03.10.txt",
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2024.05.07.txt",
     "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2024.06.12.txt",
-    "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2024.09.09.txt"
+    "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2024.09.09.txt",
+    "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2024.11.27.txt",
+    "@2024/yhnnd.wordpress.com/21-poems-2013-06-2024-12-詩/2024.12.19.txt"
 ];
 
 // 22 出路 6 (2025)

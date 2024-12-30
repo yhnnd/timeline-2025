@@ -101,11 +101,49 @@ pre del * {
 
 .message-bubble {
     display: inline-block;
+    background-color: var(--studio-blue-0);
     border: 1px solid var(--studio-blue-50);
     padding: 4px 8px;
     border-radius: 8px;
-    background-color: white;
+    border-top-left-radius: 0;
     cursor: pointer;
+}
+
+.message-bubble.message-from-god {
+    background-color: var(--studio-red-0);
+    border: 1px solid var(--studio-red-50);
+}
+
+.message-bubble.my-message {
+    background-color: var(--studio-green-0);
+    border: 1px solid var(--studio-green-50);
+}
+
+.container-1 .message-bubble {
+    border-right-color: var(--studio-blue-0);
+    border-bottom-color: var(--studio-blue-0);
+}
+
+.container-1 .message-bubble.message-from-god {
+    border-right-color: var(--studio-red-0);
+    border-bottom-color: var(--studio-red-0);
+}
+
+.container-1 .message-bubble.my-message {
+    border-right-color: var(--studio-green-0);
+    border-bottom-color: var(--studio-green-0);
+}
+
+.container-2 .message-bubble {
+    border-color: var(--studio-blue-0);
+}
+
+.container-2 .message-bubble.message-from-god {
+    border-color: var(--studio-red-0);
+}
+
+.container-2 .message-bubble.my-message {
+    border-color: var(--studio-green-0);
 }
 
 .w-fit-content {

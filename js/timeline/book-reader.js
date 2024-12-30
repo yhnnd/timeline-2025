@@ -459,6 +459,106 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }
     }
 
+    if (localStorage.getItem("enable-message-bubble") === "true") {
+        const availableStartWiths = [];
+        for (const people of window.peoplesNames) {
+            for (const peopleName of people) {
+                availableStartWiths.push(peopleName.split(";")[0]);
+            }
+        }
+        const pronouns = ["我", "她", "他", "牠", "你"];
+        const pronounsOfGod = ["祂", "祢", "主", "神", "耶稣", "耶穌", "主耶稣", "主耶穌", "上帝", "天主", "天父", "圣灵", "聖靈", "Jesus", "God"];
+        function isMessageFromGod(message) {
+            for (const pron of pronounsOfGod) {
+                if (message.startsWith(pron)) {
+                    return true;
+                }
+            }
+            return false;
+        }
+        for (const pron of pronouns) {
+            availableStartWiths.push(pron);
+        }
+        for (const pron of pronounsOfGod) {
+            availableStartWiths.push(pron);
+        }
+        const patterns = [
+            ["说", "說"],
+            ["问", "問"],
+            ["问道", "問道"],
+            ["问到", "問到"],
+            ["反问", "反問"],
+            ["反问说", "反問說"],
+            ["反问道", "反問道"],
+            ["反问到", "反問到"],
+            ["答"],
+            ["答道"],
+            ["回答", "囬答"],
+            ["回答说", "囬答說"],
+            ["回答道", "囬答道"],
+            ["回答到", "囬答到"],
+            ["回答说道", "囬答說道"],
+            ["回答说到", "囬答說到"]
+        ];
+        const delimiters = [":", "："];
+        const availableDelimiters = [];
+        for (const delimiter of delimiters) {
+            availableDelimiters.push(delimiter);
+            for (const pattern of patterns) {
+                for (const item of pattern) {
+                    availableDelimiters.push(item + delimiter);
+                }
+            }
+        }
+        console.log(availableStartWiths);
+        console.log(availableDelimiters);
+        responseText = responseText.split("\n").map(line => {
+            const matched = [];
+            const lineTrimmed = line.trim();
+            for (const availableStartWith of availableStartWiths) {
+                if (lineTrimmed.startsWith(availableStartWith)) {
+                    matched.push(availableStartWith);
+                    break;
+                }
+                if (lineTrimmed.includes("-" + availableStartWith) && lineTrimmed.split("-" + availableStartWith)[0].length < 4) {
+                    matched.push(availableStartWith);
+                    break;
+                }
+            }
+            if (matched.length && matched[0].length) {
+                for (const availableDelimiter of availableDelimiters) {
+                    const segments = lineTrimmed.split(availableDelimiter);
+                    if (segments.length > 1 && segments[0].length - matched[0].length < 10) {
+                        matched.push(availableDelimiter);
+                        break;
+                    }
+                }
+            }
+            if (matched.length === 2) {
+                const delim = matched[1];
+                const segments = line.split(delim);
+                if (segments.length > 6) {
+                    return line;
+                }
+                const startWith = segments.shift() + delim;
+                let messageContent = segments.join(delim);
+                if (messageContent.trim().length) {
+                    const mbcl = ["message-bubble"]; /* Message Bubble Class List */
+                    const swt = startWith.trim();
+                    if (isMessageFromGod(swt)) {
+                        mbcl.push("message-from-god");
+                    } else if (swt.startsWith("我")) {
+                        if (swt.length < 5 || swt.startsWith("我对") || swt.startsWith("我對")) {
+                            mbcl.push("my-message");
+                        }
+                    }
+                    return startWith + "<div class='" + mbcl.join(" ") + "'>" + messageContent + "</div>";
+                }
+            }
+            return line;
+        }).join("\n");
+    }
+
     if (localStorage.getItem("enable-censorship") !== "false") {
         // censor all the censored words
         for (const item of censored) {
@@ -756,6 +856,11 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 l.replaceWith(text);
             });
         }
+        if (localStorage.getItem("enable-delete-line") === "true" && container2.querySelector("del")) {
+            container2.querySelectorAll("del").forEach(del => {
+                del.outerHTML = "{{" + del.innerHTML + "}}";
+            });
+        }
         if (localStorage.getItem("enable-border") === "true" && container2.querySelector(".has-border")) {
             container2.querySelectorAll(".has-border").forEach(b => {
                 b.style.borderColor = "transparent";
@@ -767,6 +872,13 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 }
             });
         }
+        if (localStorage.getItem("enable-highlight-red") === "true" && container2.querySelector(".highlight-red")) {
+            container2.querySelectorAll(".highlight-red").forEach(red => {
+                red.outerHTML = red.innerHTML;
+            });
+        }
+        // if (localStorage.getItem("enable-message-bubble") === "true" && container2.querySelector(".message-bubble")) {
+        // }
         if (isMapEnabled) {
             container2.querySelectorAll(".outer-wrapper").forEach(w => {
                 const t = document.createElement("div");
@@ -809,6 +921,8 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
 
     if (isMapEnabled) {
         renderMaps(parseMapsResult.maps);
+        /* 地图加载图片只加载一张，只有在用户调整窗口尺寸时地图才会加载所有图片，所以这里模拟用户调整窗口尺寸 */
+        window.dispatchEvent(new Event('resize'));
     }
 
     document.querySelector(".desktop").style.display = "flex";

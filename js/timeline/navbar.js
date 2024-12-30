@@ -797,7 +797,7 @@ function showMiniLoading () {
         e.remove();
     });
     const miniLoading = document.createElement("div");
-    miniLoading.classList.add("mini-loading");
+    miniLoading.classList = ["mini-loading", "no-print"];
     const id = "mini-loading-" + getRandomString();
     miniLoading.setAttribute("id", id);
     miniLoading.setAttribute("onselectstart", "return false;");

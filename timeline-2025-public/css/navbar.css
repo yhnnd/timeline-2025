@@ -105,6 +105,12 @@ body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-wid
     width: 656px;
 }
 
+.settings-2 img.thumbnail {
+    border: 1px solid var(--studio-blue-10);
+    width: fit-content;
+    max-width: calc(100% - 40px);
+}
+
 .settings-2 .settings-item {
     display: flex;
     align-items: center;

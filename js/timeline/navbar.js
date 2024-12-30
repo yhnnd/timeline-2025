@@ -337,6 +337,8 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
+                <img class="thumbnail" src="img/settings-examples/05-del-before.png" alt="">
+                <img class="thumbnail" src="img/settings-examples/05-del-after.png" alt="">
             </li>
             <!-- 6 -->
             <li>
@@ -349,6 +351,8 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
+                <img class="thumbnail" src="img/settings-examples/06-border-before.png" alt="" style="height: 100px;">
+                <img class="thumbnail" src="img/settings-examples/06-border-after.png" alt="" style="height: 100px;">
             </li>
             <!-- 7 -->
             <li>
@@ -361,6 +365,7 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
+                <img class="thumbnail" src="img/settings-examples/07-badge.png" alt="">
             </li>
             <!-- 8 -->
             <li>
@@ -373,6 +378,7 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
+                <img class="thumbnail" src="img/settings-examples/08-highlight-red.png" alt="" style="height: 200px;">
             </li>
             <!-- 9 -->
             <li>

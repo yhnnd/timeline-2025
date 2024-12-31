@@ -4,6 +4,7 @@
     margin-bottom: 219px;
     flex-direction: column;
     align-items: start;
+    max-width: 100vw;
 }
 
 .page:not(:first-child) {
@@ -174,6 +175,13 @@ body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-spl
     max-width: min(560px, 100vw, 100%);
 }
 
+body[data-value-of-enable-line-width-560px="true"] pre.page,
+body[data-value-of-enable-line-width-560px="true"] pre.page .line,
+body[data-value-of-enable-line-width-560px="true"] pre.page .empty-line,
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-split="true"] pre.page .img-wrapper .content {
+    max-width: min(560px, calc(100vw - 18px), 100%);
+}
+
 body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre,
 body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre .line,
 body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre .empty-line,
@@ -182,12 +190,26 @@ body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-wid
     max-width: min(608px, 100vw, 100%);
 }
 
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre.page,
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre.page .line,
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre.page .empty-line,
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-split="true"] pre.page .img-wrapper .content {
+    max-width: min(608px, calc(100vw - 18px), 100%);
+}
+
 body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre,
 body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre .line,
 body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre .empty-line,
 body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"][data-value-of-enable-line-split="true"] .img-wrapper .content {
     width: 656px;
     max-width: min(656px, 100vw, 100%);
+}
+
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre.page,
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre.page .line,
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre.page .empty-line,
+body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"][data-value-of-enable-line-split="true"] pre.page .img-wrapper .content {
+    max-width: min(656px, calc(100vw - 18px), 100%);
 }
 
 body[data-line-width-maximum="true"] pre,
@@ -208,6 +230,25 @@ body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true
 body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"][data-value-of-enable-line-split="true"] .img-wrapper .content {
     width: 800px;
     max-width: min(800px, 100vw, 100%);
+}
+
+body[data-line-width-maximum="true"] pre.page,
+body[data-line-width-maximum="true"] pre.page .line,
+body[data-line-width-maximum="true"] pre.page .empty-line,
+body[data-line-width-maximum="true"][data-value-of-enable-line-split="true"] pre.page .img-wrapper .content,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"] pre.page,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"] pre.page .line,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"] pre.page .empty-line,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-split="true"] pre.page .img-wrapper .content,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre.page,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre.page .line,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"] pre.page .empty-line,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-split="true"] pre.page .img-wrapper .content,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre.page,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre.page .line,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"] pre.page .empty-line,
+body[data-line-width-maximum="true"][data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-width-608px="true"][data-value-of-enable-line-width-656px="true"][data-value-of-enable-line-split="true"] pre.page .img-wrapper .content {
+    max-width: min(800px, calc(100vw - 18px), 100%);
 }
 
 pre img {
@@ -290,16 +331,29 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
     display: none;
 }
 
-body[data-value-of-enable-dual-article-container="false"] .left {
+.left {
     overflow-x: hidden;
+    display: flex;
+    width: 100%;
+    justify-content: center;
 }
 
-body[data-value-of-enable-dual-article-container="true"] .left {
-    overflow-x: visible;
+.right {
+    display: none;
 }
 
-body[data-value-of-enable-dual-article-container="true"] .right {
-    overflow-x: hidden;
+@media screen and (min-width: 1600px) {
+    body[data-value-of-enable-dual-article-container="true"] .left {
+        overflow-x: visible;
+        justify-content: end;
+    }
+
+    body[data-value-of-enable-dual-article-container="true"] .right {
+        overflow-x: hidden;
+        display: flex;
+        width: 100%;
+        justify-content: start;
+    }
 }
 
 .badges .title {

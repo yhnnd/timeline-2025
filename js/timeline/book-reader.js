@@ -474,12 +474,13 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             if (line === "@WeCardTable(\"begin\");") {
                 isInTable = true;
             } else if (line === "@WeCardTable(\"end\");") {
-                const table = {
-                    lines: tmp,
-                    dom: parseTable(tmp)
-                };
+                const table = parseTable(tmp);
                 tmp = [];
-                tables.push(table);
+                table.classList.add("wecard-table");
+                tables.push({
+                    lines: tmp,
+                    dom: table
+                });
                 isInTable = false;
             } else if (isInTable) {
                 tmp.push(line);
@@ -540,7 +541,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     responseText = responseText.split("\n").map(line => {
         if (line === "@WeCardTable(\"end\");") {
-            line = tables.shift().dom.outerHTML + line;
+            line = tables.shift().dom.outerHTML + "<span class='hidden-in-container-1'>" + line + "</span>";
         }
         return line;
     }).join("\n");

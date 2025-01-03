@@ -352,10 +352,137 @@ function decodeOnline(fragment) {
     return result;
 }
 
+function parseTableLine(line) {
+    let tableCells = [], tmpout = "", tmpin = "", isOpen = false, n = 0, isQuoted = false;
+    // Read all {text} in table cells.
+    for (const char of line) {
+        if (isOpen === true) {
+            if (char === '"') {
+                isQuoted = !isQuoted;
+            }
+            if (isQuoted === false && char === "}") {
+                isOpen = false;
+                tableCells[n] = tmpin;
+                tmpin = "";
+            }
+        }
+        if (isOpen === true) {
+            tmpin += char;
+        } else {
+            tmpout += char;
+            if (char === ",") {
+                ++n;
+            }
+        }
+        if (char === "{" && isOpen === false) {
+            isOpen = true;
+            isQuoted = false;
+        }
+    }
+    const layers = tmpout.split(":").map(e => e.trim()).map(function(e) {
+        if (e.startsWith("[")) {
+            e = e.replace("[", "").replace("]", "");
+            return e.split(",").map(e => e.trim());
+        }
+        return e;
+    });
+    const getNode = function (query) {
+        const x = query.split(".");
+        let id = null, result = null;
+        for (let i = 0; i < x.length; i++) {
+            let z = x[i].split("#");
+            if (i == 0) {
+                result = document.createElement(z[0]);
+                if (z[0] == "script") {
+                    result.setAttribute("type", "text/javascript-unsafe");
+                }
+            } else {
+                result.classList.add(z[0]);
+            }
+            if (z.length > 1) {
+                id = z[1];
+            }
+        }
+        if (id) {
+            result.setAttribute("id", id);
+        }
+        return result;
+    };
+    let root = null;
+    let curr = null;
+    for (const e of layers) {
+        if (!curr) {
+            curr = getNode(e);
+            root = curr;
+        } else if (typeof e === "string") {
+            const temp = getNode(e);
+            const rand = ("" + Math.random()).split(".")[1];
+            temp.setAttribute("rand", rand);
+            curr.append(temp);
+            curr = curr.querySelector("[rand='" + rand + "']");
+            curr.removeAttribute("rand");
+        } else if (e instanceof Array) {
+            for (let i = 0; i < e.length; ++i) {
+                const p = e[i].split("=").map(u => u.trim());
+                const temp = getNode(p[0]);
+                temp.innerText = tableCells[i] || "";
+                curr.append(temp);
+            }
+        }
+    }
+    return root;
+}
+
+function parseTable(lines) {
+    let root = null, head = null, body = null;
+    for (const line of lines) {
+        if (line.startsWith("table")) {
+            root = parseTableLine(line);
+        } else if (line.startsWith("thead")) {
+            head = parseTableLine(line);
+        } else if (line.startsWith("tbody")) {
+            body = parseTableLine(line);
+        } else if (line.startsWith("tr")) {
+            if (body) {
+                body.append(parseTableLine(line));
+            } else if (head) {
+                head.append(parseTableLine(line));
+            } else {
+                body = document.createElement("tbody");
+                body.append(parseTableLine(line));
+            }
+        }
+    }
+    if (!root) {
+        root = document.createElement("table");
+    }
+    root.append(head);
+    root.append(body);
+    return root;
+}
+
 function renderArticleParse (responseText, containerClassName, container2ClassName) {
     responseText = responseText.split("\n").map(line => {
         return line.split(" ").map(decode).join(" ");
     }).join("\n");
+
+    responseText = function (responseText) {
+        let tmp = [], isInTable = false;
+        return responseText.split("\n").map((line) => {
+            if (line === "@WeCardTable(\"begin\");") {
+                isInTable = true;
+            } else if (line === "@WeCardTable(\"end\");") {
+                const table = parseTable(tmp);
+                tmp = [];
+                table.setAttribute("og-line", line);
+                line = table;
+                isInTable = false;
+            } else if (isInTable) {
+                tmp.push(line);
+            }
+            return line;
+        }).join("\n");
+    }(responseText);
 
     responseText = function (responseText) {
         return responseText.split("\n").map((line) => {

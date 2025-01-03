@@ -436,3 +436,7 @@ body[data-value-of-enable-button-previous-and-button-next="false"] .buttons-prev
 .container-1 .hidden-in-container-1 {
     display: none;
 }
+
+.container-2 .wecard-table {
+    display: none;
+}

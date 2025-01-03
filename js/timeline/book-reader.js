@@ -550,7 +550,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             const table = tables.shift();
             const ogTableLines = document.createElement("div");
             ogTableLines.style.visibility = "hidden";
-            ogTableLines.innerHTML = table.ogLines.join("\n");
+            ogTableLines.innerHTML = "<div>" + table.ogLines.join("</div><div>") + "</div>";
             tableWrapper.append(ogTableLines);
             table.dom.style.position = "absolute";
             table.dom.style.top = "0";

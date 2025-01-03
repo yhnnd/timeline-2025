@@ -437,6 +437,7 @@ body[data-value-of-enable-button-previous-and-button-next="false"] .buttons-prev
     display: none;
 }
 
+.container-2 .hidden-in-container-2,
 .container-2 .wecard-table {
     display: none;
 }

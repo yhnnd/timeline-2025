@@ -432,3 +432,7 @@ body[data-value-of-enable-button-previous-and-button-next="true"] .buttons-previ
 body[data-value-of-enable-button-previous-and-button-next="false"] .buttons-previous-and-next {
     display: none;
 }
+
+.container-1 .hidden-in-container-1 {
+    display: none;
+}

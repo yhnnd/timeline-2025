@@ -1,7 +1,7 @@
 (function () {
 
     function parse(line) {
-        let ins = [], tmpout = "", tmpin = "", isOpen = false, n = 0, isQuoted = false;
+        let tableCells = [], tmpout = "", tmpin = "", isOpen = false, n = 0, isQuoted = false;
         // Read all {text} in table cells.
         for (const char of line) {
             if (isOpen === true) {
@@ -10,7 +10,7 @@
                 }
                 if (isQuoted === false && char === "}") {
                     isOpen = false;
-                    ins[n] = tmpin;
+                    tableCells[n] = tmpin;
                     tmpin = "";
                 }
             }
@@ -76,13 +76,14 @@
                 for (let i = 0; i < e.length; ++i) {
                     const p = e[i].split("=").map(u => u.trim());
                     const temp = getNode(p[0]);
-                    temp.innerText = ins[i] || "";
+                    temp.innerText = tableCells[i] || "";
                     curr.append(temp);
                 }
             }
         }
         return root;
     }
+
 
     function parseTable(lines) {
         let root = null, head = null, body = null;
@@ -167,10 +168,11 @@
         if (tbody.className) {
             s2 += "." + tbody.className;
         }
-        let lines = [s0, s1, s2];
+
+        const lines = [s0, s1, s2];
         // Compile TBody Tr
         for (let r = 0; r < tbodyTrs.length; ++r) {
-            let tr = tbodyTrs[r];
+            const tr = tbodyTrs[r];
             let sr = tr.tagName.toLowerCase();
             if (tr.className) {
                 sr += "." + tr.className;

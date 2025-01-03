@@ -1,65 +1,60 @@
 (function () {
 
     function parse(s) {
-        var ins = [], tmpout = "", tmpin = "", open = false, n = 0, nOpen = 0, nClose = 0, isQuoted = false;
+        let ins = [], tmpout = "", tmpin = "", isOpen = false, n = 0, isQuoted = false;
         // Read all {text} in table cells.
-        for (var i = 0; i < s.length; i++) {
-            if (open === true) {
+        for (let i = 0; i < s.length; i++) {
+            if (isOpen === true) {
                 if (s[i] === '"') {
                     isQuoted = !isQuoted;
                 }
-                if (isQuoted === false && s[i] === "}" && ++nClose === nOpen) {
-                    open = false;
+                if (isQuoted === false && s[i] === "}") {
+                    isOpen = false;
                     ins[n] = tmpin;
                     tmpin = "";
                 }
             }
-            if (open === true) {
+            if (isOpen === true) {
                 tmpin += s[i];
-                if (isQuoted === false && s[i] === "{") {
-                    ++nOpen;
-                }
             } else {
                 tmpout += s[i];
                 if (s[i] === ",") {
                     ++n;
                 }
             }
-            if (s[i] === "{" && open === false) {
-                open = true;
+            if (s[i] === "{" && isOpen === false) {
+                isOpen = true;
                 isQuoted = false;
-                nOpen = 1;
-                nClose = 0;
             }
         }
         
         l = tmpout.split(":").map(e => e.trim()).map(function(e) {
             if(e.startsWith("[")) {
-                e = e.replace("[","").replace("]","");
+                e = e.replace("[", "").replace("]", "");
                 return e.split(",").map(e => e.trim());
             }
             return e;
         });
-        var root = null;
-        var a = null;
-        var node = function (q) {
-            var x = q.split("."), id = null, d = null;
-            for (var i = 0; i < x.length; i++) {
-                var z = x[i].split("#");
+        let root = null;
+        let a = null;
+        let node = function (q) {
+            let x = q.split("."), id = null, d = null;
+            for (let i = 0; i < x.length; i++) {
+                let z = x[i].split("#");
                 if (i == 0) {
-                    d = $(document.createElement(z[0]));
+                    d = document.createElement(z[0]);
                     if (z[0] == "script") {
-                        d.attr("type", "text/javascript-unsafe");
+                        d.setAttribute("type", "text/javascript-unsafe");
                     }
                 } else {
-                    d.addClass(z[0]);
+                    d.classList.add(z[0]);
                 }
                 if (z.length > 1) {
                     id = z[1];
                 }
             }
             if (id) {
-                d.attr("id", id);
+                d.setAttribute("id", id);
             }
             return d;
         };
@@ -69,11 +64,18 @@
                 a = node(e);
                 root = a;
             } else if (typeof e === "string") {
-                a = node(e).appendTo(a);
+                const temp = node(e);
+                const rand = ("" + Math.random()).split(".")[1];
+                temp.setAttribute("rand", rand);
+                a.append(temp);
+                a = a.querySelector("[rand='" + rand + "']");
+                a.removeAttribute("rand");
             } else if (e instanceof Array) {
-                for (var i = 0; i < e.length; ++i) {
+                for (let i = 0; i < e.length; ++i) {
                     p = e[i].split("=").map(u => u.trim());
-                    node(p[0]).text(ins[i]).appendTo(a);
+                    const temp = node(p[0]);
+                    temp.innerText = ins[i] || "";
+                    a.append(temp);
                 }
             }
         }
@@ -81,10 +83,10 @@
     }
     
     function parseTable(lines) {
-        var r = null, head = null, body = null;
+        let r = null, head = null, body = null;
         
-        for (var i = 0; i < lines.length; ++i) {
-            var l = lines[i];
+        for (let i = 0; i < lines.length; ++i) {
+            let l = lines[i];
             if (l.startsWith("table")) {
                 r = parse(l);
             } else if (l.startsWith("thead")) {
@@ -97,15 +99,16 @@
                 } else if (head) {
                     head.append(parse(l));
                 } else {
-                    body = $("<tbody>");
+                    body = document.createElement("tbody");
                     body.append(parse(l));
                 }
             }
         }
         if (!r) {
-            r = $("<table>");
+            r = document.createElement("table");
         }
-        r.append(head).append(body);
+        r.append(head);
+        r.append(body);
         return r;
     }
     
@@ -115,13 +118,15 @@
             return false;
         }
     
-        if (!table.length) {
-            table = $(table);
+        if (typeof table === "string") {
+            const temp = document.createElement("div");
+            temp.innerHTML = table;
+            table = temp.querySelector("table");
         }
     
         // Compile Table
-        let tableTagName = table[0].tagName.toLowerCase();
-        let tableClassName = table[0].className;
+        let tableTagName = table.tagName.toLowerCase();
+        let tableClassName = table.className;
         
         let s0 = tableTagName;
         if (tableClassName) {
@@ -129,70 +134,63 @@
         }
         
         // Compile THead
-        let thead = table.find("thead");
-        let theadTagName = thead[0].tagName.toLowerCase();
-        let theadClassName = thead[0].className;
-        let theadTr = table.find("thead > tr");
-        let theadTrClassName = theadTr[0].className;
-        let theadTrTd = theadTr.find("td,th");
+        const thead = table.querySelector("thead");
+        const theadTr = table.querySelector("thead > tr");
+        const theadTrTds = theadTr.querySelectorAll("td,th");
     
-        let s1 = theadTagName;
-        if (theadClassName) {
-            s1 += "." + theadClassName;
+        let s1 = thead.tagName.toLowerCase();
+        if (thead.className) {
+            s1 += "." + thead.className;
         }
         s1 += " : " + "tr";
-        if (theadTrClassName) {
-            s1 += "." + theadTrClassName;
+        if (theadTr.className) {
+            s1 += "." + theadTr.className;
         }
         s1 += " : [";
-        for (let i = 0; i < theadTrTd.length; ++i) {
-            let td = theadTrTd[i];
+        for (let i = 0; i < theadTrTds.length; ++i) {
+            let td = theadTrTds[i];
             s1 += td.tagName.toLowerCase();
             if (td.className) {
                 s1 += "." + td.className;
             }
-            if (td.textContent) {
-                s1 += " = {" + td.textContent + "}";
+            if (td.innerHTML) {
+                s1 += " = {" + td.innerHTML + "}";
             }
-            if (i + 1 < theadTrTd.length) {
+            if (i + 1 < theadTrTds.length) {
                 s1 += ", ";
             }
         }
         s1 += "]";
         
         // Compile TBody
-        let tbody = $(table).find("tbody");
-        let tbodyTagName = tbody[0].tagName.toLowerCase();
-        let tbodyClassName = tbody[0].className;
-        let tbodyTr = $(table).find("tbody > tr");
+        const tbody = table.querySelector("tbody");
+        const tbodyTrs = table.querySelectorAll("tbody > tr");
         
-        let s2 = tbodyTagName;
-        if (tbodyClassName) {
-            s2 += "." + tbodyClassName;
+        let s2 = tbody.tagName.toLowerCase();
+        if (tbody.className) {
+            s2 += "." + tbody.className;
         }
     
         let lines = [s0, s1, s2];
         // Compile TBody Tr
-        for (let r = 0; r < tbodyTr.length; ++r) {
-            let tr = tbodyTr[r];
-            let trTagName = tr.tagName.toLowerCase();
-            let trClassName = tr.className;
-            let sr = trTagName;
-            if (trClassName) {
-                sr += "." + trClassName;
+        for (let r = 0; r < tbodyTrs.length; ++r) {
+            let tr = tbodyTrs[r];
+            let sr = tr.tagName.toLowerCase();
+            if (tr.className) {
+                sr += "." + tr.className;
             }
             sr += " : [";
-            let tbodyTrTd = $(tr).find("td,th");
-            for (let i = 0; i < tbodyTrTd.length; ++i) {
-                let td = tbodyTrTd[i];
+            let tbodyTrTds = tr.querySelectorAll("td,th");
+            for (let i = 0; i < tbodyTrTds.length; ++i) {
+                let td = tbodyTrTds[i];
                 sr += td.tagName.toLowerCase();
                 if (td.className) {
                     sr += "." + td.className;
                 }
-                if (td.textContent) {
-                    sr += " = {" + td.textContent + "}";
+                if (td.innerHTML) {
+                    sr += " = {" + td.innerHTML + "}";
                 }
-                if (i + 1 < tbodyTrTd.length) {
+                if (i + 1 < tbodyTrTds.length) {
                     sr += ", ";
                 }
             }
@@ -235,7 +233,7 @@
     }
     
     function test1() {
-        var scripts = [
+        const scripts = [
             // "thead : tr : [th = {A}, th = {B}]", 
             // "tbody: tr: [td={:={[]}, td={:={[]}]", 
             // "tr : [td={C}, td={D}]"
@@ -244,7 +242,10 @@
             "tbody.t-body : tr : [td = {:={[]}, td = {:={[]}]", 
             "tr : [td={C}, td={D}]"
         ];
-        return parseTable(scripts);
+        return {
+            "scripts": scripts,
+            "table": parseTable(scripts)
+        };
     }
     
     function test2() {
@@ -256,10 +257,17 @@
             "tr : [td = {1}, td = {2}]",
             "tr : [td, td, td = {hello wcml}]"
         ];
-        return parseTable(scripts);
+        return {
+            "scripts": scripts,
+            "table": parseTable(scripts)
+        };
     }
 
     this.wcTable = {
-        "parseTable": parseTable
+        "parseTable": parseTable,
+        "compileTable": compileTable,
+        "createTable": createTable,
+        "test1": test1,
+        "test2": test2
     }
 })();

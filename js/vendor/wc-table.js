@@ -261,7 +261,7 @@
         };
     }
 
-    this.wcTable = {
+    this.WeCardTable = {
         "parseTable": parseTable,
         "compileTable": compileTable,
         "createTable": createTable,

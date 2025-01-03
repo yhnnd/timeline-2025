@@ -475,12 +475,12 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 isInTable = true;
             } else if (line === "@WeCardTable(\"end\");") {
                 const table = parseTable(tmp);
-                tmp = [];
                 table.classList.add("wecard-table");
                 tables.push({
                     ogLines: tmp,
                     dom: table
                 });
+                tmp = [];
                 isInTable = false;
             } else if (isInTable) {
                 tmp.push(line);

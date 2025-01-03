@@ -543,7 +543,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             line = tables.shift().dom.outerHTML + line;
         }
         return line;
-    });
+    }).join("\n");
 
     if (localStorage.getItem("enable-img-recognition") === "true" || responseText.includes("@command(\"enable-image-recognition\")")) {
         responseText = responseText.split("\n").map(line => {

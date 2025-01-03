@@ -466,16 +466,20 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         return line.split(" ").map(decode).join(" ");
     }).join("\n");
 
+    const tables = [];
+
     responseText = function (responseText) {
         let tmp = [], isInTable = false;
         return responseText.split("\n").map((line) => {
             if (line === "@WeCardTable(\"begin\");") {
                 isInTable = true;
             } else if (line === "@WeCardTable(\"end\");") {
-                const table = parseTable(tmp);
+                const table = {
+                    lines: tmp,
+                    dom: parseTable(tmp)
+                };
                 tmp = [];
-                table.setAttribute("og-line", line);
-                line = table;
+                tables.push(table);
                 isInTable = false;
             } else if (isInTable) {
                 tmp.push(line);
@@ -533,6 +537,13 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     }
 
     responseText = responseText.replaceAll("<", "&lt;");
+
+    responseText = responseText.split("\n").map(line => {
+        if (line === "@WeCardTable(\"end\");") {
+            line = tables.shift().dom.outerHTML + line;
+        }
+        return line;
+    });
 
     if (localStorage.getItem("enable-img-recognition") === "true" || responseText.includes("@command(\"enable-image-recognition\")")) {
         responseText = responseText.split("\n").map(line => {

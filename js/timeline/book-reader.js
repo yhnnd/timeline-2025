@@ -548,13 +548,16 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             const tableWrapper = document.createElement("div");
             tableWrapper.style.position = "relative";
             const table = tables.shift();
-            const ogTableLines = document.createElement("div");
-            ogTableLines.style.visibility = "hidden";
-            ogTableLines.innerHTML = "<div>" + table.ogLines.join("</div><div>") + "</div>";
-            tableWrapper.append(ogTableLines);
-            table.dom.style.position = "absolute";
-            table.dom.style.top = "0";
-            table.dom.style.left = "0";
+            if (localStorage.getItem("enable-dual-article-container") === "true") {
+                const ogTableLines = document.createElement("div");
+                ogTableLines.classList.add("hidden-in-container-2");
+                ogTableLines.style.visibility = "hidden";
+                ogTableLines.innerHTML = "<div>@WeCardTable(\"begin\");</div><div>" + table.ogLines.join("</div><div>") + "</div><div>@WeCardTable(\"end\");</div>";
+                tableWrapper.append(ogTableLines);
+                table.dom.style.position = "absolute";
+                table.dom.style.top = "0";
+                table.dom.style.left = "0";
+            }
             tableWrapper.append(table.dom);
             return tableWrapper.outerHTML + "<span class='hidden-in-container-1'>" + line + "</span>";
         }

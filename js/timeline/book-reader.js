@@ -539,9 +539,16 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     responseText = responseText.replaceAll("<", "&lt;");
 
+    let isInTable = false;
     responseText = responseText.split("\n").map(line => {
-        if (line === "@WeCardTable(\"end\");") {
-            line = tables.shift().dom.outerHTML + "<span class='hidden-in-container-1'>" + line + "</span>";
+        if (line === "@WeCardTable(\"begin\");") {
+            isInTable = true;
+        } else if (line === "@WeCardTable(\"end\");") {
+            isInTable = false;
+            return tables.shift().dom.outerHTML + "<span class='hidden-in-container-1'>" + line + "</span>";
+        }
+        if (isInTable) {
+            return "<span class='hidden-in-container-1'>" + line + "</span>";
         }
         return line;
     }).join("\n");

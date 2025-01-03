@@ -478,7 +478,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 tmp = [];
                 table.classList.add("wecard-table");
                 tables.push({
-                    lines: tmp,
+                    ogLines: tmp,
                     dom: table
                 });
                 isInTable = false;
@@ -545,7 +545,18 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             isInTable = true;
         } else if (line === "@WeCardTable(\"end\");") {
             isInTable = false;
-            return tables.shift().dom.outerHTML + "<span class='hidden-in-container-1'>" + line + "</span>";
+            const tableWrapper = document.createElement("div");
+            tableWrapper.style.position = "relative";
+            const table = tables.shift();
+            const ogTableLines = document.createElement("div");
+            ogTableLines.style.visibility = "hidden";
+            ogTableLines.innerHTML = table.ogLines.join("\n");
+            tableWrapper.append(ogTableLines);
+            table.dom.style.position = "absolute";
+            table.dom.style.top = "0";
+            table.dom.style.left = "0";
+            tableWrapper.append(table.dom);
+            return tableWrapper.outerHTML + "<span class='hidden-in-container-1'>" + line + "</span>";
         }
         if (isInTable) {
             return "<span class='hidden-in-container-1'>" + line + "</span>";

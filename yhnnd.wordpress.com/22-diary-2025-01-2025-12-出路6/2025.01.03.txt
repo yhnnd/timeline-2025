@@ -1,0 +1,14 @@
+2025/01/03 Fri
+
+@base64("VGVzdCBXZUNhcmQgVGFibGU=");
+
+@WeCardTable("begin");
+@base64("dGFibGU=");
+@base64("dGhlYWQgOiB0ciA6IFt0aCA9IHsiY29tbWllIHZhbHVlcyJ9LCB0aCA9IHsid29ybGQgdmFsdWVzIn1d");
+@base64("dGJvZHk=");
+@base64("dHIgOiBbdGQgPSB7InRoZXJlIGlzIG5vIGdvZCJ9LCB0ZCA9IHsidGhlcmUgaXMgZ29kIn1d");
+@base64("dHIgOiBbdGQgPSB7IndlIGFyZSB0aGUgbG9yZHMifSwgdGQgPSB7ImdvZCBpcyBvdXIgbG9yZCJ9XQ==");
+@base64("dHIgOiBbdGQgPSB7IndlIGNhbiBkZWZlYXQgZ29kIn0sIHRkID0geyJ3ZSBtdXN0IG9iZXkgdGhlIGxvcmQifV0=");
+@base64("dHIgOiBbdGQgPSB7IndlIG11c3Qgc3RydWdnbGUifSwgdGQgPSB7IndlIG11c3QgdG9sZXJhdGUifV0=");
+@base64("dHIgOiBbdGQgPSB7IndlIG11c3QgaGF0ZSB3aGF0IGdvZCBjcmVhdGVkIn0sIHRkID0geyJ3ZSBtdXN0IGxvdmUgd2hhdCBnb2QgY3JlYXRlZCJ9XQ==");
+@WeCardTable("end");

@@ -459,6 +459,10 @@ body[data-value-of-enable-button-previous-and-button-next="false"] .buttons-prev
     max-width: 100%;
 }
 
+body[data-value-of-enable-dual-article-container="false"] .wecard-table-wrapper>.wecard-table {
+    position: unset;
+}
+
 .wecard-table-wrapper>.wecard-table>thead>tr>th,
 .wecard-table-wrapper>.wecard-table>tbody>tr>th,
 .wecard-table-wrapper>.wecard-table>tfoot>tr>th {

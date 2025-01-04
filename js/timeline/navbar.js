@@ -804,7 +804,7 @@ function showMiniLoading () {
         e.remove();
     });
     const miniLoading = document.createElement("div");
-    miniLoading.classList = ["mini-loading", "no-print"];
+    miniLoading.classList.add("mini-loading", "no-print");
     const id = "mini-loading-" + getRandomString();
     miniLoading.setAttribute("id", id);
     miniLoading.setAttribute("onselectstart", "return false;");

@@ -83,7 +83,7 @@ function openBook(bookName) {
     for (let article of articles) {
         const articleNumber = counter++;
         let div = document.createElement("div");
-        div.classList = ["article"];
+        div.classList.add("article");
         div.id = "article-" + articleNumber;
         div.innerHTML = "<div>" + article.realUrl.split("/").pop() + "</div><div class='text' style='max-height: 100px;overflow: hidden;'></div>";
         div.setAttribute("onclick", "openArticle('" + bookName + "','" + articleNumber + "')");

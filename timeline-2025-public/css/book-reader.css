@@ -438,6 +438,44 @@ body[data-value-of-enable-button-previous-and-button-next="false"] .buttons-prev
 }
 
 .container-2 .hidden-in-container-2,
-.container-2 .wecard-table {
+.container-2 .wecard-table-wrapper {
     display: none;
+}
+
+.wecard-table-wrapper {
+    display: inline-block;
+    position: relative;
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+}
+
+.wecard-table-wrapper>.wecard-table {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    width: 100%;
+    max-width: 100%;
+}
+
+.wecard-table-wrapper>.wecard-table>thead>tr>th,
+.wecard-table-wrapper>.wecard-table>tbody>tr>th,
+.wecard-table-wrapper>.wecard-table>tfoot>tr>th {
+    text-align: left;
+    vertical-align: top;
+    background-color: var(--studio-gray-5);
+}
+
+.wecard-table-wrapper>.wecard-table>thead>tr>td,
+.wecard-table-wrapper>.wecard-table>tbody>tr>td,
+.wecard-table-wrapper>.wecard-table>tfoot>tr>td {
+    vertical-align: top;
+    background-color: var(--studio-gray-0);
+}
+
+.wecard-table-wrapper>.wecard-table>thead>tr>td:hover,
+.wecard-table-wrapper>.wecard-table>tbody>tr>td:hover,
+.wecard-table-wrapper>.wecard-table>tfoot>tr>td:hover {
+    background-color: var(--studio-blue-0);
 }

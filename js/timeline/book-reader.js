@@ -415,18 +415,23 @@ function parseTableLine(line) {
             curr = getNode(e);
             root = curr;
         } else if (typeof e === "string") {
-            const temp = getNode(e);
+            const tempNode = getNode(e);
             const rand = ("" + Math.random()).split(".")[1];
-            temp.setAttribute("rand", rand);
-            curr.append(temp);
+            tempNode.setAttribute("rand", rand);
+            curr.append(tempNode);
             curr = curr.querySelector("[rand='" + rand + "']");
             curr.removeAttribute("rand");
         } else if (e instanceof Array) {
             for (let i = 0; i < e.length; ++i) {
                 const p = e[i].split("=").map(u => u.trim());
-                const temp = getNode(p[0]);
-                temp.innerText = tableCells[i] || "";
-                curr.append(temp);
+                const tempNode = getNode(p[0]);
+                const tableCell = tableCells[i] || "";
+                if (tableCell.length > 1 && tableCell.startsWith("\"") && tableCell.endsWith("\"")) {
+                    tempNode.innerText = tableCell.substring(1, tableCell.length - 1);
+                } else {
+                    tempNode.innerHTML = tableCell;
+                }
+                curr.append(tempNode);
             }
         }
     }
@@ -466,7 +471,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         return line.split(" ").map(decode).join(" ");
     }).join("\n");
 
-    const tables = [];
+    const weCardTables = [];
+    let hasWeCardTable = false;
 
     responseText = function (responseText) {
         let tmp = [], isInTable = false;
@@ -476,10 +482,11 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             } else if (line === "@WeCardTable(\"end\");") {
                 const table = parseTable(tmp);
                 table.classList.add("wecard-table");
-                tables.push({
+                weCardTables.push({
                     ogLines: tmp,
                     dom: table
                 });
+                hasWeCardTable = true;
                 tmp = [];
                 isInTable = false;
             } else if (isInTable) {
@@ -539,33 +546,31 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     responseText = responseText.replaceAll("<", "&lt;");
 
-    let isInTable = false;
-    responseText = responseText.split("\n").map(line => {
-        if (line === "@WeCardTable(\"begin\");") {
-            isInTable = true;
-        } else if (line === "@WeCardTable(\"end\");") {
-            isInTable = false;
-            const tableWrapper = document.createElement("div");
-            tableWrapper.style.position = "relative";
-            const table = tables.shift();
-            if (localStorage.getItem("enable-dual-article-container") === "true") {
-                const ogTableLines = document.createElement("div");
-                ogTableLines.classList.add("hidden-in-container-2");
-                ogTableLines.style.visibility = "hidden";
-                ogTableLines.innerHTML = "<div>@WeCardTable(\"begin\");</div><div>" + table.ogLines.join("</div><div>") + "</div><div>@WeCardTable(\"end\");</div>";
-                tableWrapper.append(ogTableLines);
-                table.dom.style.position = "absolute";
-                table.dom.style.top = "0";
-                table.dom.style.left = "0";
+    if (hasWeCardTable) {
+        let isInTable = false;
+        responseText = responseText.split("\n").map(line => {
+            if (line === "@WeCardTable(\"begin\");") {
+                isInTable = true;
+            } else if (line === "@WeCardTable(\"end\");") {
+                isInTable = false;
+                const tableWrapper = document.createElement("div");
+                tableWrapper.classList.add("wecard-table-wrapper");
+                const table = weCardTables.shift();
+                if (localStorage.getItem("enable-dual-article-container") === "true") {
+                    const ogTableLines = document.createElement("div");
+                    ogTableLines.style.visibility = "hidden";
+                    ogTableLines.innerHTML = "<div>@WeCardTable(\"begin\");</div><div>" + table.ogLines.join("</div><div>") + "</div><div>@WeCardTable(\"end\");</div>";
+                    tableWrapper.append(ogTableLines);
+                }
+                tableWrapper.append(table.dom);
+                return tableWrapper.outerHTML + "<span class=\"hidden-in-container-1\">" + line + "</span>";
             }
-            tableWrapper.append(table.dom);
-            return tableWrapper.outerHTML + "<span class='hidden-in-container-1'>" + line + "</span>";
-        }
-        if (isInTable) {
-            return "<span class='hidden-in-container-1'>" + line + "</span>";
-        }
-        return line;
-    }).join("\n");
+            if (isInTable) {
+                return "<span class=\"hidden-in-container-1\">" + line + "</span>";
+            }
+            return line;
+        }).join("\n");
+    }
 
     if (localStorage.getItem("enable-img-recognition") === "true" || responseText.includes("@command(\"enable-image-recognition\")")) {
         responseText = responseText.split("\n").map(line => {
@@ -1077,6 +1082,17 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         });
     } else {
         container1.parentElement.style.justifyContent = "center";
+    }
+
+    if (hasWeCardTable && localStorage.getItem("enable-line-split") !== "true") {
+        document.querySelectorAll(".container-1 > pre").forEach(page => {
+            page.innerHTML = page.innerHTML.split("\n").filter(line => {
+                if (line.startsWith("<span class=\"hidden-in-container-1\">") && line.endsWith("</span>")) {
+                    return false;
+                }
+                return true;
+            }).join("\n");
+        });
     }
 
     if (isMapEnabled) {

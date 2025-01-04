@@ -337,8 +337,8 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
-                <img class="thumbnail" src="img/settings-examples/05-del-before.png" alt="">
-                <img class="thumbnail" src="img/settings-examples/05-del-after.png" alt="">
+                <deterimg class="thumbnail" src="img/settings-examples/05-del-before.png" alt=""></deterimg>
+                <deterimg class="thumbnail" src="img/settings-examples/05-del-after.png" alt=""></deterimg>
             </li>
             <!-- 6 -->
             <li>
@@ -351,8 +351,8 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
-                <img class="thumbnail" src="img/settings-examples/06-border-before.png" alt="" style="height: 100px;">
-                <img class="thumbnail" src="img/settings-examples/06-border-after.png" alt="" style="height: 100px;">
+                <deterimg class="thumbnail" src="img/settings-examples/06-border-before.png" alt="" style="height: 100px;"></deterimg>
+                <deterimg class="thumbnail" src="img/settings-examples/06-border-after.png" alt="" style="height: 100px;"></deterimg>
             </li>
             <!-- 7 -->
             <li>
@@ -365,7 +365,7 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
-                <img class="thumbnail" src="img/settings-examples/07-badge.png" alt="">
+                <deterimg class="thumbnail" src="img/settings-examples/07-badge.png" alt=""></deterimg>
             </li>
             <!-- 8 -->
             <li>
@@ -378,7 +378,7 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
-                <img class="thumbnail" src="img/settings-examples/08-highlight-red.png" alt="" style="height: 200px;">
+                <deterimg class="thumbnail" src="img/settings-examples/08-highlight-red.png" alt="" style="height: 200px;"></deterimg>
             </li>
             <!-- 9 -->
             <li>
@@ -391,6 +391,7 @@ function renderSettings() {
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
+                <deterimg class="thumbnail" src="img/settings-examples/09-message-bubble.png" alt=""></deterimg>
             </li>
             <!-- 10 -->
             <li>
@@ -545,6 +546,7 @@ display: none;
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
+                <deterimg class="thumbnail" src="img/settings-examples/15-at-map.png" alt=""></deterimg>
             </li>
             <!-- 16 -->
             <li>
@@ -617,6 +619,7 @@ display: none;
                         <div class="ios-button-circle"></div>
                     </div>
                 </div>
+                <deterimg class="thumbnail" src="img/settings-examples/21-previous-and-next.png" alt="" style="height: 60px;"></deterimg>
             </li>
         </ul>
     </li>
@@ -745,6 +748,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     renderDomText();
     renderDomHtml();
+    document.querySelectorAll(".settings-2 deterimg").forEach(deterImg => {
+        deterImg.setAttribute("onclick", "inspectImage(this.src)");
+        deterImg.outerHTML = deterImg.outerHTML.replace("<deterimg", "<img").replace("</deterimg>", "");
+    });
     try {
         ios_button_init(".settings-2");
     } catch (e) {

@@ -89,7 +89,7 @@ function parseRichText(line, configs) {
                         if (styleValue.length) {
                             labelInfo.attributesLine += "style=\"" + styleValue + "\"";
                         }
-                        if (labelInfo.tagName == "link") {
+                        if (labelInfo.tagName == "link" && labelInfo.attributes.to) {
                             let isBookReader = false;
                             if (labelInfo.attributes.to.startsWith("book-reader.html?")) {
                                 isBookReader = true;

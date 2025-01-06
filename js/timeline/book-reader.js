@@ -483,7 +483,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 const table = parseTable(tmp);
                 table.classList.add("wecard-table");
                 weCardTables.push({
-                    ogLines: tmp,
+                    ogLines: tmp.map(l => l.replaceAll("<", "&lt;")),
                     dom: table
                 });
                 hasWeCardTable = true;

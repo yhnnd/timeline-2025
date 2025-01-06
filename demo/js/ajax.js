@@ -55,6 +55,10 @@ function openFile(filename, url) {
         url = filename;
         filename = url.split("/").pop();
     }
+    if (filename.endsWith(".html")) {
+        window.open(url, "_self");
+        return;
+    }
     const modal = document.getElementsByClassName("modal")[0];
     if (modal != undefined) {
         modal.classList.add("opened");

@@ -1117,5 +1117,10 @@ function renderArticle(src, containerClassName, container2ClassName) {
 
 const src = getParameter("src");
 if (src != undefined) {
-    renderArticle(src, "container-1", "container-2");
+    if (src.endsWith(".html")) {
+        showTimelineLoading && showTimelineLoading();
+        window.open(src, "_self");
+    } else {
+        renderArticle(src, "container-1", "container-2");
+    }
 }

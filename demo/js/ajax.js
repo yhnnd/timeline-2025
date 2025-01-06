@@ -4,7 +4,29 @@ function decodeBase64(text) {
 
 function decode(t){if(t.startsWith('@utf("')&&t.endsWith('");')){t=(t=t.replaceAll("&lt;","<")).substr(6,t.length-6-3);const e=[];let s="",n="",r=!1,h=!1;for(let l=0;l<t.length;++l){const o=t[l];"<"===o?(r&&(e.push({text:s,isZh:!0}),s=""),h=!0,r=!1,n=""):">"===o?(h&&(e.push({text:n,isEn:!0}),n=""),h=!1,r=!0,s=""):h||r?r?s+=o:h&&(n+=o):(r=!0,s=o)}s.length&&e.push({text:s,isZh:!0});let l="";for(const t of e)t.isEn?l+=t.text:t.isZh&&(l+=function(t){const e=t.text;let s="";for(let t=0;t<e.length;++t)t%2==0&&(s+="%"),s+=e[t];let n="";try{n=decodeURIComponent(s)}catch{return e}return n}(t));return l}return t.startsWith('@base64("')&&t.endsWith('");')?(t=t.substr(9,t.length-9-3),decodeBase64(t)):t}
 
+window.isCache2Enabled = true;
+
+function setCache2(key, value) {
+    return localStorage.setItem("cache2[\"" + key + "\"]", JSON.stringify(value));
+}
+
+function getCache2(key) {
+    const cache2 = localStorage.getItem("cache2[\"" + key + "\"]");
+    if (cache2 === undefined || cache2 === null) {
+        return cache2;
+    } else {
+        return JSON.parse(cache2);
+    }
+}
+
 function ajax(url, callback) {
+    if (window.isCache2Enabled && callback && typeof callback === "function") {
+        const cache2 = getCache2(url);
+        if (cache2 !== undefined && cache2 !== null) {
+            callback(cache2.responseText, cache2.response);
+            return;
+        }
+    }
     let xhr = new XMLHttpRequest();
     xhr.open("GET", url, true);
     // If specified, responseType must be empty string or "text"
@@ -16,6 +38,12 @@ function ajax(url, callback) {
                     return line.split(" ").map(decode).join(" ");
                 }).join("\n");
                 callback(responseText, xhr.response);
+                if (window.isCache2Enabled) {
+                    setCache2(url, {
+                        responseText: responseText,
+                        response: xhr.response
+                    });
+                }
             }
         }
     };

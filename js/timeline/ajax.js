@@ -3,11 +3,21 @@
 window.isCacheEnabled = true;
 
 function setCache(key, value) {
-    return localStorage.setItem("cache[\"" + key + "\"]", value);
+    return localStorage.setItem("cache[\"" + key + "\"]", JSON.stringify(value));
 }
 
 function getCache(key) {
-    return localStorage.getItem("cache[\"" + key + "\"]");
+    let cache = localStorage.getItem("cache[\"" + key + "\"]");
+    if (cache === undefined || cache === null) {
+        return cache;
+    } else {
+        try {
+            cache = JSON.parse(cache);
+        } catch {
+            cache = null;
+        }
+        return cache;
+    }
 }
 
 function ajax(url, responseText, callback, errorCallback) {

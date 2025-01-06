@@ -751,10 +751,12 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     renderDomText();
     renderDomHtml();
-    document.querySelectorAll(".settings-2 deterimg").forEach(deterImg => {
-        deterImg.setAttribute("onclick", "inspectImage(this.src)");
-        deterImg.outerHTML = deterImg.outerHTML.replace("<deterimg", "<img").replace("</deterimg>", "");
-    });
+    if (document.body.getAttribute("is-iframe") !== "true" && document.body.getAttribute("is-preview") !== "true") {
+        document.querySelectorAll(".settings-2 deterimg").forEach(deterImg => {
+            deterImg.setAttribute("onclick", "inspectImage(this.src)");
+            deterImg.outerHTML = deterImg.outerHTML.replace("<deterimg", "<img").replace("</deterimg>", "");
+        });
+    }
     try {
         ios_button_init(".settings-2");
     } catch (e) {

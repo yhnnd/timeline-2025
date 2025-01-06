@@ -23,7 +23,7 @@ function ajax(url, callback) {
     if (window.isCache2Enabled && callback && typeof callback === "function") {
         const cache2 = getCache2(url);
         if (cache2 !== undefined && cache2 !== null) {
-            callback(cache2.responseText, cache2.response);
+            callback(cache2);
             return;
         }
     }
@@ -37,12 +37,9 @@ function ajax(url, callback) {
                 const responseText = xhr.responseText.split("\n").map(line => {
                     return line.split(" ").map(decode).join(" ");
                 }).join("\n");
-                callback(responseText, xhr.response);
+                callback(responseText);
                 if (window.isCache2Enabled) {
-                    setCache2(url, {
-                        responseText: responseText,
-                        response: xhr.response
-                    });
+                    setCache2(url, responseText);
                 }
             }
         }

@@ -698,6 +698,9 @@ function initNavbar() {
     }
 
     for (const [key, value] of Object.entries(localStorage)) {
+        if (key.startsWith("cache[")) {
+            continue;
+        }
         document.body.setAttribute("data-value-of-" + key, value);
     }
 

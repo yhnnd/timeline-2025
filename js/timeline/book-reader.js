@@ -675,8 +675,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 }
             }
         }
-        console.log(availableStartWiths);
-        console.log(availableDelimiters);
+        // console.log(availableStartWiths);
+        // console.log(availableDelimiters);
         responseText = responseText.split("\n").map(line => {
             const matched = [];
             const lineTrimmed = line.trim();

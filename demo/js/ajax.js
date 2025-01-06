@@ -125,6 +125,8 @@ function openBook(bookName) {
             container.querySelector("#article-" + articleNumber + " > .text").innerText = responseText;
         });
     }
+
+    localStorage.setItem("stored-book-number", bookName);
 }
 
 if (window.onload) {
@@ -151,5 +153,11 @@ window.onload = function () {
         div.setAttribute("onclick", "openBook('" + key + "')");
         container.append(div);
     }
-    openBook(1);
+    const storedBookNumber = localStorage.getItem("stored-book-number") || 1;
+    openBook(storedBookNumber);
+    if (storedBookNumber > 1) {
+        const delta = document.querySelector(".book[book-name=\"1\"]").offsetLeft;
+        const book = document.querySelector(".book[book-name=\"" + storedBookNumber + "\"]");
+        container.scrollLeft = book.offsetLeft - delta + (book.clientWidth - container.clientWidth) / 2;
+    }
 }

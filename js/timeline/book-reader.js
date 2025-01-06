@@ -956,13 +956,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         function getImageWrapper(img) {
             const imgWrapper = document.createElement("div");
             imgWrapper.classList = "img-wrapper";
-            imgWrapper.style.width = parseFloat(img.clientWidth) + "px";
-            imgWrapper.style.minWidth = parseFloat(img.clientWidth) + "px";
-            imgWrapper.style.maxWidth = parseFloat(img.clientWidth) + "px";
-            const height = (parseFloat(img.naturalHeight) * parseFloat(img.clientWidth) / parseFloat(img.naturalWidth)) + "px";
-            imgWrapper.style.height = height;
-            imgWrapper.style.minHeight = height;
-            imgWrapper.style.maxHeight = height;
+            imgWrapper.innerHTML = img.outerHTML;
             return imgWrapper;
         }
         let index = 0;

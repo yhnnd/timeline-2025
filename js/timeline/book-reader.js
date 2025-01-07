@@ -601,7 +601,12 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     if (window.openLink === undefined) {
         window.openLink = function (event) {
-            let to = event.target.getAttribute('to');
+            let to = "";
+            if ((typeof event) === "string") {
+                to = event;
+            } else {
+                to = event.target.getAttribute('to');
+            }
             const fakeUrl = window.getParameter("fakeUrl");
             if (fakeUrl && !fakeUrl.startsWith(window.localRepositoryKey)) {
                 const repositoryKey = fakeUrl.split("/").shift() + "/";
@@ -823,6 +828,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 span.style.position = "relative";
                 const ogText = document.createElement("div");
                 ogText.classList = "og-text";
+                ogText.setAttribute("to", line);
                 ogText.innerHTML = line;
                 span.append(ogText);
                 const decryptedText = document.createElement("div");

@@ -62,6 +62,7 @@ pre .censored {
 
 pre .name-link,
 pre .link,
+pre .disabled-link,
 pre .plain-name {
     display: inline-block;
     white-space: pre-wrap;

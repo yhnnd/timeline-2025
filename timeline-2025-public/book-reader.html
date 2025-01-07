@@ -50,6 +50,9 @@
             </div>
         </div>
     </div>
+    <div class="desktop-2" style="display: none; width: 100vw; height: 100vh;">
+        <iframe src="" frameborder="0" style="width: 100%; height: 100%;"></iframe>
+    </div>
     <div id="inspectImageWrapper" class="inspect-image-wrapper"></div>
     <script src="../js/vendor/param.js"></script>
     <script src="../js/timeline/people-names.js"></script>
@@ -60,39 +63,63 @@
     <script src="../js/timeline/book-reader.js" defer></script>
     <script src="../js/timeline/search.js"></script>
     <script>
-const currentArticle = {
-    realUrl: getParameter('src'),
-    fakeUrl: getParameter('fakeUrl')
-};
-let isArticleIndexValid = false;
-for (const book of window.books) {
-    if (book === undefined || book.indexList === undefined || !book.indexList.length) {
-        continue;
-    }
-    for (let i = 0; i < book.indexList.length; ++i) {
-        const {fakeUrl, realUrl} = book.indexList[i];
-        if (realUrl === currentArticle.realUrl || fakeUrl === currentArticle.fakeUrl) {
-            isArticleIndexValid = true;
-            if (i === 0) {
-                document.querySelectorAll('[onclick="gotoPrevious()"]').forEach(btn => {
-                    btn.setAttribute("disabled", true);
-                });
-            }
-            if (i === book.indexList.length - 1) {
-                document.querySelectorAll('[onclick="gotoNext()"]').forEach(btn => {
-                    btn.setAttribute("disabled", true);
-                });
+window.setPreviousAndNextButtonEnabledStatus = function () {
+    let noPrevious = false, noNext = false;
+    const currentArticle = {
+        realUrl: getParameter('src'),
+        fakeUrl: getParameter('fakeUrl')
+    };
+    let isArticleIndexValid = false;
+    for (const book of window.books) {
+        if (book === undefined || book.indexList === undefined || !book.indexList.length) {
+            continue;
+        }
+        for (let i = 0; i < book.indexList.length; ++i) {
+            const {fakeUrl, realUrl} = book.indexList[i];
+            if (realUrl === currentArticle.realUrl || fakeUrl === currentArticle.fakeUrl) {
+                isArticleIndexValid = true;
+                if (i === 0) {
+                    noPrevious = true;
+                }
+                if (i === book.indexList.length - 1) {
+                    noNext = true;
+                }
             }
         }
     }
+    if (!isArticleIndexValid || noPrevious) {
+        document.querySelectorAll('[onclick="gotoPrevious()"]').forEach(btn => {
+            btn.setAttribute("disabled", true);
+        });
+    } else {
+        document.querySelectorAll('[onclick="gotoPrevious()"]').forEach(btn => {
+            btn.removeAttribute("disabled");
+        });
+    }
+    if (!isArticleIndexValid || noNext) {
+        document.querySelectorAll('[onclick="gotoNext()"]').forEach(btn => {
+            btn.setAttribute("disabled", true);
+        });
+    } else {
+        document.querySelectorAll('[onclick="gotoNext()"]').forEach(btn => {
+            btn.removeAttribute("disabled");
+        });
+    }
 }
-if (!isArticleIndexValid) {
-    document.querySelectorAll('[onclick="gotoPrevious()"]').forEach(btn => {
-        btn.setAttribute("disabled", true);
-    });
-    document.querySelectorAll('[onclick="gotoNext()"]').forEach(btn => {
-        btn.setAttribute("disabled", true);
-    });
+
+function setUrl(setFunc) {
+    const url = new URL(window.location);
+    setFunc(url);
+    history.replaceState({}, "", url);
+}
+
+function setNewSrc(newSrc, newFakeUrl) {
+    runSyncFunctions(function () {
+        setUrl(function(url) {
+            url.searchParams.set("src", newSrc);
+            url.searchParams.set("fakeUrl", newFakeUrl);
+        });
+    }, window.setPreviousAndNextButtonEnabledStatus);
 }
 
 function gotoPrevious() {
@@ -108,7 +135,10 @@ function gotoPrevious() {
             const {fakeUrl, realUrl} = book.indexList[i];
             if (realUrl === currentArticle.realUrl || fakeUrl === currentArticle.fakeUrl) {
                 if (i > 0) {
-                    window.open("book-reader.html?src=" + book.indexList[i - 1].realUrl + "&fakeUrl=" + book.indexList[i - 1].fakeUrl + "&from=" + getParameter("from"), "_self");
+                    const newSrc = book.indexList[i - 1].realUrl;
+                    const newFakeUrl = book.indexList[i - 1].fakeUrl;
+                    setNewSrc(newSrc, newFakeUrl);
+                    openFile(newSrc);
                 }
             }
         }
@@ -128,7 +158,10 @@ function gotoNext() {
             const {fakeUrl, realUrl} = book.indexList[i];
             if (realUrl === currentArticle.realUrl || fakeUrl === currentArticle.fakeUrl) {
                 if (i < book.indexList.length - 1) {
-                    window.open("book-reader.html?src=" + book.indexList[i + 1].realUrl + "&fakeUrl=" + book.indexList[i + 1].fakeUrl + "&from=" + getParameter("from"), "_self");
+                    const newSrc = book.indexList[i + 1].realUrl;
+                    const newFakeUrl = book.indexList[i + 1].fakeUrl;
+                    setNewSrc(newSrc, newFakeUrl);
+                    openFile(newSrc);
                 }
             }
         }

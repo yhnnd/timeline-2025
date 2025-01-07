@@ -667,6 +667,18 @@ function initNavbar() {
         navbar = document.createElement("div");
         navbar.classList.add("global-navbar");
     }
+
+    if (window.location.pathname.endsWith("/book-reader.html")) {
+        const btnNext = document.createElement("button");
+        btnNext.innerText = "Next";
+        btnNext.setAttribute("onclick", "gotoNext()");
+        navbar.prepend(btnNext);
+        const btnPrev = document.createElement("button");
+        btnPrev.innerText = "Previous";
+        btnPrev.setAttribute("onclick", "gotoPrevious()");
+        navbar.prepend(btnPrev);
+    }
+
     const button = document.createElement("button");
     button.innerText = "Go Back";
     button.setAttribute("onclick", "goBack()");
@@ -688,6 +700,9 @@ function initNavbar() {
     navbar.append(button2);
 
     document.body.prepend(navbar);
+    if (window.setPreviousAndNextButtonEnabledStatus && typeof (window.setPreviousAndNextButtonEnabledStatus) === "function") {
+        window.setPreviousAndNextButtonEnabledStatus();
+    }
     renderSettings();
     hideSettings(button2);
 
@@ -710,13 +725,13 @@ function initNavbar() {
         }
     }
 
-    if (window.location.hostname === "localhost") {
-        button2.style.marginRight = "200px";
-        setTimeout(() => {
-            button2.style.transition = "margin-right .3s ease";
-            button2.style.marginRight = "unset";
-        }, 2100);
-    }
+    // if (window.location.hostname === "localhost") {
+    //     button2.style.marginRight = "200px";
+    //     setTimeout(() => {
+    //         button2.style.transition = "margin-right .3s ease";
+    //         button2.style.marginRight = "unset";
+    //     }, 2100);
+    // }
 }
 
 function renderDomText() {
@@ -763,8 +778,6 @@ document.addEventListener("DOMContentLoaded", function () {
         const btn = document.querySelector(".btn-settings");
         btn.removeAttribute("onclick");
         btn.disabled = true;
-        btn.style.backgroundColor = "var(--studio-gray-50)";
-        btn.style.borderColor = "var(--studio-gray-10)";
         btn.style.marginLeft = "auto";
         document.querySelector(".settings-2").parentElement.style.display = "none";
     }

@@ -38,6 +38,12 @@
     align-self: center;
 }
 
+.global-navbar button[disabled],
+#navbar button[disabled] {
+    background-color: var(--studio-gray-50) !important;
+    border-color: var(--studio-gray-10) !important;
+}
+
 .global-navbar button:hover,
 #navbar button:hover {
     color: #fff;

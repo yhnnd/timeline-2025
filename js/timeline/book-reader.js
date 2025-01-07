@@ -938,11 +938,12 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             return "<pre class=\"" + getClass() + "\" data-page-number=" + pageNumber + " data-page-info=\"" + linesPage[pageNumber++] + "\">" + page + "</pre>";
         }).join("");
     } else {
-        const pre = container1.getElementsByTagName("pre")[0];
+        const pre = document.createElement("pre");
         if (localStorage.getItem("enable-pre-width-fit-content") === "true" || responseText.includes("@command(\"enable-pre-width-fit-content\")")) {
             pre.classList.add("width-fit-content");
         }
         pre.innerHTML = responseText;
+        container1.innerHTML = pre.outerHTML;
     }
 
     if (getParameter("is-iframe") !== "true" && localStorage.getItem("enable-badge") === "true") {
@@ -1132,12 +1133,23 @@ function renderArticle(src, containerClassName, container2ClassName) {
     });
 }
 
-const src = getParameter("src");
-if (src != undefined) {
+function openFile(src) {
+    if (!src || !src.length) {
+        return;
+    }
     if (src.endsWith(".html")) {
-        showTimelineLoading && showTimelineLoading();
-        window.open(src, "_self");
+        document.querySelector(".desktop").style.display = "none";
+        document.querySelector(".desktop-2").style.display = null;
+        document.querySelector(".desktop-2 iframe").setAttribute("src", src);
+        if (getParameter("is-iframe") !== "true") {
+            hideTimelineLoading();
+            document.querySelector(".footer").style.display = "none";
+        }
     } else {
+        document.querySelector(".desktop-2").style.display = "none";
         renderArticle(src, "container-1", "container-2");
     }
 }
+
+const src = getParameter("src");
+openFile(src);

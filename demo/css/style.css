@@ -6,6 +6,11 @@ body {
     cursor: pointer;
 }
 
+button[disabled] {
+    background-color: var(--studio-gray-50) !important;
+    border-color: var(--studio-gray-10) !important;
+}
+
 img {
     max-width: 100%;
 }

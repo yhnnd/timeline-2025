@@ -813,6 +813,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         responseText = responseText.split("\n").map(line => {
             if (line.startsWith(decodeUrl) || line.startsWith(defaultDecodeUrl) || line.startsWith(decodeBase64Url) || line.startsWith(defaultDecodeBase64Url)) {
                 const span = document.createElement("span");
+                const randId = "rand-" + getRandomId();
+                span.setAttribute("random-id", randId);
                 span.classList = "link";
                 span.setAttribute("type", "decode-url");
                 span.setAttribute("onclick", "openLink(event)");
@@ -833,6 +835,15 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 decryptedText.setAttribute("onclick", "openLink(event)");
                 decryptedText.setAttribute("to", line);
                 span.append(decryptedText);
+                setTimeout(() => {
+                    const span = document.querySelector(".link[random-id=\"" + randId + "\"]");
+                    const ogText = span.querySelector(".og-text");
+                    const decryptedText = span.querySelector(".decrypted-text");
+                    if (decryptedText.clientHeight > ogText.clientHeight) {
+                        decryptedText.style.position = "unset";
+                        ogText.style.position = "absolute";
+                    }
+                }, 1000);
                 return span.outerHTML;
             } else if (line.includes("https://")) {
                 line = line.split(" ").map(segment => {

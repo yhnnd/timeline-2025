@@ -811,7 +811,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     if (localStorage.getItem("enable-url-recognition") === "true") {
         responseText = responseText.split("\n").map(line => {
-            if (line.startsWith(decodeUrl) || line.startsWith(defaultDecodeUrl)) {
+            if (line.startsWith(decodeUrl) || line.startsWith(defaultDecodeUrl) || line.startsWith(decodeBase64Url) || line.startsWith(defaultDecodeBase64Url)) {
                 const span = document.createElement("span");
                 span.classList = "link";
                 span.setAttribute("type", "decode-url");

@@ -1079,6 +1079,7 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 text.innerHTML = link.innerHTML;
             } else if (link.getAttribute("type") === "decode-url") { // decode-url
                 text.setAttribute("random-id", link.getAttribute("random-id"));
+                text.style.display = "inline-block";
                 text.innerHTML = link.innerHTML;
                 text.querySelector(".og-text").classList = "plain-og-text";
                 text.querySelector(".decrypted-text").removeAttribute("onclick");

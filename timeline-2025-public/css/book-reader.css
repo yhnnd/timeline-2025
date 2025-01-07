@@ -485,5 +485,5 @@ body[data-value-of-enable-dual-article-container="false"] .wecard-table-wrapper>
 }
 
 .container-2 .decrypted-text {
-    visibility: hidden;
+    visibility: hidden; /* cannot be display:none bacause height might be affected */
 }

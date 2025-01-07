@@ -110,7 +110,8 @@ pre .plain-og-text {
     word-break: break-all;
 }
 
-pre .link[type="decode-url"] .decrypted-text {
+pre .link[type="decode-url"] .decrypted-text,
+.container-2 .disabled-link .decrypted-text {
     position: absolute;
     top: 0;
     left: 0;
@@ -484,6 +485,6 @@ body[data-value-of-enable-dual-article-container="false"] .wecard-table-wrapper>
     background-color: var(--studio-blue-0);
 }
 
-.container-2 .decrypted-text {
+.container-2 .disabled-link .decrypted-text {
     visibility: hidden; /* cannot be display:none bacause height might be affected */
 }

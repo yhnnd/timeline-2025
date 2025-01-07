@@ -836,13 +836,14 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 decryptedText.setAttribute("to", line);
                 span.append(decryptedText);
                 setTimeout(() => {
-                    const span = document.querySelector(".link[random-id=\"" + randId + "\"]");
-                    const ogText = span.querySelector(".og-text");
-                    const decryptedText = span.querySelector(".decrypted-text");
-                    if (decryptedText.clientHeight > ogText.clientHeight) {
-                        decryptedText.style.position = "unset";
-                        ogText.style.position = "absolute";
-                    }
+                    document.querySelectorAll("[random-id=\"" + randId + "\"]").forEach((span) => {
+                        const ogText = span.querySelector(".og-text,.plain-og-text");
+                        const decryptedText = span.querySelector(".decrypted-text");
+                        if (decryptedText.clientHeight > ogText.clientHeight) {
+                            decryptedText.style.position = "unset";
+                            ogText.style.position = "absolute";
+                        }
+                    });
                 }, 1000);
                 return span.outerHTML;
             } else if (line.includes("https://")) {
@@ -1077,8 +1078,10 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
             } else if (link.getAttribute("type") === "url-text") { // url-text
                 text.innerHTML = link.innerHTML;
             } else if (link.getAttribute("type") === "decode-url") { // decode-url
+                text.setAttribute("random-id", link.getAttribute("random-id"));
                 text.innerHTML = link.innerHTML;
                 text.querySelector(".og-text").classList = "plain-og-text";
+                text.querySelector(".decrypted-text").removeAttribute("onclick");
             } else {
                 text.style.color = "var(--studio-red)";
                 text.innerHTML = link.innerHTML;

@@ -76,6 +76,10 @@ pre .link {
     position: relative;
 }
 
+pre .disabled-link {
+    position: relative;
+}
+
 pre .name-link::before,
 pre .link::before {
     display: none;

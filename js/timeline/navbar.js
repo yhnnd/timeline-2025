@@ -816,7 +816,7 @@ function showMiniLoading () {
     miniLoading.innerHTML = "<div class='mini-loading-caption' onselectstart='return false;'>Still loading ...</div>";
     document.querySelector("body").append(miniLoading);
     setTimeout(() => {
-        document.getElementById(id).querySelector(".mini-loading-caption").innerHTML = "Loading Time Out";
+        try { document.getElementById(id).querySelector(".mini-loading-caption").innerHTML = "Loading Time Out"; } catch {}
     }, 10000);
 }
 

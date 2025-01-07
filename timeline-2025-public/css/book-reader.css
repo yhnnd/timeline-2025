@@ -105,8 +105,9 @@ pre .link:hover::before {
     display: block;
 }
 
-pre .link[type="decode-url"] .og-text {
-    opacity: 0.1;
+pre .link[type="decode-url"] .og-text,
+.container-2 .disabled-link .decrypted-text {
+    visibility: hidden; /* cannot be display:none bacause height might be affected */
 }
 
 pre .og-text,
@@ -488,8 +489,4 @@ body[data-value-of-enable-dual-article-container="false"] .wecard-table-wrapper>
 .wecard-table-wrapper>.wecard-table>tbody>tr>td:hover,
 .wecard-table-wrapper>.wecard-table>tfoot>tr>td:hover {
     background-color: var(--studio-blue-0);
-}
-
-.container-2 .disabled-link .decrypted-text {
-    visibility: hidden; /* cannot be display:none bacause height might be affected */
 }

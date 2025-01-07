@@ -1087,8 +1087,8 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 text.classList.add("disabled-link");
                 text.setAttribute("random-id", link.getAttribute("random-id"));
                 text.innerHTML = link.innerHTML;
-                text.querySelector(".og-text").classList = "plain-og-text";
                 text.querySelector(".og-text").removeAttribute("to");
+                text.querySelector(".og-text").classList = "plain-og-text";
                 text.querySelector(".decrypted-text").removeAttribute("to");
                 text.querySelector(".decrypted-text").removeAttribute("onclick");
             } else {

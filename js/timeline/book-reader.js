@@ -1141,9 +1141,10 @@ function openFile(src) {
         document.querySelector(".desktop").style.display = "none";
         document.querySelector(".desktop-2").style.display = null;
         document.querySelector(".desktop-2 iframe").setAttribute("src", src);
-        if (getParameter("is-iframe") !== "true") {
-            hideTimelineLoading();
-            document.querySelector(".footer").style.display = "none";
+        hideTimelineLoading();
+        const footer = document.querySelector(".footer");
+        if (footer) {
+            footer.style.display = "none";
         }
     } else {
         document.querySelector(".desktop-2").style.display = "none";

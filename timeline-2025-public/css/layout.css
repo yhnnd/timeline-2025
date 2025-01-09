@@ -135,7 +135,9 @@ pre del * {
 }
 
 .container-2 .message-bubble {
-    border-color: var(--studio-blue-0);
+    background-color: unset;
+    background-image: repeating-linear-gradient(-45deg, var(--studio-gray-0), var(--studio-gray-0) 25px, transparent 25px, transparent 50px);
+    border-color: var(--studio-gray-0);
 }
 
 .container-2 .message-bubble.message-from-god {

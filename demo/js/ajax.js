@@ -18,7 +18,7 @@ async function getCache2(key) {
         return cache2;
     } else {
         try {
-            cache2 = JSON.parse(cache);
+            cache2 = JSON.parse(cache2);
         } catch {
             cache2 = null;
         }

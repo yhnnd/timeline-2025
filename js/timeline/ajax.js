@@ -1,5 +1,5 @@
 // Mon Jan 06 2025
-// Requires localforage.nopromises.min.js 
+// Requires localforage.nopromises.min.js
 window.isCacheEnabled = true;
 window.db = window["localforage"] || window["localStorage"];
 

@@ -7,8 +7,8 @@ function setCache(key, value) {
     return window.db.setItem("cache[\"" + key + "\"]", JSON.stringify(value));
 }
 
-function getCache(key) {
-    let cache = window.db.getItem("cache[\"" + key + "\"]");
+async function getCache(key) {
+    let cache = await window.db.getItem("cache[\"" + key + "\"]");
     if (cache === undefined || cache === null) {
         return cache;
     } else {

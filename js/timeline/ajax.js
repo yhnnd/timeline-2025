@@ -1,13 +1,14 @@
 // Thu Dec 07 2023
 // Mon Jan 06 2025
 window.isCacheEnabled = true;
+window.db = window["localforage"] || window["localStorage"];
 
 function setCache(key, value) {
-    return localStorage.setItem("cache[\"" + key + "\"]", JSON.stringify(value));
+    return window.db.setItem("cache[\"" + key + "\"]", JSON.stringify(value));
 }
 
 function getCache(key) {
-    let cache = localStorage.getItem("cache[\"" + key + "\"]");
+    let cache = window.db.getItem("cache[\"" + key + "\"]");
     if (cache === undefined || cache === null) {
         return cache;
     } else {

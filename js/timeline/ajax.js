@@ -21,16 +21,21 @@ async function getCache(key) {
     }
 }
 
-function ajax(url, responseText, callback, errorCallback) {
+async function ajax(url, responseText, callback, errorCallback) {
     if (responseText != undefined && callback && typeof callback === "function") {
         // short circuit.
         callback(responseText);
         return;
     } else if (window.isCacheEnabled && callback && typeof callback === "function") {
-        const cache = getCache(url);
+        const cache = await getCache(url);
         if (cache !== undefined && cache !== null) {
-            callback(cache);
-            return;
+            if (typeof(cache) === "string") {
+                callback(cache);
+                return;
+            } else if (cache.toString() === "[object Promise]") {
+                cache.then(callback);
+                return;
+            }
         }
     }
     const req = new XMLHttpRequest();

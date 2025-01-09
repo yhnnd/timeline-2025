@@ -28,14 +28,9 @@ async function ajax(url, responseText, callback, errorCallback) {
         return;
     } else if (window.isCacheEnabled && callback && typeof callback === "function") {
         const cache = await getCache(url);
-        if (cache !== undefined && cache !== null) {
-            if (typeof(cache) === "string") {
-                callback(cache);
-                return;
-            } else if (cache.toString() === "[object Promise]") {
-                cache.then(callback);
-                return;
-            }
+        if (cache !== undefined && cache !== null && typeof(cache) === "string") {
+            callback(cache);
+            return;
         }
     }
     const req = new XMLHttpRequest();

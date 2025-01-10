@@ -18,7 +18,11 @@ function openFile(link) {
     if (!link) {
         return;
     }
-    window.open(link, "_self");
+    if (window.isIframe) {
+        window.parent.postMessage({ url: link }, "*");
+    } else {
+        window.open(link, "_self");
+    }
 }
 
 function renderCalendar() {
@@ -37,6 +41,12 @@ function renderCalendar() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    const params = new URLSearchParams(window.location.search);
+    for (const [key, value] of params) {
+        if (key === "is-iframe" && value === "true") {
+            window.isIframe = true;
+        }
+    }
     renderCalendar();
 });
     </script>

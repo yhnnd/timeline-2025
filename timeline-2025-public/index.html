@@ -4,25 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的回忆录</title>
-    <script>
-function clicked(type, target) {
-    localStorage.setItem(type, target);
-    document.querySelectorAll("." + type).forEach(elem => {
-        if (elem.id !== type + "-" + target) {
-            elem.style.display = "none";
-        } else {
-            elem.style.display = null;
-            if (type === 'tab' && target === 'calendar') {
-                try {
-                    renderCalendar && renderCalendar();
-                } catch {
-                    console.log("clicked: renderCalendar is not defined.");
-                }
-            }
-        }
-    })
-}
-    </script>
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/layout.css">
     <link rel="stylesheet" href="css/search.css">
@@ -410,9 +391,12 @@ function quitInspectImage() {
     <script src="../js/timeline/search.js"></script>
     <script src="../js/vendor/param.js"></script>
     <script src="../js/timeline/books.js"></script>
-    <script src='../js/vendor/full-calendar.min.js'></script>
+    <script src='../js/vendor/full-calendar.min.js' onload="calendarScriptOnLoad"></script>
     <script>
 function renderCalendar() {
+    if (window.isCalendarRendered) {
+        return;
+    }
     const calendarEl = document.getElementsByClassName('calendar')[0];
     const calendar = new FullCalendar.Calendar(calendarEl, {
         initialView: 'dayGridMonth',
@@ -425,6 +409,28 @@ function renderCalendar() {
         events: window.calendarEvents || []
     });
     calendar.render();
+    window.isCalendarRendered = true;
+}
+
+function calendarScriptOnLoad() {
+    const tab = localStorage.getItem('tab');
+    if (tab === 'calendar') {
+        renderCalendar();
+    }
+}
+
+function clicked(type, target) {
+    localStorage.setItem(type, target);
+    document.querySelectorAll("." + type).forEach(elem => {
+        if (elem.id !== type + "-" + target) {
+            elem.style.display = "none";
+        } else {
+            elem.style.display = null;
+            if (type === 'tab' && target === 'calendar') {
+                renderCalendar();
+            }
+        }
+    });
 }
 
 document.addEventListener("DOMContentLoaded", function() {

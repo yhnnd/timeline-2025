@@ -1,13 +1,14 @@
-// Thu Dec 07 2023
 // Mon Jan 06 2025
+// Requires localforage.nopromises.min.js
 window.isCacheEnabled = true;
+window.db = window["localforage"] || window["localStorage"];
 
 function setCache(key, value) {
-    return localStorage.setItem("cache[\"" + key + "\"]", JSON.stringify(value));
+    return window.db.setItem("cache[\"" + key + "\"]", JSON.stringify(value));
 }
 
-function getCache(key) {
-    let cache = localStorage.getItem("cache[\"" + key + "\"]");
+async function getCache(key) {
+    let cache = await window.db.getItem("cache[\"" + key + "\"]");
     if (cache === undefined || cache === null) {
         return cache;
     } else {
@@ -20,14 +21,14 @@ function getCache(key) {
     }
 }
 
-function ajax(url, responseText, callback, errorCallback) {
+async function ajax(url, responseText, callback, errorCallback) {
     if (responseText != undefined && callback && typeof callback === "function") {
         // short circuit.
         callback(responseText);
         return;
     } else if (window.isCacheEnabled && callback && typeof callback === "function") {
-        const cache = getCache(url);
-        if (cache !== undefined && cache !== null) {
+        const cache = await getCache(url);
+        if (cache !== undefined && cache !== null && typeof(cache) === "string") {
             callback(cache);
             return;
         }

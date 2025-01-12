@@ -664,6 +664,7 @@ window.books[22].indexList = [
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.03.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.05.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/Xi-May-Be-Facing-a-No-Good-Very-Bad-2025-Bloomberg.html",
+    "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.09.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.13.txt",
 ];
 

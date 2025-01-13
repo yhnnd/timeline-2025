@@ -26,7 +26,7 @@ async function getCache2(key) {
     }
 }
 
-function ajaxCallback(callback, responseText) {
+function ajaxCallback(url, callback, responseText) {
     const decodedText = responseText.split("\n").map(line => {
         return line.split(" ").map(decode).join(" ");
     }).join("\n");
@@ -40,7 +40,7 @@ async function ajax(url, callback) {
     if (window.isCache2Enabled && callback && typeof callback === "function") {
         const cache2 = await getCache2(url);
         if (cache2 !== undefined && cache2 !== null && typeof(cache2) === "string") {
-            ajaxCallback(callback, cache2);
+            ajaxCallback(url, callback, cache2);
             return;
         }
     }
@@ -51,7 +51,7 @@ async function ajax(url, callback) {
     xhr.onload = function () {
         if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200) {
-                ajaxCallback(callback, xhr.responseText);
+                ajaxCallback(url, callback, xhr.responseText);
             }
         }
     };

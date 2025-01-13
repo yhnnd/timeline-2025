@@ -26,11 +26,21 @@ async function getCache2(key) {
     }
 }
 
+function ajaxCallback(callback, responseText) {
+    const decodedText = responseText.split("\n").map(line => {
+        return line.split(" ").map(decode).join(" ");
+    }).join("\n");
+    callback(decodedText);
+    if (window.isCache2Enabled) {
+        setCache2(url, responseText);
+    }
+}
+
 async function ajax(url, callback) {
     if (window.isCache2Enabled && callback && typeof callback === "function") {
         const cache2 = await getCache2(url);
         if (cache2 !== undefined && cache2 !== null && typeof(cache2) === "string") {
-            callback(cache2);
+            ajaxCallback(callback, cache2);
             return;
         }
     }
@@ -41,13 +51,7 @@ async function ajax(url, callback) {
     xhr.onload = function () {
         if (xhr.readyState === xhr.DONE) {
             if (xhr.status === 200) {
-                const responseText = xhr.responseText.split("\n").map(line => {
-                    return line.split(" ").map(decode).join(" ");
-                }).join("\n");
-                callback(responseText);
-                if (window.isCache2Enabled) {
-                    setCache2(url, responseText);
-                }
+                ajaxCallback(callback, xhr.responseText);
             }
         }
     };

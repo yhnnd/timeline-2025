@@ -621,6 +621,18 @@ display: none;
                 </div>
                 <deterimg class="thumbnail" src="img/settings-examples/21-previous-and-next.png" alt="" style="height: 60px;"></deterimg>
             </li>
+            <!-- 22 -->
+            <li>
+                <div class="settings-item">
+                    <div>
+                        <code>22</code>
+                        <span>Enable Cache</span>
+                    </div>
+                    <div class="ios-button" data-key="enable-cache">
+                        <div class="ios-button-circle"></div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </li>
 </ul>`;

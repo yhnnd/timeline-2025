@@ -1,6 +1,6 @@
 // Mon Jan 06 2025
 // Requires localforage.nopromises.min.js
-window.isCacheEnabled = true;
+
 window.db = window["localforage"] || window["localStorage"];
 
 function setCache(key, value) {
@@ -22,11 +22,15 @@ async function getCache(key) {
 }
 
 async function ajax(url, responseText, callback, errorCallback) {
+    let isCacheEnabled = false;
+    if (window.localStorage.getItem("enable-cache") === "true") {
+        isCacheEnabled = true;
+    }
     if (responseText != undefined && callback && typeof callback === "function") {
         // short circuit.
         callback(responseText);
         return;
-    } else if (window.isCacheEnabled && callback && typeof callback === "function") {
+    } else if (isCacheEnabled && callback && typeof callback === "function") {
         const cache = await getCache(url);
         if (cache !== undefined && cache !== null && typeof(cache) === "string") {
             callback(cache);
@@ -37,9 +41,7 @@ async function ajax(url, responseText, callback, errorCallback) {
     req.addEventListener("load", () => {
         if (callback && typeof callback === "function") {
             callback(req.responseText);
-            if (window.isCacheEnabled) {
-                setCache(url, req.responseText);
-            }
+            setCache(url, req.responseText);
         } else {
             console.log("loadData: no callback");
         }

@@ -576,7 +576,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         responseText = responseText.split("\n").map(line => {
             if (line.startsWith("@image &lt;img ") && line.endsWith(">")) {
                 line = line.replace("@image &lt;img ", "<img ");
-                return insertStr(line, line.length - 1, " onclick=\"inspectImage(this.src)\"");
+                return insertStr(line, line.length - 1, " onclick=\"inspectImage(this.src)\" loading=\"lazy\"");
             }
             if (line.startsWith("@div_start &lt;div") && line.endsWith(">")) {
                 return line.replace("@div_start &lt;div", "<div");

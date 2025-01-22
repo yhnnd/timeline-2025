@@ -536,6 +536,9 @@ https://www.youtube.com/watch?v=o2eSiMX7peI
 @base64("6bqT5a6J6K+0MjAyNTAxMDjvvJrkuK3lm73mnKrmnaXliLDlupXkvJrmmK/ku4DkuYjmoLfnmoTlnLrmma/vvJ/lnKjmiJHnnIvmnaXvvIzkvJrmjIHnu63lnaDokL3jgILkuIDkuKrml7bku6PjgIIxMOadoeaOqOa1i++8jOWFs+S6juavj+S4gOS4quS4reWbveS6uuOAgue7j+a1ju+8jOaVmeiCsu+8jOWwseS4mu+8jOWMu+eWl++8jOenqeW6j++8jOayu+WuieOAgueyvuelnuS4lueVjOOAgg==");
 https://www.youtube.com/watch?v=xDTN9lunKJQ
 
+@base64("6bqT5a6J6K+0MjAyNTAxMTXvvJrkuK3lm73kurrkuLrkvZXkvJrnvLrlpLHpgLvovpHvvJ/msqHmnInpgLvovpHnmoTkuJbnlYzlj4jmmK/ku4DkuYjmoLflrZDvvJ/pgqPkuYjmsqHmnInpgLvovpHku47ogIzlr7zoh7TnmoTngb7pmr7lj4jmmK/lpoLkvZXvvJ/kuLrkvZXmiJHor7TmnJ3pspzljJblsLHmmK/kuK3lm73mnInkupvkurrmnKrmnaXnmoTkuIDnlJ/vvJ/op4bpopHph4zpg73kvJrnu5nliLDnrZTmoYjjgII=");
+https://www.youtube.com/watch?v=PvnbLOXM-sk
+
 
 
 2025/01/22

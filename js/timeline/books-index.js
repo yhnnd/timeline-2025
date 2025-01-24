@@ -542,6 +542,7 @@ window.books[19].indexList = [
     "@2024/yhnnd.wordpress.com/19-letters-from-patrick-wang-王震來信/2024.08.02.txt", /* 3 */
     "@2024/yhnnd.wordpress.com/19-letters-from-patrick-wang-王震來信/2024.11.18.txt", /* 4 */
     "@2024/yhnnd.wordpress.com/19-letters-from-patrick-wang-王震來信/2024.12.23.txt", /* 5 */
+    "@2024/yhnnd.wordpress.com/19-letters-from-patrick-wang-王震來信/2025.01.24.txt", /* 6 (2025) */
 ];
 
 // 20 出路 5 (2024)

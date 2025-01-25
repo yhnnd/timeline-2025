@@ -532,6 +532,7 @@ window.books[18].indexList = [
     "@2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.11.09.txt", /* 4 */
     "@2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.11.15.txt", /* 5 */
     "@2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.12.20.txt", /* 6 */
+    "@2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2025.01.24.txt", /* 7 (2025) */
 ];
 
 // 19 王震來信2 (2024)
@@ -668,6 +669,7 @@ window.books[22].indexList = [
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.09.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.13.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.24.txt",
+    "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.01.25.txt",
 ];
 
 window.repositoryMap = {

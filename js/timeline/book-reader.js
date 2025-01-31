@@ -576,6 +576,12 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         responseText = responseText.split("\n").map(line => {
             if (line.startsWith("@image &lt;img ") && line.endsWith(">")) {
                 line = line.replace("@image &lt;img ", "<img ");
+                /* Support Articles that use Images from other Repos */
+                if (line.includes("@")) {
+                    for (const [repositoryKey, repositoryUrl] of Object.entries(window.repositoryMap)) {
+                        line = line.replace(repositoryKey, repositoryUrl);
+                    }
+                }
                 return insertStr(line, line.length - 1, " onclick=\"inspectImage(this.src)\" loading=\"lazy\"");
             }
             if (line.startsWith("@div_start &lt;div") && line.endsWith(">")) {
@@ -598,6 +604,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     responseText = responseText.replaceAll('@command("link-start")', "<div class='link' type='link' onclick='openLink(event)'");
     responseText = responseText.replaceAll('@command("link-end")', "</div>");
     responseText = responseText.replaceAll("@command(\"line-width-maximum\")", "<span class='highlight-green'>@command(\"line-width-maximum\")</span>");
+    responseText = responseText.replaceAll("@command(\"small-seal-start\")", "<div class='small-seal-script'>");
+    responseText = responseText.replaceAll("@command(\"small-seal-end\")", "\n</div>");
 
     if (window.openLink === undefined) {
         window.openLink = function (event) {
@@ -878,6 +886,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         lines2 = lines1.map(line => {
             if (line === "<div class='has-border'>") {
                 return "<div class='has-border' data-line-number='" + (lineNumber++) + "'><div class='empty-line' data-line-number='" + (lineNumber++) + "'><br></div>";
+            } else if (line === "<div class='small-seal-script'>") {
+                return "<div class='small-seal-script' data-line-number='" + (lineNumber++) + "'><div class='empty-line' data-line-number='" + (lineNumber++) + "'><br></div>";
             } else if (line === "</div>") {
                 return line;
             } else if (line === '') {
@@ -1050,6 +1060,14 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 }
             });
         }
+        container2.querySelectorAll(".small-seal-script").forEach(b => {
+            if (localStorage.getItem("enable-line-split") === "true") {
+                b.querySelector(".empty-line:first-child").innerHTML = "@command(\"small-seal-start\")";
+                b.querySelector(".empty-line:last-child").innerHTML = "@command(\"small-seal-end\")";
+            } else {
+                b.innerHTML = "@command(\"small-seal-start\")" + b.innerHTML.replace(/\n$/, "") + "@command(\"small-seal-end\")";
+            }
+        });
         if (localStorage.getItem("enable-highlight-red") === "true" && container2.querySelector(".highlight-red")) {
             container2.querySelectorAll(".highlight-red").forEach(red => {
                 red.outerHTML = red.innerHTML;

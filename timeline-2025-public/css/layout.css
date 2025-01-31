@@ -243,3 +243,13 @@ pre del * {
         border-color: transparent !important;
     }
 }
+
+@font-face {
+    font-family: "small seal script";
+    src: url(fonts/fangzhengxiaozhuan.TTF);
+}
+
+.small-seal-script {
+    font-family: "small seal script";
+    font-size: 2.5rem;
+}

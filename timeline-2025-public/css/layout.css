@@ -246,7 +246,7 @@ pre del * {
 
 @font-face {
     font-family: "small seal script";
-    src: url(fonts/fangzhengxiaozhuan.TTF);
+    src: url("fonts/fangzhengxiaozhuan.TTF");
 }
 
 .small-seal-script {

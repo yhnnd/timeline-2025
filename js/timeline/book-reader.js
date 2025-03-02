@@ -790,7 +790,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 }
                 const wrapperOpen = '<div class="video-wrapper">';
                 const covers = '<div class="backdrop-filter blur"></div><div class="backdrop-filter white"></div><div class="cover">' + line + '</div>';
-                const videoOpen = '<video width="100%" ' + parameters.join(" ") + ' style="width: 100%;">';
+                const videoOpen = '<video width="100%" ' + parameters.join(" ") + ' style="width: 100%;" loading="lazy">';
                 const source = '<source src="' + window.parseFakeUrl(src, { fakeUrl: getParameter("fakeUrl"), realUrl: getParameter("src") }) + '" type="video/' + fileType + '">'; // <source src="resources/35_1713060169.mp4" type="video/mp4">
                 const videoClose = '</video>';
                 const wrapperClose = '</div>';

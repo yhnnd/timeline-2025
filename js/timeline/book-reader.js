@@ -51,9 +51,9 @@ if (getParameter("is-iframe") !== "true") { // Loading image and footer video in
 
     window.loadFooter = function() {
         document.body.append(footer);
-        setTimeout(() => {
+        if (window.localStorage.getItem("enable-footer-gif")) {
             document.getElementById("skyside-shield-animation").innerHTML = '<img src="https://yhnnd.github.io/timeline-2024/yhnnd.wordpress.com/20-diary-2024-07-2024-12-出路5/pics-2024-08-03-diary-pics/animation-v4.gif" onclick="clickGIF(this);" loading="lazy">';
-        }, 1000);
+        }
     };
 
     window.clickGIF = function (img) {

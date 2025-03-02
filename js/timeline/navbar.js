@@ -633,6 +633,18 @@ display: none;
                     </div>
                 </div>
             </li>
+            <!-- 23 -->
+            <li>
+                <div class="settings-item">
+                    <div>
+                        <code>23</code>
+                        <span>Enable Footer GIF</span>
+                    </div>
+                    <div class="ios-button" data-key="enable-footer-gif">
+                        <div class="ios-button-circle"></div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </li>
 </ul>`;

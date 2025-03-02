@@ -793,7 +793,7 @@ document.addEventListener("DOMContentLoaded", function () {
     if (document.body.getAttribute("is-iframe") !== "true" && document.body.getAttribute("is-preview") !== "true") {
         document.querySelectorAll(".settings-2 deterimg").forEach(deterImg => {
             deterImg.setAttribute("onclick", "inspectImage(this.src)");
-            deterImg.outerHTML = deterImg.outerHTML.replace("<deterimg", "<img").replace("</deterimg>", "");
+            deterImg.outerHTML = deterImg.outerHTML.replace("<deterimg", '<img loading="lazy"').replace("</deterimg>", "");
         });
     }
     try {

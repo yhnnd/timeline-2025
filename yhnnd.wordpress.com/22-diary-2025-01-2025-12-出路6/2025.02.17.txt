@@ -426,3 +426,6 @@ P.S. 麻煩替我和 Lory 和侯方問好，麻煩幫我問一下他們有什麼
 
 @base64("57+S6L+R5bmz54ib5bC+5bel56iL5Y+I5aKe5Yqg5LqG5LiA6aCF77yM5Lit5ZyL57aT5r+f56uf54S26KaB6Z2gM+WEhOi+suawkeW3peS+huaVke+8ge+9nOWwj+e/oOaZguaUv+iyoee2kyAyMDI1MDMxMA==");
 https://www.youtube.com/watch?v=tLdvQxLXqJE
+
+@base64("5LiN5aW977yB5Lit5YWx5pyA5pOU5b+D55qE6YKE5piv55m855Sf5LqG77yB5LiK5rW357aT5r+f5bSp5r2w77yB5Lq65YWo6LeR5YWJ5LqG77yB5qC55pys5om+5LiN5Yiw5bel5L2c77yB5YCS6ZaJ546H5r+A5aKeNTgl77yB6aST5pqI55qE5LiA5aSn5oqK77yB5r2k576O5ZyL55qE5Lq65pOg54iG5LqG77yBMjAyNeW5tOaJjemWi+Wni+WwsemAmeaoo+eIm++8gemAmeaoo+S4i+WOu+WPr+aAjum6vOi+puWViu+8gQ==");
+https://www.youtube.com/watch?v=mKNTZgcT_Os

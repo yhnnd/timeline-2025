@@ -15,11 +15,13 @@
   position: relative;
 }
 
-.form-control-v2-7 > .text-editable[contenteditable="true"] {
+.form-control-v2-7 > .text-editable[contenteditable="true"],
+.form-control-v2-7.selecting > .text-editable:hover {
   outline-color: rgba(0, 123, 255, 0.15);
 }
 
-.form-control-v2-7 > .text-editable[contenteditable="true"]:last-of-type {
+.form-control-v2-7 > .text-editable[contenteditable="true"]:last-of-type,
+.form-control-v2-7.selecting > .text-editable:last-of-type:hover {
   outline-color: rgba(0, 123, 255, 0.25);
 }
 

@@ -15,10 +15,6 @@
   position: relative;
 }
 
-.form-control-v2-7 > .line.text-editable.selected {
-  background-color: yellow;
-}
-
 .form-control-v2-7 > .text-editable[contenteditable="true"],
 .form-control-v2-7.selecting > .text-editable:hover {
   outline-color: rgba(0, 123, 255, 0.15);
@@ -50,6 +46,13 @@
   transform: translateX(-204px) scale(0.8);
   text-align: right;
   transition: color linear .1s;
+}
+
+.form-control-v2-7.show-line-number > .line.text-editable.selected::before,
+.form-control-v2-7 > .line.text-editable.selected::before {
+  left: 20px;
+  padding-right: 20px;
+  border-right: 4px solid skyblue;
 }
 
 .form-control-v2-7.show-line-number.focus > .line.text-editable::before {

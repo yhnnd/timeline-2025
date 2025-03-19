@@ -455,11 +455,6 @@ var v2_7 = {
     stopSelecting: function () {
         const self = this;
         self.field.removeClass("selecting");
-        const fieldLines = self.getAllLineElements();
-        for(let i = 0; i < fieldLines.length; ++i) {
-            const fieldLine = fieldLines.eq(i);
-            fieldLine.removeClass("selected");
-        }
     },
     addDragListener: async function(element) {
         const self = this;
@@ -488,6 +483,12 @@ var v2_7 = {
                             $(this).off("mousemove").off("mouseleave");
                             element.data("isListeningMouseleave", "false");
                             self.field.addClass("selecting").find(".text-editable").blur().removeAttr("contenteditable");
+                            // 清除所有已选行
+                            const fieldLines = self.getAllLineElements();
+                            for(let i = 0; i < fieldLines.length; ++i) {
+                                const fieldLine = fieldLines.eq(i);
+                                fieldLine.removeClass("selected");
+                            }
                         });
                     }
                 });

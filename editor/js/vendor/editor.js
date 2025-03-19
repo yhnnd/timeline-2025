@@ -489,10 +489,10 @@ var v2_7 = {
                     if (self.field.hasClass("selecting") && self.isLineElement(element)) {
                         element.addClass("selected");
                     }
-                    if (element.data("isListeningMouseleave") === "false") {
+                    if (element.data("isListeningMouseleave") === "false" && self.isLineElement(element)) {
                         element.data("isListeningMouseleave", "true");
-                        $(this).on("mouseleave", function () {
-                            $(this).off("mousemove").off("mouseleave");
+                        element.on("mouseleave", function () {
+                            element.off("mousemove").off("mouseleave");
                             // 监听行选中
                             element.on("mousemove", function () {
                                 if (self.field.hasClass("focus") && self.field.hasClass("selecting") && self.isLineElement(element)) {

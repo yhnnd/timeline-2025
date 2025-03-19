@@ -452,6 +452,15 @@ var v2_7 = {
             console.log("v2.7 editor: clicking " + lineElement.attr("id") + " " + JSON.stringify(pos));
         }
     },
+    stopSelecting: function () {
+        const self = this;
+        self.field.removeClass("selecting");
+        const fieldLines = self.getAllLineElements();
+        for(let i = 0; i < fieldLines.length; ++i) {
+            const fieldLine = fieldLines.get(i);
+            fieldLine.removeClass("selected");
+        }
+    },
     addDragListener: async function(element) {
         const self = this;
         await (async function () {
@@ -464,6 +473,13 @@ var v2_7 = {
         const browserName = window.getBrowserName();
         if (browserName === "chrome") {
             element.data("isListeningMouseleave", "false");
+            if (self.isLineElement(element)) {
+                element.off("mousemove").on("mousemove", function () {
+                    if (self.field.hasClass("selecting")) {
+                        element.addClass("selected");
+                    }
+                });
+            }
             element.mousedown(function () {
                 $(this).off("mousemove").on("mousemove",function () {
                     if (element.data("isListeningMouseleave") === "false") {
@@ -479,7 +495,7 @@ var v2_7 = {
                 $(this).off("mousemove").off("mouseleave");
                 element.data("isListeningMouseleave", "false");
                 setTimeout(() => {
-                    self.field.removeClass("selecting");
+                    self.stopSelecting();
                 }, 0);
             });
         } else {
@@ -495,7 +511,7 @@ var v2_7 = {
             }).mouseup(function () {
                 $(this).off("mousemove");
                 setTimeout(() => {
-                    self.field.removeClass("selecting");
+                    self.stopSelecting();
                 }, 10);
             });
         }

@@ -16,12 +16,12 @@
 }
 
 .form-control-v2-7 > .text-editable[contenteditable="true"],
-.form-control-v2-7.selecting > .text-editable:hover {
+.form-control-v2-7.focus.selecting > .text-editable:hover {
   outline-color: rgba(0, 123, 255, 0.15);
 }
 
 .form-control-v2-7 > .text-editable[contenteditable="true"]:last-of-type,
-.form-control-v2-7.selecting > .text-editable:last-of-type:hover {
+.form-control-v2-7.focus.selecting > .text-editable:last-of-type:hover {
   outline-color: rgba(0, 123, 255, 0.25);
 }
 
@@ -48,8 +48,8 @@
   transition: color linear .1s;
 }
 
-.form-control-v2-7.show-line-number > .line.text-editable.selected::before,
-.form-control-v2-7 > .line.text-editable.selected::before {
+.form-control-v2-7.focus.show-line-number > .line.text-editable.selected::before,
+.form-control-v2-7.focus > .line.text-editable.selected::before {
   left: 20px;
   padding-right: 20px;
   border-right: 4px solid skyblue;

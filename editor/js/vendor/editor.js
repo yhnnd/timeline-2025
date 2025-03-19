@@ -457,7 +457,7 @@ var v2_7 = {
         self.field.removeClass("selecting");
         const fieldLines = self.getAllLineElements();
         for(let i = 0; i < fieldLines.length; ++i) {
-            const fieldLine = fieldLines.get(i);
+            const fieldLine = fieldLines.eq(i);
             fieldLine.removeClass("selected");
         }
     },

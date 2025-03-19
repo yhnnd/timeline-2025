@@ -456,11 +456,7 @@ var v2_7 = {
     unselectAllLineElements: function () {
         // 清除所有已选行
         const self = this;
-        const fieldLines = self.getAllLineElements();
-        for(let i = 0; i < fieldLines.length; ++i) {
-            const fieldLine = fieldLines.eq(i);
-            fieldLine.removeClass("selected");
-        }
+        self.field.find(".selected").removeClass("selected");
     },
     stopSelecting: function () {
         const self = this;
@@ -488,6 +484,10 @@ var v2_7 = {
                     self.field.off("mousemove").removeClass("isWatchingMouseMove");
                     setTimeout(() => {
                         self.stopSelecting();
+                        // 如果没有选中任何行, 则 focus 最后一行
+                        if (self.field.find(".text-editable.selected").length === 0 && self.getCurrentEditingLineElement().length === 0) {
+                            self.focusLastLine();
+                        }
                     }, 0);
                 });
             } else if (elementType === "newLine") {

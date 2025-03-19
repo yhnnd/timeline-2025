@@ -468,6 +468,7 @@ var v2_7 = {
         const browserName = window.getBrowserName();
         if (browserName === "chrome") {
             element.data("isListeningMouseleave", "false");
+            // 监听行选中
             element.on("mousemove", function () {
                 if (self.field.hasClass("selecting") && self.isLineElement(element)) {
                     element.addClass("selected");
@@ -482,6 +483,12 @@ var v2_7 = {
                         element.data("isListeningMouseleave", "true");
                         $(this).on("mouseleave", function () {
                             $(this).off("mousemove").off("mouseleave");
+                            // 监听行选中
+                            element.on("mousemove", function () {
+                                if (self.field.hasClass("selecting") && self.isLineElement(element)) {
+                                    element.addClass("selected");
+                                }
+                            });
                             element.data("isListeningMouseleave", "false");
                             self.field.addClass("selecting").find(".text-editable").blur().removeAttr("contenteditable");
                             // 清除所有已选行
@@ -495,6 +502,12 @@ var v2_7 = {
                 });
             }).mouseup(function () {
                 $(this).off("mousemove").off("mouseleave");
+                // 监听行选中
+                element.on("mousemove", function () {
+                    if (self.field.hasClass("selecting") && self.isLineElement(element)) {
+                        element.addClass("selected");
+                    }
+                });
                 element.data("isListeningMouseleave", "false");
                 setTimeout(() => {
                     self.stopSelecting();

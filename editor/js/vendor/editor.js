@@ -515,28 +515,35 @@ var v2_7 = {
                     self.focusField();
                 }
             }
-            let prevendDefault = false;
-            let prevendSave = false;
+            let preventDefault = false;
+            let preventSave = false;
+            const handleRedo = function() {
+                self.redo().then(async (version) => {
+                    if (version.lineIndex !== undefined && version.cursorPosition !== undefined) {
+                        const lineElement = self.getAllLineElements().eq(version.lineIndex);
+                        if (lineElement.length === 1) {
+                            self.focusField(lineElement, version.cursorPosition);
+                        } else {
+                            reFocus(event, version.lines);
+                        }
+                    } else {
+                        reFocus(event, version.lines);
+                    }
+                }).catch(error => {
+                    console.log("addEditListener: redo failed:", error);
+                });
+            };
             if (event.ctrlKey || event.metaKey) {
-                prevendSave = true;
-                if (event.key === 'z') {
-                    prevendDefault = true;
+                preventSave = true;
+                if (event.key === 'y') {
+                    preventDefault = true;
+                    // handle redo action
+                    handleRedo();
+                } else if (event.key === 'z') {
+                    preventDefault = true;
                     if (event.shiftKey) {
                         // handle redo action
-                        self.redo().then(async (version) => {
-                            if (version.lineIndex !== undefined && version.cursorPosition !== undefined) {
-                                const lineElement = self.getAllLineElements().eq(version.lineIndex);
-                                if (lineElement.length === 1) {
-                                    self.focusField(lineElement, version.cursorPosition);
-                                } else {
-                                    reFocus(event, version.lines);
-                                }
-                            } else {
-                                reFocus(event, version.lines);
-                            }
-                        }).catch(error => {
-                            console.log("addEditListener: redo failed:", error);
-                        });
+                        handleRedo();
                     } else {
                         // handle undo action
                         self.undo().then(async (version) => {
@@ -556,11 +563,11 @@ var v2_7 = {
                     }
                 }
             }
-            if (prevendDefault === true) {
+            if (preventDefault === true) {
                 event.preventDefault();
                 event.stopImmediatePropagation();
             }
-            if (prevendSave === false) {
+            if (preventSave === false) {
                 self.edit(event);
             }
         });

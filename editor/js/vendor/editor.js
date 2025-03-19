@@ -200,6 +200,7 @@ var v2_7 = {
         console.log("v2.7 editor: field blurred.");
         $(this.getAllLineElements()).blur().removeAttr("contenteditable");
         this.field.removeClass("focus");
+        this.unselectAllLineElements();
     },
     isLineElement: function (element) {
         return element !== undefined && element.is(".line.text-editable");
@@ -452,6 +453,15 @@ var v2_7 = {
             console.log("v2.7 editor: clicking " + lineElement.attr("id") + " " + JSON.stringify(pos));
         }
     },
+    unselectAllLineElements: function () {
+        // 清除所有已选行
+        const self = this;
+        const fieldLines = self.getAllLineElements();
+        for(let i = 0; i < fieldLines.length; ++i) {
+            const fieldLine = fieldLines.eq(i);
+            fieldLine.removeClass("selected");
+        }
+    },
     stopSelecting: function () {
         const self = this;
         self.field.removeClass("selecting");
@@ -492,11 +502,7 @@ var v2_7 = {
                             element.data("isListeningMouseleave", "false");
                             self.field.addClass("selecting").find(".text-editable").blur().removeAttr("contenteditable");
                             // 清除所有已选行
-                            const fieldLines = self.getAllLineElements();
-                            for(let i = 0; i < fieldLines.length; ++i) {
-                                const fieldLine = fieldLines.eq(i);
-                                fieldLine.removeClass("selected");
-                            }
+                            self.unselectAllLineElements();
                         });
                     }
                 });

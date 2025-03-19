@@ -480,7 +480,7 @@ var v2_7 = {
             element.data("isListeningMouseleave", "false");
             // 监听行选中
             element.on("mousemove", function () {
-                if (self.field.hasClass("selecting") && self.isLineElement(element)) {
+                if (self.field.hasClass("focus") && self.field.hasClass("selecting") && self.isLineElement(element)) {
                     element.addClass("selected");
                 }
             });
@@ -495,7 +495,7 @@ var v2_7 = {
                             $(this).off("mousemove").off("mouseleave");
                             // 监听行选中
                             element.on("mousemove", function () {
-                                if (self.field.hasClass("selecting") && self.isLineElement(element)) {
+                                if (self.field.hasClass("focus") && self.field.hasClass("selecting") && self.isLineElement(element)) {
                                     element.addClass("selected");
                                 }
                             });
@@ -510,7 +510,7 @@ var v2_7 = {
                 $(this).off("mousemove").off("mouseleave");
                 // 监听行选中
                 element.on("mousemove", function () {
-                    if (self.field.hasClass("selecting") && self.isLineElement(element)) {
+                    if (self.field.hasClass("focus") && self.field.hasClass("selecting") && self.isLineElement(element)) {
                         element.addClass("selected");
                     }
                 });

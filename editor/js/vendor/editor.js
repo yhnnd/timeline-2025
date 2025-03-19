@@ -468,15 +468,16 @@ var v2_7 = {
         const browserName = window.getBrowserName();
         if (browserName === "chrome") {
             element.data("isListeningMouseleave", "false");
-            if (self.isLineElement(element)) {
-                element.off("mousemove").on("mousemove", function () {
-                    if (self.field.hasClass("selecting")) {
-                        element.addClass("selected");
-                    }
-                });
-            }
+            element.on("mousemove", function () {
+                if (self.field.hasClass("selecting") && self.isLineElement(element)) {
+                    element.addClass("selected");
+                }
+            });
             element.mousedown(function () {
                 $(this).off("mousemove").on("mousemove",function () {
+                    if (self.field.hasClass("selecting") && self.isLineElement(element)) {
+                        element.addClass("selected");
+                    }
                     if (element.data("isListeningMouseleave") === "false") {
                         element.data("isListeningMouseleave", "true");
                         $(this).on("mouseleave", function () {

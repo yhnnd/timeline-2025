@@ -129,7 +129,7 @@ var v2_7 = {
         // Add Keydown Listener
         this.addKeydownListener();
         // Add Drag Listener
-        this.addDragListener(this.field);
+        this.addDragListener("field");
         // 注册按键监听器
         this.keyPressListener = keyPressListener;
         // 注册文本改变监听器
@@ -466,7 +466,7 @@ var v2_7 = {
         const self = this;
         self.field.removeClass("selecting");
     },
-    addDragListener: async function(element) {
+    addDragListener: async function(elementType, element) {
         const self = this;
         await (async function () {
             return new Promise((resolve) => {
@@ -476,49 +476,41 @@ var v2_7 = {
             });
         })();
         const browserName = window.getBrowserName();
-        if (browserName === "chrome") {
-            element.data("isListeningMouseleave", "false");
-            // 监听行选中
-            element.on("mousemove", function () {
-                if (self.field.hasClass("focus") && self.field.hasClass("selecting") && self.isLineElement(element)) {
-                    element.addClass("selected");
-                }
-            });
-            element.mousedown(function () {
-                $(this).off("mousemove").on("mousemove",function () {
-                    if (self.field.hasClass("selecting") && self.isLineElement(element)) {
-                        element.addClass("selected");
-                    }
-                    if (element.data("isListeningMouseleave") === "false" && self.isLineElement(element)) {
-                        element.data("isListeningMouseleave", "true");
-                        element.on("mouseleave", function () {
-                            element.off("mousemove").off("mouseleave");
-                            // 监听行选中
-                            element.on("mousemove", function () {
-                                if (self.field.hasClass("focus") && self.field.hasClass("selecting") && self.isLineElement(element)) {
-                                    element.addClass("selected");
-                                }
-                            });
-                            element.data("isListeningMouseleave", "false");
-                            self.field.addClass("selecting").find(".text-editable").blur().removeAttr("contenteditable");
-                            // 清除所有已选行
-                            self.unselectAllLineElements();
-                        });
-                    }
+        if (browserName === "chrome") { /* Chrome 脚本已于2025年3月19日更新, 请勿还原回旧版代码 */
+            if (elementType === "field") {
+                self.field.mousedown(function () {
+                    self.unselectAllLineElements();
+                    self.field.off("mousemove").addClass("isWatchingMouseMove").on("mousemove",function () {
+                        self.field.off("mousemove").removeClass("isWatchingMouseMove");
+                        self.field.addClass("selecting").find(".text-editable").blur().removeAttr("contenteditable");
+                    });
+                }).mouseup(function () {
+                    self.field.off("mousemove").removeClass("isWatchingMouseMove");
+                    setTimeout(() => {
+                        self.stopSelecting();
+                    }, 0);
                 });
-            }).mouseup(function () {
-                $(this).off("mousemove").off("mouseleave");
+            } else if (elementType === "newLine") {
                 // 监听行选中
-                element.on("mousemove", function () {
-                    if (self.field.hasClass("focus") && self.field.hasClass("selecting") && self.isLineElement(element)) {
+                element.off("mousemove").addClass("isWatchingMouseMove").on("mousemove", function () {
+                    if (self.field.hasClass("focus") && self.field.hasClass("selecting")) {
                         element.addClass("selected");
                     }
                 });
-                element.data("isListeningMouseleave", "false");
-                setTimeout(() => {
-                    self.stopSelecting();
-                }, 0);
-            });
+                element.mousedown(function () {
+                    self.unselectAllLineElements();
+                    element.off("mouseleave").addClass("isWatchingMouseLeave").on("mouseleave", function () {
+                        element.off("mouseleave").removeClass("isWatchingMouseLeave");
+                        self.field.addClass("selecting").find(".text-editable").blur().removeAttr("contenteditable");
+                        element.addClass("selected");
+                    });
+                }).mouseup(function () {
+                    element.off("mouseleave").removeClass("isWatchingMouseLeave");
+                    setTimeout(() => {
+                        self.stopSelecting();
+                    }, 0);
+                });
+            }
         } else {
             /* Firefox cannot listen to mouseleave and mouseout if mouse is down */
             element.mousedown(function (e) {
@@ -611,7 +603,7 @@ var v2_7 = {
         newLine.on("click", function (event) {
             self.handleLineClick(newLine, event);
         });
-        this.addDragListener(newLine);
+        this.addDragListener("newLine", newLine);
         newLine.data("is-pristine", "true");
         // 创建观察器
         let observer = new MutationObserver(function (mutations, instance) {

@@ -533,6 +533,8 @@
 
 @base64("5LuK5aSp5oiR5ZyoUVHkuIrpl67prY/lhYbnpaXkuLrku4DkuYjmmKjmmZrmnaXnmoTlqYnlpoPmnKzkurrlkoznhafniYfkuIrnmoTkurrplb/lvpfkuI3kuIDmoLfvvIzprY/lhYbnpaXor7Tlm6DkuLrlprnlrZDkuI3mg7Pmioroh6rlt7HnmoTnnJ/lrp7nhafniYfmlL7liLDnvZHkuIrjgILprY/lhYbnpaXlj5Hnu5nmiJHlh6DkuKrlprnlrZDnmoTnvZHlm77lkoznnJ/lrp7nmoTlvbHlg4/jgILprY/lhYbnpaXlj5Hnu5nmiJHkuIDkuKrlvojmvILkuq7nmoTlprnlrZDvvIzlj6vku6TlpoPjgII=");
 
+@video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/raw-diary-2025-04-08-pics/1.mp4
+
 @base64("5oiR6K+077ya6L+Z5Liq5aW955yL77yM5LiL5qyh5om+5aW544CC");
 
 @base64("6a2P5YWG56Wl6K+077ya5Zev77yM5YW757K+6JOE6ZSQ77yM54q25oCB5aW95LqG5aW95aW95byE5LiA55uY44CC");

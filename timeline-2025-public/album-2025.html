@@ -1,0 +1,237 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album 2025</title>
+</head>
+<body>
+  <style>
+:root {
+  --gray: #F0F0F0;
+}
+.modal-open {
+  overflow: hidden;
+}
+.container {
+  width: 840px;
+  margin: 0 auto;
+}
+#album img,
+#album video {
+  max-width: 200px;
+  max-height: 400px;
+}
+.date-group {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--gray),
+    var(--gray) 25px,
+    transparent 25px,
+    transparent 50px
+  );
+  border: 20px solid var(--gray);
+  border-top: none;
+  margin-bottom: 40px;
+}
+.date-group-title {
+  font-size: 24px;
+  border-top: 20px solid var(--gray);
+  margin-left: -200px;
+  margin-right: -20px;
+  height: 34px;
+  margin-bottom: -34px;
+}
+  </style>
+  <div class="container">
+    <h1 style="font-weight: 100;font-size: 50px;">Album 2025</h1>
+  </div>
+  <div class="container" id="album">
+  </div>
+  <div id="inspectImageWrapper" class="inspect-image-wrapper"></div>
+  <script>
+let imgs = [
+"../iPhone-pics/9eb0eef0afac7cde1f73814ba9d52a3e.JPG",
+"../iPhone-pics/17D57A346EF8E4CE195F602FE45BE354.PNG",
+"../iPhone-pics/b7aeba959aab2c63a2e0039440c99c2d.JPG",
+"../iPhone-pics/IMG_0008.PNG",
+"../iPhone-pics/IMG_0011.PNG",
+"../iPhone-pics/IMG_0015.PNG",
+"../iPhone-pics/IMG_0017.PNG",
+"../iPhone-pics/IMG_0028.PNG",
+"../iPhone-pics/IMG_0029.PNG",
+"../iPhone-pics/IMG_0037.JPG",
+"../iPhone-pics/IMG_0038.JPG",
+"../iPhone-pics/IMG_0039.jpg",
+"../iPhone-pics/IMG_0041.PNG",
+"../iPhone-pics/IMG_0042.PNG",
+"../iPhone-pics/IMG_0044.PNG",
+"../iPhone-pics/IMG_0048.PNG",
+"../iPhone-pics/IMG_0049.PNG",
+"../iPhone-pics/IMG_0052.PNG",
+"../iPhone-pics/IMG_0054.jpg",
+"../iPhone-pics/IMG_0054.PNG",
+"../iPhone-pics/IMG_0059.PNG",
+"../iPhone-pics/IMG_0060.jpg",
+"../iPhone-pics/IMG_0061.jpg",
+"../iPhone-pics/IMG_0065.PNG",
+"../iPhone-pics/IMG_0073.PNG",
+"../iPhone-pics/IMG_0084.PNG",
+"../iPhone-pics/IMG_0092.PNG",
+"../iPhone-pics/IMG_0096.PNG",
+"../iPhone-pics/IMG_0097.PNG",
+"../iPhone-pics/IMG_0098.PNG",
+"../iPhone-pics/IMG_0099.PNG",
+"../iPhone-pics/IMG_0100.PNG",
+"../iPhone-pics/IMG_0101.PNG",
+"../iPhone-pics/IMG_0102.PNG",
+"../iPhone-pics/IMG_0103.PNG",
+"../iPhone-pics/IMG_0104.PNG",
+"../iPhone-pics/IMG_0105.PNG",
+"../iPhone-pics/IMG_0106.PNG",
+"../iPhone-pics/IMG_0107.PNG",
+"../iPhone-pics/IMG_0108.PNG",
+"../iPhone-pics/IMG_0109.PNG",
+"../iPhone-pics/IMG_0110.PNG",
+"../iPhone-pics/IMG_0111.PNG",
+"../iPhone-pics/IMG_0112.PNG",
+"../iPhone-pics/IMG_0113.PNG",
+"../iPhone-pics/IMG_0114.PNG",
+"../iPhone-pics/IMG_0115.PNG",
+"../iPhone-pics/IMG_0116.PNG",
+"../iPhone-pics/IMG_0117.PNG",
+"../iPhone-pics/IMG_0118.PNG",
+"../iPhone-pics/IMG_0119.PNG",
+"../iPhone-pics/IMG_0120.PNG",
+"../iPhone-pics/IMG_0121.PNG",
+"../iPhone-pics/IMG_0122.PNG",
+"../iPhone-pics/IMG_0123.PNG",
+"../iPhone-pics/IMG_0124.PNG",
+"../iPhone-pics/IMG_0125.PNG",
+"../iPhone-pics/IMG_0126.PNG",
+"../iPhone-pics/IMG_0127.PNG",
+"../iPhone-pics/IMG_0128.PNG",
+"../iPhone-pics/IMG_0129.PNG",
+"../iPhone-pics/IMG_0130.PNG",
+"../iPhone-pics/IMG_0131.jpg",
+"../iPhone-pics/IMG_0131.PNG",
+"../iPhone-pics/IMG_0132.PNG",
+"../iPhone-pics/IMG_0133.jpg",
+"../iPhone-pics/IMG_0133.PNG",
+"../iPhone-pics/IMG_0134.PNG",
+"../iPhone-pics/IMG_0137.PNG",
+"../iPhone-pics/IMG_0140.PNG",
+"../iPhone-pics/IMG_0176.PNG",
+"../iPhone-pics/IMG_0177.PNG",
+"../iPhone-pics/IMG_0246.jpg",
+"../iPhone-pics/IMG_0336.PNG",
+"../iPhone-pics/IMG_0337.PNG",
+"../iPhone-pics/IMG_0338.PNG",
+"../iPhone-pics/IMG_0339.PNG",
+"../iPhone-pics/IMG_0340.PNG",
+"../iPhone-pics/IMG_0341.PNG",
+"../iPhone-pics/IMG_0342.PNG",
+"../iPhone-pics/IMG_0343.PNG",
+"../iPhone-pics/IMG_0344.PNG",
+"../iPhone-pics/IMG_0345.PNG",
+"../iPhone-pics/IMG_0346.PNG",
+"../iPhone-pics/IMG_0347.PNG",
+"../iPhone-pics/IMG_0348.PNG",
+"../iPhone-pics/IMG_0349.PNG",
+"../iPhone-pics/IMG_0350.PNG",
+"../iPhone-pics/IMG_0353.PNG",
+"../iPhone-pics/IMG_0354.PNG",
+"../iPhone-pics/IMG_0355.PNG",
+"../iPhone-pics/IMG_0356.PNG",
+"../iPhone-pics/IMG_0357.PNG",
+"../iPhone-pics/IMG_0358.PNG",
+"../iPhone-pics/IMG_0359.PNG",
+"../iPhone-pics/IMG_0360.PNG",
+"../iPhone-pics/IMG_0361.PNG",
+"../iPhone-pics/IMG_0362.PNG",
+"../iPhone-pics/IMG_0363.PNG",
+"../iPhone-pics/IMG_0364.PNG",
+"../iPhone-pics/IMG_0365.PNG",
+"../iPhone-pics/IMG_0366.PNG",
+"../iPhone-pics/IMG_0376.PNG",
+"../iPhone-pics/IMG_0377.PNG",
+"../iPhone-pics/IMG_0378.jpg",
+"../iPhone-pics/IMG_0379.PNG",
+"../iPhone-pics/IMG_0385.PNG",
+"../iPhone-pics/IMG_0391.jpg",
+"../iPhone-pics/IMG_0409.PNG",
+"../iPhone-pics/IMG_0420.PNG",
+"../iPhone-pics/IMG_0439.PNG",
+"../iPhone-pics/IMG_0445.PNG",
+"../iPhone-pics/IMG_0446.PNG",
+"../iPhone-pics/IMG_0447.PNG",
+"../iPhone-pics/IMG_0448.PNG",
+"../iPhone-pics/IMG_0452.PNG",
+"../iPhone-pics/IMG_0457.PNG",
+"../iPhone-pics/IMG_0469.PNG",
+"../iPhone-pics/IMG_0471.PNG",
+"../iPhone-pics/IMG_0472.PNG",
+"../iPhone-pics/IMG_0473.PNG",
+"../iPhone-pics/IMG_0474.jpg",
+"../iPhone-pics/IMG_0475.jpg",
+"../iPhone-pics/IMG_0479.jpg",
+"../iPhone-pics/IMG_0481.jpg",
+"../iPhone-pics/IMG_0482.PNG",
+"../iPhone-pics/IMG_0483.PNG",
+"../iPhone-pics/IMG_0484.PNG",
+"../iPhone-pics/IMG_0486.PNG",
+"../iPhone-pics/IMG_0488.PNG",
+"../iPhone-pics/IMG_0489.JPG",
+"../iPhone-pics/IMG_0490.PNG",
+"../iPhone-pics/IMG_0491.PNG",
+"../iPhone-pics/IMG_0492.PNG",
+"../iPhone-pics/IMG_0493.jpg",
+];
+
+const album = document.querySelector("#album");
+
+function appendDateGroups() {
+  dateGroup = document.createElement("div");
+  dateGroup.className = "date-group";
+  dateGroup.innerHTML = "<div class='date-group-title'></div>";
+  album.append(dateGroup);
+}
+
+function appendImg(img) {
+  let dateGroup = album.querySelector(".date-group");
+  if (!dateGroup) {
+    throw new Error("dateGroup not found for image \"" + img + "\"");
+  }
+  const fileType = img.split(".").pop().toLowerCase();
+  if (["jpg", "jpeg", "png", "webp"].includes(fileType)) {
+    dateGroup.innerHTML += "<img src='" + img + "' onclick='inspectImage(\"" + img + "\")'>";
+  } else {
+    dateGroup.innerHTML += "<video controls><source src=\"" + img + "\" type=\"video/" + fileType + "\"></video>";
+  }
+}
+
+appendDateGroups();
+
+for (i = 0; i < imgs.length; ++i) {
+  appendImg(imgs[i]);
+}
+
+function inspectImage(src) {
+  document.body.classList.add("modal-open");
+  document.getElementById('inspectImageWrapper').innerHTML += '<div onclick="quitInspectImage()" style="display: block; position: fixed; top: 0; left: 0; width: 100%; z-index: 1499; height: ' + window.innerHeight + 'px; opacity: 0.8; background: black; filter: brightness(0.1);">' +
+      '</div>' +
+      '<div onclick="quitInspectImage()" style="display: block; position: fixed; top: 0; left: 0; width: 100%; height: ' + window.innerHeight + 'px; z-index: 1500;">' +
+      '<div style="display: flex; width: 100%; height: 100%; align-items: center; justify-content: center;">' +
+      '<div style="width: fit-content; max-width: 100%; height: fit-content; max-height: 100%; overflow: scroll;">' +
+      '<img style="width: auto; max-width: 100vw; height: auto; max-height: 100vh;" src="' + src + '">' +
+      '</div>' +
+      '</div>' +
+      '</div>';
+}
+
+function quitInspectImage() {
+  document.body.classList.remove("modal-open");
+  document.getElementById('inspectImageWrapper').innerHTML = '';
+}
+  </script>
+</body>
+</html>

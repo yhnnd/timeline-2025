@@ -177,3 +177,15 @@
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-20/IMG_0878.jpg" alt="">
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-20/IMG_0879.jpg" alt="">
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-20/IMG_0881.jpg" alt="">
+
+
+
+2025/Apr./21
+
+@base64("5oiR546w5Zyo5qyg5p2O5L+KIDM1NjguNSDlhYPljKrluIHjgII=");
+@base64("5oiR546w5Zyo5qyg5oiR54i25q+NIDcwMDAg5YWD5Yyq5biB44CC");
+@base64("5oiR546w5Zyo5LiA5YWx5qyg5Lqy5Y+LIDEwNTY4LjUg5YWD5Yyq5biB44CC");
+
+@base64("5oiR546w5Zyo5qyg5oub5ZWG6ZO26KGM5Yyq5biBIDUxMy45NSDlhYPjgIHliIbmnJ/otLfmrL7nrKzkuInmnJ8gMzMzMyDlhYPljKrluIHjgII=");
+@base64("5oiR546w5Zyo5qyg5pSv5LuY5a6d6Iqx5ZGX5Yyq5biBIDM0NDEuNzEg5YWD44CC");
+@base64("5oiR546w5Zyo5LiA5YWx5qyg6ZO26KGM5Yyq5biBIDcyODguNjYg5YWD44CC");

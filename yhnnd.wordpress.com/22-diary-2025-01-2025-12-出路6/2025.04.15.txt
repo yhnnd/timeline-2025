@@ -292,3 +292,11 @@ https://www.youtube.com/watch?v=2Z8Wo7ec8nk
 @base64("5byg55Cq5aaZ6K+077ya5LiN55+l6YGT44CC");
 
 @base64("5oiR6K+077ya5LiN55+l6YGT77yf5ZWl5Y+r5LiN55+l6YGT77yf5L2g5rKh6ZKx5ZCD6aWt55qE5pe25YCZ5oCO5LmI55+l6YGT566h5oiR6KaB6ZKx5ZGi77yf5L2g6KaB5piv5LiN5oS/5oSP5b2T5oiR5aWz5pyL5Y+L77yM5L2g5bCx55u06K+077yM5oiR5rKh5b+F6KaB5a+55L2g6L+Z5LmI5aW944CC");
+
+@base64("5Y2X5Lqs5q2M5omL5p2O5b+X55qE5q2M5puy5LiL6L29");
+https://github.com/lvboda/lizhi-mp3
+
+@base64("5oiR5q+U6L6D5Zac5qyi55qE5p2O5b+X55qE5q2M5puy77ya");
+@base64("MSDlkozkvaDlnKjkuIDotbc=");
+@base64("MiDlpKnnqbrkuYvln44=");
+@base64("MyDlhbPkuo7pg5Hlt57nmoTorrDlv4Y=");

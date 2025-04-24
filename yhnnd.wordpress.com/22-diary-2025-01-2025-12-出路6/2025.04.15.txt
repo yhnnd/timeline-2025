@@ -280,3 +280,15 @@ https://www.youtube.com/watch?v=2Z8Wo7ec8nk
 
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-23/3.jpg" alt="">
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-23/4.jpg" alt="">
+
+
+
+2025/Apr./24
+
+@base64("5byg55Cq5aaZ5ZGK6K+J5oiR5aW55aaI5ZKM5aW554i477yI5byg5YyF5YyF77yJ56a75ama5LqG44CC");
+
+@base64("5oiR6Zeu5byg55Cq5aaZ77ya5ZKx5L+p55qE5YWz57O76IO95LiN6IO956iz5a6a5LiL5p2l77yf");
+
+@base64("5byg55Cq5aaZ6K+077ya5LiN55+l6YGT44CC");
+
+@base64("5oiR6K+077ya5LiN55+l6YGT77yf5ZWl5Y+r5LiN55+l6YGT77yf5L2g5rKh6ZKx5ZCD6aWt55qE5pe25YCZ5oCO5LmI55+l6YGT566h5oiR6KaB6ZKx5ZGi77yf5L2g6KaB5piv5LiN5oS/5oSP5b2T5oiR5aWz5pyL5Y+L77yM5L2g5bCx55u06K+077yM5oiR5rKh5b+F6KaB5a+55L2g6L+Z5LmI5aW944CC");

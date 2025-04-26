@@ -385,4 +385,6 @@ https://github.com/lvboda/lizhi-mp3
 <div class="row">
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-26/IMG_1172.PNG" alt="">
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-26/IMG_1174.PNG" alt="">
+<img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-26/IMG_1183.PNG" alt="">
+<img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-04-26/IMG_1185.PNG" alt="">
 </div>

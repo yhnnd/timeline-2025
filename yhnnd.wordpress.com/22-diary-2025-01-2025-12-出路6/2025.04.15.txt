@@ -410,3 +410,12 @@ https://github.com/lvboda/lizhi-mp3
 
 @base64("5Y+w54Gj6JCs5Lq66ZuG5pyD57235YWN6LO05riF5b6377yB6Kaq5Lit5Yui5Yqb5aSn5Y+N5pKy77yM6Jmf56ix44CM5Y+N57ag5YWx5oiw542o6KOB44CN77yM5Y275LiN5Y+N55yf5YWx5Lmf5LiN5Y+N55yf542o6KOB");
 https://www.youtube.com/watch?v=YrZJXWYGhkQ
+
+@base64("44CQ6L6x5YyF44CR5Lmg6L+R5bmz6L+b5Yab6K+05ZSx5ZyI77yM44CKUG9vZOOAi+epuumZjULmppzvvIjljp/mm7LvvJpNb29kIC0gMjRrR29sZG4gLyBmdC4gaWFubiBkaW9y77yJ44CM5Lq65YqbUmFw44CN");
+https://www.youtube.com/watch?v=jPM2w2nLpZE
+
+@base64("44CQ6L6x5YyF44CR5LqM5Y2B5aSn6YeR5puy77yaSSBHb3QgRW1wZXJvciAoZmVhdC4gRGluZyBaaGVuLCBFaWxlZW4gR3Up44CM5Lq65YqbUmFw44CN5pys5L2c5Y+C6ICD6Ieq55CG5aGY6YeR5puy77yaSSBHb3QgU21va2U=");
+https://www.youtube.com/watch?v=RP13QoFj1Rw
+
+@base64("44CQ6L6x5YyF44CR5qKB5a625rKz5paw5puy44CK56Cw56Cw44CLIOmch+aSvOWPkeW4g++8ge+8iOWOn+absu+8muWXteWXtSAtIERPVURPVe+8ieOAjEFJ6YeN6LCD6Z+z54mI44CN");
+https://www.youtube.com/watch?v=s0QhRvDtAmw

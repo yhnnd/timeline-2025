@@ -56,6 +56,9 @@
 
 @base64("5oiR5oqK5byg55Cq5aaZ55qE5oi35Y+j5L+h5oGv5Y+R57uZ5aW544CC5aW56Zeu5oiR5Li65LuA5LmI6KaB5p+l5aW55oi35Y+j44CC5aW55Y+R55qE5piv6K+t6Z+z77yM5oiR5ZCs5aW55Y+R55qE6K+t6Z+z55qE6IOM5pmv6Z+z77yM5YOP5piv5ZyoS1RW55qE5YyF6Ze06YeM44CC");
 
+<img class="thumbnail" src="../../mobile-pics/Pictures/Telegram/IMG_20250316_050429_216.jpg" alt="">
+<img src="../../mobile-pics/Pictures/Telegram/IMG_20250318_140314_893.jpg" alt="">
+
 @base64("5oiR6K+077ya5L2g5LuW5aaI5Li65LuA5LmI6aqX5oiR77yf5L2g5LuW5aaI6K+05L2g6IO95p2l5om+5oiR77yM5Y+I5LuW5aaI5LiN5p2l44CC5Li65LuA5LmI77yf");
 
 @base64("5aW56K+077ya5L2g6L+Z5piv5Zyo5YG356ql5oiR44CC5L2g5LiA54K56YO95LiN5bCK6YeN5Yir5Lq644CC");

@@ -663,7 +663,7 @@ Wir weben
 </div>
 @video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-17/IMG_2089.mp4
 @video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-17/IMG_2090.mp4
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-17/IMG_2091.PNG" alt="">
+<img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-17/IMG_2091.PNG" alt="">
 
 
 
@@ -1166,7 +1166,6 @@ https://www.youtube.com/watch?v=GxwAvkOSBj4
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2406.PNG" alt="">
 </div>
 <div class="row">
-<img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2407.mp4" alt="">
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2408.PNG" alt="">
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2410.jpg" alt="">
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2411.jpg" alt="">
@@ -1289,6 +1288,8 @@ https://www.youtube.com/watch?v=GxwAvkOSBj4
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2612.PNG" alt="">
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2613.PNG" alt="">
 </div>
+
+@video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/IMG_2407.mp4
 @video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/6.MP4
 @video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/7.MP4
 @video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-05-25/8.MP4

@@ -53,6 +53,7 @@ window.femalePeopleNamesAlphabetMap = {
         "方芳(學院書記)",
         "方雨晴",
         "方詩語",
+        "费家悦",
         "馮麗元",
         "馮忠慧",
         "傅亞東",

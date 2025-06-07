@@ -681,6 +681,7 @@ window.books[22].indexList = [
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.04.15.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.05.01.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.05.26.txt",
+    "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.06.07.txt",
 ];
 
 window.repositoryMap = {

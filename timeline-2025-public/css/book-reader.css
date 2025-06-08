@@ -263,7 +263,7 @@ pre img {
 }
 
 pre .thumbnail {
-    display: inline;
+    display: inline-block;
     width: 100px;
     min-width: 100px;
     max-width: 100px;
@@ -271,7 +271,7 @@ pre .thumbnail {
 }
 
 pre .thumbnail-2x {
-    display: inline;
+    display: inline-block;
     width: 200px;
     min-width: 200px;
     max-width: 200px;

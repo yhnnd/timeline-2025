@@ -255,35 +255,3 @@
 <div class="row">
 <img class="thumbnail" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-06-07/IMG_3520.JPG" alt="">
 </div>
-
-
-
-2025/06/08 Sun.
-
-@base64("5LiA5Liq6aOe5py6552A5LqG54Gr");
-@base64("5LiA5Liq5aWz5a2p5Y205oGo5oiR");
-@base64("5LiA5Y+j54Of6L+Y5rKh5oq95a6M");
-@base64("5LuW5Lus5LiL5Yiw5rKz6YeM546p");
-@base64("5L2g77yI5piv77yJ5ZK46Ziz");
-@base64("5oiR77yI6Z2e77yJ5ZK46Ziz");
-@base64("5LiN5YOP77yI5bCx5YOP77yJ5aW55Lus77yI5LuW5Lus77yJ");
-@base64("5LiA5Liq5paw55aG");
-@base64("5Zub5LqU5Liq5rit5Y2X");
-@base64("5LiA5Liq5Zyo5bqT5bCU5pav5YWL");
-@base64("5LiA5Liq5Zyo5LyK5bCU5bqT6Iyo5YWL");
-@base64("5LiA5Liq5Zyo54OI54Gr6YeM");
-@base64("5LiA5Liq5Zyo5Yaw5rC05Lit");
-@base64("6YKj5rC06YeM77yI6YWS6YeM77yJ55qE5oiR5Lus");
-@base64("5ZOq5LiA55O26L+Y5rKh5Zad5a6M77yf");
-@base64("5LiN5Lya5ri45rOz");
-@base64("5bCx5Yir5Y676K+V5o6i");
-@base64("5Yir5Y67566h");
-@base64("5Yir6JC95Y2V");
-@base64("5Yir57uZ5LuW5Lus5aW96IS455yL");
-@base64("5byv6YGT5ryC56e75Lmf5LiN5piv57uZ5L2g55yL");
-@base64("5oiR5Zyo5aSp5LiK");
-@base64("5L2g5Zyo5Yeh6Ze0");
-@base64("6aOO6Iqx6Zuq5pyI5Lqr5LiN5bC9");
-@base64("576O5pmv576O6Imy54ix5LiN5a6M");
-@base64("566h5a6D5LuA5LmI");
-@base64("6KW/5Lic5YyX5Y2X77yf");

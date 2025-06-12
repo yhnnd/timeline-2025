@@ -314,6 +314,9 @@ https://www.youtube.com/watch?v=ldFCEPSty-4
 @base64("44CQ5ZGo5p2w5LymeOmprOWFi+ilv+WnhuOAkemAhumznnjlhYvnvZflnLDkuprni4Lmg7Pmm7Ig5a6M576O6J6N5ZCI77yI5by654OI5bu66K6u5L2p5oi06ICz5py677yJ");
 https://www.bilibili.com/video/BV1Ps411p7XH/
 
+PHARAOH - ДИКО, НАПРИМЕР
+https://www.youtube.com/watch?v=l7v8DAbIOx0&list=RDl7v8DAbIOx0
+
 @base64("MDEg5qKm6YeM5oiR5Y+I5Zue5Yiw5LqG5oiR55qE5pWZ5a6k");
 @base64("MDIg5ZCM5a2m5Yia5ouW5a6M5Zyw");
 @base64("MDMg5rC05rOl5Zyw6Z2i5rm/5ryJ5ryJ55qE");

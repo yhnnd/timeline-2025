@@ -708,7 +708,7 @@ function initNavbar() {
     button.setAttribute("onclick", "goBack()");
     navbar.prepend(button);
 
-    if (!window.location.pathname.endsWith("/index.html")) {
+    if (!window.location.pathname.endsWith("/") && !window.location.pathname.endsWith("/index.html")) {
         const btn2 = document.createElement("button");
         btn2.innerText = "Home";
         btn2.setAttribute("onclick", "goHome()");
@@ -748,14 +748,6 @@ function initNavbar() {
             document.body.setAttribute(key, "true");
         }
     }
-
-    // if (window.location.hostname === "localhost") {
-    //     button2.style.marginRight = "200px";
-    //     setTimeout(() => {
-    //         button2.style.transition = "margin-right .3s ease";
-    //         button2.style.marginRight = "unset";
-    //     }, 2100);
-    // }
 }
 
 function renderDomText() {

@@ -1,0 +1,464 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Album 2025 II</title>
+</head>
+<body>
+  <style>
+:root {
+  --gray: #F0F0F0;
+}
+.modal-open {
+  overflow: hidden;
+}
+.container {
+  width: 1120px;
+  margin: 0 auto;
+}
+#album .grid {
+  display: inline-block;
+  min-width: 100px;
+  max-width: 100px;
+}
+#album img,
+#album video {
+  min-width: 100px;
+  width: 100px;
+  max-width: 100px;
+  max-height: 200px;
+}
+#album img.inspecting,
+#album video.inspecting {
+  min-width: unset;
+  width: unset;
+  max-width: 100%;
+  max-height: 100%;
+}
+[onclick] {
+  cursor: pointer;
+}
+.date-group {
+  background-image: repeating-linear-gradient(
+    -45deg,
+    var(--gray),
+    var(--gray) 25px,
+    transparent 25px,
+    transparent 50px
+  );
+  border: 20px solid var(--gray);
+  border-top: none;
+  margin-bottom: 40px;
+}
+.date-group-title {
+  font-size: 24px;
+  border-top: 20px solid var(--gray);
+  margin-left: -200px;
+  margin-right: -20px;
+  height: 34px;
+  margin-bottom: -34px;
+}
+  </style>
+  <div class="container">
+    <h1 style="font-weight: 100;font-size: 50px;">Album 2025 II</h1>
+  </div>
+  <div class="container" id="album">
+  </div>
+  <div class="pager" style="width: 100%; display: flex; justify-content: center; gap: 5px;"></div>
+  <div id="inspectImageWrapper" class="inspect-image-wrapper"></div>
+  <script>
+let imgs = [
+"../iPhone-pics-2025-0413-0623/_124f.JPG",
+"../iPhone-pics-2025-0413-0623/_7833.JPG",
+"../iPhone-pics-2025-0413-0623/_c9dd.JPG",
+"../iPhone-pics-2025-0413-0623/_ca57.JPG",
+"../iPhone-pics-2025-0413-0623/_cad3.jpg",
+"../iPhone-pics-2025-0413-0623/2112.JPG",
+"../iPhone-pics-2025-0413-0623/2113.JPG",
+"../iPhone-pics-2025-0413-0623/17154.JPG",
+"../iPhone-pics-2025-0413-0623/17277.JPG",
+"../iPhone-pics-2025-0413-0623/32424.JPG",
+"../iPhone-pics-2025-0413-0623/32477.JPG",
+"../iPhone-pics-2025-0413-0623/36534.JPG",
+"../iPhone-pics-2025-0413-0623/67058.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0494.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0506.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0507.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0508.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0509.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0511.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0515.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0520.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0526.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0527.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0550.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0551.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0558.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0562.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0563.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0564.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0570.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0571.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0581.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0583.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0584.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0598.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0599.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0600.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0601.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0604.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0605.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0618.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0619.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0620.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0621.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0622.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0623.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0624.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0629.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0637.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0638.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0639.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0663.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0686.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0750.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0758.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0764.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_0770.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0814.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_0970.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1035.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1113.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1133.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1144.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1146.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1147.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1148.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1149.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1150.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1152.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1155.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1157.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1159.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1160.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1161.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1162.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1163.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1164.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1170.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1239.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1261.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1283.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1299.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1300.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1302.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1303.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1309.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1312.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1318.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1319.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1320.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1321.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1322.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1323.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1324.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1325.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1326.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1327.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1328.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1329.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1330.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1331.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1332.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1337.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1338.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1339.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1343.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1344.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1345.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1350.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1351.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1352.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1354.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1355.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1356.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1357.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1367.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1490.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1491.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1497.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1524.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1547.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1582.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1598.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1638.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1639.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1655.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1656.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1657.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1658.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1659.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1660.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1661.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1662.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1663.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1664.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1666.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1667.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1668.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1669.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1671.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1697.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1698.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1716.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1718.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1719.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1720.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1721.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1722.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1723.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1724.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1725.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1726.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1727.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1728.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1729.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1730.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1759.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1760.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1761.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1799.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1800.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1801.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1802.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1803.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1804.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1805.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1806.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1808.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1809.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1814.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1815.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1831.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1833.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1835.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1839.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1863.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1867.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_1906.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1942.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1973.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_1998.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_2088.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_2098.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_2581.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_2582.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3218.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3221.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3235.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3236.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3237.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3240.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3242.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3243.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3244.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3246.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3266.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3273.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3274.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3275.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3276.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3277.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3278.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3279.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3280.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3281.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3294.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3298.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3299.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3304.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3305.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3313.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3314.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3315.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3316.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3317.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3496.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3510.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3511.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3515.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3518.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3519.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3555.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3556.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3561.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3564.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3575.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3592.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3593.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3603.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3605.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3607.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3608.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3609.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3612.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3613.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3616.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3617.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3618.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3636.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3637.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3638.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3659.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3660.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3661.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3662.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3663.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3664.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3674.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3675.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3691.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3701.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3702.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3704.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3716.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3717.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3720.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3721.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3722.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3723.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3724.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3725.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3726.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3727.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3728.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3729.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3730.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3731.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3732.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3733.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3734.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3735.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3736.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3737.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3738.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3739.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3740.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3741.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3742.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3743.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3758.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3772.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3773.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3774.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3775.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3779.jpg",
+"../iPhone-pics-2025-0413-0623/IMG_3780.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3787.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3788.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3804.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3818.PNG",
+"../iPhone-pics-2025-0413-0623/IMG_3822.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3830.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3831.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3832.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3833.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3834.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3835.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3836.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3837.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3838.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3839.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3840.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3842.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3843.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3844.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3845.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3846.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3847.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3848.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3849.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3850.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3873.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3885.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3888.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3891.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3892.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3893.JPG",
+"../iPhone-pics-2025-0413-0623/IMG_3894.JPG",
+];
+
+const album = document.querySelector("#album");
+
+function appendDateGroups() {
+  dateGroup = document.createElement("div");
+  dateGroup.className = "date-group";
+  dateGroup.innerHTML = "<div class='date-group-title'></div>";
+  album.append(dateGroup);
+}
+
+function appendImg(dateGroup, img) {
+  const fileType = img.split(".").pop().toLowerCase();
+  if (["jpg", "jpeg", "png", "webp", "heic"].includes(fileType)) {
+    dateGroup.innerHTML += "<div class='grid'><div class='grid-inner' onclick='quitInspectImage()'><img src='" + img + "' onclick='inspectImage(this, event)' loading='lazy'></div></div>";
+  } else {
+    dateGroup.innerHTML += "<video controls><source src=\"" + img + "\" type=\"video/" + fileType + "\"></video>";
+  }
+}
+
+appendDateGroups();
+
+function renderPage(pageNumber, pageSize) {
+  const dateGroup = album.querySelector(".date-group");
+  if (!dateGroup) {
+    throw new Error("dateGroup not found for image \"" + img + "\"");
+  }
+  dateGroup.innerHTML = "";
+  document.querySelectorAll("[page-number]").forEach(e => {
+    if (e.getAttribute("page-number") === "" + pageNumber) {
+      e.style.backgroundColor = "yellow";
+    } else {
+      e.style.backgroundColor = "transparent";
+    }
+  });
+  for (let i = pageNumber * pageSize; i < (pageNumber + 1) * pageSize; ++i) {
+    if (i >= imgs.length) {
+      break;
+    }
+    appendImg(dateGroup, imgs[i]);
+  }
+}
+
+const pageSize = 50;
+
+const pager = document.querySelector(".pager");
+for (let i = 0; i < Math.ceil(imgs.length / pageSize); ++i) {
+  pager.innerHTML += "<button onclick='renderPage(" + i + ", " + pageSize + ")' page-number=" + i + " style='padding: 8px 16px; border-width: 1px;'>" + i + "</button>";
+}
+
+renderPage(0, pageSize);
+
+function inspectImage(target, event) {
+  event && event.stopPropagation();
+  document.body.classList.add("modal-open");
+  document.getElementById('inspectImageWrapper').innerHTML += '<div onclick="quitInspectImage()" style="display: block; position: fixed; top: 0; left: 0; width: 100%; z-index: 1499; height: ' + window.innerHeight + 'px; opacity: 0.8; background: black; filter: brightness(0.1);"></div>';
+  const img = target;
+  img.classList.add("inspecting");
+  img.setAttribute("onclick", "quitInspectImage(this)");
+  img.parentElement.setAttribute("style", "display: flex; justify-content: center; align-items: center; position: fixed; top: 0; left: 0; z-index: 1500; min-width: 100vw; width: 100vw; max-width: 100vw; height: 100vh; max-height: " + window.innerHeight + "px;");
+}
+
+function quitInspectImage(target) {
+  document.body.classList.remove("modal-open");
+  document.getElementById('inspectImageWrapper').innerHTML = '';
+  const img = target || document.querySelector(".inspecting");
+  if (!img) {
+    return;
+  }
+  img.parentElement.removeAttribute("style");
+  img.classList.remove("inspecting");
+  img.setAttribute("onclick", "inspectImage(this, event)");
+}
+  </script>
+</body>
+</html>

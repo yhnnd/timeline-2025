@@ -264,6 +264,12 @@ function goBack() {
         window.open("index.html", "_self");
     } else if (window.location.pathname.endsWith("/album-2023.html")) {
         window.open("index.html", "_self");
+    } else if (window.location.pathname.endsWith("/album-2024.html")) {
+        window.open("index.html", "_self");
+    } else if (window.location.pathname.endsWith("/album-2025-1.html")) {
+        window.open("index.html", "_self");
+    } else if (window.location.pathname.endsWith("/album-2025-2.html")) {
+        window.open("index.html", "_self");
     } else if (!["null", "undefined", null, undefined].includes(getParameter("from"))) {
         window.open(getParameter("from"), "_self");
     } else {

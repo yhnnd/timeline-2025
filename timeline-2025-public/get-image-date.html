@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>读取 JPG 拍摄时间</title>
+</head>
+<body>
+<style>
+.grid {
+  display: inline-block;
+  background-color: transparent;
+  position: relative;
+}
+.grid-inner {
+  display: flex;
+  width: 200px;
+  height: 200px;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin: 0 auto;
+}
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.hover-show-date {
+  background-color: lightblue;
+  padding: 8px 16px;
+  display: none;
+  position: absolute;
+}
+.grid:hover {
+  background-color: black;
+}
+.grid:hover .hover-show-date {
+  display: block;
+}
+</style>
+<div style="display: flex; gap: 1px;">
+  <div class="grid">
+    <div class="grid-inner">
+      <img src="https://yhnnd.github.io/timeline-2025/iPhone-pics/IMG_0061.jpg" alt="">
+    </div>
+    <div class="hover-show-date">
+      拍摄时间: <span class="dateHtml" style="display: inline-block; width: max-content;"></span>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-inner">
+      <img src="https://yhnnd.github.io/timeline-2025/iPhone-pics/IMG_0131.jpg" alt="">
+    </div>
+    <div class="hover-show-date">
+      拍摄时间: <span class="dateHtml" style="display: inline-block; width: max-content;"></span>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-inner">
+      <img src="https://yhnnd.github.io/timeline-2025/iPhone-pics-2025-0413-0623/17154.JPG" alt="">
+    </div>
+    <div class="hover-show-date">
+      拍摄时间: <span class="dateHtml" style="display: inline-block; width: max-content;"></span>
+    </div>
+  </div>
+  <div class="grid">
+    <div class="grid-inner">
+      <img src="https://yhnnd.github.io/timeline-2025/iPhone-pics-2025-0413-0623/IMG_3734.JPG" alt="">
+    </div>
+    <div class="hover-show-date">
+      拍摄时间: <span class="dateHtml" style="display: inline-block; width: max-content;"></span>
+    </div>
+  </div>
+</div>
+  <script src="exif.min.js"></script>
+  <script>
+    const pictures = document.querySelectorAll('.grid');
+    pictures.forEach(picture => {
+      const img = picture.querySelector("img");
+      img.onload = function () {
+        EXIF.getData(img, function () {
+          picture.querySelector(".dateHtml").innerHTML = EXIF.getTag(this, 'DateTimeOriginal');
+        });
+      };
+    });
+  </script>
+</body>
+</html>

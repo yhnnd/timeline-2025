@@ -58,6 +58,21 @@
   height: 34px;
   margin-bottom: -34px;
 }
+.image-date {
+  display: none;
+  position: absolute;
+}
+.grid.hover-show-date .image-date {
+  background-color: lightblue;
+  padding: 8px 16px;
+}
+.grid.hover-show-date:hover .image-date {
+  display: block;
+}
+.image-date-inner {
+  display: inline-block;
+  width: max-content;
+}
   </style>
   <div class="container">
     <h1 style="font-weight: 100;font-size: 50px;">Album 2025 II</h1>
@@ -66,6 +81,7 @@
   </div>
   <div class="pager" style="width: 100%; display: flex; justify-content: center; gap: 5px;"></div>
   <div id="inspectImageWrapper" class="inspect-image-wrapper"></div>
+  <script src="exif.min.js"></script>
   <script>
 let imgs = [
 "../iPhone-pics-2025-0413-0623/_124f.JPG",
@@ -581,7 +597,8 @@ function appendDateGroups() {
 function appendImg(dateGroup, img) {
   const fileType = img.split(".").pop().toLowerCase();
   if (["jpg", "jpeg", "png", "webp", "heic"].includes(fileType)) {
-    dateGroup.innerHTML += "<div class='grid'><div class='grid-inner' onclick='quitInspectImage()'><img src='" + img + "' onclick='inspectImage(this, event)' loading='lazy'></div></div>";
+    dateGroup.innerHTML += "<div class='grid'><div class='grid-inner' onclick='quitInspectImage()'><img src='" + img + "' onclick='inspectImage(this, event)' loading='lazy'></div>"
+    + "<div class='image-date'><span class='image-date-inner'></span></div></div>";
   } else {
     dateGroup.innerHTML += "<video controls><source src=\"" + img + "\" type=\"video/" + fileType + "\"></video>";
   }
@@ -608,6 +625,21 @@ function renderPage(pageNumber, pageSize) {
     }
     appendImg(dateGroup, imgs[i]);
   }
+  const pictures = document.querySelectorAll('.grid');
+  pictures.forEach(picture => {
+    const img = picture.querySelector("img");
+    if (img) {
+      img.onload = function () {
+        EXIF.getData(img, function () {
+          const imageDate = EXIF.getTag(this, 'DateTimeOriginal');
+          if (imageDate) {
+            picture.classList.add("hover-show-date");
+            picture.querySelector(".image-date-inner").innerHTML = "拍摄时间: " + imageDate;
+          }
+        });
+      };
+    }
+  });
 }
 
 const pageSize = 50;

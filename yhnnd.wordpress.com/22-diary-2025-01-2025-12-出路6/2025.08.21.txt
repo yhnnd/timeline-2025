@@ -51,10 +51,25 @@ My beloved friend 方志清 bestowed a copy of La Porte Étroite to me and I put
 L'étudiante 1988
 Edouard Jansen et Valentine Ezquerra.
 
-Watched the film Eden again this evening at 大都荟.
+Watched the film Eden again this evening at 大都荟. And I recommend 张舰 to watch Eden. I call it the best film of this year.
 
 
 
 2025/08/27
+
+@base64("44CK6Ie054mb5qOu5ZKM5YiY546w55yB44CL");
+@base64("MDEg54mb5qOu");
+@base64("MDIg6K+35L2g5LiN6KaB5Y+r54mg5q+b54i354i3");
+@base64("MDMg5Zug5Li65L2g55qE54i354i35LiN5piv54mg");
+@base64("MDQg5L2g566h5LiA5Liq5YO15bC46IWK6IKJ5Y+r54i354i3");
+@base64("MDUg5L2g5ZKM5YK76YC85q+b5paw5a6H6Zq+6YGT5piv5Lqy5YWE5byf77yf");
+@base64("MDYg5YiY546w55yB5YWE5byf");
+@base64("MDcg6K+35LiN6KaB5Y+r54mg5Lmg5aSn5aSn");
+@base64("MDgg5aSn5aSn55qE5oSP5oCd5piv54i2");
+@base64("MDkg5L2g566h5LiA5Liq5YK76YC857u05bC854aK5Y+r5aSn5aSn");
+@base64("MTAg5L2g5LiN6KeJ5b6X5Lii5Lq6546w55y85ZCX77yf");
+
+@base64("5Lmf5LiN6KaB56ew5ZG85Zyw5LiK55qE5Lq65Li654i277yM5Zug5Li65Y+q5pyJ5LiA5L2N5piv5L2g5Lus55qE54i277yM5bCx5piv5Zyo5aSp5LiK55qE54i244CC");
+@base64("KOmprOWkquemj+mfsyAyMzo5IOWSjOWQiOacrCk=");
 
 @base64("5YiY5pum5rO96ZW/5b6X5b6I5aW955yL44CCMjAwN+W5tO+8jOWIneS4gOWImuW8gOWtpueahOaXtuWAme+8jOWImOabpuazveaYr+aIkeeahOWQjOahjO+8jOaIkeS7rOeahOivvuahjOaYr+S4pOS4quS6uuWFrOeUqOeahO+8jOaIkeeUqOWwuuWtkOWcqOivvuahjOS4remXtOeUu+WHuuS4gOadoee6v++8jOWRiuivieWlueS4jeimgei2iueVjO+8jOWFtuWunuaIkeaYr+W8gOeOqeeskeeahO+8jOS9huaYr+WlueS4jeS5kOaEj+S6hu+8jOWlueWOu+aJvuePreS4u+S7u+iwg+aNouS6huW6p+S9je+8jOaIkeWwseWSjOW8oOeRnOWBmuWQjOahjOS6huOAgjIwMDflubTnmoTlnKPor57oioLliY3lpJXvvIzljbPlubPlronlpJzvvIzmiJHpgIHnu5nliJjmm6bms73kuIDkuKrlubPlronmnpzvvIzmiJHpl67lpbnkuLrku4DkuYjkuI3lm57pgIHmiJHnpLznianvvIzlpbnor7TvvJrigJzkvaDpgIHmiJHnpLznianmmK/kvaDoh6rlt7HmhL/mhI/pgIHnmoTvvIzlj4jkuI3mmK/miJHorqnkvaDpgIHmiJHnmoTvvIzosIHor7TmlLbnpLzkuIDlrpropoHlm57npLzkuobvvJ/igJ3ov5nlgrvpgLzlr7nmiJHor7TnmoTkuIDnlaror53orqnmiJHpnZ7luLjnlJ/msJTjgILlnKjlpbnmlL7lrabotbDlkI7vvIzmiJHlnKjmlZnlrqTph4zlgLzml6XlgZrljavnlJ/nmoTml7blgJnvvIzotbDliLDlpbnnmoTor77moYzml4HvvIzmiorlpbnnmoTor77mnKzmiZTliLDlnLDkuIrvvIzmsJTmhKTlnLDnlKjohJrkvb/lirLouKnjgILov5nlubTlnKPor57oioLnmoTkuIrljYjvvIzmiJHluKbkuobmiJHku47ogrLmiY3kuablupfkubDnmoTlnKPor57otLrljaHotbDov5vmlZnlrqTvvIzmiJHotaDnu5nnvZfmmI7plYfjgIHokZvml7vjgIHljZXkvbPmpaDjgIHlvKDlvabljZrvvIjku5bmmK/liJjmm6bms73nmoTooajlk6XvvInkuIDkurrkuIDlvKDlnKPor57otLrljaHjgII=");

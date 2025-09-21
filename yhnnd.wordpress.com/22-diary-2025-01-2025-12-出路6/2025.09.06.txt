@@ -182,3 +182,8 @@ Charlie’s life was short, but it was full. It was defined by truth, anchored i
 
 @base64("5ZK46ZizIDE5MyA5MTY0IDI5ODY=");
 @base64("55qu6IKk55m977yM6Lqr5p2Q5aW944CC6IO45YOP5rC05rCU55CD5LiA5qC377yM5oqT552A6IiS5pyN5b6X5b6I44CC5aiH5ZaY5aOw5Y+v5rer6I2h5LqG44CC5q2j6Z2i5p2l5a6M77yM5Y+N6Z2i5p2l77yM54i95q2744CC6K+06K+d5YOP55S35a2p5LiA5qC35py057Sg77yM5L2G5piv6ISx5LqG6KGj5pyN5bCx5YOP5Lq65aa75LiA5qC344CC");
+
+
+2025/09/21
+
+@base64("MjAyNeW5tDnmnIgyMeaXpeaYn+acn+aXpe+8jOWwj+mbqOOAguS4reWNiO+8jOaIkeWSjOmDreW/oOeQquOAgeW8oOiIsOOAgeW8oOiIsOeahOWmu+WtkOS4gOi1t+WcqOilv+WuieS4iOWFq+WMl+i3r+WcsOmTgeermeaXgei+ueeahOWkp+iMguWfjuWbm+WxgueahOWwj+eypOWto+iBmumkkO+8jOaIkeWSjOmDreW/oOeQquWcqOWkp+iMguWfjueahOWkp+mXqOWPo+WBtumBh+S6huWQjOS6i+S9leaZuumRq++8jOS7luaYr+WSuOmYs+S6uuOAguW8oOiIsOS5sOS6huibi+ezle+8jOS7luiHquW3seayoeWQg++8jOaIkeS7rOS4gOS6uuWQg+S6huWbm+WIhuS5i+S4gO+8jOeVmeS6huWbm+WIhuS5i+S4gOe7memDreW/oOeQqueahOWmu+WtkOW4puWbnuWOu+OAgg==");

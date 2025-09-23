@@ -239,6 +239,8 @@ window.books[7] = {};
 window.books[7].indexList = [
     "@2023/yhnnd.wordpress.com/7-diary-2018-12-2020-05-棕書2/2018.12.18.txt",
     "@2023/yhnnd.wordpress.com/7-diary-2018-12-2020-05-棕書2/2018.12.22.txt",
+    "@2023/yhnnd.wordpress.com/7-diary-2018-12-2020-05-棕書2/2018.12.29.txt",
+    "@2023/yhnnd.wordpress.com/7-diary-2018-12-2020-05-棕書2/2019.01.05.txt",
 ];
 
 window.books[8] = {};

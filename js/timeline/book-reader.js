@@ -498,13 +498,16 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }).join("\n");
     }(responseText);
 
+    const pattern1 = "@command(\"enable-border-recognition\")";
+    const isBorderEnabled = (localStorage.getItem("enable-border") === "true") || responseText.includes(pattern1);
+
     responseText = function (responseText) {
         return responseText.split("\n").map((line) => {
             if (line.trim().startsWith("{{") && line.trim().endsWith("}}") && localStorage.getItem("enable-delete-line") === "true") {
                 return line.replace("{{", '@command("delete-start")').replace("}}", '@command("delete-end")');
-            } else if (line === "<border>" && localStorage.getItem("enable-border") === "true") {
+            } else if (line === "<border>" && isBorderEnabled) {
                 return '@command("border-start")';
-            } else if (line === "</border>" && localStorage.getItem("enable-border") === "true") {
+            } else if (line === "</border>" && isBorderEnabled) {
                 return '@command("border-end")';
             }
             if (line === "@command(\"line-width-maximum\")") {
@@ -547,6 +550,15 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     }
 
     responseText = responseText.replaceAll("<", "&lt;");
+
+    if (isBorderEnabled) {
+        responseText = responseText.split("\n").map(line => {
+            if (line.includes(pattern1)) {
+                return line.replace(pattern1, "<span class='highlight-green'>" + pattern1 + "</span>");
+            }
+            return line;
+        }).join("\n");
+    }
 
     if (hasWeCardTable) {
         let isInTable = false;

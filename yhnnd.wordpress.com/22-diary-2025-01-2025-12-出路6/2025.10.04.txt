@@ -1,3 +1,6 @@
+@command("enable-image-recognition")
+@command("enable-border-recognition")
+
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/NATO-vs-Warsaw-Pact.svg" alt="">
 
 <div class="row">

@@ -1,13 +1,10 @@
 @command("enable-image-recognition")
 @command("enable-border-recognition")
 
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/NATO-vs-Warsaw-Pact.svg" alt="">
-
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/red-dragon-fighting-woman.jpg" style="width: unset;margin: auto;" alt="">
-</div>
-<div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/7-headed-dragon.jpg" style="width: unset;margin: auto;" alt="">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/NATO-vs-Warsaw-Pact.svg" alt="" style="width: 40%; height: fit-content; margin-left: -20px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/red-dragon-fighting-woman.jpg" style="width: 30%; height: fit-content; margin-left: 10px;" alt="">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/7-headed-dragon.jpg" style="width: 30%; height: fit-content; margin-left: 10px;" alt="">
 </div>
 
 Revelation 12
@@ -60,10 +57,14 @@ Revelation 12
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Cold_War_alliances_mid-1975.svg" alt="">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/shutterstock_2131583929.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/coldwar.webp" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/shutterstock_2131583929.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/red-dragon.avif" alt="">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/red-dragon.avif" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Raising_a_flag_over_the_Reichstag.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Raising_the_Flag_on_Iwo_Jima.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/People's_Liberation_Army_occupied_the_presidential_palace_1949.jpg" alt="">
 </div>
 
 Revelation 13
@@ -117,14 +118,106 @@ Revelation 13
 </border>
 
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/genocide-victims-Tuol-Sleng.avif" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Mao,_Bulganin,_Stalin,_Ulbricht_Tsedenbal.jpeg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Tsar-Bomb-600x337.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/US_Army_tanks_face_off_against_Soviet_tanks,_Berlin_1961.jpg" alt="">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Killing-Fields-Cambodian-Genocide.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/cultural-revolution.avif" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/genocide-victims-Tuol-Sleng.avif" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Killing-Fields-Cambodian-Genocide.jpg" alt="">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Mystery-Babylon-the-Great-Harlot.png" style="width: unset;margin: auto;" alt="">
-<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Hua-Chunying.jpeg" style="width: unset;margin: auto;" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/cultural-revolution.webp" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Xi_Zhongxun_on_struggle_session_in_September_1967.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Liu_shaoqi.jpg" alt="">
+</div>
+
+Revelation 16
+
+1 And I heard a great voice out of the temple saying to the seven angels, Go your ways, and pour out the vials of the wrath of God upon the earth.
+
+2 And the first went, and poured out his vial upon the earth; and there fell a noisome and grievous sore upon the men which had the mark of the beast, and upon them which worshipped his image.
+
+3 And the second angel poured out his vial upon the sea; and it became as the blood of a dead man: and every living soul died in the sea.
+
+4 And the third angel poured out his vial upon the rivers and fountains of waters; and they became blood.
+
+5 And I heard the angel of the waters say, Thou art righteous, O Lord, which art, and wast, and shalt be, because thou hast judged thus.
+
+6 For they have shed the blood of saints and prophets, and thou hast given them blood to drink; for they are worthy.
+
+7 And I heard another out of the altar say, Even so, Lord God Almighty, true and righteous are thy judgments.
+
+8 And the fourth angel poured out his vial upon the sun; and power was given unto him to scorch men with fire.
+
+9 And men were scorched with great heat, and blasphemed the name of God, which hath power over these plagues: and they repented not to give him glory.
+
+10 And the fifth angel poured out his vial upon the seat of the beast; and his kingdom was full of darkness; and they gnawed their tongues for pain,
+
+11 And blasphemed the God of heaven because of their pains and their sores, and repented not of their deeds.
+
+12 And the sixth angel poured out his vial upon the great river Euphrates; and the water thereof was dried up, that the way of the kings of the east might be prepared.
+
+13 And I saw three unclean spirits like frogs come out of the mouth of the dragon, and out of the mouth of the beast, and out of the mouth of the false prophet.
+
+14 For they are the spirits of devils, working miracles, which go forth unto the kings of the earth and of the whole world, to gather them to the battle of that great day of God Almighty.
+
+15 Behold, I come as a thief. Blessed is he that watcheth, and keepeth his garments, lest he walk naked, and they see his shame.
+
+16 And he gathered them together into a place called in the Hebrew tongue Armageddon.
+
+17 And the seventh angel poured out his vial into the air; and there came a great voice out of the temple of heaven, from the throne, saying, It is done.
+
+18 And there were voices, and thunders, and lightnings; and there was a great earthquake, such as was not since men were upon the earth, so mighty an earthquake, and so great.
+
+19 And the great city was divided into three parts, and the cities of the nations fell: and great Babylon came in remembrance before God, to give unto her the cup of the wine of the fierceness of his wrath.
+
+20 And every island fled away, and the mountains were not found.
+
+21 And there fell upon men a great hail out of heaven, every stone about the weight of a talent: and men blasphemed God because of the plague of the hail; for the plague thereof was exceeding great.
+
+启示录 第 16 章
+
+<border>
+1 我听见有大声音从殿中出来，向那七位天使说，你们去，把盛神大怒的七碗倒在地上。
+
+2 第一位天使便去，把碗倒在地上，就有恶而且毒的疮，生在那些有兽印记，拜兽像的人身上。
+
+3 第二位天使把碗倒在海里，海就变成血，好像死人的血，海中的活物都死了。
+
+4 第三位天使把碗倒在江河与众水的泉源里，水就变成血了。 5 我听见掌管众水的天使说，昔在今在的圣者阿，你这样判断是公义的。 6 他们曾流圣徒与先知的血，现在你给他们血喝。这是他们所该受的。 7 我又听见祭坛中有声音说，是的，主神，全能者阿，你的判断义哉，诚哉。
+
+8 第四位天使把碗倒在日头上，叫日头能用火烤人。 9 人被大热所烤，就亵渎那有权掌管这些灾的神之名，并不悔改将荣耀归给神。
+
+10 第五位天使把碗倒在兽的座位上，兽的国就黑暗了。人因疼痛就咬自己的舌头。 11 又因所受的疼痛，和生的疮，就亵渎天上的神。并不悔改所行的。
+
+12 第六位天使把碗倒在伯拉大河上，河水就干了，要给那从日出之地所来的众王预备道路。 13 我又看见三个污秽的灵，好像青蛙，从龙口兽口并假先知的口中出来。 14 他们本是鬼魔的灵，施行奇事，出去到普天下众王那里，叫他们在神全能者的大日聚集争战。 15 （看哪，我来像贼一样。那儆醒，看守衣服，免得赤身而行，叫人见他羞耻的，有福了 16 那三个鬼魔便叫众王聚集在一处，希伯来话叫作哈米吉多顿。
+
+17 第七位天使把碗倒在空中，就有大声音从殿中的宝座上出来，说，成了。 18 又有闪电，声音，雷轰，大地震，自从地上有人以来，没有这样大这样利害的地震。 19 那大城裂为三段，列国的城也都倒塌了。神也想起巴比伦大城来，要把那盛自己烈怒的酒杯递给他。 20 各海岛都逃避了，众山也不见了。 21 又有大雹子从天落在人身上，每一个约重一他连得。（一他连得约有九十斤）为这雹子的灾极大，人就亵渎神。
+</border>
+
+
+<div class="row">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/tangshan-1.jpg" alt="" style="width: 50%; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/tangshan-2.jpeg" alt="" style="width: 50%; height: fit-content; margin-left: 10px;">
+</div>
+<div class="row">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Reagan_and_Gorbachev_signing.jpg" alt="" style="width: 50%; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/honk-kong-rally-gty-jt-200107_sl_3x2_1600.jpg" alt=""style="width: 50%; height: fit-content; margin-left: 10px;">
+</div>
+<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/202204_shanghai_covid_lockdown.webp" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/4000.webp" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/230126-shanghai-covid-mb-0857-9381dc.jpg" alt="">
+</div>
+<div class="row">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/revelation.jpeg" alt="">
+</div>
+<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/d8216121.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/d8216116.png" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/w1600.webP" alt="">
 </div>
 
 Revelation 17
@@ -174,10 +267,13 @@ Revelation 17
 </border>
 
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/20241005_CND001.jpg" alt="">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Mystery-Babylon-the-Great-Harlot.png" alt="" style="width: 40%; height: fit-content;">
+<img src="@2023/yhnnd.wordpress.com/10-diary-2019-06-2020-04-黑書5/imgs/coldwar.jpg" alt="" style="width: 60%; height: fit-content; margin-left: 10px;">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/97d686f_5524521-01-06.avif" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Hua-Chunying.jpeg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/20241005_CND001.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/97d686f_5524521-01-06.avif" alt="">
 </div>
 <div class="row">
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/mceclip0.jpg" alt="">
@@ -252,11 +348,14 @@ Revelation 18
 </border>
 
 <div class="row">
-<img src="@2023/yhnnd.wordpress.com/10-diary-2019-06-2020-04-黑書5/imgs/coldwar.jpg" alt="">
-</div>
-<div class="row">
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/71loxkAKkmL.jpg" alt="">
 </div>
 <div class="row">
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/960x640_wmkn_329842979907_0.jpg" alt="">
 </div>
+
+Return of the Dragon | Tomorrow's World
+https://www.tomorrowsworld.org/magazines/2000/september-october/return-of-the-dragon
+
+Does Revelation 16 Prophecy REVEAL China's End Times INVASION Of Israel? | Rosenberg Report
+https://www.youtube.com/watch?v=SxRfrfLe1r0

@@ -348,8 +348,8 @@ Revelation 17
 </border>
 
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Mystery-Babylon-the-Great-Harlot.png" alt="" style="width: 20%; height: fit-content;">
-<img src="@2023/yhnnd.wordpress.com/17-diary-2024-01-2024-12-出路4/raw-2024-06-20-diary-pics/2.jpeg" alt="" style="width: 42%; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Mystery-Babylon-the-Great-Harlot.png" alt="" style="width: 132px; height: fit-content;">
+<img src="@2023/yhnnd.wordpress.com/17-diary-2024-01-2024-12-出路4/raw-2024-06-20-diary-pics/2.jpeg" alt="" style="width: 280px; height: fit-content;">
 <img class="thumbnail-2x" src="@2023/yhnnd.wordpress.com/10-diary-2019-06-2020-04-黑書5/imgs/coldwar.jpg" alt="">
 </div>
 <div class="row">

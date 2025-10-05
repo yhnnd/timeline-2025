@@ -1,6 +1,10 @@
 @command("enable-image-recognition")
 @command("enable-border-recognition")
 
+<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Flag_of_Vatican_City.svg" alt="" style="margin: auto;">
+</div>
+
 Revelation 12
 
 1 And there appeared a great wonder in heaven; a woman clothed with the sun, and the moon under her feet, and upon her head a crown of twelve stars:
@@ -278,20 +282,18 @@ Revelation 16
 </border>
 
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/tangshan-1.jpg" alt="" style="width: 50%; height: fit-content;">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/tangshan-2.jpeg" alt="" style="width: 50%; height: fit-content; margin-left: 10px;">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/tangshan-1.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/tangshan-2.jpeg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Reagan_and_Gorbachev_signing.jpg" alt="">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Reagan_and_Gorbachev_signing.jpg" alt="" style="width: 50%; height: fit-content;">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/honk-kong-rally-gty-jt-200107_sl_3x2_1600.jpg" alt=""style="width: 50%; height: fit-content; margin-left: 10px;">
-</div>
-<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/honk-kong-rally-gty-jt-200107_sl_3x2_1600.jpg" alt="">
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/202204_shanghai_covid_lockdown.webp" alt="">
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/4000.webp" alt="">
-<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/230126-shanghai-covid-mb-0857-9381dc.jpg" alt="">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/revelation.jpeg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/230126-shanghai-covid-mb-0857-9381dc.jpg" alt="">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/revelation.jpeg" alt="" style="width: 270px; height: fit-content;">
 </div>
 <div class="row">
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/d8216121.jpg" alt="">
@@ -346,8 +348,9 @@ Revelation 17
 </border>
 
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Mystery-Babylon-the-Great-Harlot.png" alt="" style="width: 40%; height: fit-content;">
-<img src="@2023/yhnnd.wordpress.com/10-diary-2019-06-2020-04-黑書5/imgs/coldwar.jpg" alt="" style="width: 60%; height: fit-content; margin-left: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Mystery-Babylon-the-Great-Harlot.png" alt="" style="width: 20%; height: fit-content;">
+<img src="@2023/yhnnd.wordpress.com/17-diary-2024-01-2024-12-出路4/raw-2024-06-20-diary-pics/2.jpeg" alt="" style="width: 42%; height: fit-content;">
+<img class="thumbnail-2x" src="@2023/yhnnd.wordpress.com/10-diary-2019-06-2020-04-黑書5/imgs/coldwar.jpg" alt="">
 </div>
 <div class="row">
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Hua-Chunying.jpeg" alt="">
@@ -429,12 +432,13 @@ Revelation 18
 </border>
 
 <div class="row">
-<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/mceclip0.jpg" alt="">
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/G2WO93-WkAAE2oI.jpeg" alt="">
-<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/71loxkAKkmL.jpg" alt="">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/charlie-kirk-bless-trump-and-musk.jpeg" alt="" style="width: 180px; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/mceclip0.jpg" alt="" style="width: 260px; height: fit-content;">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/960x640_wmkn_329842979907_0.jpg" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/71loxkAKkmL.jpg" alt="">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/960x640_wmkn_329842979907_0.jpg" alt="" style="width: 440px; height: fit-content;">
 </div>
 
 Return of the Dragon | Tomorrow's World
@@ -442,3 +446,6 @@ https://www.tomorrowsworld.org/magazines/2000/september-october/return-of-the-dr
 
 Does Revelation 16 Prophecy REVEAL China's End Times INVASION Of Israel? | Rosenberg Report
 https://www.youtube.com/watch?v=SxRfrfLe1r0
+
+China’s Communist Party Targets Religious Leaders
+https://www.youtube.com/watch?v=YFU-P4nBb_8

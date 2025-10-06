@@ -136,9 +136,9 @@ Revelation 13
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/ccp.webp" alt="">
 </div>
 <div class="row">
-<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/genocide-victims-Tuol-Sleng.avif" alt="">
-<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Killing-Fields-Cambodian-Genocide.jpg" alt="">
-<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/monument-of-victims-of-communism.avif" alt="">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/genocide-victims-Tuol-Sleng.avif" alt="" style="width: 190px; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Killing-Fields-Cambodian-Genocide.jpg" alt="" style="width: 180px; height: fit-content; margin-left: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/monument-of-victims-of-communism.avif" alt="" style="width: 280px; height: fit-content; margin-left: 10px;">
 </div>
 
 Revelation 14

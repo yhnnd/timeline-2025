@@ -1,3 +1,12 @@
+@font-face {
+    font-family: "Linux Libertine Font";
+    src: url("./fonts/LinLibertine_Mah.ttf");
+}
+
+.has-border {
+    font-family: "Linux Libertine Font";
+}
+
 .container-fluid {
     display: flex;
     justify-content: center;

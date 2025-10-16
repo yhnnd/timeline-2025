@@ -78,6 +78,10 @@ pre .plain-name {
     word-break: break-word;
 }
 
+pre .link {
+    display: inline !important;
+}
+
 pre .name-link,
 pre .link {
     color: var(--studio-blue);

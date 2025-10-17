@@ -78,8 +78,10 @@ pre .plain-name {
     word-break: break-word;
 }
 
-pre .link {
+pre .link,
+.container-2 [to] {
     display: inline !important;
+    word-break: break-all !important;
 }
 
 pre .name-link,

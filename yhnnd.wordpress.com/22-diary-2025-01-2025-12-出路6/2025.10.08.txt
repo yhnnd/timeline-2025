@@ -114,6 +114,8 @@ Grok 对《启示录》的解读
 <border>
 “The vision in Chapter 10 represents the Protestant Reformation and the printing of Bibles in common languages. Adventists apply it to the Millerite movement, with the 'bitterness' of the book (Rev 10:10) as the Great Disappointment.”
 </border>
+[1] <link to="https://en.wikipedia.org/wiki/Historicist_interpretations_of_the_Book_of_Revelation">https://en.wikipedia.org/wiki/Historicist_interpretations_of_the_Book_of_Revelation</link>
+
 <div class="row" style="font-weight: bold;">
 第11章：两个见证人与第七号
 </div>
@@ -394,8 +396,8 @@ Grok 对《启示录》的解读
 
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-16/kill-commie.jpg" alt="">
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-16/AdobeStock_443817895.png" alt="" style="width: 55%;">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-16/no-islam.jpeg" alt="" style="width: 45%;height: fit-content;margin: auto;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-16/AdobeStock_443817895.png" alt="" style="width: 281.5px;height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-16/no-islam.jpeg" alt="" style="width: 230px;height: fit-content;margin: auto;">
 </div>
 
 @command("enable-image-recognition")

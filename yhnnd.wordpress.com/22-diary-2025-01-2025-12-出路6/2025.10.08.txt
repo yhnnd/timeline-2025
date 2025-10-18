@@ -402,5 +402,19 @@ Grok 对《启示录》的解读
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-16/no-islam.jpeg" alt="" style="width: 230px;height: fit-content;margin: auto;">
 </div>
 
+Oct 18, 2025
+
+<div class="row">
+<img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/JiangFengTimes.jpg" alt="">
+習近平官宣光桿司令，何衛東、苗華等習家軍九大將一日清零；防兵變保四中全會，張又俠各地調兵，裝甲直搗東部戰區老巢！【江峰漫談20251017第1139期】
+</div>
+<link to="https://www.youtube.com/watch?v=x9uJ83WDZ2o">https://www.youtube.com/watch?v=x9uJ83WDZ2o</link>
+
+<div class="row">
+<img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/laodeng89.jpg" alt="">
+胜利：习近平何卫东反军集团被粉碎，军方提案曝光决战四中全会，张又侠抢先动手占得先机。《老灯开讲第1032期》
+</div>
+<link to="https://www.youtube.com/watch?v=odUaBX4TDWI">https://www.youtube.com/watch?v=odUaBX4TDWI</link>
+
 @command("enable-image-recognition")
 @command("enable-border-recognition")

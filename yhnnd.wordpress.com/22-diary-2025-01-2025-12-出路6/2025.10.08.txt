@@ -404,17 +404,47 @@ Grok 对《启示录》的解读
 
 Oct 18, 2025
 
+<border>
 <div class="row">
 <img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/JiangFengTimes.jpg" alt="">
 習近平官宣光桿司令，何衛東、苗華等習家軍九大將一日清零；防兵變保四中全會，張又俠各地調兵，裝甲直搗東部戰區老巢！【江峰漫談20251017第1139期】
 </div>
 <link to="https://www.youtube.com/watch?v=x9uJ83WDZ2o">https://www.youtube.com/watch?v=x9uJ83WDZ2o</link>
+</border>
 
+<border>
 <div class="row">
 <img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/laodeng89.jpg" alt="">
 胜利：习近平何卫东反军集团被粉碎，军方提案曝光决战四中全会，张又侠抢先动手占得先机。《老灯开讲第1032期》
 </div>
 <link to="https://www.youtube.com/watch?v=odUaBX4TDWI">https://www.youtube.com/watch?v=odUaBX4TDWI</link>
+</border>
+
+<border>
+<div class="row">
+<img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/zJMuSq9E_400x400.jpg" alt="">
+The removal of nine Xi Jinping loyalists in the military, announced today, suggests Xi will be stripped of some or all power next week at the CCP’s Fourth Plenum. Stay tuned for news and rumors.
+</div>
+<link to="https://x.com/GordonGChang/status/1979179501041930563">https://x.com/GordonGChang/status/1979179501041930563</link>
+</border>
+
+<border>
+<div class="row">
+<img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/zJMuSq9E_400x400.jpg" alt="">
+China could have a new leader by Thursday. If not, an energized Xi Jinping will almost certainly start a new round of purges. Either way, there will be blood on the floor, at least figuratively.
+</div>
+<link to="https://x.com/GordonGChang/status/1979556122261340629">https://x.com/GordonGChang/status/1979556122261340629</link>
+</border>
+
+<border>
+<div class="row">
+<img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/PvMdO7Cr_400x400.jpg" alt="">
+These are the names and photos of the nine top PLA flag and general officers whose expulsion from the Party and the military was officially announced today.
+</div>
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/G3ehoZ0X0AEyZEK.jpeg" alt="" style="height: fit-content;">
+
+<link to="https://x.com/jenniferzeng97/status/1979228967212142949">https://x.com/jenniferzeng97/status/1979228967212142949</link>
+</border>
 
 @command("enable-image-recognition")
 @command("enable-border-recognition")

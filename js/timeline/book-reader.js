@@ -239,6 +239,11 @@ function decode(fragment) {
 }
 
 function getDecodeUrl() {
+    if (window.location.hostname === "localhost") {
+        let breadcrumbs = '/timeline-2025/timeline-2025-public/'.split("/");
+        breadcrumbs.pop();
+        return 'https://yhnnd.github.io' + breadcrumbs.join("/") + "/decode.html";
+    }
     let breadcrumbs = window.location.pathname.split("/");
     breadcrumbs.pop();
     return window.location.origin + breadcrumbs.join("/") + "/decode.html";
@@ -615,7 +620,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     responseText = responseText.replaceAll('@command("delete-end")', "</del>");
     responseText = responseText.replaceAll('@command("border-start")', "<div class='has-border'>");
     responseText = responseText.replaceAll('@command("border-end")', "\n</div>");
-    responseText = responseText.replaceAll('@command("link-start")', "<div class='link' type='link' onclick='openLink(event)'");
+    responseText = responseText.replaceAll('@command("link-start")', "<div class='link' onclick='openLink(event)'");
     responseText = responseText.replaceAll('@command("link-end")', "</div>");
     responseText = responseText.replaceAll("@command(\"line-width-maximum\")", "<span class='highlight-green'>@command(\"line-width-maximum\")</span>");
     responseText = responseText.replaceAll("@command(\"small-seal-start\")", "<div class='small-seal-script'>");
@@ -842,8 +847,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 const span = document.createElement("span");
                 const randId = "rand-" + getRandomId();
                 span.setAttribute("random-id", randId);
-                span.classList = "link";
-                span.setAttribute("type", "decode-url");
+                span.classList = "decode-url-link";
                 span.setAttribute("onclick", "openLink(event)");
                 span.setAttribute("to", line);
                 span.style.width = "100%";
@@ -878,8 +882,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 line = line.split(" ").map(segment => {
                     if (segment.startsWith("https://")) {
                         const span = document.createElement("span");
-                        span.classList = "link";
-                        span.setAttribute("type", "url-text");
+                        span.classList = "url-text-link";
                         span.setAttribute("onclick", "openLink(event)");
                         span.setAttribute("to", segment);
                         span.innerHTML = segment;
@@ -1107,27 +1110,30 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 li.replaceWith(listItemNumberLines.shift());
             });
         }
-        container2.querySelectorAll(".link").forEach(link => {
+        container2.querySelectorAll(".link").forEach(link => { // <link to=''></link>
             const text = document.createElement("span");
-            if (link.getAttribute("type") === "link") { // <link to=''></link>
-                text.setAttribute("to", link.getAttribute("to"));
-                text.setAttribute("innerHTML", link.innerHTML);
-                text.innerHTML = link.innerHTML;
-                text.setAttribute("onclick", "revealOuterHTML(this)");
-            } else if (link.getAttribute("type") === "url-text") { // url-text
-                text.innerHTML = link.innerHTML;
-            } else if (link.getAttribute("type") === "decode-url") { // decode-url
-                text.classList.add("disabled-link");
-                text.setAttribute("random-id", link.getAttribute("random-id"));
-                text.innerHTML = link.innerHTML;
-                text.querySelector(".og-text").removeAttribute("to");
-                text.querySelector(".og-text").classList = "plain-og-text";
-                text.querySelector(".decrypted-text").removeAttribute("to");
-                text.querySelector(".decrypted-text").removeAttribute("onclick");
-            } else {
-                text.style.color = "var(--studio-red)";
-                text.innerHTML = link.innerHTML;
-            }
+            text.classList.add("disabled-link");
+            text.setAttribute("to", link.getAttribute("to"));
+            text.setAttribute("innerHTML", link.innerHTML);
+            text.innerHTML = link.innerHTML;
+            text.setAttribute("onclick", "revealOuterHTML(this)");
+            link.replaceWith(text);
+        });
+        container2.querySelectorAll(".url-text-link").forEach(link => { // url-text-link
+            const text = document.createElement("span");
+            text.classList.add("disabled-url-text-link");
+            text.innerHTML = link.innerHTML;
+            link.replaceWith(text);
+        });
+        container2.querySelectorAll(".decode-url-link").forEach(link => { // decode-url-link
+            const text = document.createElement("span");
+            text.classList.add("disabled-decode-url-link");
+            text.setAttribute("random-id", link.getAttribute("random-id"));
+            text.innerHTML = link.innerHTML;
+            text.querySelector(".og-text").removeAttribute("to");
+            text.querySelector(".og-text").classList = "plain-og-text";
+            text.querySelector(".decrypted-text").removeAttribute("to");
+            text.querySelector(".decrypted-text").removeAttribute("onclick");
             link.replaceWith(text);
         });
     } else {

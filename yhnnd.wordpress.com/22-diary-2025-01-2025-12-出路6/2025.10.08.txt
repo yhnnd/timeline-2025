@@ -149,13 +149,13 @@ Grok 对《启示录》的解读
 [1] <link to="http://protectressofthefaith.org/index.php/mmp-rev-red-dragon/">http://protectressofthefaith.org/index.php/mmp-rev-red-dragon/</link>
 [2] <link to="https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/42/62/81/2020426281/2020426281.pdf">https://tile.loc.gov/storage-services/master/gdc/gdcebookspublic/20/20/42/62/81/2020426281/2020426281.pdf</link>
 
-<div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/red-dragon-fighting-woman.jpg" alt="" style="width: 40%; height: fit-content;">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/7-headed-dragon.jpg" alt="" style="width: 40%; height: fit-content; margin: auto;">
+<div class="row" style="gap: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/red-dragon-fighting-woman.jpg" alt="" style="width: 262.4px; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/7-headed-dragon.jpg" alt="" style="width: 262.4px; height: fit-content; margin: auto;">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/NATO-vs-Warsaw-Pact.svg" alt="" style="width: 40%; height: fit-content;">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Cold_War_alliances_mid-1975.svg" alt="" style="width: 70%; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/NATO-vs-Warsaw-Pact.svg" alt="" style="width: 262.4px; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Cold_War_alliances_mid-1975.svg" alt="" style="width: 460px; height: fit-content;">
 </div>
 <div class="row">
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/coldwar.webp" alt="">

@@ -70,33 +70,42 @@ pre .censored {
 }
 
 pre .name-link,
-pre .link,
-pre .disabled-link,
-pre .plain-name {
+pre .decode-url-link,
+.container-2 .disabled-decode-url-link,
+.container-2 .plain-name {
     display: inline-block;
     white-space: pre-wrap;
     word-break: break-word;
 }
 
 pre .link,
-.container-2 [to] {
-    display: inline !important;
-    word-break: break-all !important;
+pre .url-text-link,
+.container-2 .disabled-link,
+.container-2 .disabled-url-text-link {
+    display: inline;
+    white-space: pre-wrap;
+    word-break: break-all;
 }
 
 pre .name-link,
-pre .link {
+pre .link,
+pre .url-text-link,
+pre .decode-url-link {
     color: var(--studio-blue);
     cursor: pointer;
     position: relative;
 }
 
-pre .disabled-link {
+.container-1 .decode-url-link,
+.container-2 .disabled-decode-url-link {
     position: relative;
+    background-image: repeating-linear-gradient(-45deg, var(--studio-gray-0), var(--studio-gray-0) 25px, transparent 25px, transparent 50px);
 }
 
 pre .name-link::before,
-pre .link::before {
+pre .link::before,
+pre .url-text-link::before,
+pre .decode-url-link::before {
     display: none;
     position: absolute;
     left: 0;
@@ -111,17 +120,21 @@ pre .name-link::before {
     content: attr(data-info);
 }
 
-pre .link::before {
+pre .link::before,
+pre .url-text-link::before,
+pre .decode-url-link::before {
     content: attr(to);
 }
 
 pre .name-link:hover::before,
-pre .link:hover::before {
+pre .link:hover::before,
+pre .url-text-link:hover::before,
+pre .decode-url-link:hover::before {
     display: block;
 }
 
-pre .link[type="decode-url"] .og-text,
-.container-2 .disabled-link .decrypted-text {
+pre .decode-url-link .og-text,
+.container-2 .disabled-decode-url-link .decrypted-text {
     visibility: hidden; /* cannot be display:none bacause height might be affected */
 }
 
@@ -131,8 +144,8 @@ pre .plain-og-text {
     word-break: break-all;
 }
 
-pre .link[type="decode-url"] .decrypted-text,
-.container-2 .disabled-link .decrypted-text {
+pre .decode-url-link .decrypted-text,
+.container-2 .disabled-decode-url-link .decrypted-text {
     position: absolute;
     top: 0;
     left: 0;
@@ -441,7 +454,7 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
 
 body[data-value-of-enable-no-backdrop="true"] .container-2 .img-wrapper>img,
 body[data-value-of-enable-no-backdrop="true"] .container-2 .video-wrapper video,
-body[data-value-of-enable-no-backdrop="true"] .container-1 .link[type="decode-url"] .og-text {
+body[data-value-of-enable-no-backdrop="true"] .container-1 .decode-url-link .og-text {
     visibility: hidden;
 }
 

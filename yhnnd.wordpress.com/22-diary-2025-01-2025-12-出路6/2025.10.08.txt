@@ -42,35 +42,35 @@ Oct 16, 2025
 <div class="row" style="font-size: 1.25rem;font-family: serif;">
 Grok 对《启示录》的解读
 </div>
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第1章：引言与基督的异象
 </div>
 公元1世纪末罗马帝国迫害早期教会时期，如多米田皇帝统治下，基督的异象象征对教会初期的鼓励和警告，预示教会历史从使徒时代开始的扩展与考验。妇人（天主教会即基督教会）在此初现为灯台，象征其纯洁与见证。
 <border>
 “Historicism is a method of interpretation in Christian eschatology which associates biblical prophecies with actual historical events.”
 </border>
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第2-3章：给七教会的信
 </div>
 教会历史阶段，从公元1世纪早期教会纯洁（以弗所）到中世纪衰落（推雅推喇的淫乱对应中世纪教会腐败，公元5-15世纪），再到宗教改革前夕的冷淡（撒狄、老底嘉，公元16世纪前）。教会作为妇人，在迫害中保持忠心。
 <border>
 “Thomas Brightman proposed they represent seven ages of the Church of Christ: Ephesus as the apostolic age; Smyrna as persecution through AD 313; Pergamum as the compromised Church until AD 500; Thyatira as the rise of the papacy to the Reformation; Sardis as the Reformation age; Philadelphia as the age of evangelism; and Laodicea as liberal churches in a present-day context.”
 </border>
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第4章：宝座异象
 </div>
 教会历史整体框架，从公元1世纪基督升天后，神主宰罗马帝国兴衰（公元1-5世纪），长老象征已完成的教会（犹太-基督徒忠信者）。
 <border>
 “The Seven Seals span from John of Patmos to early Christendom, with Protestant scholars like Campegius Vitringa, Alexander Keith, and Christopher Wordsworth extending the timeframe into the early modern period.”
 </border>
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第5章：书卷与羔羊
 </div>
 基督被钉十字架死而复活后（公元30年），开启教会时代，从罗马迫害到中世纪战争（公元1-15世纪）。
 <border>
 “Seventh-day Adventists view the first six seals as events during the Christian era up to 1844.”
 </border>
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第6章：前六印
 </div>
 公元1-6世纪，罗马帝国衰落与蛮族入侵（战争、饥荒）、早期教会殉道、公元476年西罗马帝国灭亡的社会动荡。
@@ -80,12 +80,12 @@ Grok 对《启示录》的解读
 <border>
 “Adventists see Revelation 6:12–13 fulfilled in the 1755 Lisbon earthquake, the dark day of 19 May 1780, and the Leonids meteor shower of 13 November 1833.”
 </border>
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第7章：144,000人受印
 </div>
 早期教会发展。
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第8-9章：第七印与前六号
 </div>
 第七印开启了中世纪。第七印开启后，前六号吹响，災祸降临：蒙古入侵（公元13世纪，蝗虫象征骑兵）、黑死病（公元1347–1353）、伊斯兰教入侵（从七世纪阿拉伯征服到十三世纪奥斯曼帝国）。
@@ -106,7 +106,7 @@ Grok 对《启示录》的解读
 [2] <link to="https://www.fromreformationtoreformation.com/post/poole-on-revelation-9-3-locusts-out-of-the-smoke">https://www.fromreformationtoreformation.com/post/poole-on-revelation-9-3-locusts-out-of-the-smoke</link>
 [3] <link to="https://biblehub.com/commentaries/revelation/9-3.htm">https://biblehub.com/commentaries/revelation/9-3.htm</link>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第10章：小书卷
 </div>
 宗教改革前夕（公元15世纪末），书卷象征《圣经》复兴。预示第11章的两个见证人：《圣经》。
@@ -116,7 +116,7 @@ Grok 对《启示录》的解读
 </border>
 [1] <link to="https://en.wikipedia.org/wiki/Historicist_interpretations_of_the_Book_of_Revelation">https://en.wikipedia.org/wiki/Historicist_interpretations_of_the_Book_of_Revelation</link>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第11章：两个见证人与第七号
 </div>
 两个穿毛衣的见证人为《圣经》（旧新约），传道1260天，即1260年，也就是前六印和第七印前六号所佔的时间。两个见证人被“杀”象征《圣经》被焚烧，他们被杀害在巴黎大城，这大城按灵的意思，名叫所多玛（又叫埃及）。法国大革命（1789-1799年）期间，无神论者（如罗伯斯庇尔）禁《圣经》，迫害基督徒。1793年巴黎圣母院改供“理性女神”。三天半（三年半）过后，两个见证人复活，对应1797年宗教自由恢复。第七号吹响，19世纪开始，魔鬼的使者马克思降生。
@@ -135,7 +135,7 @@ Grok 对《启示录》的解读
 </border>
 [1] <link to="https://www.ministrymagazine.org/archive/1940/05/the-two-witnesses-in-prophecy">https://www.ministrymagazine.org/archive/1940/05/the-two-witnesses-in-prophecy</link>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第12章：妇人与大红龙
 </div>
 20世纪初，无神论意识形态扩张，敌基督运动兴起。义和团暴动（1899—1900年）、共产主义兴起（1917年俄罗斯布尔什维克革命）、非基督教運動（1922-1927年）、西班牙内战（1936-1939年），这些全都是大红龙对妇人的迫害。妇人就是教会，其后裔就是各国的基督徒；大红龙为无神论（如马克思列宁主义）；龙逼迫妇人象征苏联等无神论政权迫害教会。
@@ -168,7 +168,7 @@ Grok 对《启示录》的解读
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/People's_Liberation_Army_occupied_the_presidential_palace_1949.jpg" alt="">
 </div>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第13章：两个兽：苏联和中共国
 </div>
 20世纪，无神论政权扩张。1922年起，兽的致命伤医好，象征苏联复兴（共产主义“复活”）。二战和冷战期间，苏俄煽动世界各国的敌基督运动。兽就是无神论政权：海中兽是苏联；地中兽是中共国（1949年起）；巴比伦淫妇（无神论政党）骑在兽上。
@@ -197,7 +197,7 @@ Grok 对《启示录》的解读
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/ccp.webp" alt="">
 </div>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第14章：羔羊站在锡安山上、三位天使、收割
 </div>
 20世纪中后期（1950-1980年代）羔羊和144,000人站在锡安山上，代表以色列复国。144,000人为妇人（教会）忠信者。
@@ -228,7 +228,7 @@ Grok 对《启示录》的解读
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/reuters_2018_10_19.jpeg" alt="">
 </div>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第15-16章：七碗和七災
 </div>
 从苏联建立到中共国灭亡的期间，七位天使倾倒七个碗，降下七场災难。災难针对兽（共产主义政权）以及大红龙（无神论）。
@@ -271,7 +271,7 @@ Grok 对《启示录》的解读
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/230126-shanghai-covid-mb-0857-9381dc.jpg" alt="">
 </div>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第17章：大淫妇和朱红色的兽：共产党和中共国
 </div>
 一个身穿紫色和红色衣服、手持金杯盛满淫乱污秽的淫妇，坐在众水（万民）上，骑乘七头十角的朱红色兽（从无底坑中升起），醉于圣徒和殉道者之血。淫妇象征无神论共产主义政党（如中共），骑在兽（共产主义政权，如中共国）上，掌控全球民众，通过宣传机器（金杯）传播虚假乌托邦，迫害基督徒（如苏联斯大林时代的大清洗和中共的文化大革命），导致灵性与道德的“醉酒”式堕落。
@@ -305,7 +305,7 @@ Grok 对《启示录》的解读
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/view-collapse-World-Trade-Center-New-York-September-11-2001.webp" alt="">
 </div>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第18章：巴比伦倾倒：北平的覆灭
 </div>
 21世纪，无神论政权（例如中共国）债务危机爆发、经济崩溃。
@@ -341,7 +341,7 @@ Grok 对《启示录》的解读
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/960x640_wmkn_329842979907_0.jpg" alt="" style="width: 440px; height: fit-content;">
 </div>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第19章：婚筵与基督再临
 </div>
 21世纪，末世前，在巴比伦大娼妓被焚烧后，即北平被毁灭后，耶稣再临，北约与兽展开最终决战，共产主义彻底终结。
@@ -361,7 +361,7 @@ Grok 对《启示录》的解读
 </border>
 [1] <link to="https://www.ucg.org/learn/bible-study-tools/bible-study-aids/russia-and-bible-prophecy/where-does-russia-fit-end-time-prophecy">https://www.ucg.org/learn/bible-study-tools/bible-study-aids/russia-and-bible-prophecy/where-does-russia-fit-end-time-prophecy</link>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第20章：千年王国、撒但被捆绑
 </div>
 共产主义败后，千年王国时代开始，撒但（无神论）被捆绑投入无底坑，封印一千年。
@@ -380,12 +380,12 @@ Grok 对《启示录》的解读
 </border>
 [1] <link to="https://www.ucg.org/learn/bible-study-tools/bible-study-aids/russia-and-bible-prophecy/where-does-russia-fit-end-time-prophecy">https://www.ucg.org/learn/bible-study-tools/bible-study-aids/russia-and-bible-prophecy/where-does-russia-fit-end-time-prophecy</link>
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第21章：新天新地
 </div>
 千年王国时代后，圣城“新耶路撒冷”从天而降，神与人同住，邪恶的人被扔进烧着硫磺的火湖里，这火湖就是第二次的死。
 
-<div class="row" style="font-weight: bold;">
+<div class="row" style="font-weight: bold;display: inline;">
 第22章：河与树、结语
 </div>
 永恒应许实现。妇人（教会）永享生命树。
@@ -431,7 +431,9 @@ Oct 18, 2025
 <border>
 <div class="row">
 <img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-18/zJMuSq9E_400x400.jpg" alt="">
+<div class="row" style="display: inline;">
 The removal of nine Xi Jinping loyalists in the military, announced today, suggests Xi will be stripped of some or all power next week at the CCP’s Fourth Plenum. Stay tuned for news and rumors.
+</div>
 </div>
 <link to="https://x.com/GordonGChang/status/1979179501041930563">https://x.com/GordonGChang/status/1979179501041930563</link>
 </border>

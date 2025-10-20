@@ -493,5 +493,12 @@ Oct 20, 2025
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/xi-3.jpeg" alt="">
 </border>
 
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/ISoon_MA-1.jpg" alt="">
+
+<div class="row" style="gap: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/dragon.png" alt="" style="width: 300px;height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/dragon-2.jpeg" alt="" style="width: 300px;height: fit-content;">
+</div>
+
 @command("enable-image-recognition")
 @command("enable-border-recognition")

@@ -500,5 +500,8 @@ Oct 20, 2025
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/dragon-2.jpeg" alt="" style="width: 300px;height: fit-content;">
 </div>
 
+@base64("5Y6G5Luj5b+XNTjor77vvJrlnKPln47lhajkvJrvvIgyODoxLTEw77yJ44CC5pWZ5Lya6KeG6YeO77ya5riF5rSX5Lmd5LiK5bCG77yM5Lmg6L+R5bmz5Zub5Lit5YWo5Lya5piv5ZCm5LiL5Y+w77yf5Z+6552j5pWZ6YeN5bu65a6j6KiA5LmL5LqM44CC5LiJ6Imy5a625aW06YOR5Li95paH55qE5Y+w5rm+5pyr6Lev5LiO5p2o5oyv5a6B55qE6a2C54ux6IKJ6Lqr44CC6aaW5qyh6LSj5aSH5bed5pmu5byP5ZKM5bmz5YGH6I2v5LiO5bed57KJ5Z+6552j5b6S6JuG55u444CC");
+<link to="https://www.youtube.com/watch?v=CfFz4SXyex0">https://www.youtube.com/watch?v=CfFz4SXyex0</link>
+
 @command("enable-image-recognition")
 @command("enable-border-recognition")

@@ -463,11 +463,23 @@ Oct 20, 2025
 <border>
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/46.jpg" alt="">
 </border>
-
+<border>
+<div class="row" style="gap: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/xi-1.png" alt="" style="width: 320px;height: fit-content;margin: auto;">
 @base64("6aKE6KiA56We5YeG44CC6YeR5Zyj5Y+55puw77ya4oCc5ZCb546L5piP6IGp77yM5LiA5YuH5aOr5LuX5LmJ5YW05YW177yM5Li65rCR6K+35ZG944CC5pWF5puw77ya4oCY5LiH5Lq65LiN5q2777yM5LiA5Lq66Zq+6YCD44CC4oCZ4oCdIOacieS4gOWGm+S6uu+8iOWGm+WnlOWJr+S4u+W4re+8iei6q+W4puW8k++8iOWnk+W8k+mVv+W8oO+8ie+8jOWPquiogOaIkeaYr+eZveWktOe/ge+8iOeZveS4iuaciee/ge+8jOWPjee/kuWFrOS5n++8ie+8jOS4nOi+uemXqOmHjOS8j+mHkeWJke+8iOS4gOWKieWnk+iAhei+heS5i++8ie+8jOWLh+Wjq+WQjumXqOWFpeW4neWuq++8iOWGm+mYn+WHuuWFtuS4jeaEj+aNieaLv+eah+W4ne+8ieOAgueZveWktOe/geiAhe+8jOW8oOWPiOS+oOS5n+OAguS4nOmXqOS8j+WJkeiAhe+8jOWImOa6kOS5n+OAguagueaNruWUkOS7o+mihOiogOOAiuaOqOiDjOWbvuOAi++8jOWCu+mAvOWwj+eGiue7tOWwvOimgeiiq+WGm+S6uuaOqOe/u+S6huOAguWGm+S6uuWFteWPmOeahOmihuWvvOiAheaYr+W8oOWPiOS+oOOAgeWImOa6kOOAguaAjuS5iOagt++8n+ivpeeQpuOAguelnuaYr+WtmOWcqOeahOOAguWkqeaEj+WcqOatpO+8geWkqeeBreS4reWFseOAgg==");
-
+</div>
+</border>
+<border>
+<div class="row" style="gap: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/wang.png" alt="" style="width: 260px;height: fit-content;margin: auto;">
 @base64("5YK76YC855qH5bid5Lmg5YyF5a2Q5LiL5Y+w5LmL5ZCO77yM5LiH6L6+5Lmf6KaB5a6M5LqG77yM546L5YGl5p6X5ZKM546L5oCd6IGq5YWo6KaB5a6M5LqG44CC5YK76YC855qH5bid5Lmg5YyF5a2Q55qE5aeQ5aeQ6b2Q5qGl5qGl5ZKM5aeQ5aSr6YKT5a626LS16YO95piv5LiH6L6+6ZuG5Zui55qE5pep5pyf6IKh5Lic44CC");
 
+@base64("54++5bm0NzHmrbLnmoTnjovlgaXmnpflh7rouqvkuK3lhbHop6PmlL7ou43vvIwxOTg35bm05Zyo5YWx6LuN6KOB5rib5YW15ZOh5LiL6YCA5LyN6L2J5qWt77yM5Ye65Lu76YG85a+n55yB5aSn6YCj5biC6KW/5bSX5Y2A5pS/5bqc6L6m5YWs5a6k5Li75Lu744CC57+M5bm05Zug6IGv5ZCI6YeR5Li777yM5oiQ5Yqf6Kej5rG66KW/5bSX5Y2A5L2P5a6F6ZaL55m85YWs5Y+455qE5YK15YuZ5ZWP6aGM77yM6L2J6ICM5YWl5Li76Kmy5YWs5Y+45oiQ54K657i957aT55CG44CC5Y+I5Zug54K66JeJ5q2k5Y+W5b6X5aSn6YCj5biC5qOa5oi25Y2A5pS56YCg5qGI542y5Yip6LGQ5Y6a77yMMTk5MuW5tOWwh+WFrOWPuOabtOWQjeeCuuOAjOiQrOmBlOOAje+8jOaIkOeCuuiQrOmBlOmbhuWcmOeahOmWi+err+OAgg==");
+</div>
+</border>
+<border>
+<div class="row" style="gap: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/xi-2.png" alt="" style="width: 200px;height: fit-content;margin: auto;">
 @base64("5LiH56eR5Lmf6KaB5a6M5LqG77yM5YK76YC855qH5bid5Lmg5YyF5a2Q55qE5aeQ5aeQ5ZKM5aeQ5aSr5ZKM54mg5Lus5Zyo5rex5Zyz55qE55m95omL5aWX5YWo6YO96KaB5a6M5LqG44CC5LiH56eR5Y+K5YW25aSn6IKh5Lic5rex5Zyz5Zyw6ZOB5LiO5YK76YC85Lmg5YyF5a2Q55qE5aeQ5aeQ6b2Q5qGl5qGl5a2Y5Zyo5a+G5YiH6IGU57O744CC");
 
 @base64("OeaciDE45pel77yM5LiH56eR5YWs5Y+46JGj5LqL6ZW36L6b5YKR5Zyo5rex5Zyz5LiA5YCL5pyD6K2w54++5aC06KKr5bi26LWw6Kq/5p+l77yM55uu5YmN5bey57aT5aSx6IGv44CC6L6b5YKRMjAxN+W5tOWHuuS7u+a3seWcs+WcsOmQteiRo+S6i+mVt++8jDIwMjHlubTlhbzku7vml5fkuIvokKznp5Hlhazlj7jokaPkuovmnIPokaPkuovvvIzku4rlubQx5pyI5o6l5Lu76JCs56eR6JGj5LqL5pyD5Li75bit44CC");
@@ -477,6 +489,9 @@ Oct 20, 2025
 @base64("5LuK5bm0MeaciO+8jOiQrOenkeWOn+e4veijgeelneS5neWLneiIh+aZguS7u+iQrOenkeiRo+S6i+acg+S4u+W4reeahOmDgeS6ruS4gOWQjOi+reiBt+OAgjEw5pyIMTTml6XvvIzpmbjlqpLlj4jloLHlsI7vvIzokKznp5Hljp/nuL3oo4HnpZ3kuZ3li53lt7LooqvliJHmi5jjgII=");
 
 @base64("5rex5Zyz5Zyw6ZC155qE5qC45b+D6LOH55Si5LmL5LiA77yM5bCx5piv5Zyw6ZC15LiK6JOL54mp5qWt55qE6ZaL55m877yM57i95YWx5pyJ5Y2B5YCL6aCF55uu77yM57i95bu656+J6Z2i56mN6YGU5Yiw5LqGNTAw6JCs5bmz5pa557Gz44CC5pep5ZyoMjAwNeW5tDHmnIjvvIzmt7HlnLPlnLDpkLXlsLHlkozmt7HlnLPpgaDngrrlr6bmpa3lkIjkvZzvvIzmiJDnq4vkuIDlrrblkI3ngrrjgIzmt7HlnLPlnLDpkLXpgaDngrrjgI3nmoTmiL/lnLDnlKLplovnmbzlhazlj7jvvIzlvp7kuovmpa3li5nlsLHmmK/kuIrok4vnianmpa3nmoTplovnmbzjgILmt7HlnLPpgaDngrrlr6bmpa3nmoTlhanlkI3ogqHmnbHvvIzliIbliKXmmK/nv5Lov5HlubPnmoTlp5Dlp5DpvYrmqYvmqYvlkozlp5DlpKvphKflrrbosrTjgILoqbLlhazlj7jnmoTkuIDlkI3nj77ku7vokaPkuovlvLXnh5XljZfvvIzmmK/pvYrmqYvmqYvoiIfliY3lpKvnlJ/nmoTlpbPlhZLjgII=");
+</div>
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/xi-3.jpeg" alt="">
+</border>
 
 @command("enable-image-recognition")
 @command("enable-border-recognition")

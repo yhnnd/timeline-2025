@@ -456,5 +456,15 @@ These are the names and photos of the nine top PLA flag and general officers who
 <link to="https://x.com/jenniferzeng97/status/1979228967212142949">https://x.com/jenniferzeng97/status/1979228967212142949</link>
 </border>
 
+Oct 20, 2025
+
+@base64("5Lit5YWx5Zyo5p+s5Z+U5a+o55qE54iq54mZ77yM5aSq5a2Q6ZuG5Zui55qE6ZmI5b+X77yM5aSa5bm05p2l5LiA55u05Zyo5pu/5Lit5YWx6YKq5YWa5Zyo5p+s5Z+U5a+o5pWb6LSi44CB56W45a6z5b2T5Zyw44CC5aSq5a2Q6ZuG5Zui5Zyo5p+s5Z+U5a+o5LuO5LqL6LSp5Y2W5Lq65Y+j44CB5rS75pGY5Zmo5a6Y44CB572R57uc6K+I6aqX562J572q6KGM44CC576O5Zu95Y+45rOV6YOo6IGU5ZCI6Iux5Zu95LiA6LW35rKh5pS25LqG5aSq5a2Q6ZuG5Zui55qE6Z2e5rOV5omA5b6X44CC6L+Z5Liq6ZmI5b+X5ZKM54mg55qE5aSq5a2Q6ZuG5Zui77yM5Lul5Y+K5YW26IOM5ZCO55qE5YWx5Yyq5YWa77yM6YO95piv6a2U6ay85pKS5L2G5Zyo5Lq66Ze055qE5Luj55CG5Lq677yM54mg5Lus5oqK5Lq657G75b2T5L2c5YW26LWE5Lqn44CB5aW05b255Lq657G744CB5q6L5a6z55Sf5ZG944CB6YCa6L+H6LCO6KiA5ZKM5oGQ5oCW56ev57Sv5beo6aKd6LSi5a+M77yM5b+F5bCG6Ieq5Y+W54Gt5Lqh44CC56We5bey57uP5byA5aeL5riF566X54mg5Lus44CC");
+
+<border>
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-20/46.jpg" alt="">
+</border>
+
+@base64("6aKE6KiA56We5YeG44CC6YeR5Zyj5Y+55puw77ya4oCc5ZCb546L5piP6IGp77yM5LiA5YuH5aOr5LuX5LmJ5YW05YW177yM5Li65rCR6K+35ZG944CC5pWF5puw77ya4oCY5LiH5Lq65LiN5q2777yM5LiA5Lq66Zq+6YCD44CC4oCZ4oCdIOacieS4gOWGm+S6uu+8iOWGm+WnlOWJr+S4u+W4re+8iei6q+W4puW8k++8iOWnk+W8k+mVv+W8oO+8ie+8jOWPquiogOaIkeaYr+eZveWktOe/ge+8iOeZveS4iuaciee/ge+8jOWPjee/kuWFrOS5n++8ie+8jOS4nOi+uemXqOmHjOS8j+mHkeWJke+8iOS4gOWKieWnk+iAhei+heS5i++8ie+8jOWLh+Wjq+WQjumXqOWFpeW4neWuq++8iOWGm+mYn+WHuuWFtuS4jeaEj+aNieaLv+eah+W4ne+8ieOAgueZveWktOe/geiAhe+8jOW8oOWPiOS+oOS5n+OAguS4nOmXqOS8j+WJkeiAhe+8jOWImOa6kOS5n+OAguagueaNruWUkOS7o+mihOiogOOAiuaOqOiDjOWbvuOAi++8jOWCu+mAvOWwj+eGiue7tOWwvOimgeiiq+WGm+S6uuaOqOe/u+S6huOAguWGm+S6uuWFteWPmOeahOmihuWvvOiAheaYr+W8oOWPiOS+oOOAgeWImOa6kOOAguaAjuS5iOagt++8n+ivpeeQpuOAguelnuaYr+WtmOWcqOeahOOAguWkqeaEj+WcqOatpO+8geWkqeeBreS4reWFseOAgg==");
+
 @command("enable-image-recognition")
 @command("enable-border-recognition")

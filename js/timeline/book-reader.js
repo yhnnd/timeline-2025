@@ -520,6 +520,10 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             }
             line = line.replaceAll("<link", '@command("link-start")');
             line = line.replaceAll("</link>", '@command("link-end")');
+            if (line.includes("<bubble") && line.includes("</bubble>")) {
+                line = line.replaceAll("<bubble", '@command("bubble-start")');
+                line = line.replaceAll("</bubble>", '@command("bubble-end")');
+            }
             return line;
         }).join("\n");
     }(responseText);
@@ -616,6 +620,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }).join("\n");
     }
 
+    responseText = responseText.replaceAll('@command("bubble-start")', '<div class="message-bubble"');
+    responseText = responseText.replaceAll('@command("bubble-end")', "</div>");
     responseText = responseText.replaceAll('@command("delete-start")', "<del>");
     responseText = responseText.replaceAll('@command("delete-end")', "</del>");
     responseText = responseText.replaceAll('@command("border-start")', "<div class='has-border'>");
@@ -707,8 +713,6 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 }
             }
         }
-        // console.log(availableStartWiths);
-        // console.log(availableDelimiters);
         responseText = responseText.split("\n").map(line => {
             const matched = [];
             const lineTrimmed = line.trim();
@@ -1090,8 +1094,6 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 red.outerHTML = red.innerHTML;
             });
         }
-        // if (localStorage.getItem("enable-message-bubble") === "true" && container2.querySelector(".message-bubble")) {
-        // }
         if (isMapEnabled) {
             container2.querySelectorAll(".outer-wrapper").forEach(w => {
                 const t = document.createElement("div");

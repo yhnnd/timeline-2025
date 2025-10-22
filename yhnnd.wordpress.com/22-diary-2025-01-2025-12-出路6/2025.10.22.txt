@@ -121,6 +121,12 @@ Vue 3 通过新的响应式系统（使用 <bubble>Proxy</bubble> 代替 <bubble
 Vue 3 的 Diff 算法通过块树优化（Block Tree）、静态节点提升和更高效的节点比较等方式进行了显著优化，提高了渲染性能。
 
 <div class="row" style="font-weight: bold;display: inline;">
+13、什么是闭包？闭包导致的问题
+</div>
+
+闭包是一个函数，它能够访问其定义时的作用域中的变量，即使该作用域已经执行完毕。闭包可能会导致内存泄漏（如果闭包持有的变量长时间不释放）、性能损耗（因为需要维护作用域链和查找变量）以及代码可读性下降（如果闭包过于复杂或嵌套过深）等问题。
+
+<div class="row" style="font-weight: bold;display: inline;">
 14、什么是深拷贝？如何实现深拷贝？
 </div>
 

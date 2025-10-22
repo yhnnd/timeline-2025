@@ -1,0 +1,310 @@
+Oct 22, 2025
+
+一面
+
+搜索组前端一面面试题：
+1、挑一个印象比较深的项目介绍一下，开发中遇到了什么问题让你印象比较深刻，得到了什么成长？
+2、vue 和 js 有哪些不同，如果让你和身边的同时推荐 vue 你会怎么说？
+3、vue 中请求用的哪种方式，不同的 code 后台返回，前端如何处理？
+4、为什么选择 element ui 库，都用过哪些组件？有没有不满足使用自己封装的情况？
+5、后台项目怎么实现自适应在手机端查看？
+6、flex 如何实现纵向垂直水平居中？屏幕缩小保证内容不被压缩？
+
+我看了一下这个组一面总共5个面试官，问的题估计会有差异，让候选人都熟悉下自己之前做过的项目，会跟进项目具体问一些技术点
+
+搜索组一面面试题补充：
+7、Http 状态码
+8、小程序和 h5 进程
+9、cookie 和 localstorage
+10、Keepalive 原理
+11、自己项目的介绍，难点
+
+一面：
+12、vue2 和 vue3 的区别，vue3 的 diff 算法做了哪些优化？
+13、什么是闭包？闭包导致的问题
+14、什么是深拷贝？如何实现深拷贝？
+15、节流和防抖是什么？
+16、封装请求
+
+17、手写 eventbus
+18、数组取交集
+19、数组去重
+20、http 缓存，当浏览器输入个地址的时候页面渲染的流程
+21、webpack 的相关问题
+22、性能优化
+23、跨域
+
+后端一面问题补充
+isset empty 区别
+redis 缓存怎么保证一致性
+es 搜索排序
+在线单库，新方案分库分表如何不影响线上用户，迁移
+gmp 调度，队列满了如何处理的
+
+<div class="row" style="font-weight: bold;display: inline;">
+2、vue 和 js 有哪些不同，如果让你和身边的同时推荐 vue 你会怎么说？
+</div>
+
+Vue 是一个用于构建用户界面的渐进式 JavaScript 框架，而 JavaScript 是一门编程语言，Vue 是在 JavaScript 基础之上构建的。要向同事推荐 Vue，可以强调其轻量、易学、组件化和高效的特点，例如它能通过组件化提高开发效率，利用双向数据绑定和虚拟 DOM 提升性能，以及提供丰富的第三方 UI 库来节省开发时间。
+
+<div class="row" style="font-weight: bold;display: inline;">
+3、vue 中请求用的哪种方式，不同的 code 后台返回，前端如何处理？
+</div>
+
+在 Vue 中，常用的请求方式是使用 axios 库，也可以使用浏览器原生的 fetch API。对于后端返回的 code，前端可以通过在 API 请求的拦截器（axios 的请求/响应拦截器）中统一处理。
+
+根据 code 值进行处理，主要依赖于前端统一封装的请求模块和响应拦截器。在 axios 中设置响应拦截器，当服务器返回响应时，拦截器会先执行。
+<border>
+// 添加响应拦截器
+service.interceptors.response.use(
+  response => {
+    // 成功响应
+    if (response.data.code === 200) {
+      return response.data; // 返回数据
+</border>
+
+<div class="row" style="font-weight: bold;display: inline;">
+6、flex 如何实现纵向垂直水平居中？屏幕缩小保证内容不被压缩？
+</div>
+
+使用 Flexbox 实现纵向和水平居中时，需要在父容器上设置 <bubble>display: flex;</bubble>，然后使用 <bubble>justify-content: center;</bubble> 实现水平居中，再用 <bubble>align-items: center;</bubble> 实现垂直居中。如果 <bubble>flex-direction</bubble> 设置为 <bubble>column</bubble>，则需要反过来使用，<bubble>justify-content: center;</bubble> 用于垂直方向，<bubble>align-items: center;</bubble> 用于水平方向。
+
+<div class="row" style="font-weight: bold;display: inline;">
+7、Http 状态码
+</div>
+
+1xx（信息性状态码）： 表示服务器正在接收和处理请求。
+2xx（成功状态码）： 表示客户端的请求已成功被服务器处理和响应。
+    200 (OK)： 请求成功，服务器已返回所需的数据。
+    201 (Created)： 请求成功，服务器已创建了新的资源。
+    202 (Accepted)： 请求已被服务器接受，但尚未处理完成。
+3xx（重定向状态码）： 表示完成请求需要客户端进行进一步的操作，通常是将客户端重定向到另一个URL。
+    301 (Moved Permanently)： 表示资源已永久移动到新位置。
+4xx（客户端错误状态码）： 表示请求包含错误的语法，或者无法完成请求。
+    404 (Not Found)： 服务器找不到请求的页面。
+5xx（服务器错误状态码）： 表示服务器在处理一个有效请求时发生了错误。
+
+<div class="row" style="font-weight: bold;display: inline;">
+9、cookie 和 localstorage
+</div>
+
+Cookie 和 LocalStorage 都是用於儲存使用者瀏覽器資料的機制，但它們在儲存容量、過期時間和資料傳輸方式上有顯著差異。Cookie 容量小且有時效性，會隨 HTTP 要求傳送至伺服器，常用於身份驗證。LocalStorage 容量較大且為永久儲存（除非手動刪除），僅儲存在瀏覽器端，不參與請求，適合儲存不需要與伺服器溝通的資料，如使用者的偏好設定。 
+
+@WeCardTable("begin");
+table
+thead : tr : [th.thumbnail = {特點}, th = {Cookie}, th = {LocalStorage}]
+tbody
+tr : [th = {儲存位置}, td = {瀏覽器端}, td = {瀏覽器端}]
+tr : [th = {容量}, td = {小，約 4KB}, td = {大，約 5MB-10MB}]
+tr : [th = {過期時間}, td = {可設定過期時間，到期後自動刪除}, td = {永久儲存，除非手動刪除}]
+tr : [th = {資料傳輸}, td = {每次 HTTP 要求都會自動夾帶至伺服器}, td = {不會自動傳送至伺服器}]
+tr : [th = {主要用途}, td = {身份驗證（如 SessionID、token）}, td = {使用者偏好設定、離線應用程式資料}]
+tr : [th = {效能影響}, td = {夾帶過多資料會影響效能}, td = {僅存在客戶端，不參與請求，對效能影響小}]
+@WeCardTable("end");
+
+<div class="row" style="font-weight: bold;display: inline;">
+10、Keepalive 原理
+</div>
+
+HTTP Keep-Alive: 由應用層實現，允許在同一個 TCP 連線上收發多個 HTTP 請求和回應，減少了建立和關閉 TCP 連線的開銷，提高了效能。
+在请求和响应头中加上 <bubble>Connection: Keep-Alive</bubble>
+
+<div class="row" style="font-weight: bold;display: inline;">
+12、vue2 和 vue3 的区别，vue3 的 diff 算法做了哪些优化？
+</div>
+
+根节点限制：
+Vue 2: 限制组件必须有一个根节点。这会导致不必要的 DOM 层级，增加渲染和 Diff 的开销。
+Vue 3: 支持 Fragments，允许组件返回多个根节点，减少了不必要的 DOM 结构，提高了效率。
+
+Diff 算法：
+Vue 2: 采用传统的递归方式，即使某些节点未变化，仍然会重新比对所有子节点，增加了计算开销。
+Vue 3: 采用更智能的 Diff 机制，通过优化大幅减少了不必要的比对。
+
+Vue 2 使用选项式 API；Vue 3 则引入了 Composition API。
+Vue 3 通过新的响应式系统（使用 <bubble>Proxy</bubble> 代替 <bubble>Object.defineProperty</bubble>）以及编译优化，在性能上，比 Vue 2 有显著提升。
+Vue 3 的 Diff 算法通过块树优化（Block Tree）、静态节点提升和更高效的节点比较等方式进行了显著优化，提高了渲染性能。
+
+<div class="row" style="font-weight: bold;display: inline;">
+14、什么是深拷贝？如何实现深拷贝？
+</div>
+
+1、<bubble>JSON.parse(JSON.stringify(obj))</bubble>
+2、<bubble>structuredClone(obj)</bubble>
+3、
+<border>
+if (!Object.entries) {
+  Object.entries = function (obj) {
+    var entries = [];
+    if (typeof obj !== "object" || obj === null) {
+      return [];
+    }
+    for (var key in obj) {
+      entries.push([key, obj[key]]);
+    }
+    return entries;
+  };
+}
+
+function deepCopyArray(obj, maxLevel, level) {
+  var dst = [];
+  var i;
+  for (i = 0; i < obj.length; ++i) {
+    (function () {
+      var value = obj[i];
+      if (typeof value === "undefined") {
+        dst.push(undefined);
+      } else if (typeof value === "object") {
+        dst.push(deepCopy(value, maxLevel, level + 1));
+      } else {
+        dst.push(value);
+      }
+    })(i);
+  }
+  return dst;
+}
+
+function deepCopyObject(obj, maxLevel, level, key) {
+  var dst = {};
+  var entries = Object.entries(obj);
+  var i;
+  for (i = 0; i < entries.length; ++i) {
+    (function (i) {
+      var key = entries[i][0], value = entries[i][1];
+      var isId = false;
+      if (key !== undefined && key !== null) {
+        var strKey = new java.lang.String(key);
+        isId = strKey.endsWith("Id");
+      }
+      if (typeof value === "undefined") {
+        dst[key] = undefined;
+      } else if (isId) {
+        dst[key] = value === null ? null : "" + value;
+      } else if (typeof value === "object") {
+        dst[key] = deepCopy(value, maxLevel, level + 1, key);
+      } else {
+        dst[key] = value;
+      }
+    })(i);
+  }
+  return dst;
+}
+
+function deepCopy(obj) {
+  var maxLevel = arguments[1] !== void 0 ? arguments[1] : 8;
+  var level = arguments[2] !== void 0 ? arguments[2] : 0;
+  var key = arguments[3];
+  if (level >= maxLevel) {
+    return "[Too Deep]";
+  }
+  var isId = false;
+  if (key !== undefined && key !== null) {
+    var strKey = new java.lang.String(key);
+    isId = strKey.endsWith("Id");
+  }
+  if (typeof obj === "undefined") {
+    return undefined;
+  } else if (isId) {
+    return obj === null ? null : "" + obj;
+  } else if (typeof obj !== "object") {
+    return obj;
+  }
+  if (obj === null) {
+    return obj;
+  }
+  if (obj instanceof Array) {
+    return deepCopyArray(obj, maxLevel, level);
+  }
+  return deepCopyObject(obj, maxLevel, level, key);
+}
+</border>
+
+<div class="row" style="font-weight: bold;display: inline;">
+15、节流和防抖是什么？
+</div>
+
+节流是指在一定时间内，函数最多只执行一次，确保以固定频率执行。防抖是指在事件触发结束后的一段时间内，若没有新的事件触发，则执行函数；如果在这段时间内有新的事件，则会重新计时，直到事件停止触发后才执行一次。
+
+@WeCardTable("begin");
+table
+thead : tr : [th.thumbnail = {特征}, th = {节流 (Throttle)}, th = {防抖 (Debounce)}]
+tbody
+tr : [th = {核心原理}, td = {在一个固定时间间隔内，函数最多只能执行一次}, td = {等待一段时间，确保在短时间内只有一个事件被处理（最后一次执行）}]
+tr : [th = {触发逻辑}, td = {无论触发多少次，都会按固定的时间间隔（或在每次间隔开始时）执行一次}, td = {若在规定时间内再次触发，会取消之前的等待，重新开始计时}]
+tr : [th = {何时执行}, td = {在指定的时间块中只执行一次}, td = {在最后一次事件触发后的指定时间内执行}]
+tr : [th = {应用场景}, td = {滚动事件、游戏中的按键操作、拖拽事件等，适用于希望在连续触发时以固定频率响应的场景}, td = {搜索建议、表单验证、窗口大小调整等，适用于希望事件完成后才执行一次的场景}]
+@WeCardTable("end");
+
+<div class="row" style="font-weight: bold;display: inline;">
+17、手写 eventbus
+</div>
+<border>
+const eventBus = new EventBus();
+eventBus.on('xx', function(){})
+eventBus.emit('xx', args)
+</border>
+
+<div class="row" style="font-weight: bold;display: inline;">
+18、数组取交集
+</div>
+<border>
+let arr1 = [1,2,3,4,5]
+let arr2 = [2,4,6,8,10]
+
+let result =arr1.filter((e) => {
+  return arr2.indexOf(e) > -1
+})
+
+console.log(r) // [2,4]
+</border>
+
+<div class="row" style="font-weight: bold;display: inline;">
+19、数组去重
+</div>
+
+方法一：使用 Set (最简洁)
+
+<border>
+const uniqueArray = [...new Set(originalArray)];
+// 或者
+// const uniqueArray = Array.from(new Set(originalArray));
+</border>
+
+方法二：使用 filter() 和 indexOf() / includes()
+
+<border>
+// 使用 indexOf
+const uniqueArray = originalArray.filter((value, index, self) => {
+  return self.indexOf(value) === index;
+});
+</border>
+<border>
+// 使用 includes
+const uniqueArray = originalArray.filter((value, index, self) => {
+  return !self.includes(value, index + 1);
+});
+</border>
+<bubble>Array.prototype.includes(item, fromIndex)</bubble>: 在数组中搜索 <bubble>item</bubble>，从 <bubble>fromIndex</bubble> 开始。
+
+<div class="row" style="font-weight: bold;display: inline;">
+20、http 缓存，当浏览器输入个地址的时候页面渲染的流程
+</div>
+
+当浏览器收到一个URL请求后，首先会通过缓存判断是否能直接使用本地缓存；如果不行，会先进行DNS解析，然后建立TCP/TLS连接，接着发送HTTP请求到服务器；服务器处理后返回响应，浏览器根据返回的HTML进行渲染，并在遇到JS、CSS、图片等资源时重复此过程。 
+
+详细流程
+1、缓存判断: 浏览器首先检查本地缓存中是否有该请求的资源，以及该资源是否过期。如果有有效缓存，则直接使用本地资源，跳过网络请求。
+2、DNS解析: 如果缓存中没有或已过期，浏览器会进行域名解析，将输入的URL中的域名转换为对应的IP地址。
+3、建立TCP连接: 浏览器根据IP地址，与服务器建立TCP连接。对于HTTPS连接，还会进行TLS握手。
+4、发送HTTP请求: 浏览器向服务器发送HTTP请求，包含所请求的资源和相关头部信息。
+5、服务器响应: 服务器接收请求，进行处理，并返回HTTP响应给浏览器，响应中包含状态码和响应体（HTML等）。
+6、渲染页面: 浏览器接收到响应后，开始进行页面渲染。
+    1、HTML解析: 浏览器解析HTML，构建DOM树。
+    2、CSS解析: 解析CSS，构建CSSOM树。
+    3、构建渲染树: 合并DOM树和CSSOM树，生成渲染树。
+    4、布局和绘制: 对渲染树进行布局和绘制。
+7、获取其他资源: 如果在HTML中引用了其他资源（如CSS、JS、图片等），浏览器会重复上述网络请求和渲染流程来获取和渲染这些资源。 
+
+@command("enable-border-recognition")
+@command("enable-image-recognition")
+@command("line-width-maximum")

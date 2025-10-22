@@ -507,6 +507,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     const isBorderEnabled = (localStorage.getItem("enable-border") === "true") || responseText.includes(pattern1);
 
     responseText = function (responseText) {
+        document.body.removeAttribute("data-line-width-maximum");
         return responseText.split("\n").map((line) => {
             if (line.trim().startsWith("{{") && line.trim().endsWith("}}") && localStorage.getItem("enable-delete-line") === "true") {
                 return line.replace("{{", '@command("delete-start")').replace("}}", '@command("delete-end")');

@@ -507,6 +507,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     const isBorderEnabled = (localStorage.getItem("enable-border") === "true") || responseText.includes(patternBdr);
     const patternVid = "@command(\"enable-video-recognition\")";
     const isVideoEnabled = (localStorage.getItem("enable-at-sign-video") === "true") || responseText.includes(patternVid);
+    const ogBorderStartLines = [];
 
     responseText = function (responseText) {
         document.body.removeAttribute("data-line-width-maximum");
@@ -514,7 +515,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             if (line.trim().startsWith("{{") && line.trim().endsWith("}}") && localStorage.getItem("enable-delete-line") === "true") {
                 return line.replace("{{", '@command("delete-start")').replace("}}", '@command("delete-end")');
             } else if ((line === "<border>" || line.startsWith("<border ") && line.endsWith(">")) && isBorderEnabled) {
-                return line.replace("<border", '@command("border-start")');
+                ogBorderStartLines.push(line);
+                return '@command("border-start")';
             } else if (line === "</border>" && isBorderEnabled) {
                 return '@command("border-end")';
             }
@@ -627,7 +629,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     responseText = responseText.replaceAll('@command("bubble-end")', "</div>");
     responseText = responseText.replaceAll('@command("delete-start")', "<del>");
     responseText = responseText.replaceAll('@command("delete-end")', "</del>");
-    responseText = responseText.replaceAll('@command("border-start")', "<div class='has-border'");
+    responseText = responseText.replaceAll('@command("border-start")', "<div class='has-border'>");
     responseText = responseText.replaceAll('@command("border-end")', "\n</div>");
     responseText = responseText.replaceAll('@command("link-start")', "<div class='link' onclick='openLink(event)'");
     responseText = responseText.replaceAll('@command("link-end")', "</div>");
@@ -806,7 +808,15 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     if (isVideoEnabled) {
         responseText = responseText.split("\n").map(line => {
-            if (line.startsWith("@video")) { // @video resources/35_1713060169.mp4 loop
+            if (line.startsWith("@video")) {
+                if (/src="https:\/\/www\.youtube\.com\/embed\//.test(line)) {
+                    // @video width="790" height="444" src="https://www.youtube.com/embed/VXGRZ6O38ec" frameborder="0" allowfullscreen
+                    const wrapperOpen = '<div class="video-wrapper">';
+                    const covers = '<div class="backdrop-filter blur"></div><div class="backdrop-filter white"></div><div class="cover iframe-cover">' + line + '</div>';
+                    const wrapperClose = '</div>';
+                    return wrapperOpen + covers + line.replace("@video", "<iframe") + "></iframe>" + wrapperClose;
+                }
+                // @video resources/35_1713060169.mp4 loop
                 const parameters = line.split(" ");
                 parameters.shift();
                 const src = parameters.shift(); // resources/35_1713060169.mp4
@@ -1001,6 +1011,15 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }());
     }
 
+    if (isBorderEnabled) {
+        for (const count in ogBorderStartLines) {
+            const ogBorderStartText = ogBorderStartLines[count];
+            if (ogBorderStartText.includes(" style=")) {
+                container1.querySelectorAll(".has-border")[count].setAttribute("style", ogBorderStartText.match(/style\s*=\s*"([^"]*)"/i)[1]);
+            }
+        }
+    }
+
     if (getParameter("is-iframe") !== "true" && localStorage.getItem("enable-dual-article-container") === "true") {
         const container2 = document.getElementsByClassName(container2ClassName)[0];
         container1.querySelectorAll("img").forEach(img => {
@@ -1075,15 +1094,34 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 del.outerHTML = "{{" + del.innerHTML + "}}";
             });
         }
-        if (localStorage.getItem("enable-border") === "true" && container2.querySelector(".has-border")) {
+        if (isBorderEnabled && container2.querySelector(".has-border")) {
+            const tips = "This text is shown to make the height of the border block left same with right. To hide this text, disable dual container.";
+            let count = 0;
+            container1.querySelectorAll(".has-border").forEach(b => {
+                let ogBorderStartText = ogBorderStartLines[count];
+                ogBorderStartText = ogBorderStartText ? ogBorderStartText.replaceAll("<", "&lt;") : "&lt;border&gt;";
+                if (localStorage.getItem("enable-line-split") === "true") {
+                    const firstLine = b.querySelector(".empty-line:first-child");
+                    firstLine.setAttribute("onclick", "alert(\"" + tips + "\")");
+                    firstLine.style.color = "var(--studio-red-20)";
+                    firstLine.innerHTML = ogBorderStartText;
+                } else {
+                    b.innerHTML = "<span onclick=\"alert(&quot;" + tips + "&quot;)\" style=\"color: var(--studio-red-20)\">" + ogBorderStartText + "</span>" + b.innerHTML;
+                }
+                count++;
+            });
+            count = 0;
             container2.querySelectorAll(".has-border").forEach(b => {
                 b.style.borderColor = "transparent";
+                let ogBorderStartText = ogBorderStartLines[count];
+                ogBorderStartText = ogBorderStartText ? ogBorderStartText.replaceAll("<", "&lt;") : "&lt;border&gt;";
                 if (localStorage.getItem("enable-line-split") === "true") {
-                    b.querySelector(".empty-line:first-child").innerHTML = "&lt;border&gt;";
+                    b.querySelector(".empty-line:first-child").innerHTML = ogBorderStartText;
                     b.querySelector(".empty-line:last-child").innerHTML = "&lt;/border&gt;";
                 } else {
-                    b.innerHTML = "&lt;border&gt;" + b.innerHTML.replace(/\n$/, "") + "&lt;/border&gt;";
+                    b.innerHTML = ogBorderStartText + b.innerHTML.replace(/\n$/, "") + "&lt;/border&gt;";
                 }
+                count++;
             });
         }
         container2.querySelectorAll(".small-seal-script").forEach(b => {

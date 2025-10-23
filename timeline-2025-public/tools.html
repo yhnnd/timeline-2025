@@ -6,42 +6,74 @@
   <script src="../js/timeline/navbar.js"></script>
 </head>
 <body>
+  <style>
+.bubble {
+  display: inline-block;
+  background-color: #e9f0f5;
+  border-left: 1px solid #0675c4;
+  padding: 4px 8px;
+  border-radius: 8px;
+  border-top-left-radius: 0;
+  cursor: pointer;
+}
+.bubble.red {
+  background-color: #f7ebec;
+  border-color: #d63638;
+}
+.bubble.green {
+  background-color: #e6f2e8;
+  border-color: #008a20;
+}
+  </style>
   <div style="display: flex; justify-content: center; margin-bottom: 200px;">
     <pre style="width: 800px;"><h1>link</h1>
 
-a &lt;link&gt; tag will be translated to a &lt;div class="link" onclick="openLink(event)"&gt; tag.
+a <div class="bubble">&lt;link&gt;</div> tag will be translated to a <div class="bubble green">&lt;div class="link" onclick="openLink(event)"&gt;</div> tag.
 
-&lt;link to="book-reader.html?src=../folder/filename.txt" &gt; will be translated to
+<div class="bubble">&lt;link to="book-reader.html?src=../folder/filename.txt" &gt;</div> will be translated to
 
-&lt;div class="link" onclick="openLink(event)" to="book-reader.html?src=../folder/filename.txt" &gt;
+<div class="bubble green">&lt;div class="link" onclick="openLink(event)" to="book-reader.html?src=../folder/filename.txt" &gt;</div>
 
 <h1>img</h1>
 
-a &lt;img src="../folder/filename.jpg"&gt; will be recognized as a html img tag.
+a <div class="bubble">&lt;img src="../folder/filename.jpg"&gt;</div> will be recognized as a html <div class="bubble red">img</div> tag.
 
 <h1>thumbnail row</h1>
 
-a &lt;div class="row"&gt; will be recognized as a html div tag.
+a <div class="bubble">&lt;div class="row"&gt;</div> will be recognized as a html <div class="bubble red">div</div> tag.
 
-a &lt;div class="row"&gt; can wrap a list of &lt;img class="thumbnail"&gt; and will display a group of images in one line.
+a <div class="bubble">&lt;div class="row"&gt;</div> can wrap a list of <div class="bubble">&lt;img class="thumbnail"&gt;</div> and will display a group of images in one line.
+
+<i>If the image with class name <div class="bubble red">thumbnail</div> is too small, use <div class="bubble red">thumbnail-2x</div>.</i>
 
 <h1>border</h1>
 
-&lt;border&gt;
-&lt;/border&gt; will be translated to
+<div class="bubble"
+>&lt;border&gt;
+&lt;/border&gt;</div> will be translated to
 
-&lt;div class="border"&gt;
-&lt;/div&gt;
+<div class="bubble green"
+>&lt;div class="border"&gt;
+&lt;/div&gt;</div>
 
 <h1>video</h1>
 
-@video resources/35_1713060169.mp4
+<div class="bubble">@video resources/35_1713060169.mp4</div>
 
 will be translated to
 
-&lt;video width="100%" controls="" style="width: 100%;"&gt;
+<div class="bubble green"
+>&lt;video width="100%" controls="" style="width: 100%;"&gt;
   &lt;source src="resources/35_1713060169.mp4" type="video/mp4"&gt;
 &lt;/video&gt;
+</div>
+
+<h2 style="font-weight: lighter;">YouTube Video</h2>
+<div class="bubble">@video width="790" height="444" src="https://www.youtube.com/embed/VXGRZ6O38ec" frameborder="0" allowfullscreen</div>
+
+will be translated to
+
+<div class="bubble green">&lt;iframe width="790" height="444" src="https://www.youtube.com/embed/VXGRZ6O38ec" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div>
 
 <h1>Tools</h1>
 

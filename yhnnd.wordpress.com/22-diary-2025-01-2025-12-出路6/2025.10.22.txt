@@ -324,6 +324,11 @@ Oct 23, 2025
 @video https://cdn.erocdn.co/gCBfPWtyVZbTYDNA6mGjtA==,1761252509/s2/video/v/x/vxdswerafq/vxdswerafq_1746695521535-video.mp4
 </border>
 
+@base64("U29maWEgR29yc2hrb3ZhIPCfh7fwn4e6INCh0L7RhNC40Y8g0JPQvtGA0YjQutC+0LLQsA==");
+<link to="https://www.youtube.com/watch?v=VXGRZ6O38ec">https://www.youtube.com/watch?v=VXGRZ6O38ec</link>
+
+@video width="790" height="444" src="https://www.youtube.com/embed/VXGRZ6O38ec" frameborder="0" allowfullscreen
+
 @command("enable-border-recognition")
 @command("enable-image-recognition")
 @command("line-width-maximum")

@@ -306,6 +306,25 @@ const uniqueArray = originalArray.filter((value, index, self) => {
     4、布局和绘制: 对渲染树进行布局和绘制。
 7、获取其他资源: 如果在HTML中引用了其他资源（如CSS、JS、图片等），浏览器会重复上述网络请求和渲染流程来获取和渲染这些资源。 
 
+Oct 23, 2025
+
+@list-item-number-increment(i);
+<link to="https://erothots.co/video/omfkgvts/kovicki-zelda/">https://erothots.co/video/omfkgvts/kovicki-zelda/</link>
+<border style="width: 500px;">
+@video https://cdn.erocdn.co/c3S8TiVWc2pH4TLI36vzAQ==,1761251556/s2/video/o/m/omfkgvts/omfkgvts_1746695757336-video.mp4
+</border>
+@list-item-number-increment(i);
+<link to="https://erothots.co/video/gidiprkqaduw/kovicki-makima/">https://erothots.co/video/gidiprkqaduw/kovicki-makima/</link>
+<border style="width: 500px;">
+@video https://cdn.erocdn.co/MjrIzcet-kMWYiGrkJ_EaQ==,1761252569/s2/video/g/i/gidiprkqaduw/gidiprkqaduw_1746695640924-video.mp4
+</border>
+@list-item-number-increment(i);
+<link to="https://erothots.co/video/vxdswerafq/kovicki-d-va/">https://erothots.co/video/vxdswerafq/kovicki-d-va/</link>
+<border style="width: 200px;">
+@video https://cdn.erocdn.co/gCBfPWtyVZbTYDNA6mGjtA==,1761252509/s2/video/v/x/vxdswerafq/vxdswerafq_1746695521535-video.mp4
+</border>
+
 @command("enable-border-recognition")
 @command("enable-image-recognition")
 @command("line-width-maximum")
+@command("enable-video-recognition")

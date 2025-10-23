@@ -503,16 +503,18 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }).join("\n");
     }(responseText);
 
-    const pattern1 = "@command(\"enable-border-recognition\")";
-    const isBorderEnabled = (localStorage.getItem("enable-border") === "true") || responseText.includes(pattern1);
+    const patternBdr = "@command(\"enable-border-recognition\")";
+    const isBorderEnabled = (localStorage.getItem("enable-border") === "true") || responseText.includes(patternBdr);
+    const patternVid = "@command(\"enable-video-recognition\")";
+    const isVideoEnabled = (localStorage.getItem("enable-at-sign-video") === "true") || responseText.includes(patternVid);
 
     responseText = function (responseText) {
         document.body.removeAttribute("data-line-width-maximum");
         return responseText.split("\n").map((line) => {
             if (line.trim().startsWith("{{") && line.trim().endsWith("}}") && localStorage.getItem("enable-delete-line") === "true") {
                 return line.replace("{{", '@command("delete-start")').replace("}}", '@command("delete-end")');
-            } else if (line === "<border>" && isBorderEnabled) {
-                return '@command("border-start")';
+            } else if ((line === "<border>" || line.startsWith("<border ") && line.endsWith(">")) && isBorderEnabled) {
+                return line.replace("<border", '@command("border-start")');
             } else if (line === "</border>" && isBorderEnabled) {
                 return '@command("border-end")';
             }
@@ -563,8 +565,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     if (isBorderEnabled) {
         responseText = responseText.split("\n").map(line => {
-            if (line.includes(pattern1)) {
-                return line.replace(pattern1, "<span class='highlight-green'>" + pattern1 + "</span>");
+            if (line.includes(patternBdr)) {
+                return line.replace(patternBdr, "<span class='highlight-green'>" + patternBdr + "</span>");
             }
             return line;
         }).join("\n");
@@ -625,7 +627,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
     responseText = responseText.replaceAll('@command("bubble-end")', "</div>");
     responseText = responseText.replaceAll('@command("delete-start")', "<del>");
     responseText = responseText.replaceAll('@command("delete-end")', "</del>");
-    responseText = responseText.replaceAll('@command("border-start")', "<div class='has-border'>");
+    responseText = responseText.replaceAll('@command("border-start")', "<div class='has-border'");
     responseText = responseText.replaceAll('@command("border-end")', "\n</div>");
     responseText = responseText.replaceAll('@command("link-start")', "<div class='link' onclick='openLink(event)'");
     responseText = responseText.replaceAll('@command("link-end")', "</div>");
@@ -802,7 +804,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         responseText = parseMapsResult.text;
     }
 
-    if (localStorage.getItem("enable-at-sign-video") === "true") {
+    if (isVideoEnabled) {
         responseText = responseText.split("\n").map(line => {
             if (line.startsWith("@video")) { // @video resources/35_1713060169.mp4 loop
                 const parameters = line.split(" ");
@@ -819,6 +821,8 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 const videoClose = '</video>';
                 const wrapperClose = '</div>';
                 return wrapperOpen + covers + videoOpen + source + videoClose + wrapperClose;
+            } else if (line.includes(patternVid)) {
+                return line.replace(patternVid, "<span class='highlight-green'>" + patternVid + "</span>");
             }
             return line;
         }).join("\n");

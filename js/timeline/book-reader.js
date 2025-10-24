@@ -1207,6 +1207,77 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         hideTimelineLoading();
         window.loadFooter && window.loadFooter();
         document.querySelector(".footer").style.display = null;
+        _highlightSearchKeywords_(container1);
+    }
+}
+
+function _highlightSearchKeywords_(container) {
+    const q = getParameter("q"), conf = getParameter("conf");
+    if (q) {
+        const searchKeywords = JSON.parse(q), configs = conf ? JSON.parse(conf) : null;
+        if (!configs || configs.type === "text") {
+            container.childNodes.forEach(pre => {
+                if (pre.tagName === "PRE" && !pre.classList.contains("badges")) {
+                    traverse(pre, {
+                        textHandler: highlightSearchKeywords,
+                        textHandlerParams: {searchKeywords, configs}
+                    });
+                }
+            });
+        }
+        // 删除浏览器地址栏中的 q 参数
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+        params.delete('q');
+        params.delete('conf');
+        url.search = params.toString();
+        window.history.replaceState(null, '', url.toString()); // 更新地址栏（不刷新页面）
+    }
+}
+
+function traverse(node, {textHandler, textHandlerParams}) {
+    let child = node.firstChild;
+    while (child) {
+        const next = child.nextSibling; // 预取下一个，避免修改后丢失
+        if (!child.isNewTextNode) {
+            if (child.nodeType === Node.TEXT_NODE) {
+                textHandler(child, textHandlerParams);
+            } else {
+                traverse(child, {textHandler, textHandlerParams});
+            }
+        }
+        child = next;
+    }
+}
+
+function highlightSearchKeywords(child, {searchKeywords, configs}) {
+    if (child.isNewTextNode || !child.parentElement || child.parentElement.classList.contains('marker-wrapper')) {
+        return;  // 跳过新文本节点
+    }
+    if (child.nodeType === Node.TEXT_NODE && child.textContent) {
+        const newChildren = document.createDocumentFragment();
+        const escapedKeywords = searchKeywords.map(key => key.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")).sort((a, b) => b.length - a.length);
+        const pattern = "(" + escapedKeywords.join("|") + ")";
+        const regex1 = new RegExp(pattern, "gi");  // g: Global, i: Ignore case
+        const regex2 = new RegExp("^(" + escapedKeywords.join("|") + ")$", "i");
+        const textSplited = child.textContent.split(regex1);
+        for (const text of textSplited) {
+            if (!text) {
+                continue;
+            }
+            let newTextNode;
+            if (regex2.test(text)) {
+                newTextNode = document.createElement("code");
+                newTextNode.classList.add("marker-wrapper");
+                newTextNode.innerHTML = "<var class=\"marker\">" + text + "</var>";
+            } else {
+                newTextNode = document.createTextNode(text);
+            }
+            newTextNode.isNewTextNode = true; // 标记新文本节点
+            newChildren.appendChild(newTextNode);
+            console.log("newTextNode " + (newTextNode.nodeType === Node.TEXT_NODE ? newTextNode.textContent : newTextNode.innerHTML));
+        }
+        child.parentElement.replaceChild(newChildren, child);
     }
 }
 

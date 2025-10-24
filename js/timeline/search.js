@@ -237,9 +237,13 @@ function searchKeywords(keywords, configs) {
                         }
                     }
                 }
-                link.innerHTML = "<a target='_self' href='book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "'>"
+                let targetUrl = "book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "&q=" + encodeURIComponent(JSON.stringify(keywords));
+                if (configs) {
+                    targetUrl += "&conf=" + encodeURIComponent(JSON.stringify(configs));
+                }
+                link.innerHTML = "<a target='_self' href='" + targetUrl + "'>"
                     + "<span class='folder'>" + folder + "</span> / <span>" + filename + "</span></a>"
-                    + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "','_self');\"></div></div>"
+                    + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('" + targetUrl + "','_self','noopener,noreferrer');\"></div></div>"
                     + "<div class='text'><pre>" + lines.join("\n") + "</pre></div>";
                 resultWrapper.appendChild(link);
             }
@@ -356,7 +360,7 @@ function doAdvancedSearch(conditions, keywords) {
             }
             link.innerHTML = "<a target='_self' href='book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "'>"
                 + "<span class='folder'>" + folder + "</span> / <span>" + filename + "</span></a>"
-                + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "','_self');\"></div></div>"
+                + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "','_self','noopener,noreferrer');\"></div></div>"
                 + "<div class='text'><pre>" + lines.join("\n") + "</pre></div>";
             resultWrapper.appendChild(link);
         }

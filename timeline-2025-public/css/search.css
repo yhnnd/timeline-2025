@@ -168,17 +168,25 @@ pre {
     font-family: Menlo, Monaco, Consolas, "Courier New", "Microsoft YaHei", monospace;
 }
 
+.marker-wrapper,
+.marker {
+    font-size: unset;
+    font-style: unset;
+    font-weight: unset;
+    font-family: unset;
+}
+
 .marker {
     background-color: var(--studio-yellow-10);
-    outline: 2px solid var(--studio-red);
-    outline-offset: 1px;
-    outline-style: dashed;
-    font-style: normal;
+    outline: 1px solid var(--studio-yellow-10);
+    outline-offset: 0;
+    outline-style: solid;
 }
 
 .marker-wrapper {
-    font-size: unset;
-    font-family: unset;
+    outline: 2px solid var(--studio-red);
+    outline-offset: 1px;
+    outline-style: dashed;
 }
 
 .search>.search-result>.link>.text .thumbnail,

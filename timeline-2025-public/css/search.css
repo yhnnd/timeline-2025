@@ -171,30 +171,14 @@ pre {
 .marker {
     background-color: var(--studio-yellow-10);
     outline: 2px solid var(--studio-red);
-    outline-offset: 2px;
+    outline-offset: 1px;
     outline-style: dashed;
     font-style: normal;
-    font-family: Menlo, Monaco, Consolas, "Courier New", "Microsoft YaHei", monospace;
-    position: relative;
-    z-index: 32;
 }
 
 .marker-wrapper {
-    position: relative;
-    display: inline-block;
-    font-size: 16px;
-}
-
-.marker-wrapper::before {
-    display: inline-block;
-    content: '';
-    position: absolute;
-    z-index: 31;
-    left: -2px;
-    top: 0;
-    width: calc(100% + 4px);
-    height: 23px;
-    background: var(--studio-yellow-10);
+    font-size: unset;
+    font-family: unset;
 }
 
 .search>.search-result>.link>.text .thumbnail,

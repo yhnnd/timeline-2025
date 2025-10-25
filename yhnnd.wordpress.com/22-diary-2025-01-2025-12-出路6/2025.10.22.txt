@@ -83,7 +83,7 @@ service.interceptors.response.use(
 9、cookie 和 localstorage
 </div>
 
-Cookie 和 LocalStorage 都是用於儲存使用者瀏覽器資料的機制，但它們在儲存容量、過期時間和資料傳輸方式上有顯著差異。Cookie 容量小且有時效性，會隨 HTTP 要求傳送至伺服器，常用於身份驗證。LocalStorage 容量較大且為永久儲存（除非手動刪除），僅儲存在瀏覽器端，不參與請求，適合儲存不需要與伺服器溝通的資料，如使用者的偏好設定。 
+Cookie 和 LocalStorage 都是用於儲存使用者瀏覽器資料的機制，但它們在儲存容量、過期時間和資料傳輸方式上有顯著差異。Cookie 容量小且有時效性，會隨 HTTP 要求傳送至伺服器，常用於身份驗證。LocalStorage 容量較大且為永久儲存（除非手動刪除），僅儲存在瀏覽器端，不參與請求，適合儲存不需要與伺服器溝通的資料，如使用者的偏好設定。
 
 @WeCardTable("begin");
 table
@@ -291,7 +291,7 @@ const uniqueArray = originalArray.filter((value, index, self) => {
 20、http 缓存，当浏览器输入个地址的时候页面渲染的流程
 </div>
 
-当浏览器收到一个URL请求后，首先会通过缓存判断是否能直接使用本地缓存；如果不行，会先进行DNS解析，然后建立TCP/TLS连接，接着发送HTTP请求到服务器；服务器处理后返回响应，浏览器根据返回的HTML进行渲染，并在遇到JS、CSS、图片等资源时重复此过程。 
+当浏览器收到一个URL请求后，首先会通过缓存判断是否能直接使用本地缓存；如果不行，会先进行DNS解析，然后建立TCP/TLS连接，接着发送HTTP请求到服务器；服务器处理后返回响应，浏览器根据返回的HTML进行渲染，并在遇到JS、CSS、图片等资源时重复此过程。
 
 详细流程
 1、缓存判断: 浏览器首先检查本地缓存中是否有该请求的资源，以及该资源是否过期。如果有有效缓存，则直接使用本地资源，跳过网络请求。
@@ -304,7 +304,7 @@ const uniqueArray = originalArray.filter((value, index, self) => {
     2、CSS解析: 解析CSS，构建CSSOM树。
     3、构建渲染树: 合并DOM树和CSSOM树，生成渲染树。
     4、布局和绘制: 对渲染树进行布局和绘制。
-7、获取其他资源: 如果在HTML中引用了其他资源（如CSS、JS、图片等），浏览器会重复上述网络请求和渲染流程来获取和渲染这些资源。 
+7、获取其他资源: 如果在HTML中引用了其他资源（如CSS、JS、图片等），浏览器会重复上述网络请求和渲染流程来获取和渲染这些资源。
 
 Oct 23, 2025
 
@@ -325,6 +325,232 @@ Oct 23, 2025
 Oct 25, 2025
 
 @base64("5pio5aSp5piv56iL5bqP5ZGY6IqC77yM5oiR5oSf5YaS5LqG77yM5byA5aeL5byA56qX6YCa6aOO44CB5LiN54as5aSc6YCa5a615LqG44CC5LuK5aSp5Lit5Y2I77yM5oiR5Y675qW85LiL55qE5a2Z5a625Yev5ZCb576K6IKJ5rOh6aaN6aWt5bqX5ZCD5Y2I6aWt44CC5LuK5aSp5LiL5Y2I77yM5oiR5Zyo5LiH5a6254Gv54Gr5L2P5aSE6Lq65Zyo5bqK5LiK552h6KeJ77yM5qKm6KeB5oiR5Zyo5aSp5Li75pWZ5aCC77yM6YGH6KeB5Lik5Liq56mG5pav5p6X77yM5LuW5Lus5ou/55qE5Zyj57uP6Z2e5bi45Y6a77yM5L2G5piv5Y+q5pyJ56ys5LiA56ug44CK5Yib5LiW6K6w44CL5ZKM5oiR5Lus55qE5Zyj57uP5LiA5qC377yM6ICM5ZCO6YO95piv5LuW5Lus6Ieq5bex5omL5YaZ55qE57uP5paH77yM5piv57q15ZCR55qE5a2X44CC6LWw55qE5pe25YCZ77yM5oiR5LiA6L655Zyo5omL5py65LiK5pCc57Si4oCc5Li65LuA5LmI56mG5pav5p6X6KaB5Y675aSp5Li75pWZ5aCC56S85ouc4oCd5LiA6L655LiK5LqG5YWs5Lqk6L2m77yM5YWs5Lqk6L2m6YeM5pyJ5Lik5bGC77yM5LiK6Z2i55qE56m66Ze05aSq54ut5bCP77yM5oiR5L2O552A5aS06YO96L+b5LiN5Y6777yM5oiR5bCx5Z2Q5Zyo5LiL6Z2i6YKj5bGC77yM5ZGo6bmP56iL5ZKM5Y+m5LiA5Liq5oiR6K6k6K+G55qE55S355qE5Lmf6LWw5Yiw5LiL6Z2i6YKj5bGC77yM5LuW5Lus5Z2Q5Zyo5oiR5peB6L6555qE5bqn5L2N44CC5oiR5omT5byA5omL5py65pSv5LuY5a6d5LmY6L2m56CB77yM5oqK5omL5py66YCS57uZ5Z2Q5Zyo5LiK6Z2i6YKj5bGC55qE6Ziu5piO5ZOy77yM6K6p5LuW5biu5oiR5Yi35LiA5LiL5LmY6L2m56CB77yM5LuW5o6l6L+H5oiR55qE5omL5py677yM5LuW5a+5552A5omr56CB55qE5py65Zmo5LuO5LiK5Yiw5LiL55qE5q+P5LiA5Liq5pGE5YOP5aS06YO95omr5LqG5LiA6YGN77yM5omr5Yiw5pyA5LiL6L6555qE6YKj5Liq5pGE5YOP5aS077yM5py65Zmo5o+Q56S65omr56CB5oiQ5Yqf44CC5YWs5Lqk6L2m5Y+45py66K+05omA5pyJ5LmY5a6i5LiK6L2m5LmL5ZCO6YO95LiN6IO955So6L2m5bC+6YOo55qE5Y6V5omA77yM5Zug5Li65Y6V5omA6ams5qG25aC15LqG77yM5oiR54i25Lqy5bCx5Y676L2m5bC+6YOo5Y675L+u5Y6V5omA6YeM55qE6ams5qG277yM5pyJ5LiA5Liq5oiR54i25Lqy55qE5ZCM5LqL6L+H5p2l5a+55oiR6K+077ya4oCc5bCP5LqO77yM5L2g54i25Lqy5Yia5LuO5aSW5Zyw6LW25Zue5p2l77yM6L+Z5LmI6L6b6Ium77yM6L+Y6K6p5LuW5b+Z5rS75L+u6ams5qG277yf5L2g5b+r5Y675pu/5LuW55yL55yL77yM6K6p5LuW5q2H5Lya5YS/44CC4oCdIOaIkeWwseWIsOi9puWwvumDqOeahOWOleaJgOabv+aIkeeItuS6suS/rumprOahtu+8jOaIkei/mOayoei/m+WFpeWOleaJgO+8jOaIkeermeWcqOWOleaJgOmXqOWklueahOaXtuWAme+8jOWwseeci+WIsOadqOWbveS7leWcqOWOleaJgOmHjOS/rumprOahtu+8jOS7luaKiumprOahtuaKrOi1t+adpe+8jOWPkeeOsOS4i+mdouacieS4gOS4quWujOaVtOeahOWBh+WPkeWSjOaUr+aetuWgteWcqOS4i+mdou+8jOmprOahtuWgteS6hueahOmXrumimOaYvueEtuaYr+ino+WGs+S6hu+8jOadqOWbveS7leeUqOaJi+aPkOedgOmCo+S4quWBh+WPkeS7juWOleaJgOi1sOS6huWHuuadpe+8jOS7lueUqeS6hueUqemCo+S4quWBh+WPke+8jOaIkeeci+a4healmumCo+S4quWBh+WPkeeahOW9oueKtuWQju+8jOehruWumuS6hui/meS4gOWumuaYr+mZiOaso+Wuh+eahOWBh+WPke+8jOWboOS4uuWug+WSjOmZiOaso+Wuh+eahOWPkeWei+S4gOaooeS4gOagt+OAguWcqOaIkeS7rOWbnuWOu+eahOi3r+S4iu+8jOaIkei/mOWcqOWOleaJgOWklui+ueeahOi1sOW7iumHjOaooeS7v+mZiOaso+Wuh+eahOWDj+aYr+aJk+WXneS4gOagt+eahOWSr+WSr+eskeOAgg==");
+
+<link to="https://renminbao.com/rmb/articles/2023/9/25/77828b.html">試解賒刀人對習近平的預言</link>
+2023年9月25日
+
+<border style="border-style: dashed;">
+作者：見山
+
+最近看到一則2021年洛陽賒刀人的預言再次在網路上流傳，內容如下
+
+前幾天洛陽老家的父母告訴我，村子裡來了個奇怪的人，上午拿著幾把刀在村子裡擺了個攤，卻不主動叫賣，也不標價。有人問才知道他這個刀只能賒，不賣。賒刀的流程是確定價格以後，買者告訴賣方名字，電話，地址，然後賣方給一張紙，紙上寫著他的“預言”，說完以後直接就可以把這個刀拿回家，等到<bubble>預言</bubble>靈驗，賣方就找買方要錢，就是之前確定的價格。結果可能是大家都覺得這刀價格便宜，品質好，還不用付現錢，就算以後也不一定要付，或者可以賴掉，反正到下午的時候，這個人的刀就都賒完了，他也就收拾東西走了。我開始就覺得有點奇怪，後來在網路上搜了一下，才知道這種人居然是大名鼎鼎的<bubble>賒刀人</bubble>!
+
+以下是他留下的紙條上印的內容:
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+不肖之徒，盛乎梧林。
+白猴出世，黑鼠起禍。
+夷畿素羽，竟墜羕泉。
+問今天下，其言有宋。
+</div>
+
+從網路上看到一些對賒刀人預言的解讀，筆者有不同的看法，現將個人見解說明如下。為了更好地理解這則預言，我們先看第三四句，然後再看第一二句，就很容易明白前兩句在指什麼了。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【夷畿素羽，竟墜羕泉】
+</div>
+
+<bubble>夷</bubble>除了蠻夷之地的用法，還有剷平和平定的意思，可取其<bubble>平</bubble>義。
+
+<bubble>畿</bubble>本義指國都四周的廣大地區，可指靠近國都的地方，可欲其<bubble>近</bubble>義。
+
+<bubble>素羽</bubble>，習的繁體字寫法就是上羽下白。
+
+這樣的話，“夷畿素羽”即“羽素畿夷”，指習近平。
+
+<bubble>羕泉</bubble>可指青杞，但跟在動詞<bubble>墜</bubble>的後面，所以應該是在說地理位置。除了“漾泉”，幾乎沒有跟“羕泉”有關的和接近的地名，基本上可以認為 “羕泉”指“漾泉” ，即山西省陽泉市。
+
+<bubble>竟墜</bubble>如果照字面理解，可能是飛機墜毀，也可能只是指習近平突然意外死亡。
+
+連起來看，這句話似乎在說習近平將在山西陽泉死於非命。筆者覺得出事地點說的太明確了，讓人難以置信，因為預言通常不會說得太直白。
+
+網路上也有人用古代的九畿來解釋“夷畿”，即離首都約 3500 裡的地方。但是後面已經有<bubble>羕泉</bubble>這樣的地理座標，所以前面的<bubble>夷畿</bubble> 應該不是指地理位置。退一步講，就算“夷畿”是指地理位置，“離首都 3500 裡的習近平竟墜羕泉”，這話讓人費解。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【問今天下，其言有宋】
+</div>
+
+<bubble>問今天下</bubble>，應該是賒刀人回去向拿了刀的人要刀錢的未來某個時間。
+
+<bubble>其言有宋</bubble> ，預言當今情況時談及宋朝，賒刀人想用宋朝說明什麼呢？
+
+一種理解是，北宋時期設有四座都城，首都為東京開封府，另有三座陪都，即西京河南府（今河南洛陽）、南京應天府（今河南商丘）、北京大名府（今河北大名） 。可能是指習近平死後，中國結束大一統，進入分裂時期。
+
+另一種理解是，宋代是中國古代歷史上經濟與文化教育最繁榮的時代，在政治上也相對寬容。也許預言是說，中共最後一代領導人死去之後，沒有了共產黨，中國將進入一個像宋朝那樣的繁榮時代。這讓筆者心嚮往之。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【不肖之徒，盛乎梧林】
+</div>
+
+<bubble>梧林</bubble>位於福建泉州市安溪縣，以梧林傳統村落聞名，可以代指福建，也就是說，<bubble>不肖之徒</bubble>在福建開始走好運。
+
+<bubble>肖</bubble>的本義是骨肉相似，<bubble>不肖</bubble>指兒子不像父親。如果整篇預言都在說跟習近平有關的事，那麼習近平什麼地方不像他父親習仲勳呢？ 習仲勳從1978年開始任中共廣東省委書記。在當年中央工作會議期間，習仲勳、楊尚昆等人提出給廣東更大的自主權，允許參照外國和亞洲四小龍的成功經驗搞出口特區。1979年廣東被批准創辦經濟特區。而習近平把改革派統統踢出權力核心，一切定於習一尊。再想想習近平疫情清零這幾年的折騰，以及電商、教培、房地產等行業被他一一錘爆的殘酷現實，<bubble>不肖之徒</bubble>真是名副其實。
+
+查看習近平履歷，他在福建工作的時間長達17年（1985年~2002年）超過其它任何地方。閩江新軍或閩江舊部，即福建幫，也是習近平親信的重要來源，代表人物有蔡奇、陳希、何衛東、何立峰、王小洪、黃坤明、李書磊、陳文清和孫春蘭等。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【白猴出世，黑鼠起禍】
+</div>
+
+白色對應五行中的金。地支中，生肖猴對應申。將地支與五行配合，則<bubble>白猴</bubble>對應的是庚申年，跟現在比較接近的年份是1980年和2040年。
+
+“出世”，可以理解為出生，一般指的是年份，可習近平1953年出生，所以這裡的“出世”應該是指“出仕”，即進入中共官場。預言中用近似字來代替原字的做法很常見，讓預言沒那麼直白易懂。習近平是1979年從清華大學畢業，分配到國務院辦公廳和中共中央軍委辦公廳，擔任其父好友、當時的中共中央政治局委員兼國防部部長耿飚的秘書。為何差了1年？ 可能因為 1980年，前國務院副總理習仲勳被平反，他兒子習近平也就從此得見天日，開始在中共官場官運亨通，就像在官場重生一樣。
+
+黑色對應五行中的水。地支中，生肖鼠對應子，所以黑鼠對應的年份是壬子年，跟現在比較接近的年份是1972年和2032年。<bubble>黑鼠起禍</bubble>只能在<bubble>出世</bubble>後面發生，所以應該是指2032年。今年是2023年，還有九年才到2032年。看最近幾年，總加速師將中國政治、經濟清零的速度，習政權應該很難撐到2032年吧？ 否則接下來這九年，不知他還會怎樣折騰，那中國的百姓就太苦了。
+
+另一種理解是<bubble>黑鼠起禍</bubble>說的不是年份，而是月份，壬子月是從12月7號持續到1月5號左右，即年末年初。結合第三句“竟墜羕泉”，那麼應該是說習近平遭遇不測的時間範圍是某年的年底年初這段時間。
+
+所以，整篇預言是在說，習近平將在某年的12月7號至1月5號之間在山西陽泉附近橫死？突然想起《鐵板圖》裡面說的“白羽毛鳥兒撞死在山這邊”，這樣看來習之死，也許真的跟“山”有關啊。
+</border>
+
+<link to="https://www.bannedbook.org/bnews/zh-tw/comments/20240217/2001972.html">見山：賒刀人預言習近平終局</link>
+2024年02月17日 8:24
+
+<border style="border-style: dashed;">
+作者：見山
+
+2021年，一則洛陽賒刀人預言開始在網路流傳。2023年9月筆者曾發文嘗試解讀這則預言。隨著時間推移，越來越多的信息讓筆者對這則預言有了進一步理解，尤其是<bubble>黑鼠起禍</bubble>和<bubble>竟墜羕泉</bubble>兩句，點出了習近平的終局及其肇因，近期英國預言家帕克關於中國的預言竟然與賒刀人的預言遙相呼應。
+
+預言如下
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+不肖之徒，盛乎梧林。
+白猴出世，黑鼠起禍。
+夷畿素羽，竟墜羕泉。
+問今天下，其言有宋。
+</div>
+
+我們先從第三句開始，然後再從頭順序看，會更容易理解每句所指。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【夷畿素羽】
+</div>
+
+<bubble>夷</bubble>字除了古時指民族之外，還有弄平和平安等意，可取其<bubble>平</bubble>義。
+
+<bubble>畿</bubble>指靠近國都的地方，可取其<bubble>近</bubble>義。
+
+<bubble>素羽</bubble>，即白羽，上羽下白是<bubble>習</bubble>字的繁體字寫法。
+
+<bubble>夷畿素羽</bubble>倒過來看，就是<bubble>羽白畿夷</bubble> ，即習近平，點出這篇預言是在說習近平。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【不肖之徒】
+</div>
+
+<bubble>肖</bubble>的本義是骨肉相似。<bubble>不肖</bubble>，即兒子不像父親。
+
+習近平什麼地方不像他父親習仲勛呢？習仲勛一直被外界認為是中共黨內開明派。1978年，習仲勛任中共廣東省委書記時，與楊尚昆等人提出給廣東更大自主權，允許參照外國和亞洲四小龍的成功經驗搞出口特區。次年，廣東被批准創辦經濟特區。而習近平把改革開放派統統排除在權力核心之外，頻頻釋放文革和計劃經濟等毛時代信號，跟其父習仲勛的治國理念背道而馳。
+
+廣義上，<bubble>不肖之徒</bubble>也可指習近平作為胡錦濤的接班人，鄧小平、胡錦濤等人的後輩，卻沒有繼承前輩的改革開放政策路線。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【盛乎梧林】
+</div>
+
+<bubble>梧林</bubble>位於福建泉州市安溪縣，以梧林傳統村落聞名，可代指福建。
+
+查看習近平履歷，他在福建工作的時間長達17年（1985年至2002年），超過其它任何地方。在福建跟習近平有過交集的中共官員是其親信的重要來源，代表人物有蔡奇、陳希、何衛東、何立峰、王小洪、黃坤明、李書磊、陳文清和孫春蘭等。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【白猴出世】
+</div>
+
+白色對應五行中的金。
+
+地支中，生肖猴對應申。
+
+將地支與五行相配，則<bubble>白猴</bubble>對應庚申年，跟現在比較接近的年份是1980年和2040年。
+
+<bubble>出世</bubble>，可以理解為出生，一般指的是年份。可習近平在1953年出生，所以這裏的<bubble>出世</bubble>應該不是指出生年份。
+
+<bubble>出世</bubble>也可以理解為<bubble>出仕</bubble>做官的諧音。1979年習近平自清華大學畢業后，被分配到國務院辦公廳和中共中央軍委辦公廳工作，擔任其父好友、當時的中共中央政治局委員兼國防部部長耿飈的秘書。
+
+那麼，預言為何不寫習1979年<bubble>出世</bubble>，而是1980年呢？
+
+往下追查發現，1980年，習近平的父親、前國務院副總理習仲勛被平反，習近平自此受到中共高層的特別關照。對習近平而言，1980年才是其仕途上有重大意義的一年，彷彿在官場重生。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【黑鼠起禍】
+</div>
+
+<bubble>起禍</bubble>即種下禍端的那個時間點。那麼什麼樣的事情堪稱<bubble>禍</bubble>呢？應該是極其重大的事情，關乎生死的抉擇等。
+
+<bubble>黑</bubble>色對應五行中的水。
+
+地支中，生肖<bubble>鼠</bubble>對應子。
+
+將地支與五行相配，則<bubble>黑鼠</bubble>對應的年份是壬子年，跟現在比較接近的年份是1972年和2032年。因為預言先說了<bubble>白猴出世</bubble> ，所以<bubble>黑鼠起禍</bubble>應該是在<bubble>出世</bubble>之後發生，就排除了1972年的可能性。但這則預言2021年出現在網上，而且是跟習近平有關，應該不是在說十幾年以後的事，2032年似乎也不是預言所指。
+
+如果<bubble>黑鼠</bubble>說的不是年份，有可能是指壬子月嗎？其實幹支紀月除了月支之外，月干在史書中並不普遍，只是常用於生辰八字計算。
+
+那會不會是壬子日呢？每年有6個壬子日，從1980年到現在這麼多年，查找的工作量讓人望而卻步。靈光一現，查了一下2022年的10月26日，這一天竟然就是當年的6個壬子日之一。當時中共二十大閉幕不到一周，習近平抵達陝西省延安市。次日，習帶領全體新科常委參觀了中共前領導人的延安舊居。延安被中共稱為<bubble>革命聖地</bubble>，權力穩固後去延安<bubble>朝聖</bubble>，相當於習近平表態，宣示自己的紅色血統，並要沿著紅色道路走下去。
+
+為什麼要查這個日子？據可靠消息，習近平在前面兩個任期時，曾經對中國開明派及當時的美國總統川普等許諾，要拋棄中共，讓中國走上民主之路。如果說在前兩個任期，習的地位還有不穩固之處，那麼二十大之後，他已經把權力牢牢掌握在自己手裡，七常委全部換成了自己的人馬。在大權在握之後，他沒有兌現自己解體中共的承諾，而是貪戀手中權力，選擇為中共續命。天意滅共，他這是公然逆天啊，習之大禍始於此，<bubble>黑鼠起禍</bubble>竟然這樣實錘了。
+
+本來2023年剛開始看這則賒刀人預言的時候，心中還有些懷疑其真偽。當讀懂了<bubble>黑鼠起禍</bubble>所指，不禁感慨，這賒刀人確實厲害——此預言2021年出現在網路，賒刀人在習近平2022年去延安的前一年就已經知道，二十大習近平會連任，並且會選擇為中共續命。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【竟墜羕泉】
+</div>
+
+這句話是<bubble>黑鼠起禍</bubble>的結果，點出了習近平的終局。
+
+照字面理解，<bubble>竟墜</bubble>可以是<bubble>竟然墜落</bubble>的意思。
+
+<bubble>羕泉</bubble>跟在<bubble>墜</bubble>的後面，應該是在說地理位置。除了山西省陽泉市古稱<bubble>漾泉</bubble>之外，幾乎沒有其它跟<bubble>羕泉</bubble>接近的地名。去年，習近平清洗火箭軍正酣，很自然就會把<bubble>竟墜羕泉</bubble>理解為習的專機被打下來，掉在<bubble>羕泉</bubble>。當然賒刀人也可能用<bubble>羕泉</bubble>指代山西，就像前面用<bubble>梧林</bubble>指代福建那樣，即習近平竟然在山西掉下來。
+
+但這樣的話，出事地點說的太明確了。象習近平這幾個字，賒刀人用了<bubble>夷畿素羽</bubble>這四個字且逆序來曲折表達，那麼習之隕落，按理說，也不該直接說他在山西墜機。
+
+最近想到，如果<bubble>墜</bubble>確實是指墜機之類的事件，那麼延續前句<bubble>夷畿素羽</bubble>拆字組字的思路，也許應該把<bubble>羕</bubble>字上下拆開，拆成<bubble>羊永</bubble>，把<bubble>泉</bubble>上下拆開成<bubble>白水</bubble>。結果發現在甘肅甘南臨潭有羊永鎮，可以指代甘肅。在甘肅隴南有白水河，在陝西漢中有白水江，在陝西渭南還有白水縣等，可以指代甘肅或陝西。那麼這句話是在說習的飛機或專列會在甘肅或陝西一帶掉下來嗎？
+
+如果<bubble>墜</bubble>並非指實體掉落，而是指習近平失去一尊之高位，當然不太可能是習自己主動讓位，那麼其原因可能是疾病，或政變等。
+
+如果是政變，那麼政變發生的地點是在陝甘一帶嗎？還是主導政變者是陝甘一帶之人呢？
+
+想起前陣子英國預言家帕克關於2024年的預言。帕克稱，習近平病了，病情嚴重，但被隱瞞。由於習的疾病，中國將發生第二次革命。中共黨內分歧將導致動蕩，致使習下台。如果帕克這個預言基本準確，那麼<bubble>羕</bubble>應該是用來代替意指患病的<bubble>恙</bubble>字，<bubble>泉</bubble>字取其<bubble>黃泉</bubble>或<bubble>九泉</bubble>之意，也就是說，最終習會病亡,也是因為身體原因，習將失去最高權力，即<bubble>竟墜恙泉</bubble>。
+
+寫到這裏，腦洞大開，<bubble>竟墜</bubble>會不會是<bubble>頸椎</bubble>的諧音呢？去網上查了一下，發現這幾年郭文貴一直在說習的頸椎有嚴重問題，隨時有生命危險，還說習有其它各種嚴重健康問題等。若頸椎問題屬實，那麼<bubble>竟墜羕泉</bubble>會不會是諧音，說習因為頸椎的原因，不得己退權讓位，即<bubble>頸椎讓權</bubble>呢？
+
+忽又想到，<bubble>黑鼠起禍</bubble>的地點就在陝西，如果<bubble>泉</bubble>字拆開的<bubble>白水</bubble>是指代陝西的話，那麼<bubble>竟墜羕泉</bubble>這句話也可以理解為，習近平頸椎之恙和<bubble>黑鼠</bubble>之逆天禍端是導致其從一尊之高位墜落的表面原因和根本原因，即<bubble>頸椎恙</bubble>、<bubble>泉</bubble>。
+
+預言的前四句都是在說已經或正在發生的事情，所以比較容易找到對應的人和事。但後面幾句關乎未來，只能分析各種可能，見仁見智了。
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【問今天下】
+</div>
+
+現在中國社會什麼樣，大家都看得到，所以這句應該是指未來某個時間，賒刀人回去要刀錢的時候。那時的天下，將會是怎樣的情形呢？
+
+<div style="font-family: monospace;font-size: 1rem;font-weight: bolder;display: inline;">
+【其言有宋】
+</div>
+
+最近帕克的預言很有啟發。帕克稱，習近平病重。權力動蕩中，中國會分裂，西藏與香港會獨立，形成類似歐盟那樣的國家聯盟。如果帕克預言準確，那麼對<bubble>其言有宋</bubble>的一種理解是，習下台後，中國結束大一統，進入一個分裂時期。
+
+但對於出現賒刀人的洛陽而言，西藏和香港地處偏遠。如果只是西藏與香港獨立，對中原人影響不大。而且很多朝代末年都是不同勢力割據與混戰的亂局，宋朝也沒表現出混亂得多麼與眾不同。
+
+賒刀人預言未來中國時談及宋朝，想類比宋朝什麼呢？換個角度想，宋朝有什麼獨特之處呢？其實，宋朝可以說是中國古代歷史上經濟與文化教育最繁榮的時代。《世界經濟千年史》顯示，公元1000年，宋朝GDP約佔世界GDP的五分之一，是當時最文明、最先進的國家。仔細看《清明上河圖》就會發現，北宋京城汴梁及汴河兩岸何其繁華。
+
+帕克稱，看到中共解體，中國實現民主，不過不會在2024年馬上發生。所以對於<bubble>其言有宋</bubble>這句話，筆者更傾向於理解為，習作為中共最後一代領導人，下台不久，中共即解體。在未來中國，老百姓再也不用養活臃腫龐大的中共官僚機構；沒有了中共對社會和人民的桎梏，老百姓的主動性與創造力得以發揮，否極泰來，中國可能出現象宋朝那樣經濟與文化教育都很繁榮的時代，人民生活富足，政治環境相對寬容。
+
+這樣看來，整篇預言是在說，習近平1980年開始官運亨通，福建官場曾經的下屬們是其親信的主要來源。習與其父輩改革開放的政策背道而馳，二十大后選擇為中共續命，這成為他逆天大禍的開端，最後表現為因病失去高位。沒有了中共的未來中國，出現堪比宋朝的繁榮。
+
+預言，往往都是發生之後，大家才恍然大悟。在尚未應驗之前，往往都是站在不同角度上去揣測，眾說紛紜。隨著事態發展，也許會有更多線索出現，會讓我們對預言的理解更接近現實中即將發生的事。
+</border>
+
+<link to="https://www.gov.cn/yaowen/liebiao/202507/content_7031043.htm">7月7日至8日，习近平在山西省委书记唐登杰和省长卢东亮陪同下，先后到阳泉、太原考察调研。</link>
+2025-07-08 16:25
+
+<link to="http://politics.people.com.cn/n1/2025/0708/c1001-40517440.html">时政新闻眼丨习近平考察山西阳泉，为何来到这座太行山城？</link>
+2025年07月08日20:36
+
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-25/W020250708633979379888_ORIGIN.jpeg" alt="">
+7月7日至8日，中共中央总书记、国家主席、中央军委主席习近平在山西考察。这是7日下午，习近平在位于阳泉市狮脑山的百团大战纪念碑广场，向八路军烈士敬献花篮。新华社记者 谢环驰 摄
+
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-25/W020250708633982005209_ORIGIN.jpeg" alt="">
+7月7日至8日，中共中央总书记、国家主席、中央军委主席习近平在山西考察。这是7日下午，习近平在阳泉阀门股份有限公司考察时，同企业员工在一起。新华社记者 燕雁 摄
 
 @command("enable-border-recognition")
 @command("enable-image-recognition")

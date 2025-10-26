@@ -442,7 +442,7 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
 .container-1 .video-wrapper .cover,
 .container-1 .video-wrapper .backdrop-filter.blur,
 .container-1 .video-wrapper .backdrop-filter.white,
-.container-1 .svg-wrapper .cover,
+.container-1 .svg-wrapper .svg-cover,
 .container-1 .svg-wrapper .backdrop-filter.blur,
 .container-1 .svg-wrapper .backdrop-filter.white {
     display: none;
@@ -451,7 +451,7 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
 .container-2 .video-wrapper .cover,
 .container-2 .video-wrapper .backdrop-filter.blur,
 .container-2 .video-wrapper .backdrop-filter.white,
-.container-2 .svg-wrapper .cover,
+.container-2 .svg-wrapper .svg-cover,
 .container-2 .svg-wrapper .backdrop-filter.blur,
 .container-2 .svg-wrapper .backdrop-filter.white {
     position: absolute;
@@ -460,6 +460,17 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
     width: 100%;
     height: 100%;
     overflow: hidden;
+}
+
+.container-2 .svg-wrapper .svg-cover.checking {
+    position: relative;
+    overflow: unset;
+}
+
+.container-2 .svg-wrapper:has(.svg-cover.checking) svg {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 .container-2 .video-wrapper .backdrop-filter.blur,
@@ -476,7 +487,7 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
 }
 
 .container-2 .video-wrapper .cover,
-.container-2 .svg-wrapper .cover {
+.container-2 .svg-wrapper .svg-cover {
     z-index: 10;
 }
 

@@ -142,6 +142,14 @@ function getRandomId() {
     return ("" + Math.random() * 10).split(".").join("").substring(0, 12) + "-" + (new Date()).getTime();
 }
 
+function toggleClass(target, className) {
+    if (target.classList.contains(className)) {
+        target.classList.remove(className);
+    } else {
+        target.classList.add(className);
+    }
+}
+
 function revealOuterHTML(target) {
     const to = target.getAttribute('to');
     target.style.color = "var(--studio-red)";
@@ -618,7 +626,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             if (line.startsWith("@svg_start &lt;svg") && line.endsWith("@svg_end")) {
                 const svg = line.replace("@svg_start &lt;svg", "<svg").replace("@svg_end", "</svg>").replaceAll("&lt;", "<");
                 const wrapperOpen = '<div class="svg-wrapper">';
-                const covers = '<div class="backdrop-filter blur"></div><div class="backdrop-filter white"></div><div class="cover svg-cover" onclick="alert(\'' + svg.replaceAll("\"", "&quot;") + '\')">' + svg.replaceAll("<", "&lt;") + '</div>';
+                const covers = '<div class="backdrop-filter blur"></div><div class="backdrop-filter white"></div><div class="svg-cover" onclick="toggleClass(this,\'checking\')">' + svg.replaceAll("<", "&lt;") + '</div>';
                 const wrapperClose = '</div>';
                 return wrapperOpen + covers + svg + wrapperClose;
             }

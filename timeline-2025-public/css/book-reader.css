@@ -427,8 +427,11 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
     font-weight: bold;
 }
 
-.video-wrapper {
+.video-wrapper,
+.svg-wrapper {
     position: relative;
+    display: inline-block;
+    width: 100%;
 }
 
 .video-wrapper video {
@@ -438,42 +441,54 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
 
 .container-1 .video-wrapper .cover,
 .container-1 .video-wrapper .backdrop-filter.blur,
-.container-1 .video-wrapper .backdrop-filter.white {
+.container-1 .video-wrapper .backdrop-filter.white,
+.container-1 .svg-wrapper .cover,
+.container-1 .svg-wrapper .backdrop-filter.blur,
+.container-1 .svg-wrapper .backdrop-filter.white {
     display: none;
 }
 
 .container-2 .video-wrapper .cover,
 .container-2 .video-wrapper .backdrop-filter.blur,
-.container-2 .video-wrapper .backdrop-filter.white {
+.container-2 .video-wrapper .backdrop-filter.white,
+.container-2 .svg-wrapper .cover,
+.container-2 .svg-wrapper .backdrop-filter.blur,
+.container-2 .svg-wrapper .backdrop-filter.white {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
 }
 
-.container-2 .video-wrapper .backdrop-filter.blur {
+.container-2 .video-wrapper .backdrop-filter.blur,
+.container-2 .svg-wrapper .backdrop-filter.blur {
     backdrop-filter: blur(2px);
     z-index: 8;
 }
 
-.container-2 .video-wrapper .backdrop-filter.white {
+.container-2 .video-wrapper .backdrop-filter.white,
+.container-2 .svg-wrapper .backdrop-filter.white {
     background-color: white;
     opacity: .9;
     z-index: 9;
 }
 
-.container-2 .video-wrapper .cover {
+.container-2 .video-wrapper .cover,
+.container-2 .svg-wrapper .cover {
     z-index: 10;
 }
 
 body[data-value-of-enable-no-backdrop="true"] .container-2 .img-wrapper>img,
 body[data-value-of-enable-no-backdrop="true"] .container-2 .video-wrapper video,
+body[data-value-of-enable-no-backdrop="true"] .container-2 .svg-wrapper svg,
 body[data-value-of-enable-no-backdrop="true"] .container-1 .decode-url-link .og-text {
     visibility: hidden;
 }
 
-body[data-value-of-enable-no-backdrop="true"] .container-2 .video-wrapper .backdrop-filter {
+body[data-value-of-enable-no-backdrop="true"] .container-2 .video-wrapper .backdrop-filter,
+body[data-value-of-enable-no-backdrop="true"] .container-2 .svg-wrapper .backdrop-filter {
     display: none;
 }
 

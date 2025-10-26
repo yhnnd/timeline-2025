@@ -651,6 +651,17 @@ display: none;
                     </div>
                 </div>
             </li>
+            <li>
+                <div class="settings-item">
+                    <div>
+                        <code>24</code>
+                        <span>Enable Cache for Search ⚠️</span>
+                    </div>
+                    <div class="ios-button" data-key="enable-cache-for-search">
+                        <div class="ios-button-circle"></div>
+                    </div>
+                </div>
+            </li>
         </ul>
     </li>
 </ul>`;

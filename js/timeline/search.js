@@ -139,7 +139,7 @@ function initSearch(resultWrapper, configs) {
 
     for (const i in articles) {
         const url = articles[i].realUrl;
-        ajax(url, articles[i]["text"], function (responseText) {
+        ajax(url, articles[i]["text"], window.localStorage.getItem("enable-cache-for-search") === "true", function (responseText) {
             articles[i].text = responseText;
             searchLoading();
         }, function () {

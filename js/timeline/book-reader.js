@@ -553,6 +553,9 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                 }
                 return "@image " + window.parseFakeUrl(line, { fakeUrl: getParameter("fakeUrl"), realUrl: getParameter("src") });
             }
+            if (line.startsWith("<svg") && line.endsWith("</svg>")) {
+                return "@svg_start " + line.replace(/<\/svg>$/, "@svg_end");
+            }
             if (line.startsWith("<div") && line.endsWith(">")) {
                 return "@div_start " + line;
             }
@@ -611,6 +614,13 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                     }
                 }
                 return insertStr(line, line.length - 1, " onclick=\"inspectImage(this.src)\" loading=\"lazy\"");
+            }
+            if (line.startsWith("@svg_start &lt;svg") && line.endsWith("@svg_end")) {
+                const svg = line.replace("@svg_start &lt;svg", "<svg").replace("@svg_end", "</svg>").replaceAll("&lt;", "<");
+                const wrapperOpen = '<div class="svg-wrapper">';
+                const covers = '<div class="backdrop-filter blur"></div><div class="backdrop-filter white"></div><div class="cover svg-cover" onclick="alert(\'' + svg.replaceAll("\"", "&quot;") + '\')">' + svg.replaceAll("<", "&lt;") + '</div>';
+                const wrapperClose = '</div>';
+                return wrapperOpen + covers + svg + wrapperClose;
             }
             if (line.startsWith("@div_start &lt;div") && line.endsWith(">")) {
                 return line.replace("@div_start &lt;div", "<div");
@@ -1275,14 +1285,13 @@ function highlightSearchKeywords(child, {searchKeywords, configs}) {
             }
             newTextNode.isNewTextNode = true; // 标记新文本节点
             newChildren.appendChild(newTextNode);
-            console.log("newTextNode " + (newTextNode.nodeType === Node.TEXT_NODE ? newTextNode.textContent : newTextNode.innerHTML));
         }
         child.parentElement.replaceChild(newChildren, child);
     }
 }
 
 function renderArticle(src, containerClassName, container2ClassName) {
-    ajax(src, undefined, function(responseText) {
+    ajax(src, undefined, window.localStorage.getItem("enable-cache") === "true", function(responseText) {
         renderArticleParse(responseText, containerClassName, container2ClassName);
     });
 }

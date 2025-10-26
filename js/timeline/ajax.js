@@ -21,11 +21,7 @@ async function getCache(key) {
     }
 }
 
-async function ajax(url, responseText, callback, errorCallback) {
-    let isCacheEnabled = false;
-    if (window.localStorage.getItem("enable-cache") === "true") {
-        isCacheEnabled = true;
-    }
+async function ajax(url, responseText, isCacheEnabled, callback, errorCallback) {
     if (responseText != undefined && callback && typeof callback === "function") {
         // short circuit.
         callback(responseText);

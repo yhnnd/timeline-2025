@@ -643,6 +643,10 @@ Oct 28, 2025
 
 以色列必胜，伊斯兰邪教必亡。
 
+Oct 29, 2025
+
+刘鲁东，微博用户名: 地瓜熊老六。身份证号: 372328197909280017。电话号: 13591731973。身高178cm，2002年由山东迁至大连，手机尾号1973，家里电话尾号7648。妻子刘伟1984年出生，身高165cm，瓦房店人。
+
 @command("enable-border-recognition")
 @command("enable-image-recognition")
 @command("line-width-maximum")

@@ -39,7 +39,7 @@ Oct 15, 2025
 
 Oct 16, 2025
 
-<div style="font-size: 1.25rem;font-family: serif;">
+<div style="font-size: 1.25rem;font-weight: bolder;">
 Grok 对《启示录》的解读
 </div>
 <div style="font-weight: bold;display: inline;">

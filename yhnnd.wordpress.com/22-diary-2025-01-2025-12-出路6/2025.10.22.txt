@@ -941,6 +941,44 @@ Oct 30, 2025
 
 各省，各市，各乡，各地方的独立自主，全民普选，不容任何中央集权政府的垄断、侵犯、干涉！
 
+Oct 31, 2025
+
+百度面试题
+
+数组去重复元素，按升序排列
+
+<border>
+function uniqueAndAscend(arr) {
+  let arr2 = [];
+  arr.forEach(e => {
+    if (!arr2.includes(e)) {
+      arr2.push(e);
+    }
+  });
+  return arr2.sort((a, b) => a - b);
+}
+</border>
+
+把数组中出现次数超过数组长度一半的元素输出，没有则输出 0
+
+<border>
+function occurExceedsHalfLength(arr) {
+  const halfLength = arr.length / 2;
+  const numOccur = {};
+  for (const e of arr) {
+    if (numOccur[e]) {
+      numOccur[e] = numOccur[e] + 1;
+    } else {
+      numOccur[e] = 1;
+    }
+    if (numOccur[e] > halfLength) {
+      return e;
+    }
+  }
+  return 0;
+}
+</border>
+
 @command("enable-border-recognition")
 @command("enable-image-recognition")
 @command("line-width-maximum")

@@ -27,5 +27,12 @@ https://x.com/KaiZong28476/status/1983913822038474770
 
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-01/4.jpeg" alt="">
 
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-01/trump-xi.webp" alt="">
+
+<div class="row" style="gap: 10px;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-01/1_JD_Fancy.webp" alt="" style="width: 300px;height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-01/4_prophet_of_ohio.webp" alt="" style="width: 300px;height: fit-content;">
+</div>
+
 @command("enable-image-recognition")
 @command("enable-border-recognition")

@@ -31,14 +31,18 @@ pre.context {
 pre.context span.og-quote,
 pre.context span[onclick] {
     text-decoration: underline dotted darkviolet;
+    text-underline-offset: 2px;
 }
 body[data-value-of-platform="MacIntel"] pre.context span.og-quote,
 body[data-value-of-platform="MacIntel"] pre.context span[onclick] {
-    text-decoration: underline dashed darkviolet;
+    text-decoration-style: dashed;
 }
 pre.context span.og-quote:hover,
 pre.context span[onclick]:hover {
-    background-color: aquamarine;
+    text-decoration: unset !important;
+    color: white;
+    background-color: black;
+    outline: 2px solid black;
 }
 pre.context .only-here {
     color: red;

@@ -26,10 +26,10 @@ https://www.tiktok.com/@zhuliaman/video/7032669111364668677
 Below videos were downloaded from TikTok (2021-11-20)
 <div class="row" style="font-size: 0;gap: 10px;">
 <border>
-@video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-05/1.mp4 controls autoplay loop onloadstart="this.volume=0.006"
+@video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-05/1.mp4 controls loop onloadstart="this.volume=0.006"
 </border>
 <border>
-@video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-05/2.mp4 controls autoplay loop onloadstart="this.volume=0.006"
+@video ../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-05/2.mp4 controls loop onloadstart="this.volume=0.006"
 </border>
 </div>
 

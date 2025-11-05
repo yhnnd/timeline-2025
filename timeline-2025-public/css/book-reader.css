@@ -359,6 +359,11 @@ pre .row:has(.img-wrapper) {
     overflow: hidden;
 }
 
+/* Override parent font-size (in case parent font-size: 0) */
+.container-2 .img-wrapper .content {
+    font-size: 1rem;
+}
+
 .img-wrapper .background-image {
     background-size: cover;
 }
@@ -460,6 +465,12 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
     width: 100%;
     height: 100%;
     overflow: hidden;
+}
+
+/* Override parent font-size (in case parent font-size: 0) */
+.container-2 .video-wrapper .cover,
+.container-2 .svg-wrapper .svg-cover {
+    font-size: 1rem;
 }
 
 .container-2 .svg-wrapper .svg-cover.checking {

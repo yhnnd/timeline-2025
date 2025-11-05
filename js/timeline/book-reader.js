@@ -1167,6 +1167,9 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         }
         container2.querySelectorAll("video").forEach(video => {
             video.removeAttribute("controls");
+            video.removeAttribute("autoplay");
+            video.removeAttribute("onloadstart");
+            video.setAttribute("muted", true);
         });
         if (listItemNumberLines.length) {
             container2.querySelectorAll(".list-item-number").forEach(li => {

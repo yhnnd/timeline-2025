@@ -7,6 +7,11 @@
 </head>
 <body>
   <style>
+pre {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  word-break: break-word;
+}
 .bubble {
   display: inline-block;
   background-color: #e9f0f5;
@@ -28,7 +33,7 @@
   <div style="display: flex; justify-content: center; margin-bottom: 200px;">
     <pre style="width: 800px;"><h1>link</h1>
 
-a <div class="bubble">&lt;link&gt;</div> tag will be translated to a <div class="bubble green">&lt;div class="link" onclick="openLink(event)"&gt;</div> tag.
+A <div class="bubble">&lt;link&gt;</div> tag will be translated to a <div class="bubble green">&lt;div class="link" onclick="openLink(event)"&gt;</div> tag.
 
 <div class="bubble">&lt;link to="book-reader.html?src=../folder/filename.txt" &gt;</div> will be translated to
 
@@ -36,13 +41,15 @@ a <div class="bubble">&lt;link&gt;</div> tag will be translated to a <div class=
 
 <h1>img</h1>
 
-a <div class="bubble">&lt;img src="../folder/filename.jpg"&gt;</div> will be recognized as a html <div class="bubble red">img</div> tag.
+A <div class="bubble">&lt;img src="../folder/filename.jpg"&gt;</div> will be recognized as a html <div class="bubble red">img</div> tag.
+
+A Scalable Vector Graphic <span class="bubble">&lt;svg&gt;</span> will be recognized as a html <span class="bubble red">svg</span> tag <b>ONLY</b> when it is written in single line. The opening tag <span class="bubble">&lt;svg&gt;</span> and the closing tag <span class="bubble">&lt;/svg&gt;</span> <b>MUST</b> be in one single line.
 
 <h1>thumbnail row</h1>
 
-a <div class="bubble">&lt;div class="row"&gt;</div> will be recognized as a html <div class="bubble red">div</div> tag.
+A <div class="bubble">&lt;div class="row"&gt;</div> will be recognized as a html <div class="bubble red">div</div> tag.
 
-a <div class="bubble">&lt;div class="row"&gt;</div> can wrap a list of <div class="bubble">&lt;img class="thumbnail"&gt;</div> and will display a group of images in one line.
+A <div class="bubble">&lt;div class="row"&gt;</div> can wrap a list of <div class="bubble">&lt;img class="thumbnail"&gt;</div> and will display a group of images in one line.
 
 <i>If the image with class name <div class="bubble red">thumbnail</div> is too small, use <div class="bubble red">thumbnail-2x</div>.</i>
 

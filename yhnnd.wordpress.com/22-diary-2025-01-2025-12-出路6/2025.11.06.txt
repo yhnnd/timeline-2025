@@ -220,5 +220,14 @@ https://www.kanzhongguo.eu/node/71737
 
 2024年6月，63岁的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">景俊海</bubble>被免去吉林省委书记、常委、委员职务。同年9月13日，在第十四届全国人大常委会第十一次会议上被任命为全国人大教育科学文化卫生委员会副主任委员，退居二线。
 
+<border>
+<div class="row">
+<img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-15/channels4_profile.jpg" alt="">
+習近平「龍脈」崩塌內幕！景俊海突被押北戴河、方紅衛寺廟被抓、央視鏡頭降格、彭麗媛畫面藏玄機，三陝西高官連環倒，修陵功臣全滅，究竟誰在掘墓？
+</div>
+<link to="https://youtu.be/HvBrFUEm2hc">https://youtu.be/HvBrFUEm2hc</link>
+</border>
+
 @command("enable-image-recognition")
 @command("enable-video-recognition")
+@command("enable-border-recognition")

@@ -228,6 +228,14 @@ https://www.kanzhongguo.eu/node/71737
 <link to="https://youtu.be/HvBrFUEm2hc">https://youtu.be/HvBrFUEm2hc</link>
 </border>
 
+<border>
+<div class="row">
+<img class="thumbnail rounded-circle" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-11-15/channels4_profile.jpg" alt="">
+中共最怕的經濟噩夢來了：陷入通縮螺旋！印了那麼多錢，為什麼還通縮蔓延？經濟「冷暴力衰退」你該如何自保？
+</div>
+<link to="https://youtu.be/qQHRGqv5QnI">https://youtu.be/qQHRGqv5QnI</link>
+</border>
+
 @command("enable-image-recognition")
 @command("enable-video-recognition")
 @command("enable-border-recognition")

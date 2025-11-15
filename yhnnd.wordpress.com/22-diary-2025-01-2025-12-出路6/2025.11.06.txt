@@ -236,6 +236,11 @@ https://www.kanzhongguo.eu/node/71737
 <link to="https://youtu.be/qQHRGqv5QnI">https://youtu.be/qQHRGqv5QnI</link>
 </border>
 
+International Lawmakers Unite at IPAC Summit Unveiling Coordinated Action to Safeguard Human Rights And Regional Security
+https://www.ipac.global/news/international-lawmakers-unite-at-ipac-summit-unveiling-coordinated-action-to-safeguard-human-rights-and-regional-security
+
+@base64("5Zu96ZmF5a+55YWx5Yyq5Zu95pS/562W6Leo5Zu96K6u5Lya6IGU55ufIElQQUMg5Y+R5biD5YWs5ZGK77yM6LC06LSj5YWx5Yyq5Zu95rS75pGY5Zmo5a6Y572q6KGM44CC");
+
 @command("enable-image-recognition")
 @command("enable-video-recognition")
 @command("enable-border-recognition")

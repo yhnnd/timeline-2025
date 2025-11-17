@@ -482,7 +482,7 @@ Nov 17, 2025
 <div style="font-size: 1rem;">
 耶利米书第33章第11节
 <div style="margin-left: 1rem;">
-但这些地方必传出欢乐声、新郎和新娘的欢笑声，
+但这些地方必传出欢乐声、<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新郎</bubble>和<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新娘</bubble>的欢笑声，
 并听见有人说：要感谢万军之耶和华，因为耶和华是美善的，祂的慈爱永远长存！
 又有在耶和华殿中献感恩祭者的歌唱声，
 因为我必使这地被掳的人归回，和起初一样。这是耶和华说的。
@@ -497,8 +497,8 @@ Nov 17, 2025
 耶利米书第33章第14-17节
 <div style="margin-left: 1rem;">
 14 耶和华说：看啊，时候将到，我要实现我给以色列人和犹大人的美好应许。
-15 那时，我要使大卫公义的苗裔兴起，他要在地上秉公行义。
-16 那时，犹大必得到拯救，耶路撒冷必安享太平并被称为耶和华是我们的义。
+15 那时，我要使大卫<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">公义</bubble>的苗裔兴起，他要在地上秉公行<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">义</bubble>。
+16 那时，犹大必得到拯救，耶路撒冷必安享太平并被称为耶和华是我们的<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">义</bubble>。
 17 因为耶和华说：我应许大卫的后裔必永远统治以色列，
 </div>
 </div>
@@ -512,7 +512,7 @@ Nov 17, 2025
 <div style="margin-left: 1rem;">
 27 约翰回答说：除非是从天上赏赐下来的，否则人什么都得不到。
 28 你们自己可以为我做见证，我说过我不是基督，我只是奉差在祂前面预备道路的。
-29 娶新娘的是新郎，站在旁边的朋友听见新郎的声音，就会欢喜快乐。
+29 娶<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新娘</bubble>的是<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新郎</bubble>，站在旁边的朋友听见<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新郎</bubble>的声音，就会欢喜快乐。
 因此，我现在也心满意足了。
 </div>
 </div>
@@ -524,8 +524,8 @@ Nov 17, 2025
 <div style="font-size: 1rem;">
 马太福音第9章第15节
 <div style="margin-left: 1rem;">
-耶稣对他们说：新郎和宾客还在一起的时候，宾客怎能悲伤呢？
-但有一天新郎将被带走，那时他们就要禁食了。
+耶稣对他们说：<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新郎</bubble>和宾客还在一起的时候，宾客怎能悲伤呢？
+但有一天<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新郎</bubble>将被带走，那时他们就要禁食了。
 </div>
 </div>
 </div>
@@ -537,7 +537,7 @@ Nov 17, 2025
 马太福音第24章第32-34节
 <div style="margin-left: 1rem;">
 32 你们可以从无花果树学个道理。当无花果树发芽长叶的时候，你们就知道夏天快来了。
-33 同样，当你们看见这一切事发生时，就知道人子快来了，就在门口。
+33 同样，当你们看见这一切事发生时，就知道<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">人子快来了</bubble>，就在门口。
 34 我实在告诉你们，这个世代还没有过去，这一切都要发生。
 </div>
 </div>
@@ -550,14 +550,14 @@ Nov 17, 2025
 马太福音第24章第36-44节
 <div style="margin-left: 1rem;">
 36 但没有人知道那日子和时辰何时来到，连天上的天使也不知道，子也不知道，唯有天父知道。
-37 人子降临时的情形就像诺亚的时代。
+37 <bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">人子降临时</bubble>的情形就像诺亚的时代。
 38 洪水来临之前，人们吃吃喝喝，男婚女嫁，一直到诺亚进方舟那天。
-39 他们懵然不知，直到洪水来把他们全冲走了。人子降临时的情形也是这样。
+39 他们懵然不知，直到洪水来把他们全冲走了。<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">人子降临时</bubble>的情形也是这样。
 40 那时，两个人在田里，一个将被接去，一个将被撇下；
 41 两个妇人推磨，一个将被接去，一个将被撇下。
-42 所以，你们要警醒，因为你们不知道你们的主会在哪一天来。
+42 所以，你们<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">要警醒</bubble>，因为你们不知道你们的主会在哪一天来。
 43 你们都知道，如果一家的主人知道贼会在半夜几点来，就必警醒，不让贼入屋偷窃。
-44 同样，你们也要做好准备，因为在你们意想不到的时候，人子就来了。
+44 同样，你们也<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">要做好准备</bubble>，因为在你们意想不到的时候，人子就来了。
 </div>
 </div>
 </div>
@@ -568,8 +568,8 @@ Nov 17, 2025
 <div style="font-size: 1rem;">
 马太福音第25章第6、13节
 <div style="margin-left: 1rem;">
-6 到了半夜，忽然听见有人喊道：新郎来了！出来迎接吧！
-13 所以，你们要警醒，因为你们不知道我回来的日子和时辰。
+6 到了半夜，忽然听见有人喊道：<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新郎</bubble>来了！出来迎接吧！
+13 所以，你们<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">要警醒</bubble>，因为你们不知道我回来的日子和时辰。
 </div>
 </div>
 </div>
@@ -584,9 +584,9 @@ Nov 17, 2025
 无论尊卑老少，都要赞美我们的上帝！
 6 我听见有声音好像一大群人的呼喊声，又像洪涛，也像雷鸣，
 说：哈利路亚！因为我们的主 —— 全能的上帝已经执掌王权了。
-7 我们应当欢喜快乐，归荣耀给祂，因为羔羊的婚期到了，祂的新娘已预备妥当，
-8 获准穿上光亮洁白的细麻衣。这细麻衣代表圣徒的义行。
-9 天使吩咐我说：你要写下，被邀请参加羔羊婚宴的人有福了！
+7 我们应当欢喜快乐，归荣耀给祂，因为<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">羔羊</bubble>的<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">婚期</bubble>到了，祂的<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新娘</bubble>已预备妥当，
+8 获准穿上光亮洁白的细麻衣。这细麻衣代表圣徒的<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">义行</bubble>。
+9 天使吩咐我说：你要写下，被邀请参加<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">羔羊婚宴</bubble>的人有福了！
 他又说：这是上帝亲口说的，千真万确。
 </div>
 </div>
@@ -600,7 +600,7 @@ Nov 17, 2025
 <div style="margin-left: 1rem;">
 1 接着我看见一个新天新地，因为以前的天地都消逝了，海洋也不复存在了。
 2 我又看见圣城新耶路撒冷从天上的上帝那里降下，
-预备好了，像装饰整齐等候新郎的新娘。
+预备好了，像装饰整齐等候<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新郎</bubble>的<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新娘</bubble>。
 3 我听见从宝座中传来响亮的声音说：看啊！上帝的居所设立在人间，
 祂要与人同住。他们要成为祂的子民，
 上帝要亲自与他们同在，做他们的上帝。
@@ -616,13 +616,13 @@ Nov 17, 2025
 <div style="font-size: 1rem;">
 启示录第22章第12-20节
 <div style="margin-left: 1rem;">
-12 看啊，我快要来了，到时候我要按各人的行为施行赏罚。
+12 看啊，<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">我快要来了</bubble>，到时候我要按各人的行为施行赏罚。
 13 我是阿拉法，我是欧米伽；我是首先的，我是末后的；我是开始，我是终结。
-16 我耶稣差遣我的天使到众教会，向你们证明这些事。
+16 我耶稣差遣我的天使到众<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">教会</bubble>，向你们证明这些事。
 我是大卫的根，也是大卫的后裔，又是明亮的晨星。
-17 圣灵和新娘都说：来吧！听见的也要说：来吧！
-口渴的，让他来吧！愿意的，让他白白享用生命水吧！
-20 那位证明这些事的说：是的，我必快来。阿们！主耶稣啊，我愿你来！
+17 圣灵和<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">新娘</bubble>都说：来吧！听见的也要说：来吧！
+口渴的，让他来吧！愿意的，让他白白享用<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">生命水</bubble>吧！
+20 那位证明这些事的说：是的，<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">我必快来</bubble>。阿们！主耶稣啊，我愿你来！
 </div>
 </div>
 </div>

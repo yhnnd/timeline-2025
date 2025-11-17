@@ -627,6 +627,104 @@ Nov 17, 2025
 </div>
 </div>
 
+<div style="font-size: 1.5rem;font-weight: bolder;display: inline;">
+主对我主说 <bubble style="border: unset;font-weight: normal;padding: 0;background: unset;font-size: 1rem;">2023.09.12</bubble>
+</div>
+
+<div style="font-size: 1rem;font-weight: bolder;display: inline;">
+詩篇 8
+</div>
+<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;font-style: italic;">大衛的詩，交於伶長。用迦特樂器。</bubble>
+1 耶和華我們的主啊，你的名在全地何其美，你將你的榮耀彰顯於天！
+2 你因敵人的緣故，從<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">嬰孩</bubble>和吃奶的口中建立了能力，使仇敵和報仇的閉口無言。
+3 我觀看你指頭所造的天，並你所陳設的月亮星宿，
+4 便說：「<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">人</bubble>算什麼，你竟顧念<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>？<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">世人</bubble>算什麼，你竟眷顧<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>？
+5 你叫<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>比天使微小一點，並賜<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>榮耀尊貴為冠冕。
+6 你派<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>管理你手所造的，使萬物，就是一切的牛羊，田野的獸，空中的鳥，海裡的魚，凡經行海道的，都服在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">腳下</bubble>。」 7 8
+9 耶和華我們的主啊，你的名在全地何其美！
+
+<div style="font-size: 1rem;font-weight: bolder;display: inline;">
+詩篇 110
+</div>
+<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;font-style: italic;">大衛的詩。</bubble>
+1 耶和華對<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">我主</bubble>說：「<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>坐在我的右邊，等我使<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的仇敵做<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">腳凳</bubble>。」
+2 耶和華必使<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>從錫安伸出能力的杖來，<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>要在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的仇敵中掌權。
+3 當<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>掌權的日子 ，<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的民要以聖潔的裝飾為衣，甘心犧牲自己，<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的民多如清晨的甘露。
+4 耶和華起了誓，決不後悔，說：「<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>是照著<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: purple;">麥基洗德</bubble>的等次永遠為祭司。」
+
+<div style="font-size: 1rem;font-weight: bolder;display: inline;">
+馬太福音 22:41
+</div>
+41 法利賽人聚集的時候，耶穌問他們說： 
+42 「論到<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>，你們的意見如何？<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>是誰的子孫呢？」
+他們回答說：「是大衛的子孫。」
+43 耶穌說：「這樣，大衛被聖靈感動，怎麼還稱<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>為主說：
+44 『主對<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">我主</bubble>說：<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>坐在我的右邊，等我把<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的仇敵放在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">腳下</bubble>』？
+45 大衛既稱<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>為主，<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>怎麼又是大衛的子孫呢？」
+46 他們沒有一個人能回答一言。從那日以後，也沒有人敢再問<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>什麼。
+
+<div style="font-size: 1rem;font-weight: bolder;display: inline;">
+希伯來書 5
+</div>
+1 凡從人間挑選的大祭司，是奉派替人辦理屬神的事，為要獻上禮物和贖罪祭 。
+2 他能體諒那愚蒙的和失迷的人，因為他自己也是被軟弱所困。
+3 故此，他理當為百姓和自己獻祭贖罪。
+4 這大祭司的尊榮沒有人自取，唯要蒙神所召，像亞倫一樣。
+5 如此，<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>也不是自取榮耀做大祭司，乃是在乎向<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>說「<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>是我的兒子，我今日生<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>」的<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">那一位</bubble>，
+6 就如經上又有一處說：「你是照著<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: purple;">麥基洗德</bubble>的等次永遠為祭司。」
+7 <bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>在肉體的時候既大聲哀哭，流淚禱告，懇求那能救<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>免死的<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">主</bubble>，就因<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的虔誠蒙了應允。
+8 <bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>雖然為兒子，還是因所受的苦難學了順從。
+9 <bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>既得以完全，就為凡順從<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的人成了永遠得救的根源，
+10 並蒙<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>照著<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: purple;">麥基洗德</bubble>的等次稱<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>為大祭司。
+
+<div style="font-size: 1rem;font-weight: bolder;display: inline;">
+希伯來書 10:10
+</div>
+10 我們憑這旨意，靠<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">耶穌基督</bubble>只一次獻上<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的身體，就得以成聖。
+11 凡祭司天天站著侍奉<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>，屢次獻上一樣的祭物，這祭物永不能除罪。
+12 但<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>獻了一次永遠的贖罪祭，就在<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>的右邊坐下了，
+13 從此等候<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的仇敵成了<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">腳凳</bubble>。
+14 因為<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>一次獻祭，便叫那得以成聖的人永遠完全。
+
+<div style="font-size: 1rem;font-weight: bolder;display: inline;">
+哥林多前書 15
+</div>
+19 我们若靠<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>只在今生有指望，就算比众人更可怜！
+20 但<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>已经从死里复活，成为睡了之人初熟的果子。
+21 死既是因一人而来，死人复活也是因<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">一人</bubble>而来。
+22 在亚当里众人都死了，照样，在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>里众人也都要复活。
+23 但各人是按着自己的次序复活：初熟的果子是<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>，以后在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>来的时候，是那些属<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>的。
+24 再后末期到了，那时<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>既将一切执政的、掌权的、有能的都毁灭了，就把国交于<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">父神</bubble>。
+25 因为<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>必要做王，等<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>把一切仇敌都放在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">脚下</bubble>。
+26 <bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>最后要毁灭的仇敌就是死亡，
+27 因为经上说：“<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>叫万物都服在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">脚下</bubble>。”
+既说万物都服了<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>，明显<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">那叫万物服<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的</bubble>不在其内了。
+28 万物既服了<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>，那时<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">子</bubble>也要<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">自己</bubble>服<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">那叫万物服<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">他</bubble>的</bubble>，叫<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>在万物之上、为万物之主。
+
+郭弟兄、刘弟兄，
+对于哥林多前书第15章第25至第28节，因为原文涉及一些人称代词和从句，所以翻译成中文之后晦涩难懂。我们已经知道，那叫万物服他的，就是耶和华。现在的问题是，我们不知道“他”是指耶和华自己还是指耶和华的儿子基督。也就是说，到底是耶和华叫万物服耶和华自己，还是叫万物服基督？我认为，结合上下文，把这几句中的所有的人称代词和从句所省略的内容都补充上，之后就很容易理解了。其实，如果耶和华叫万物直接服耶和华自己，就没有必要创造人类了，创世记中很明显告诉我们，耶和华创造人类的目的就是让人类替耶和华统治万物，同样，耶和华差遣我主耶稣来这世上建立圣教会，也是为了叫万物都服基督，而到了末时，万物既服了基督，那时子也要自己服（那叫万物服他的）耶和华，这样耶和华就在万物之上、为万物之主了。
+<bubble style="border: none;font-weight: bolder;padding: 0;background: unset;">这是我修改之后的版本</bubble>，之前我们读的版本因为文中全是让人困惑的“他”所以不容易理解。
+我把所有的“他”都替换成了其对应的名字。一般情况下，这些“他”指的都是基督，而不是耶和华。
+
+25 因为<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>必要做王，直到<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>把一切仇敌都放在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">脚下</bubble>。
+26 <bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>最后要毁灭的仇敌就是死亡，
+27 因为经上说：“<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>叫万物都服在<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">脚下</bubble>。”
+既说万物都服了<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>，明显那叫万物服<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>的<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>不在其内了。
+28 万物既服了<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">基督</bubble>，那时<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">子</bubble>也要<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">自己</bubble>服那叫万物服<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">子</bubble>的<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">父</bubble>，叫<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">神</bubble>在万物之上、为万物之主。
+
+这样，我们就可以理解，耶和华借着祂所创造的人类统治世界，而在人类犯罪之后，耶和华借着祂所差遣的基督通过献祭自己而赎了人类的罪，从而拯救了世界。
+
+起初，神创造万物，之后，神创造人。
+神叫万物服人，而人要服耶和华。
+但人不服耶和华，犯了原罪，被神逐出伊甸园。
+人又犯罪，罪恶深重，神拣选诺亚一家。
+神拣选雅各家。神差遣先知摩西与以色列民订立旧约。
+人又犯罪，杀害神所差遣的众先知，神差遣自己的儿子降世，拯救世人。
+到了末时，万物服基督，而基督服耶和华。
+这样，耶和华靠着基督实现了拯救世人的应许。这就是最美的新约。
+
+<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">主</bubble>對<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">我主</bubble>說：「<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>坐在<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">我</bubble>的右邊，等<bubble style="border: 0;font-weight: normal;padding: 0;background: yellow;">我</bubble>使<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的仇敵做<bubble style="border: 0;font-weight: normal;padding: 0;background: unset;color: red;">你</bubble>的<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">腳凳</bubble>。」
+
 @command("enable-image-recognition")
 @command("enable-video-recognition")
 @command("enable-border-recognition")

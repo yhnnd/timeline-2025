@@ -237,9 +237,10 @@ function searchKeywords(keywords, configs) {
                         }
                     }
                 }
-                let targetUrl = "book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "&q=" + encodeURIComponent(JSON.stringify(keywords));
+                let targetUrl = "book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl;
+                window.sessionStorage.setItem("q", JSON.stringify(keywords));
                 if (configs) {
-                    targetUrl += "&conf=" + encodeURIComponent(JSON.stringify(configs));
+                    window.sessionStorage.setItem("conf", JSON.stringify(configs));
                 }
                 link.innerHTML = "<a target='_self' href='" + targetUrl + "'>"
                     + "<span class='folder'>" + folder + "</span> / <span>" + filename + "</span></a>"

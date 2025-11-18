@@ -1233,7 +1233,7 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
 }
 
 function _highlightSearchKeywords_(container) {
-    const q = getParameter("q"), conf = getParameter("conf");
+    const q = window.sessionStorage.getItem("q"), conf = window.sessionStorage.getItem("conf");
     if (q) {
         const searchKeywords = JSON.parse(q), configs = conf ? JSON.parse(conf) : null;
         if (!configs || configs.type === "text") {
@@ -1246,13 +1246,8 @@ function _highlightSearchKeywords_(container) {
                 }
             });
         }
-        // 删除浏览器地址栏中的 q 参数
-        const url = new URL(window.location.href);
-        const params = new URLSearchParams(url.search);
-        params.delete('q');
-        params.delete('conf');
-        url.search = params.toString();
-        window.history.replaceState(null, '', url.toString()); // 更新地址栏（不刷新页面）
+        window.sessionStorage.removeItem("q");
+        window.sessionStorage.removeItem("conf");
     }
 }
 

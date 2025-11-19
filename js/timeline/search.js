@@ -297,6 +297,8 @@ function closeSearch() {
     document.body.classList.remove("modal-open");
     searchInfo.hasUnfinishedTask = false;
     searchInfo.keywords = [];
+    window.sessionStorage.removeItem("q");
+    window.sessionStorage.removeItem("conf");
 }
 
 function doAdvancedSearch(conditions, keywords) {

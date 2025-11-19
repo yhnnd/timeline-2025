@@ -1246,8 +1246,6 @@ function _highlightSearchKeywords_(container) {
                 }
             });
         }
-        window.sessionStorage.removeItem("q");
-        window.sessionStorage.removeItem("conf");
     }
 }
 

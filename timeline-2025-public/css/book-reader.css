@@ -321,6 +321,11 @@ pre .thumbnail-2x {
     height: fit-content;
 }
 
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] pre .thumbnail,
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] pre .thumbnail-2x {
+    height: unset;
+}
+
 pre .row {
     display: flex;
 }

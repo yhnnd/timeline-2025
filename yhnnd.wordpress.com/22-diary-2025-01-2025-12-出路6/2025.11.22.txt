@@ -65,3 +65,46 @@ https://youtu.be/WUaXamDfWCA
 人不知而不愠，不亦君子乎？
 
 今天星期一，我在京东的前端低代码平台魔盒（类似华为的低代码平台灵雀）上编写了一个页面，和后端张志新的API联调，调了一整天。
+
+Dec 02, 2025
+
+学习笔记 2 组件之间如何传参
+
+需求：表格的数据行里有一个按钮，点击按钮之后打开弹窗，此弹窗中有另一个表格，打开弹窗时要调服务以加载此表格里的数据。
+
+第1步 选中按钮，在“事件”中增加“单击”事件。为“单击”事件配置逻辑：在“单击”事件的流程图中增加“修改数据”节点，<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">将“修改数据”的“目标组件”设置为要打开的弹窗</bubble>，点击“添加修改属性”按钮，添加两个要修改的弹窗属性。
+
+第2步 在“目标组件”为弹窗的“修改数据”节点中，添加属性1：属性名称为 visible，属性值为 true
+
+第3步 在<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">“目标组件”为弹窗的“修改数据”节点</bubble>中，添加属性2：属性名称为自定义的 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">currentRow</bubble> 属性，编辑这个属性的属性值：将其所依赖的组件设置为空，<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">并将属性值设置为 return currentRow</bubble>
+
+上面这些步骤的作用是将按钮的 currentRow 属性传给弹窗，这样按钮被单击的时候，按钮的 currentRow 属性就会被传给弹窗。
+
+第4步 选中弹窗里的表格，在“事件”中增加 loadData 事件，点击“配置逻辑”按钮，为 loadData 事件配置逻辑。
+
+第5步 在表格的 loadData 事件的流程图中，增加“修改数据”节点，“目标组件”为弹窗中的表格，属性名称为 loading，属性值为 true
+
+第6步 在表格的 loadData 事件的流程图中，增加“执行服务”节点，在“执行服务”节点的“选择服务”下拉菜单中选择服务名称。将“执行服务”节点的“入参”的类型设为 JavaScript，<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">将“入参”所依赖的组件设为该表格所在的弹窗(p1)，因为入参要读取弹窗的 currentRow 属性。</bubble>将“入参”的值设置为如下
+
+return {
+  "request": {
+    "appStoreSn": <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">p1.currentRow</bubble>?.appStoreSn || "",
+    "currentPage": eventParam?.currentPage || 1,
+    "pageSize": eventParam?.pageSize || 10,
+    "traceId": `pos-${dayjs().valueOf()}`
+  }
+}
+
+<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">注意：在读取依赖组件的属性的时候，必须在属性名称(如 currentRow)之前加上 p1</bubble>, p2 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">以表明我们要读的是哪个依赖组件的属性</bubble>，依赖组件可以有多个，所以有 p1, p2 ... 以此类推。
+
+第7步 设置“执行服务”节点的“出参别名”为 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">res2</bubble>
+
+第8步 设置“执行服务”节点的“出参”，将“出参”的类型设置为 JavaScript，不需要为“出参”设置其所依赖的组件，将“出参”的值设置为 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">return response</bubble>
+
+第9步 在前面第5步，“执行服务”节点之前的“修改数据”节点，我们将“目标组件”表格的属性 loading 设为了 true 以开启加载动画。在本步，在“执行服务”节点后增加“修改数据”节点，将“目标组件”表格的属性 loading 设为 false 以关闭加载动画。
+
+第10步 用“分支”节点处理其之前（第7步）“执行服务”节点所获取的出参 res2。如果 res2.success 的值是 true 那么就要加载 res2 里的数据。具体操作：在上一步的关闭加载动画的“修改数据”节点的后面，添加“分支”节点。为“分支”节点添加两个锚点：第一个锚点的名称为 success，设置该锚点的条件：条件类型为 JavaScript，不需要设置条件所依赖的组件，条件的值为 return res2?.success。第二个锚点的名称为 failed，条件类型也是 JavaScript，也不需要设置条件所依赖的组件，条件的值设为 return !res2?.success
+
+第11步 在“分支”节点的锚点1(success)的后面添加“修改数据”节点，以让表格能加载 res2 中的数据。具体操作：在“分支”节点的锚点1(success)的后面添加节点“修改数据”：“目标组件”为需要加载数据的表格，点击“添加修改属性”按钮，在“属性名称”下拉菜单中选择 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">dataSource</bubble>，将属性值的类型设置为 JavaScript，不需要设置属性值所依赖的组件，并将属性值的值设为 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;color: red;">return res2.result || []</bubble>
+
+第12步 在“分支”节点的锚点2(failed)的后面添加“信息提示”节点，“提示内容”的类型为 JavaScript，不需要设置依赖组件，“提示内容”的值为 return res2?.msg

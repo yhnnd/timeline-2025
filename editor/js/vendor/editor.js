@@ -628,47 +628,12 @@ var v2_7 = {
                     }
                 }
             }
-            if (newLine.data("keycode") === self.DELETE && newLine.text().length === 0) {
-                // Firefox: delete whole line will lost focus.
-                // Firefox: text.length = 0  hasHtml = true
-                // This is obviously wrong.
-                // Stop Firefox from formatting empty line will fix this issue.
-                if (hasHtml === true) {
-                    console.log("Whole line was deleted. Browser " + window.getBrowserName() + " has detected html in empty line. Stopped it from formatting text which could cause losing focus.");
-                    return;
-                }
-            }
             if (hasHtml) {
-                (function () {
-                    const target = newLine;
-                    // let contentAddedLength = 0;
-                    // for (const child of target.children()) {
-                    //     if (child.textContent.length) {
-                    //         contentAddedLength += child.textContent.length;
-                    //     }
-                    // }
-                    const posPrev = self.getEditInfo(target);
-                    // Format Text
-                    function formatHtml (div) {
-                        if ($(div).children("div,pre,p").length) {
-                            return _.map($(div).children(), div2 => formatHtml(div2)).join("\n");
-                        } else {
-                            return $(div).text();
-                        }
-                    }
-                    console.log("pos before formatting " + JSON.stringify(posPrev));
-                    $(target).text(formatHtml(target));
-                    console.log("pos after formatting " + JSON.stringify(self.getEditInfo(target)));
-                    if (posPrev.caretOffset <= $(target).text().length) {
-                        self.setCaretPosition(target[0], posPrev.caretOffset);
-                    } else {
-                        window.bsConfirm({
-                            "title": "<i class='fa fa-lg fa-exclamation-triangle upper'></i> We Got An Issue",
-                            "content": "This editor does not support html editing.<br>Copying html text to this editor is not safe.",
-                            "alertClass": "alert-danger",
-                        });
-                    }
-                })();
+                if (posPrev.caretOffset <= $(target).text().length) {
+                    self.setCaretPosition(target[0], posPrev.caretOffset);
+                } else {
+                    alert("This editor does not support html editing.");
+                }
             }
         });
         // 观察文本行内容改变

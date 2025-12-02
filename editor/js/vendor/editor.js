@@ -629,11 +629,7 @@ var v2_7 = {
                 }
             }
             if (hasHtml) {
-                if (posPrev.caretOffset <= $(target).text().length) {
-                    self.setCaretPosition(target[0], posPrev.caretOffset);
-                } else {
-                    alert("This editor does not support html editing.");
-                }
+                alert("This editor does not support html editing.");
             }
         });
         // 观察文本行内容改变

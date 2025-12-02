@@ -629,7 +629,6 @@ var v2_7 = {
                 }
             }
             if (hasHtml) {
-                alert("This editor does not support html editing.");
             }
         });
         // 观察文本行内容改变

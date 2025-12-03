@@ -1,0 +1,16 @@
+Dec 03, 2025
+
+学习笔记 3 优化魔盒操作界面的脚本
+
+let pin1 = document.querySelector(".jx-composite-panel-tabs-header-pin");
+pin1 && pin1.click();
+let pin2 = document.querySelector(".jx-settings-panel-header-pin");
+pin2 && pin2.click();
+let style = document.createElement("style");
+style.innerText = `.jx-composite-panel-tabs-content {width: 512px}
+.jx-composite-panel-tabs-header-pin-filled, .jx-settings-panel-pin-filled {display: none}
+.jx-main-panel-header-actions .ant-space.ant-space-horizontal {margin-right: 51px !important}
+.jx-main-panel-header-actions .ant-space.ant-space-horizontal .ant-space-item:last-child {margin-left: 125px}
+.ant-btn-group.jx-view-tools {position: fixed;top: 16px;right: 120px;transform: scale(1.25);}
+.jx-settings-panel-opener {background: unset;color: white;border: unset;position: fixed;right: 0;top: 0;transform: unset;width: 50px;height: 50px;}`;
+document.body.append(style);

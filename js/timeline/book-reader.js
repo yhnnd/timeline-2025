@@ -181,25 +181,28 @@ function divToBubble(str) {
     newAttrs = newAttrs.replace(/\s+/g, ' ').trim();
     // 如果还有其他属性，前面加一个空格
     const attrStr = newAttrs ? ` ${newAttrs}` : '';
-    return `<bubble${attrStr}>${content}</bubble>`;
+    return `&lt;bubble${attrStr}&gt;${content}&lt;/bubble&gt;`;
   });
 }
 
-function revealOuterHTML(target, type) {
+function revealOuterHTML(event, target, type) {
+    event.stopPropagation();
     if (type === "link") {
         const to = target.getAttribute('to');
         target.innerHTML = "&lt;link to=\"" + to + "\"&gt;" + target.innerHTML + "&lt;/link&gt;";
     } else if (type === "bubble") {
-        target.innerText = divToBubble(target.getAttribute("outerHtml"));
+        target.innerHTML = divToBubble(target.getAttribute("outerHtml"));
+        target.querySelectorAll(".message-bubble[onclick^='revealOuterHTML']").forEach(bb => { bb.click() });
     }
     target.classList.add(`${type}-og-text`);
-    target.setAttribute("onclick", `hideOuterHTML(this,"${type}")`);
+    target.setAttribute("onclick", `hideOuterHTML(event,this,"${type}")`);
 }
 
-function hideOuterHTML(target, type) {
+function hideOuterHTML(event, target, type) {
+    event.stopPropagation();
     target.classList.remove(`${type}-og-text`);
     target.innerHTML = target.getAttribute('innerHTML');
-    target.setAttribute("onclick", `revealOuterHTML(this,"${type}")`);
+    target.setAttribute("onclick", `revealOuterHTML(event,this,"${type}")`);
 }
 
 function decodeBase64(text) {
@@ -1221,7 +1224,7 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
             text.setAttribute("to", link.getAttribute("to"));
             text.setAttribute("innerHTML", link.innerHTML);
             text.innerHTML = link.innerHTML;
-            text.setAttribute("onclick", "revealOuterHTML(this,'link')");
+            text.setAttribute("onclick", "revealOuterHTML(event,this,'link')");
             link.replaceWith(text);
         });
         container2.querySelectorAll(".url-text-link").forEach(link => { // url-text-link
@@ -1241,16 +1244,18 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
             text.querySelector(".decrypted-text").removeAttribute("onclick");
             link.replaceWith(text);
         });
-        container2.querySelectorAll(".bubble").forEach(bubble => {
+        const func = function (bubble) {
             const text = document.createElement("span");
             text.classList.add("message-bubble");
             text.style = bubble.getAttribute("style");
             text.setAttribute("outerHtml", bubble.outerHTML);
             text.setAttribute("innerHTML", bubble.innerHTML);
             text.innerHTML = bubble.innerHTML;
-            text.setAttribute("onclick", "revealOuterHTML(this,'bubble')");
+            text.setAttribute("onclick", "revealOuterHTML(event,this,'bubble')");
             bubble.replaceWith(text);
-        });
+        }
+        container2.querySelectorAll(".bubble>.bubble").forEach(func);
+        container2.querySelectorAll(".bubble").forEach(func);
     } else {
         container1.parentElement.style.justifyContent = "center";
     }

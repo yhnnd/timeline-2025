@@ -191,7 +191,7 @@ function revealOuterHTML(target, type) {
         target.style.color = "var(--studio-red)";
         target.innerHTML = "&lt;link to=\"" + to + "\"&gt;" + target.innerHTML + "&lt;/link&gt;";
     } else if (type === "bubble") {
-        const to = target.getAttribute('to');
+        target.style.display = "inline";
         target.innerText = divToBubble(target.getAttribute("outerHtml"));
     }
     target.setAttribute("onclick", `hideOuterHTML(this,"${type}")`);
@@ -1246,6 +1246,7 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         });
         container2.querySelectorAll(".bubble").forEach(bubble => {
             const text = document.createElement("span");
+            text.classList.add("message-bubble");
             text.style = bubble.getAttribute("style");
             text.setAttribute("outerHtml", bubble.outerHTML);
             text.setAttribute("innerHTML", bubble.innerHTML);

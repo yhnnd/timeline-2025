@@ -15,3 +15,22 @@ style.innerText = `.jx-composite-panel-tabs-content {width: 512px}
 .ant-btn-group.jx-view-tools .ant-btn:not([disabled]) {background: unset;color: white;border-color: transparent;}
 .jx-settings-panel-opener {background: unset;color: white;border: unset;position: fixed;right: 0;top: 0;transform: unset;width: 50px;height: 50px;}`;
 document.body.append(style);
+
+Dec 04, 2025
+
+学习笔记 4 优化魔盒操作界面的脚本(新)
+
+let pin1 = document.querySelector(".ant-composite-panel-tabs-header-pin");
+pin1 && pin1.click();
+let pin2 = document.querySelector(".ant-settings-panel-header-pin");
+pin2 && pin2.click();
+let style = document.createElement("style");
+style.innerText = `.ant-composite-panel-tabs-content {width: 512px}
+.ant-composite-panel-tabs-header-pin-filled, .ant-settings-panel-pin-filled, .i-icon-smart-optimization {display: none}
+.ant-main-panel-header-actions {margin-right: 40px !important}
+.ant-main-panel-header-actions .ant-space-item:last-child {margin-left: 135px}
+.ant-view-tools {position: fixed;top: 13px;right: 139px;transform: scale(1.5);}
+.ant-view-tools .ant-btn:not([disabled]) {background: unset;color: white;border-color: transparent;}
+.ant-settings-panel-opener {background: unset;color: white;border: unset;position: fixed;right: 0;top: 0;transform: unset;width: 50px;height: 50px;}
+.ant-btn-circle:has(.i-icon-smart-optimization) {display: none}`;
+document.body.append(style);

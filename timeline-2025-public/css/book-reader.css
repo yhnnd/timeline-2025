@@ -403,18 +403,16 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
     display: none;
 }
 
-@media screen and (min-width: 1600px) {
-    body[data-value-of-enable-dual-article-container="true"] .left {
-        overflow-x: visible;
-        justify-content: end;
-    }
+body[data-value-of-enable-dual-article-container="true"] .left {
+    overflow-x: visible;
+    justify-content: end;
+}
 
-    body[data-value-of-enable-dual-article-container="true"] .right {
-        overflow-x: visible;
-        display: flex;
-        width: 100%;
-        justify-content: start;
-    }
+body[data-value-of-enable-dual-article-container="true"] .right {
+    overflow-x: visible;
+    display: flex;
+    width: 100%;
+    justify-content: start;
 }
 
 .badges .title {

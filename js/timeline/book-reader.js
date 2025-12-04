@@ -150,17 +150,59 @@ function toggleClass(target, className) {
     }
 }
 
-function revealOuterHTML(target) {
-    const to = target.getAttribute('to');
-    target.style.color = "var(--studio-red)";
-    target.innerHTML = "&lt;link to=\"" + to + "\"&gt;" + target.innerHTML + "&lt;/link&gt;";
-    target.setAttribute("onclick", "hideOuterHTML(this)");
+/**
+ * 将 <div class="... bubble message-bubble ...">内容</div> 转换成
+ * <bubble class="... 其他class ...">内容</bubble>
+ * 并自动去除 class 中的 bubble 和 message-bubble（如果存在）
+ * 只处理最外层的 div，即使内容里有嵌套 div 也不会被修改
+ * 支持 class 使用单引号或双引号，支持属性间无空格（如 <div class="a"id="b">）
+ */
+function divToBubble(str) {
+  // 如果字符串不是以 <div 开头，直接返回原字符串
+  if (!/^<div\b/i.test(str)) {
+    return str;
+  }
+  return str.replace(/^<div\b([^>]*)>([\s\S]*)(<\/div\s*>)$/i, (match, attrs, content) => {
+    let newAttrs = attrs;
+    // 匹配 class 属性（支持单/双引号，支持 = 前后有任意空格）
+    const classMatch = attrs.match(/class\s*=\s*(["'])([^"']*)\1/i);
+    if (classMatch) {
+      const classes = classMatch[2].split(/\s+/).filter(Boolean);
+      const filtered = classes.filter(cls => cls !== 'bubble' && cls !== 'message-bubble');
+      const newClassValue = filtered.join(' ');
+      // 保留原来的引号类型，并尽量保持 = 前有空格
+      const newClassAttr = newClassValue 
+        ? ` class=${classMatch[1]}${newClassValue}${classMatch[1]}` 
+        : '';
+      // 用正则精确替换原来的整个 class 属性部分
+      newAttrs = attrs.replace(classMatch[0], newClassAttr);
+    }
+    // 清理多余空格（属性之间保留单个空格）
+    newAttrs = newAttrs.replace(/\s+/g, ' ').trim();
+    // 如果还有其他属性，前面加一个空格
+    const attrStr = newAttrs ? ` ${newAttrs}` : '';
+    return `<bubble${attrStr}>${content}</bubble>`;
+  });
 }
 
-function hideOuterHTML(target) {
-    target.style.color = "unset";
+function revealOuterHTML(target, type) {
+    if (type === "link") {
+        const to = target.getAttribute('to');
+        target.style.color = "var(--studio-red)";
+        target.innerHTML = "&lt;link to=\"" + to + "\"&gt;" + target.innerHTML + "&lt;/link&gt;";
+    } else if (type === "bubble") {
+        const to = target.getAttribute('to');
+        target.innerText = divToBubble(target.getAttribute("outerHtml"));
+    }
+    target.setAttribute("onclick", `hideOuterHTML(this,"${type}")`);
+}
+
+function hideOuterHTML(target, type) {
+    if (type === 'link') {
+        target.style.color = "unset";
+    }
     target.innerHTML = target.getAttribute('innerHTML');
-    target.setAttribute("onclick", "revealOuterHTML(this)");
+    target.setAttribute("onclick", `revealOuterHTML(this,"${type}")`);
 }
 
 function decodeBase64(text) {
@@ -643,7 +685,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }).join("\n");
     }
 
-    responseText = responseText.replaceAll('@command("bubble-start")', '<div class="message-bubble"');
+    responseText = responseText.replaceAll('@command("bubble-start")', '<div class="bubble message-bubble"');
     responseText = responseText.replaceAll('@command("bubble-end")', "</div>");
     responseText = responseText.replaceAll('@command("delete-start")', "<del>");
     responseText = responseText.replaceAll('@command("delete-end")', "</del>");
@@ -1182,7 +1224,7 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
             text.setAttribute("to", link.getAttribute("to"));
             text.setAttribute("innerHTML", link.innerHTML);
             text.innerHTML = link.innerHTML;
-            text.setAttribute("onclick", "revealOuterHTML(this)");
+            text.setAttribute("onclick", "revealOuterHTML(this,'link')");
             link.replaceWith(text);
         });
         container2.querySelectorAll(".url-text-link").forEach(link => { // url-text-link
@@ -1201,6 +1243,15 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
             text.querySelector(".decrypted-text").removeAttribute("to");
             text.querySelector(".decrypted-text").removeAttribute("onclick");
             link.replaceWith(text);
+        });
+        container2.querySelectorAll(".bubble").forEach(bubble => {
+            const text = document.createElement("span");
+            text.style = bubble.getAttribute("style");
+            text.setAttribute("outerHtml", bubble.outerHTML);
+            text.setAttribute("innerHTML", bubble.innerHTML);
+            text.innerHTML = bubble.innerHTML;
+            text.setAttribute("onclick", "revealOuterHTML(this,'bubble')");
+            bubble.replaceWith(text);
         });
     } else {
         container1.parentElement.style.justifyContent = "center";

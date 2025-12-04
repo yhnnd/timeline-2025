@@ -148,6 +148,10 @@ pre del * {
     border-color: var(--studio-green-0);
 }
 
+.container-2 .bubble-og-text {
+    display: inline;
+}
+
 .w-fit-content {
     width: fit-content;
 }

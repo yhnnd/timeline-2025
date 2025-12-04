@@ -191,15 +191,17 @@ function revealOuterHTML(target, type) {
         target.style.color = "var(--studio-red)";
         target.innerHTML = "&lt;link to=\"" + to + "\"&gt;" + target.innerHTML + "&lt;/link&gt;";
     } else if (type === "bubble") {
-        target.style.display = "inline";
+        target.classList.add("bubble-og-text");
         target.innerText = divToBubble(target.getAttribute("outerHtml"));
     }
     target.setAttribute("onclick", `hideOuterHTML(this,"${type}")`);
 }
 
 function hideOuterHTML(target, type) {
-    if (type === 'link') {
+    if (type === "link") {
         target.style.color = "unset";
+    } else if (type === "bubble") {
+        target.classList.remove("bubble-og-text");
     }
     target.innerHTML = target.getAttribute('innerHTML');
     target.setAttribute("onclick", `revealOuterHTML(this,"${type}")`);

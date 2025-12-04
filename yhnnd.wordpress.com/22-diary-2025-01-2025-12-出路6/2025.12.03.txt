@@ -82,6 +82,7 @@ style.innerHTML = `.jx-composite-panel-tabs-content, .jx-settings-panel,
 
 .jx-composite-panel-tabs-header-close:hover, .jx-settings-panel-header-close:hover {transform: unset}
 
+.jx-btn-circle:has(.i-icon-smart-optimization),
 .ant-btn-circle:has(.i-icon-smart-optimization) {display: none}
 
 .jx-main-panel-header,

@@ -93,6 +93,50 @@ style.innerHTML = `.jx-composite-panel-tabs-content, .jx-settings-panel,
 
 .jx-composite-panel-tabs-content:not(:has(.jx-outline-tree-container)) .btn-collapse-all-nodes,
 .ant-composite-panel-tabs-content:not(:has(.ant-outline-tree-container)) .btn-collapse-all-nodes {display: none}
+
+.jx-resource-item-text,
+.ant-resource-item-text,
+.jx-outline-tree-node-title,
+.ant-outline-tree-node-title {font-size: 1rem;color: black;font-weight: bold;}
+
+.jx-settings-form-wrapper .jx-formily-item *,
+.ant-settings-form-wrapper .ant-formily-item * {font-size: 1rem;}
+
+.jx-formily-item-label-content,
+.ant-formily-item-label-content {font-weight: bold;}
+
+.jx-drawer-right .jx-drawer-content-wrapper[style*="width: 300px;"],
+.ant-drawer-right .ant-drawer-content-wrapper[style*="width: 300px;"] {width: 512px!important;}
+
+.jx-drawer-right .jx-drawer-content-wrapper,
+.ant-drawer-right .ant-drawer-content-wrapper {width: 100%!important;}
+
+.jsonata-editor .jx-drawer-body > .SplitPane,
+.jsonata-editor .ant-drawer-body > .SplitPane {max-height: calc(100vh - 70px);}
+
+.jsonata-editor .jx-drawer-body > .SplitPane > .Pane1,
+.jsonata-editor .ant-drawer-body > .SplitPane > .Pane1 {width: 100%!important;}
+
+.jsonata-editor .jx-drawer-body > .SplitPane > .Pane2,
+.jsonata-editor .ant-drawer-body > .SplitPane > .Pane2 {display: none}
+
+.jx-drawer-left.ant-drawer-open, .jx-drawer-right.ant-drawer-open,
+.ant-drawer-left.ant-drawer-open, .ant-drawer-right.ant-drawer-open {transition: none;animation: none;}
+
+.jx-drawer.ant-drawer-open .jx-drawer-mask,
+.ant-drawer.ant-drawer-open .ant-drawer-mask {transition: none;animation: none;}
+
+.jx-drawer,
+.ant-drawer {transition: none;animation: none;}
+
+.jx-drawer-mask,
+.ant-drawer-mask {transition: none;animation: none;}
+
+.jx-drawer-content-wrapper,
+.ant-drawer-content-wrapper {transition: none;animation: none;}
+
+.jx-formily-item-control-content-component .jx-btn-link,
+.ant-formily-item-control-content-component .ant-btn-link {border: 1px solid;border-radius: 6px;margin-top: 16px;margin-bottom:16px;}
 `;
 document.body.append(style);
 

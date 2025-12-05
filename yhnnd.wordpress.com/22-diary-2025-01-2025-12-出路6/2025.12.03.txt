@@ -76,23 +76,47 @@ style.innerHTML = `.jx-composite-panel-tabs-content, .jx-settings-panel,
 
 .jx-settings-panel-opener,
 .ant-settings-panel-opener,
-.jx-settings-panel-header-close {background: unset;color: white;border: unset;position: fixed;right: 0;top: 0;transform: unset;width: 50px;height: 50px;}
+.jx-settings-panel-header-close,
+.ant-settings-panel-header-close {background: unset;color: white;border: unset;position: fixed;right: 0;top: 0;transform: unset;width: 50px;height: 50px;}
 
-.jx-settings-panel-header-close {display: flex;justify-content: center;align-items: center;}
+.jx-settings-panel-header-close,
+.ant-settings-panel-header-close {display: flex;justify-content: center;align-items: center;}
 
-.jx-composite-panel-tabs-header-close:hover, .jx-settings-panel-header-close:hover {transform: unset}
+.jx-composite-panel-tabs-header-close:hover, .jx-settings-panel-header-close:hover,
+.ant-composite-panel-tabs-header-close:hover, .ant-settings-panel-header-close:hover {transform: unset}
 
 .jx-btn-circle:has(.i-icon-smart-optimization),
 .ant-btn-circle:has(.i-icon-smart-optimization) {display: none}
 
 .jx-main-panel-header,
 .ant-main-panel-header {background-image: linear-gradient(to right, rgb(3, 105, 161), rgb(56, 189, 248), rgb(30, 64, 175))}
+
+.jx-composite-panel-tabs-content:not(:has(.jx-outline-tree-container)) .btn-collapse-all-nodes,
+.ant-composite-panel-tabs-content:not(:has(.ant-outline-tree-container)) .btn-collapse-all-nodes {display: none}
 `;
 document.body.append(style);
 
 setTimeout(() => {
 let pins = document.querySelectorAll(".jx-composite-panel-tabs-header-pin,.jx-settings-panel-header-pin,.ant-composite-panel-tabs-header-pin,.ant-settings-panel-header-pin");
 pins.forEach(pin => { pin.click() });
+let collapseButtonClicked = function () {
+    document.querySelectorAll(".jx-outline-tree-node-children > .jx-outline-tree-node.expanded > .jx-outline-tree-node-header .jx-outline-tree-node-expand").forEach(expand => { expand.click(); });
+    document.querySelectorAll(".ant-outline-tree-node-children > .ant-outline-tree-node.expanded > .ant-outline-tree-node-header .ant-outline-tree-node-expand").forEach(expand => { expand.click(); });
+}
+let addCollapseBtn = function () {
+    const btn = document.createElement("span");
+    btn.classList.add("btn-collapse-all-nodes");
+    btn.innerText = "Collapse";
+    btn.style.cssText = "color: black;border: 1px solid black;border-radius: 8px;padding: 4px 8px;cursor: pointer;";
+    btn.addEventListener("click", collapseButtonClicked);
+    setTimeout(function () {
+        if (!document.querySelector(".jx-composite-panel-tabs-header-actions > .btn-collapse-all-nodes, .ant-composite-panel-tabs-header-actions > .btn-collapse-all-nodes")) {
+            document.querySelector(".jx-composite-panel-tabs-header-actions, .ant-composite-panel-tabs-header-actions").prepend(btn);
+        }
+    }, 100);
+}
+addCollapseBtn();
+document.querySelector(".jx-composite-panel-tabs-pane:has(.i-icon-layers), .ant-composite-panel-tabs-pane:has(.i-icon-layers)").addEventListener("click", addCollapseBtn);
 console.log("魔盒优化插件脚本已成功注入并执行！");
 document.title = "已被插件优化 - " + document.title;
 }, 1000);

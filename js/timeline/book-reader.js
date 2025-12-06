@@ -1260,6 +1260,18 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         }
         container2.querySelectorAll(".bubble>.bubble").forEach(func);
         container2.querySelectorAll(".bubble").forEach(func);
+
+        if (localStorage.getItem("enable-line-split") === "true" && localStorage.getItem("enable-hover-show-line-info") === "true") {
+            let styStr = "";
+            container2.querySelectorAll("[data-line-number]").forEach(line => {
+                const lnNo = line.getAttribute("data-line-number");
+                styStr += `.desktop:has([data-line-number="${lnNo}"]:hover) [data-line-number="${lnNo}"]::before {display: block}\n\r`;
+                styStr += `.desktop:has([data-line-number="${lnNo}"]:hover) [data-line-number="${lnNo}"] {background: rgba(255, 255, 0, .2);outline: 1px dashed black;position: relative;}\n\r`;
+            });
+            let s = document.createElement("style");
+            s.innerHTML = styStr;
+            document.body.append(s);
+        }
     } else {
         container1.parentElement.style.justifyContent = "center";
     }

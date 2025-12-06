@@ -107,6 +107,10 @@ pre .decode-url-link {
     background-image: repeating-linear-gradient(-45deg, var(--studio-gray-0), var(--studio-gray-0) 25px, transparent 25px, transparent 50px);
 }
 
+body[data-value-of-enable-no-backdrop="true"] .container-2 .iframe-cover {
+    background-image: repeating-linear-gradient(-45deg, var(--studio-gray-0), var(--studio-gray-0) 25px, white 25px, white 50px);
+}
+
 pre .name-link::before,
 pre .link::before,
 pre .url-text-link::before,
@@ -158,13 +162,7 @@ pre .decode-url-link .decrypted-text,
     min-height: 100%;
 }
 
-body[data-value-of-enable-hover-show-line-info="true"] pre [data-line-number]:not(:has([data-line-number]:hover)):hover {
-    background-color: lightgoldenrodyellow;
-    outline: 1px dashed black;
-    position: relative;
-}
-
-body[data-value-of-enable-hover-show-line-info="true"] pre [data-line-number]:not(:has([data-line-number]:hover)):hover::before {
+pre [data-line-number]::before {
     content: attr(class) ' ' attr(data-line-number);
     position: absolute;
     top: -1px;
@@ -172,22 +170,23 @@ body[data-value-of-enable-hover-show-line-info="true"] pre [data-line-number]:no
     width: 200px;
     padding-right: 4px;
     height: 100%;
-    display: block;
+    display: none;
     border-top: 1px dashed black;
     border-right: 1px dashed black;
     border-bottom: 1px dashed black;
     text-align: right;
-    background: linear-gradient(to right, transparent, lightyellow);
+    color: black;
+    background: linear-gradient(to right, transparent, white, lightyellow);
 }
 
-body[data-value-of-enable-hover-show-line-info="true"] .container-2 pre [data-line-number]:not(:has([data-line-number]:hover)):hover::before {
+.container-2 pre [data-line-number]::before {
     left: unset;
     right: -230px !important;
     padding-left: 4px;
     text-align: left;
     border-left: 1px dashed black;
     border-right: unset;
-    background: linear-gradient(to right, lightyellow, transparent);
+    background: linear-gradient(to right, lightyellow, white, transparent);
 }
 
 body[data-value-of-enable-hover-show-page-info="true"] .page:hover::before {
@@ -205,6 +204,16 @@ body[data-value-of-enable-hover-show-page-info="true"] .page:hover::before {
     border-bottom: 1px dashed black;
     text-align: right;
     background: linear-gradient(to right, white, lightgoldenrodyellow);
+}
+
+body[data-value-of-enable-hover-show-page-info="true"] .container-2 .page:hover::before {
+    left: unset;
+    right: -222px;
+    padding-left: 4px;
+    border-left: 1px dashed black;
+    border-right: unset;
+    text-align: left;
+    background: linear-gradient(to left, transparent, lightgoldenrodyellow);
 }
 
 body[data-value-of-enable-hover-show-page-info="true"] .page:not(:first-child):hover::before {

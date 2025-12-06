@@ -26,12 +26,12 @@
 
     <div style="min-height: calc(100vh - 420px);">
         <div class="flex flex-row px-6 bg-gray-800" id="navbar">
-            <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 transition-all duration-300 cursor-pointer" onclick="clicked('tab', 'calendar')">Calendar</div>
-            <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 transition-all duration-300 cursor-pointer" onclick="clicked('tab', 'books')">Books</div>
-            <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 transition-all duration-300 cursor-pointer" onclick="clicked('tab', 'tools')">Tools</div>
+            <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 transition-all duration-300 cursor-pointer tab" id="tab-calendar" onclick="tabClicked('calendar')">Calendar</div>
+            <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 transition-all duration-300 cursor-pointer tab" id="tab-books" onclick="tabClicked('books')">Books</div>
+            <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 transition-all duration-300 cursor-pointer tab" id="tab-tools" onclick="tabClicked('tools')">Tools</div>
         </div>
 
-        <div class="tab" id="tab-calendar" style="display: none;">
+        <div class="tab-content" id="tab-content-calendar" style="display: none;">
             <div class="px-24 py-16 bg-gradient-to-r from-sky-900 via-sky-700 to-sky-400">
                 <div class="text-white text-6xl">Calendar</div>
                 <p class="text-gray-300 text-2xl mt-2" onclick="openFile('book-reader.html?src=https://yhnnd.github.io/timeline-2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.12.20.txt')">因为爱能恒久长存，而恐惧与仇恨不久就会消亡。</p>
@@ -39,7 +39,7 @@
             <iframe loading="lazy" src="calendar.html?is-iframe=true" width="100%" style="border: none; width: 100%; height: 600px;"></iframe>
         </div>
 
-        <div class="tab" id="tab-books" style="display: none;">
+        <div class="tab-content" id="tab-content-books" style="display: none;">
             <div class="px-24 py-16 bg-gradient-to-r from-sky-700 via-sky-400 to-blue-800">
                 <div class="text-white text-6xl">Books</div>
                 <p class="text-gray-300 text-2xl mt-2" onclick="openFile('book-reader.html?src=https://yhnnd.github.io/timeline-2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.12.20.txt')">因为爱能恒久长存，而恐惧与仇恨不久就会消亡。</p>
@@ -220,7 +220,7 @@
             </div>
         </div>
 
-        <div class="tab" id="tab-tools" style="display: none;">
+        <div class="tab-content" id="tab-content-tools" style="display: none;">
             <div class="px-24 py-16 bg-gradient-to-r from-blue-800 via-indigo-700 to-indigo-400">
                 <div class="text-white text-6xl">Tools</div>
                 <p class="text-gray-300 text-2xl mt-2" onclick="openFile('book-reader.html?src=https://yhnnd.github.io/timeline-2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.12.20.txt')">因为爱能恒久长存，而恐惧与仇恨不久就会消亡。</p>
@@ -387,14 +387,13 @@ function quitInspectImage() {
     <script src="../js/vendor/param.js"></script>
     <script src="../js/timeline/books.js"></script>
     <script>
-function clicked(type, target) {
-    localStorage.setItem(type, target);
-    document.querySelectorAll("." + type).forEach(elem => {
-        if (elem.id !== type + "-" + target) {
-            elem.style.display = "none";
-        } else {
-            elem.style.display = null;
-        }
+function tabClicked(value) {
+    localStorage.setItem("tab", value);
+    document.querySelectorAll(".tab").forEach(e => {
+        e.classList[(e.id !== "tab-" + value) ? "remove" : "add"]("focus");
+    });
+    document.querySelectorAll(".tab-content").forEach(e => {
+        e.style.display = (e.id !== "tab-content-" + value) ? "none" : null;
     });
 }
 
@@ -402,12 +401,7 @@ document.addEventListener("DOMContentLoaded", function() {
     window.addEventListener("message", (e) => {
         e.data && e.data.url && openFile(e.data.url)
     }, false);
-    const tab = localStorage.getItem('tab');
-    if (tab) {
-        clicked('tab', tab);
-    } else {
-        clicked('tab', 'books');
-    }
+    tabClicked(localStorage.getItem('tab') || "books");
     hideTimelineLoading();
     document.querySelector(".footer").innerHTML = `<div class="col" id="version-selector" style="display: none;">
     <div style='background: white; padding: 2px 3px;' onclick="selectShieldVersion(this, event)">

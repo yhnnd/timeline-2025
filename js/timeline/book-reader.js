@@ -877,12 +877,16 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
                     return wrapperOpen + covers + line.replace("@video", "<iframe") + "></iframe>" + wrapperClose;
                 }
                 // @video resources/35_1713060169.mp4 loop
-                const parameters = line.split(" ");
+                let parameters = line.split(" ");
                 parameters.shift();
                 const src = parameters.shift(); // resources/35_1713060169.mp4
                 const fileType = src.split(".").pop(); // mp4
-                if (!parameters.includes("loop") && !parameters.includes("controls")) {
-                    parameters.push("controls");
+                if (getParameter("is-iframe") === "true") {
+                    parameters = parameters.filter(e => e !== "autoplay");
+                } else {
+                    if (!parameters.includes("loop") && !parameters.includes("controls")) {
+                        parameters.push("controls");
+                    }
                 }
                 const wrapperOpen = '<div class="video-wrapper">';
                 const covers = '<div class="backdrop-filter blur"></div><div class="backdrop-filter white"></div><div class="cover">' + line + '</div>';

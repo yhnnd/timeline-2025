@@ -85,6 +85,11 @@
     backdrop-filter: blur(1px) brightness(.5);
 }
 
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] .backdrop {
+    backdrop-filter: blur(1px) brightness(.5);
+    -webkit-backdrop-filter: blur(1px) brightness(.5);
+}
+
 .settings-2 {
     width: 512px;
     height: max-content;

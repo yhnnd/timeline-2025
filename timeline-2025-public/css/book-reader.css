@@ -579,3 +579,37 @@ body[data-value-of-enable-dual-article-container="false"] .wecard-table-wrapper>
 .global-navbar {
     background: rgba(0, 0, 0, 0.67) !important;
 }
+
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="width:fit-content"],
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="width: fit-content"] {
+    width: unset!important;
+}
+
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="height:fit-content"],
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="height: fit-content"] {
+    height: unset!important;
+}
+
+body[is-iframe="true"] {
+    overflow-x: hidden;
+}
+
+/* iframe preview 中的滚动条 */
+body[is-iframe="true"]::-webkit-scrollbar {
+    width: 32px;
+}
+
+/* 滚动条轨道 */
+body[is-iframe="true"]::-webkit-scrollbar-track:hover {
+    background-color: rgba(0, 0, 0, .05);
+}
+
+/* 滚动条滑块 */
+body[is-iframe="true"]::-webkit-scrollbar-thumb {
+    background-color: white;
+    outline: 8px solid rgba(0, 0, 0, .2);
+}
+
+body[is-iframe="true"]::-webkit-scrollbar-thumb:hover {
+    outline: 7px solid rgba(0, 0, 0, .4);
+}

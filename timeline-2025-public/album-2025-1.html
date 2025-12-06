@@ -256,10 +256,8 @@ pictures.forEach(picture => {
     img.onload = function () {
       EXIF.getData(img, function () {
         const imageDate = EXIF.getTag(this, 'DateTimeOriginal');
-        if (imageDate) {
-          picture.classList.add("hover-show-date");
-          picture.querySelector(".image-date-inner").innerHTML = "拍摄时间: " + imageDate;
-        }
+        picture.classList.add("hover-show-date");
+        picture.querySelector(".image-date-inner").innerHTML = "拍摄时间: " + imageDate;
       });
     };
   }

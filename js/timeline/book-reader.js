@@ -1064,7 +1064,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
             title.innerHTML = "<span class='badge'>" + segments.join("</span>&nbsp;/&nbsp;<span class='badge'>") + "</span>";
             const folderIndex = segments.length - 2;
             const badgeList = title.querySelectorAll(".badge");
-            if (folderIndex >= 0 && folderIndex < badgeList.length && searchKeywords) {
+            if (folderIndex >= 0 && folderIndex < badgeList.length) {
                 badgeList[folderIndex].setAttribute("onclick", "searchKeywords([this.innerText], {type: 'folder'})");
             }
             const wrapper = document.createElement("pre");

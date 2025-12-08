@@ -237,7 +237,7 @@ function searchKeywords(keywords, configs) {
                         }
                     }
                 }
-                let targetUrl = "book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl;
+                let targetUrl = "book-reader.html?fakeUrl=" + item.fakeUrl;
                 window.sessionStorage.setItem("q", JSON.stringify(keywords));
                 if (configs) {
                     window.sessionStorage.setItem("conf", JSON.stringify(configs));
@@ -361,9 +361,9 @@ function doAdvancedSearch(conditions, keywords) {
                     }
                 }
             }
-            link.innerHTML = "<a target='_self' href='book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "'>"
+            link.innerHTML = "<a target='_self' href='book-reader.html?fakeUrl=" + item.fakeUrl + "'>"
                 + "<span class='folder'>" + folder + "</span> / <span>" + filename + "</span></a>"
-                + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('book-reader.html?src=" + item.realUrl + "&fakeUrl=" + item.fakeUrl + "','_self','noopener,noreferrer');\"></div></div>"
+                + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('book-reader.html?fakeUrl=" + item.fakeUrl + "','_self','noopener,noreferrer');\"></div></div>"
                 + "<div class='text'><pre>" + lines.join("\n") + "</pre></div>";
             resultWrapper.appendChild(link);
         }

@@ -745,37 +745,42 @@ window.htmlRepositoryMap = {
 window.localRepositoryKey = "@2025/";
 
 window.getRepository = function (configs) {
-    let repositoryKey = "", repositoryValue = "";
+    let repository = { key: "", value: "" };
     const repositoryMap = window.repositoryMap, htmlRepositoryMap = window.htmlRepositoryMap;
-    if (configs.fakeUrl) {
+    if (configs?.fakeUrl) {
         for (const [key, value] of Object.entries(repositoryMap)) {
             if (configs.fakeUrl.startsWith(key)) {
-                repositoryKey = key;
-                repositoryValue = value;
+                repository = {key, value};
                 break;
             }
         }
-    } else if (configs.realUrl) {
+    } else if (configs?.realUrl) {
         for (const [key, value] of Object.entries(repositoryMap)) {
             if (configs.realUrl.startsWith(value)) {
-                repositoryKey = key;
-                repositoryValue = value;
+                repository = {key, value};
                 break;
             }
         }
     }
-    if (configs.isGetHtmlRepository) {
-        repositoryValue = htmlRepositoryMap[repositoryKey];
+    if (repository.key && configs?.isGetHtmlRepository) {
+        repository.value = htmlRepositoryMap[repository.key];
     }
-    return repositoryValue;
+    return repository;
 }
 
 window.parseFakeUrl = function (line, configs) {
-    const repository = window.getRepository(configs);
-    if (!repository) {
-        return line;
+    const baseRepository = window.getRepository(configs);
+    if (line.startsWith("../")) {
+        return line.replace("../", baseRepository?.value);
     }
-    return line.replace("../", repository);
+    if (line.startsWith(baseRepository.key)) {
+        return line.replace(baseRepository.key, baseRepository.value);
+    }
+    const lineRepository = window.getRepository({fakeUrl: line});
+    if (lineRepository.value) {
+        return line.replace(lineRepository.key, lineRepository.value);
+    }
+    return line;
 }
 
 function parseRepository(book) {
@@ -839,7 +844,7 @@ for (const book of window.books) {
         }
         calendarEvents.push({
             title: "Read " + Month + "." + MonthDay,
-            url: "javascript: openFile(\"book-reader.html?src=" + realUrl + "&fakeUrl=" + fakeUrl + "\");",
+            url: "javascript: openFile(\"book-reader.html?fakeUrl=" + fakeUrl + "\");",
             start: Year + "-" + Month + "-" + MonthDay
         });
     }

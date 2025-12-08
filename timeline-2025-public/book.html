@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
             let iframeSrc = realUrl, previewSrc = realUrl;
             if (window.location.href.startsWith("file://")) {
             } else {
-                link = "book-reader.html?src=" + link + "&fakeUrl=" + fakeUrl;
+                link = "book-reader.html?fakeUrl=" + fakeUrl;
                 iframeSrc = link + "&is-iframe=true";
                 previewSrc = link + "&is-iframe=true&is-preview=true";
             }

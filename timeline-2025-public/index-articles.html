@@ -58,7 +58,7 @@ window.onload = function() {
                 for (const j in window.books[i].indexList) {
                     const article = window.books[i].indexList[j];
                     const a = document.createElement("a");
-                    a.href = "book-reader.html?src=" + article.realUrl + "&fakeUrl=" + article.fakeUrl + "&from=index-articles.html";
+                    a.href = "book-reader.html?fakeUrl=" + article.fakeUrl + "&from=index-articles.html";
                     a.innerText = article.fakeUrl;
                     const articleDiv = document.createElement("div");
                     articleDiv.innerHTML = "<div style='display: inline-block;min-width: 80px;margin-right: 20px;text-align: right;'>" + (parseInt(j) + 1) + "</div>";

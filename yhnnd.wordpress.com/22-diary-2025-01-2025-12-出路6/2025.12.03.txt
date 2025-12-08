@@ -124,6 +124,7 @@ body:has(.ant-view-tools > button:last-child[disabled]) .ant-composite-panel {di
 
 .jx-formily-item-label[style*="width: 120px;"][style*="max-width: 120px;"],
 .ant-formily-item-label[style*="width: 120px;"][style*="max-width: 120px;"] {
+  min-width: 120px;
   width: unset!important;
   max-width: unset!important;
 }
@@ -257,7 +258,14 @@ body:has(.ant-select-dropdown:not(.ant-select-dropdown-hidden)) .ant-drawer-cont
   transition: none !important;
 }
 
-.jx-switch {
+.jx-monaco-input,
+.ant-monaco-input {
+  transition: unset!important;
+  opacity: 1!important;
+}
+
+.jx-switch,
+.ant-switch {
   font-size: 16px;
   border-radius: 11px!important;
 }

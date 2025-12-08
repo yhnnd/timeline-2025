@@ -108,6 +108,9 @@ style.innerHTML = `.jx-composite-panel-tabs-content, .jx-settings-panel,
 body:has(.jx-view-tools > button:last-child[disabled]) .jx-main-panel-header,
 body:has(.ant-view-tools > button:last-child[disabled]) .ant-main-panel-header {animation: bg 60s infinite linear;}
 
+body:has(.jx-view-tools > button:last-child[disabled]) .jx-composite-panel,
+body:has(.ant-view-tools > button:last-child[disabled]) .ant-composite-panel {display: none}
+
 .jx-composite-panel-tabs-content:not(:has(.jx-outline-tree-container)) .btn-collapse-all-nodes,
 .ant-composite-panel-tabs-content:not(:has(.ant-outline-tree-container)) .btn-collapse-all-nodes {display: none}
 
@@ -252,6 +255,11 @@ body:has(.ant-select-dropdown:not(.ant-select-dropdown-hidden)) .ant-drawer-cont
   height: 100% !important;
   animation: none !important;
   transition: none !important;
+}
+
+.jx-switch {
+  font-size: 16px;
+  border-radius: 11px!important;
 }
 `;
 document.body.append(style);

@@ -1268,7 +1268,9 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
                 styStr += `.desktop:has([data-line-number="${lnNo}"]:hover) [data-line-number="${lnNo}"] {background: rgba(255, 255, 0, .2);outline: 1px dashed black;position: relative;}\n\r`;
             });
             let s = document.createElement("style");
+            s.id = "line-hover";
             s.innerHTML = styStr;
+            document.body.querySelector("#line-hover")?.remove();
             document.body.append(s);
         }
     } else {

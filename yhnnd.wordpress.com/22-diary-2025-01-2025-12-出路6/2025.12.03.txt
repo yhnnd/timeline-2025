@@ -295,6 +295,15 @@ console.log("魔盒优化插件脚本已成功注入并执行！");
 document.title = "已被插件优化 - " + document.title;
 }, 1000);
 
+<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">Get Line Unique Id</bubble>
+
+Math.random().toString(36)
+
+<bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">Trim Article</bubble>
+
+<link to="book-reader.html?fakeUrl=@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.03.txt&trm=1&t0=tab8ro96mud&t1=ov49jsiyeqr">book-reader.html?fakeUrl=@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.03.txt&trm=1&t0=tab8ro96mud&t1=ov49jsiyeqr</link>
+
+@LineUniqueId("tab8ro96mud");
 
 https://iconsvg.xyz/
 
@@ -362,3 +371,5 @@ https://iconsvg.xyz/
 </div>
 <bubble style="display: inline;border: unset;border-radius: unset;background: unset;">Click to Collapse All SVGs</bubble>
 </div>
+
+@LineUniqueId("ov49jsiyeqr");

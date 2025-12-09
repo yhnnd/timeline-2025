@@ -680,6 +680,13 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }).join("\n");
     }
 
+    responseText = responseText.split("\n").map(line => {
+        if (line.startsWith("@LineUniqueId(")) {
+            return "<span class='badge highlight-green' style='font-size:13px'>" + line + "</span>";
+        }
+        return line;
+    }).join("\n");
+
     responseText = responseText.replaceAll('@command("bubble-start")', '<div class="bubble message-bubble"');
     responseText = responseText.replaceAll('@command("bubble-end")', "</div>");
     responseText = responseText.replaceAll('@command("delete-start")', "<del>");
@@ -1361,8 +1368,22 @@ function highlightSearchKeywords(child, {searchKeywords, configs}) {
     }
 }
 
-function renderArticle(src, containerClassName, container2ClassName) {
+function renderArticle(src, containerClassName, container2ClassName, {isTrim, t0, t1}) {
     ajax(src, undefined, window.localStorage.getItem("enable-cache") === "true", function(responseText) {
+        if (["true", "1"].includes(isTrim)) {
+            if (t0) {
+                const startIndex = responseText.indexOf(`@LineUniqueId("${t0}");\n`);
+                if (startIndex >= 0) {
+                    responseText = responseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
+                }
+            }
+            if (t1) {
+                const endIndex = responseText.indexOf(`@LineUniqueId("${t1}");`);
+                if (endIndex >= 0) {
+                    responseText = responseText.substring(0, endIndex);
+                }
+            }
+        }
         renderArticleParse(responseText, containerClassName, container2ClassName);
     });
 }
@@ -1382,7 +1403,11 @@ function openFile(src) {
         }
     } else {
         document.querySelector(".desktop-2").style.display = "none";
-        renderArticle(src, "container-1", "container-2");
+        renderArticle(src, "container-1", "container-2", {
+            isTrim: getParameter("trm"),
+            t0: getParameter("t0"),
+            t1: getParameter("t1")
+        });
     }
 }
 

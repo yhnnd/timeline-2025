@@ -215,16 +215,6 @@ button {
     color: rgb(255 255 255 / var(--tw-text-opacity))
 }
 
-.transition-all {
-    transition-property: all;
-    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-    transition-duration: 150ms
-}
-
-.duration-300 {
-    transition-duration: 300ms
-}
-
 .hover\:bg-gray-700:hover {
     --tw-bg-opacity: 1;
     background-color: rgb(55 65 81 / var(--tw-bg-opacity))

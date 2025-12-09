@@ -122,6 +122,10 @@ body[data-value-of-enable-line-width-560px="true"][data-value-of-enable-line-wid
     max-width: calc(100% - 40px);
 }
 
+body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] .settings-2 img.thumbnail {
+    width: unset;
+}
+
 .settings-2 .settings-item {
     display: flex;
     align-items: center;

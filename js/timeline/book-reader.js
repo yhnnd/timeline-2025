@@ -143,11 +143,7 @@ function getRandomId() {
 }
 
 function toggleClass(target, className) {
-    if (target.classList.contains(className)) {
-        target.classList.remove(className);
-    } else {
-        target.classList.add(className);
-    }
+    target.classList.toggle(className);
 }
 
 /**

@@ -154,6 +154,9 @@ pre del * {
 
 .container-2 .bubble-og-text {
     display: inline;
+    word-break: break-all !important;
+    white-space: normal !important;
+    font-size: unset !important;
 }
 
 .w-fit-content {

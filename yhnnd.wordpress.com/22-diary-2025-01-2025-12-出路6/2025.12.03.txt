@@ -444,6 +444,7 @@ Dec 11, 2025
   background: greenyellow;
   justify-content: center;
   padding: 30px;
+  width: calc(100% - 60px);
 }
 
 #content > * {

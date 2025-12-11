@@ -376,7 +376,7 @@ https://iconsvg.xyz/
 
 Dec 11, 2025
 
-<div class="container">
+&lt;div class="container">
   <div id="bg-wrapper">
     <div class="item"></div>
   </div>
@@ -385,8 +385,8 @@ Dec 11, 2025
     <div></div>
     <div></div>
   </div>
-</div>
-<style>
+&lt;/div>
+&lt;style>
 :root {
   overflow-x: hidden;
 }
@@ -452,4 +452,4 @@ Dec 11, 2025
   height: 80px;
   border: 3px dashed green;
 }
-</style>
+&lt;/style>

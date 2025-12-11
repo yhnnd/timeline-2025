@@ -1415,21 +1415,27 @@ function highlightSearchKeywords(child, {searchKeywords, configs}) {
     }
 }
 
+function trimArticle({responseText, t0, t1}) {
+    if (t0) {
+        const startIndex = responseText.indexOf(`@LineUniqueId("${t0}");\n`);
+        if (startIndex >= 0) {
+            responseText = responseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
+        }
+    }
+    if (t1) {
+        const endIndex = responseText.indexOf(`@LineUniqueId("${t1}");`);
+        if (endIndex >= 0) {
+            responseText = responseText.substring(0, endIndex);
+        }
+    }
+    return responseText;
+}
+
 function renderArticle(src, container1ClassName, container2ClassName, {isTrim, t0, t1}) {
     ajax(src, undefined, window.localStorage.getItem("enable-cache") === "true", function(responseText) {
+        window.currentArticle ? window.currentArticle.ogResponseText = responseText : 0;
         if (["true", "1"].includes(isTrim)) {
-            if (t0) {
-                const startIndex = responseText.indexOf(`@LineUniqueId("${t0}");\n`);
-                if (startIndex >= 0) {
-                    responseText = responseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
-                }
-            }
-            if (t1) {
-                const endIndex = responseText.indexOf(`@LineUniqueId("${t1}");`);
-                if (endIndex >= 0) {
-                    responseText = responseText.substring(0, endIndex);
-                }
-            }
+            responseText = trimArticle({responseText, t0, t1});
         }
         renderArticleParse(responseText, container1ClassName, container2ClassName);
     });
@@ -1460,11 +1466,16 @@ function openFile(src) {
 
 const src = getParameter("src");
 if (src) {
+    window.currentArticle = {"realUrl": src};
     openFile(src);
 } else {
     const fakeUrl = getParameter("fakeUrl");
     if (fakeUrl) {
         const realUrl = window.parseFakeUrl(fakeUrl, {fakeUrl});
+        window.currentArticle = {"realUrl": realUrl, "fakeUrl": fakeUrl};
         openFile(realUrl);
     }
+}
+if (window.setPreviousAndNextButtonEnabledStatus && typeof (window.setPreviousAndNextButtonEnabledStatus) === "function") {
+    window.setPreviousAndNextButtonEnabledStatus();
 }

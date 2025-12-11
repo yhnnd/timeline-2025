@@ -66,24 +66,23 @@
     <script>
 window.setPreviousAndNextButtonEnabledStatus = function () {
     let noPrevious = false, noNext = false;
-    const currentArticle = {
-        realUrl: getParameter('src'),
-        fakeUrl: getParameter('fakeUrl')
-    };
+    const currentArticle = window.currentArticle;
     let isArticleIndexValid = false;
-    for (const book of window.books) {
-        if (book === undefined || book.indexList === undefined || !book.indexList.length) {
-            continue;
-        }
-        for (let i = 0; i < book.indexList.length; ++i) {
-            const {fakeUrl, realUrl} = book.indexList[i];
-            if (realUrl === currentArticle.realUrl || fakeUrl === currentArticle.fakeUrl) {
-                isArticleIndexValid = true;
-                if (i === 0) {
-                    noPrevious = true;
-                }
-                if (i === book.indexList.length - 1) {
-                    noNext = true;
+    if (currentArticle) {
+        for (const book of window.books) {
+            if (book === undefined || book.indexList === undefined || !book.indexList.length) {
+                continue;
+            }
+            for (let i = 0; i < book.indexList.length; ++i) {
+                const {fakeUrl, realUrl} = book.indexList[i];
+                if (realUrl === currentArticle.realUrl || fakeUrl === currentArticle.fakeUrl) {
+                    isArticleIndexValid = true;
+                    if (i === 0) {
+                        noPrevious = true;
+                    }
+                    if (i === book.indexList.length - 1) {
+                        noNext = true;
+                    }
                 }
             }
         }
@@ -114,20 +113,25 @@ function setUrl(setFunc) {
     history.replaceState({}, "", url);
 }
 
-function setNewSrc(newSrc, newFakeUrl) {
+function setNewSrc(newFakeUrl) {
     runSyncFunctions(function () {
         setUrl(function(url) {
-            url.searchParams.set("src", newSrc);
+            url.searchParams.delete("trm");
+            url.searchParams.delete("t0");
+            url.searchParams.delete("t1");
             url.searchParams.set("fakeUrl", newFakeUrl);
         });
+    }, function () {
+        const realUrl = window.parseFakeUrl(newFakeUrl, {fakeUrl: newFakeUrl});
+        window.currentArticle = {"realUrl": realUrl, "fakeUrl": newFakeUrl};
     }, window.setPreviousAndNextButtonEnabledStatus);
 }
 
 function gotoPrevious() {
-    const currentArticle = {
-        realUrl: getParameter('src'),
-        fakeUrl: getParameter('fakeUrl')
-    };
+    const currentArticle = window.currentArticle;
+    if (!currentArticle) {
+        return;
+    }
     for (const book of window.books) {
         if (book === undefined || book.indexList === undefined || !book.indexList.length) {
             continue;
@@ -138,7 +142,7 @@ function gotoPrevious() {
                 if (i > 0) {
                     const newSrc = book.indexList[i - 1].realUrl;
                     const newFakeUrl = book.indexList[i - 1].fakeUrl;
-                    setNewSrc(newSrc, newFakeUrl);
+                    setNewSrc(newFakeUrl);
                     openFile(newSrc);
                 }
             }
@@ -147,10 +151,10 @@ function gotoPrevious() {
 }
 
 function gotoNext() {
-    const currentArticle = {
-        realUrl: getParameter('src'),
-        fakeUrl: getParameter('fakeUrl')
-    };
+    const currentArticle = window.currentArticle;
+    if (!currentArticle) {
+        return;
+    }
     for (const book of window.books) {
         if (book === undefined || book.indexList === undefined || !book.indexList.length) {
             continue;
@@ -161,7 +165,7 @@ function gotoNext() {
                 if (i < book.indexList.length - 1) {
                     const newSrc = book.indexList[i + 1].realUrl;
                     const newFakeUrl = book.indexList[i + 1].fakeUrl;
-                    setNewSrc(newSrc, newFakeUrl);
+                    setNewSrc(newFakeUrl);
                     openFile(newSrc);
                 }
             }

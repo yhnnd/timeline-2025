@@ -376,6 +376,10 @@ https://iconsvg.xyz/
 
 Dec 11, 2025
 
+<link to="book-reader.html?fakeUrl=@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.03.txt&trm=1&t0=mc1zoc41s68">book-reader.html?fakeUrl=@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.03.txt&trm=1&t0=mc1zoc41s68</link>
+
+@LineUniqueId("mc1zoc41s68");
+
 &lt;div class="container">
   <div id="bg-wrapper">
     <div class="item"></div>
@@ -454,3 +458,12 @@ Dec 11, 2025
   border: 3px dashed green;
 }
 &lt;/style>
+
+@LineUniqueId("cku393d8d3a");
+
+<div class="row" style="align-items: center;gap: 10px;">
+<div class="row wrap" style="display: inline-flex;font-size: 0;border: 1px solid black;padding: 7px;border-radius: 3px;cursor: pointer;" onclick="document.querySelector(&quot;.desktop&quot;).outerHTML = trimArticle({responseText: window.currentArticle.ogResponseText,t0:&quot;mc1zoc41s68&quot;,t1:&quot;cku393d8d3a&quot;}).replaceAll(&quot;&amp;lt;&quot;,&quot;<&quot;).replaceAll(&quot;&amp;gt;&quot;,&quot;>&quot;) + &quot;<button style='margin: auto;' onclick='window.location.reload();'>Go Back</button>&quot;;">
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+</div>
+<bubble style="display: inline;border: unset;border-radius: unset;background: unset;">Click to View</bubble>
+</div>

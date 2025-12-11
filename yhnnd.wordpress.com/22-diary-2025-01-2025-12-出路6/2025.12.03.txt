@@ -297,7 +297,7 @@ document.title = "已被插件优化 - " + document.title;
 
 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">Get Line Unique Id</bubble>
 
-Math.random().toString(36)
+<bubble style="border: 0;padding: 0;background: unset;" onclick="this.nextElementSibling.innerHTML = ` = <span style=&quot;color:brown&quot;>&quot;${ Math.random().toString(36) }&quot;</span>`;">Math.random().toString(36)</bubble><bubble style="border: 0;padding: 0;background: unset;">&nbsp;</bubble>
 
 <bubble style="border: 0;font-weight: bolder;padding: 0;background: unset;">Trim Article</bubble>
 

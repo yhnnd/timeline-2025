@@ -61,7 +61,7 @@ var v2_7 = {
         return scope;
     },
     getNewLine: function(attr) {
-        const hash = this.getRandomString().substring(0, 12);
+        const hash = this.getRandomString();
         const time = new Date();
         const id = "text-editable-" + hash + "-" + time.getTime();
         const newLine = $("<pre id=\"" + id + "\" class=\"line break-all text-editable\">");
@@ -398,7 +398,7 @@ var v2_7 = {
         });
     },
     getRandomString: function () {
-        return ("" + Math.random() * 10).split(".").join("");
+        return Math.random().toString(36).substring(2);
     },
     getLineMaxWidth: function () {
         return 644;

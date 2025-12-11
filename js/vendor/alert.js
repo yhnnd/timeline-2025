@@ -86,7 +86,7 @@ function bsConfirm(params) {
 
     if (getRandomString === undefined) {
         getRandomString = function () {
-            return ("" + Math.random() * 10).split(".").join("");
+            return Math.random().toString(36).substring(2);
         }
     }
 

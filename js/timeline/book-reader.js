@@ -519,7 +519,7 @@ function parseTable(lines) {
     return root;
 }
 
-function renderArticleParse (responseText, containerClassName, container2ClassName) {
+function renderArticleParse (responseText, container1ClassName, container2ClassName) {
     responseText = responseText.split("\n").map(line => {
         return line.split(" ").map(decode).join(" ");
     }).join("\n");
@@ -682,7 +682,35 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
 
     responseText = responseText.split("\n").map(line => {
         if (line.startsWith("@LineUniqueId(")) {
-            return "<span class='badge highlight-green' style='font-size:13px'>" + line + "</span>";
+            return `<template style="display: flex;">
+<for-container-1>
+<uq-id>
+<green-dot onclick="this.nextElementSibling.classList.toggle('invisible')"></green-dot>
+<og-text class="invisible">${line}</og-text>
+</uq-id>
+<style>
+uq-id {
+& {display: flex;flex-direction: row;align-items: center;font-size: 13px;gap: 10px}
+& > green-dot {
+    & {display: block;width: 10px;height: 10px;border-radius: 50%;background: yellowgreen;cursor: pointer}
+    &:hover {box-shadow: 0 0 0 1px green}
+}
+& > og-text {color: green}
+& .invisible {visibility: hidden}
+}
+</style>
+</for-container-1>
+<for-container-2>
+<uq-id><green-dot></green-dot><og-text class="invisible">${line}</og-text></uq-id>
+<style>
+uq-id {
+& {display: flex;flex-direction: row;align-items: center;font-size: 13px;gap: 10px}
+& > green-dot {display: block;width: 10px;height: 10px;border-radius: 50%;background: transparent;box-shadow: 0 0 0 1px green}
+& > og-text {color: green}
+}
+</style>
+</for-container-2>
+</template>`.split("\n").join("");
         }
         return line;
     }).join("\n");
@@ -1000,7 +1028,7 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         responseText = lines2.join("");
     }
 
-    const container1 = document.getElementsByClassName(containerClassName)[0];
+    const container1 = document.getElementsByClassName(container1ClassName)[0];
 
     if (localStorage.getItem("enable-page-split") === "true") {
         const pages = [], linesPage = [];
@@ -1086,8 +1114,10 @@ function renderArticleParse (responseText, containerClassName, container2ClassNa
         }
     }
 
-    if (getParameter("is-iframe") !== "true" && localStorage.getItem("enable-dual-article-container") === "true") {
-        const container2 = document.getElementsByClassName(container2ClassName)[0];
+    const isContainer2Enabled = getParameter("is-iframe") !== "true" && localStorage.getItem("enable-dual-article-container") === "true";
+    const container2 = isContainer2Enabled && document.getElementsByClassName(container2ClassName)[0];
+
+    if (isContainer2Enabled) {
         container1.querySelectorAll("img").forEach(img => {
             img.setAttribute("random-id", "img-" + getRandomId());
         });
@@ -1262,22 +1292,22 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         }
         container2.querySelectorAll(".bubble>.bubble").forEach(func);
         container2.querySelectorAll(".bubble").forEach(func);
-
-        if (localStorage.getItem("enable-line-split") === "true" && localStorage.getItem("enable-hover-show-line-info") === "true") {
-            let styStr = "";
-            container2.querySelectorAll("[data-line-number]").forEach(line => {
-                const lnNo = line.getAttribute("data-line-number");
-                styStr += `.desktop:has([data-line-number="${lnNo}"]:hover) [data-line-number="${lnNo}"]::before {display: block}\n\r`;
-                styStr += `.desktop:has([data-line-number="${lnNo}"]:hover) [data-line-number="${lnNo}"] {background: rgba(255, 255, 0, .2);outline: 1px dashed black;position: relative;}\n\r`;
-            });
-            let s = document.createElement("style");
-            s.id = "line-hover";
-            s.innerHTML = styStr;
-            document.body.querySelector("#line-hover")?.remove();
-            document.body.append(s);
-        }
     } else {
         container1.parentElement.style.justifyContent = "center";
+    }
+
+    if (localStorage.getItem("enable-line-split") === "true" && localStorage.getItem("enable-hover-show-line-info") === "true") {
+        let styStr = "";
+        container1.querySelectorAll("[data-line-number]").forEach(line => {
+            const lnNo = line.getAttribute("data-line-number");
+            styStr += `.desktop:has([data-line-number="${lnNo}"]:hover) [data-line-number="${lnNo}"]::before {display: block}\n\r`;
+            styStr += `.desktop:has([data-line-number="${lnNo}"]:hover) [data-line-number="${lnNo}"] {background: rgba(255, 255, 0, .2);outline: 1px dashed black;position: relative;}\n\r`;
+        });
+        let s = document.createElement("style");
+        s.id = "line-hover";
+        s.innerHTML = styStr;
+        document.body.querySelector("#line-hover")?.remove();
+        document.body.append(s);
     }
 
     if (hasWeCardTable && localStorage.getItem("enable-line-split") !== "true") {
@@ -1295,6 +1325,23 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         renderMaps(parseMapsResult.maps);
         /* 地图加载图片只加载一张，只有在用户调整窗口尺寸时地图才会加载所有图片，所以这里模拟用户调整窗口尺寸 */
         window.dispatchEvent(new Event('resize'));
+    }
+
+    const renderShadow = function (scope, selector) {
+        scope.querySelectorAll("template").forEach(tpl => {
+            const host = document.createElement("x-shadow-root");
+            const shadow = host.attachShadow({ mode: "open" });
+            shadow.appendChild(tpl.content.querySelector(selector));
+            tpl.after(host);
+            host.classList = tpl.classList;
+            host.style.cssText = tpl.style.cssText;
+            tpl.remove();
+        });
+    }
+
+    renderShadow(container1, "for-container-1");
+    if (isContainer2Enabled) {
+        renderShadow(container2, "for-container-2");
     }
 
     document.querySelector(".desktop").style.display = "flex";
@@ -1368,7 +1415,7 @@ function highlightSearchKeywords(child, {searchKeywords, configs}) {
     }
 }
 
-function renderArticle(src, containerClassName, container2ClassName, {isTrim, t0, t1}) {
+function renderArticle(src, container1ClassName, container2ClassName, {isTrim, t0, t1}) {
     ajax(src, undefined, window.localStorage.getItem("enable-cache") === "true", function(responseText) {
         if (["true", "1"].includes(isTrim)) {
             if (t0) {
@@ -1384,7 +1431,7 @@ function renderArticle(src, containerClassName, container2ClassName, {isTrim, t0
                 }
             }
         }
-        renderArticleParse(responseText, containerClassName, container2ClassName);
+        renderArticleParse(responseText, container1ClassName, container2ClassName);
     });
 }
 

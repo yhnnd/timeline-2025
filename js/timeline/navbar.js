@@ -204,7 +204,7 @@ function getEdgeLogo() {
 
 
 function getRandomString() {
-    return ("" + Math.random() * 10).split(".").join("");
+    return Math.random().toString(36).substring(2);
 }
 
 function deepCopy(obj, maxLevel = 3, level = 0) {

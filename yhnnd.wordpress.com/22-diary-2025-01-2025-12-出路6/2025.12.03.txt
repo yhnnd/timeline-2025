@@ -373,3 +373,83 @@ https://iconsvg.xyz/
 </div>
 
 @LineUniqueId("ov49jsiyeqr");
+
+Dec 11, 2025
+
+<div class="container">
+  <div id="bg-wrapper">
+    <div class="item"></div>
+  </div>
+  <div id="content">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+</div>
+<style>
+:root {
+  overflow-x: hidden;
+}
+
+.container {
+  height: 1200px;
+  background-color: palegoldenrod;
+  position: relative;
+}
+
+@keyframes bg {
+  from {
+    background: transparent;
+  }
+  to {
+    background: black;
+  }
+}
+
+#bg-wrapper {
+  height: 400px;
+  animation: bg 1ms linear;
+  animation-timeline: view();
+  animation-range: cover 100vh exit;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(.01);
+  }
+}
+
+.item {
+  width: 100%;
+  height: 400px;
+  position: absolute;
+  background-position: 0 0, 20px 20px;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(45deg, white 25%, transparent 0, transparent 75%, white 0),
+    linear-gradient(45deg, white 25%, transparent 0, transparent 75%, white 0);
+  animation: zoom 1ms linear;
+  animation-timeline: view();
+  animation-range: cover 100vh exit;
+  transform-origin: bottom center;
+}
+
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  background: greenyellow;
+  justify-content: center;
+  padding: 30px;
+}
+
+#content > * {
+  display: flex;
+  width: 100%;
+  height: 80px;
+  border: 3px dashed green;
+}
+</style>

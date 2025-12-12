@@ -93,10 +93,10 @@ function parseRichText(line, configs) {
                             let isBookReader = false;
                             if (labelInfo.attributes.to.startsWith("book-reader.html?")) {
                                 isBookReader = true;
-                                labelInfo.attributes.to = labelInfo.attributes.to.split("src=")[1];
+                                labelInfo.attributes.to = labelInfo.attributes.to.split("src=")[1] || labelInfo.attributes.to.split("fakeUrl=")[1];
                                 labelInfo.attributes.to = labelInfo.attributes.to.split("&")[0];
                             }
-                            if (labelInfo.attributes.to.startsWith("../") && window.parseFakeUrl) {
+                            if ((labelInfo.attributes.to.startsWith("../") || labelInfo.attributes.to.startsWith("@")) && window.parseFakeUrl) {
                                 labelInfo.attributes.to = window.parseFakeUrl(labelInfo.attributes.to, configs);
                             } else if (!labelInfo.attributes.to.startsWith("https://") && !labelInfo.attributes.to.startsWith("http://") && window.getRepository) {
                                 labelInfo.attributes.to = window.getRepository({...configs, isGetHtmlRepository: true}) + labelInfo.attributes.to;

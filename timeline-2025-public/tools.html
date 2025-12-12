@@ -7,6 +7,21 @@
 </head>
 <body>
   <style>
+h1 {
+  width: 160px;
+  white-space: nowrap;
+  overflow: visible;
+  margin-top: 25px;
+  margin-bottom: 0;
+  border-top: 1px solid #0675c4;
+  border-left: 1px solid #0675c4;
+  box-shadow: -3px -2px 1px 0 yellowgreen;
+  padding-top: 16px;
+  padding-left: 20px;
+  border-top-left-radius: 10px;
+  position: relative;
+  left: -20px;
+}
 pre {
   white-space: pre-wrap;
   word-wrap: break-word;
@@ -29,6 +44,18 @@ pre {
   background-color: #e6f2e8;
   border-color: #008a20;
 }
+.text {
+  display: inline;
+}
+.text.blue {
+  color: #0675c4;
+}
+.text.red {
+  color: #d63638;
+}
+.text.green {
+  color: #008a20;
+}
   </style>
   <div style="display: flex; justify-content: center; margin-bottom: 200px;">
     <pre style="width: 800px;"><h1>link</h1>
@@ -39,11 +66,15 @@ A <div class="bubble">&lt;link&gt;</div> tag will be translated to a <div class=
 
 <div class="bubble green">&lt;div class="link" onclick="openLink(event)" to="book-reader.html?src=../folder/filename.txt" &gt;</div>
 
+⚠️ <div class="text red">Automatically Enabled.</div>
+
 <h1>img</h1>
 
 A <div class="bubble">&lt;img src="../folder/filename.jpg"&gt;</div> will be recognized as a html <div class="bubble red">img</div> tag.
 
 A Scalable Vector Graphic <span class="bubble">&lt;svg&gt;</span> will be recognized as a html <span class="bubble red">svg</span> tag <b>ONLY</b> when it is written in single line. The opening tag <span class="bubble">&lt;svg&gt;</span> and the closing tag <span class="bubble">&lt;/svg&gt;</span> <b>MUST</b> be in one single line.
+
+⚠️ <div class="text red">This function is disabled by default. Use </div><div class="bubble text red">@command("enable-image-recognition")</div><div class="text red"> to enable this function.</div>
 
 <h1>thumbnail row</h1>
 
@@ -52,6 +83,8 @@ A <div class="bubble">&lt;div class="row"&gt;</div> will be recognized as a html
 A <div class="bubble">&lt;div class="row"&gt;</div> can wrap a list of <div class="bubble">&lt;img class="thumbnail"&gt;</div> and will display a group of images in one line.
 
 <i>If the image with class name <div class="bubble red">thumbnail</div> is too small, use <div class="bubble red">thumbnail-2x</div>.</i>
+
+⚠️ <div class="text red">Automatically Enabled.</div>
 
 <h1>border</h1>
 
@@ -62,6 +95,8 @@ A <div class="bubble">&lt;div class="row"&gt;</div> can wrap a list of <div clas
 <div class="bubble green"
 >&lt;div class="border"&gt;
 &lt;/div&gt;</div>
+
+⚠️ <div class="text red">This function is disabled by default. Use </div><div class="bubble text red">@command("enable-border-recognition")</div><div class="text red"> to enable this function.</div>
 
 <h1>video</h1>
 
@@ -81,6 +116,26 @@ will be translated to
 will be translated to
 
 <div class="bubble green">&lt;iframe width="790" height="444" src="https://www.youtube.com/embed/VXGRZ6O38ec" frameborder="0" allowfullscreen=""&gt;&lt;/iframe&gt;</div>
+
+⚠️ <div class="text red">This function is disabled by default. Use </div><div class="bubble text red">@command("enable-video-recognition")</div><div class="text red"> to enable this function.</div>
+
+<h1>Map</h1>
+
+<div class="bubble">@map {id: 'map_2', center: {lat: 39.06508132468046, lng: 117.10561037063599}, zoomLevel: 15}</div>
+
+will be translated to a Leaflet map.
+
+⚠️ <div class="text red">This function is disabled by default. You can enable it in Settings.</div>
+
+<h1>Bubble</h1>
+
+<div class="bubble">&lt;bubble&gt;<div class="text red">text content</div>&lt;/bubble&gt;</div>
+
+will be translated to
+
+<div class="bubble green">&lt;div&gt; class=&quot;bubble message-bubble&quot;&gt;<div class="text red">text content</div>&lt;/div&gt;</div>.
+
+⚠️ <div class="text red">Automatically Enabled.</div>
 
 <h1>Tools</h1>
 

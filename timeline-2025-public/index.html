@@ -87,7 +87,7 @@
                                     <span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-blue-50); position: relative; top: 3px;"></span>
                                     <span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-green-30); position: relative; top: 3px; left: -10px;"></span>
                                     致王震书
-                                    <ul>
+                                    <ul class="article-list">
                                         <li>
                                             <a href="javascript: openFile(&quot;book-reader.html?fakeUrl=@2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.07.11.txt&quot;);">2024.07.11.txt</a>
                                         </li>
@@ -121,7 +121,7 @@
                                     <span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-red-50); position: relative; top: 3px;"></span>
                                     <span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-yellow-30); position: relative; top: 3px; left: -10px;"></span>
                                     王震来信
-                                    <ul>
+                                    <ul class="article-list">
                                         <li>
                                             <a href="javascript: openFile(&quot;book-reader.html?fakeUrl=@2024/yhnnd.wordpress.com/19-letters-from-patrick-wang-王震來信/2024.07.25.txt&quot;);" title="我在工区收到你自西安寄来的信">2024.07.25.txt</a>
                                         </li>
@@ -151,13 +151,13 @@
                         </li>
                         <li>
                             盾徽
-                            <ul>
+                            <ul class="article-list">
                                 <li><a href="javascript: openFile(&quot;book-reader.html?fakeUrl=@2024/yhnnd.wordpress.com/20-diary-2024-07-2024-12-出路5/2024.07.11.txt&quot;);">Shield Skyside 2024-07-11 with background</a></li>
                             </ul>
                         </li>
                         <li>
                             小说
-                            <ul>
+                            <ul class="article-list">
                                 <li><a href="javascript: openFile(&quot;2025.07.22-letter-to-patrick.html&quot;);">兒時事、天工大、獄中夢、書信、诗</a></li>
                                 <li><a href="javascript: openFile(&quot;https://yhnnd.github.io/timeline-public/docs/timeline-public/the-phoenix-book-revised.html&quot;);">凤凰古君书新编</a></li>
                                 <li><a href="javascript: openFile(&quot;book-reader.html?fakeUrl=@2024/yhnnd.wordpress.com/20-diary-2024-07-2024-12-出路5/2024.07.20.txt&quot;);">凤凰帝国史 1</a></li>
@@ -178,7 +178,7 @@
                         </li>
                         <li>
                             外部链接🔗
-                            <ul>
+                            <ul class="article-list">
                                 <li><a href="javascript: openFile(&quot;../demo/index.html&quot;);">安全模式</a></li>
                                 <li><a href="javascript: openFile(&quot;https://yhnnd.github.io/timeline-public/docs/timeline-public/&quot;);">旧版网址</a></li>
                             </ul>
@@ -191,28 +191,14 @@
                     <ul>
                         <li>
                             索引
-                            <ul>
+                            <ul class="article-list">
                                 <li><a href="javascript: openFile(&quot;index-articles.html&quot;);">Index of Articles (文章索引)</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="javascript: openFile(&quot;index-places.html&quot;);">Index of Places (地名索引)</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="javascript: openFile(&quot;index-names.html&quot;);">Index of Names (人名索引)</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="javascript: openFile(&quot;index-alias.html&quot;);">Index of Alias (別名索引)</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="javascript: openFile(&quot;https://yhnnd.github.io/timeline-2024/timeline-2024-public/album-2023.html&quot;);">Album 2023.07 - 2024.09</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="javascript: openFile(&quot;album-2024.html&quot;);">Album 2024.09 - 2025.03</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="javascript: openFile(&quot;album-2025-1.html&quot;);">Album 2025 I</a></li>
-                            </ul>
-                            <ul>
                                 <li><a href="javascript: openFile(&quot;album-2025-2.html&quot;);">Album 2025 II</a></li>
                             </ul>
                         </li>
@@ -231,8 +217,8 @@
                     <ul>
                         <li>
                             工具 ⚙️
-                            <ul>
-                                <li><a href="javascript: openFile(&quot;tools.html&quot;);">图片编辑工具</a></li>
+                            <ul class="article-list">
+                                <li><a href="javascript: openFile(&quot;tools.html&quot;);">图片/视频/富文本 编辑工具</a></li>
                                 <li><a href="javascript: openFile(&quot;encrypt.html&quot;);">文字加密工具</a></li>
                                 <li><a href="javascript: openFile(&quot;encrypt-online.html&quot;);">Online 文字加密工具</a></li>
                                 <li><a href="javascript: openFile(&quot;../editor/editor.html&quot;);">Editor V2.7</a></li>
@@ -494,6 +480,16 @@ ul ul {
     list-style-type: circle;
     margin-block-start: 0px;
     margin-block-end: 0px;
+}
+
+.book-list>li,
+.article-list>li {
+    height: 25px;
+}
+
+.book-list a,
+.article-list a {
+    text-decoration: none;
 }
 
 .row {

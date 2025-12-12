@@ -442,13 +442,13 @@ Dec 11, 2025
   animation-timeline: view();
 }
 & .heading {
-  height: var(--x-heading-height);
+  height: var(--mc1z-heading-height);
   animation-range: cover 100vh exit;
 }
 & .footer {
-  height: var(--x-footer-height);
+  height: var(--mc1z-footer-height);
   background: black;
-  animation-range: entry cover var(--x-footer-height);
+  animation-range: entry cover var(--mc1z-footer-height);
 }
 & .heading > .image,
 & .footer > .image {
@@ -461,17 +461,17 @@ Dec 11, 2025
     linear-gradient(45deg, white 25%, transparent 0, transparent 75%, white 0);
 }
 & .heading > .image {
-  height: var(--x-heading-height);
+  height: var(--mc1z-heading-height);
   animation: mc1z-zoom-out 1ms linear;
   animation-timeline: view();
   animation-range: cover 100vh exit;
   transform-origin: bottom center;
 }
 & .footer > .image {
-  height: var(--x-footer-height);
+  height: var(--mc1z-footer-height);
   animation: mc1z-zoom-in 1ms linear;
   animation-timeline: view();
-  animation-range: entry cover var(--x-footer-height);
+  animation-range: entry cover var(--mc1z-footer-height);
   transform-origin: top center;
 }
 & .content {

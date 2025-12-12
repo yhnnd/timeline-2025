@@ -1,7 +1,5 @@
-@media screen and (max-width:1200px) {
-  .display-min-width-1200px {
-    display: none;
-  }
+.book-list > li {
+  height: 25px;
 }
 
 .sidebar-container {
@@ -10,37 +8,30 @@
 }
 
 .sidebar.rotate {
-  width: 308px;
+  width: 200px;
   transform: rotateY(-33.333deg);
   transform-origin: top left;
   background-color: white;
-  padding: 30px 0;
-  transition: all .3s;
+  padding: 30px 60px 30px 30px;
+  outline: 1px solid rgb(65 105 225 / 50%);
+  transition: all .1s;
 }
 
 .timeline {
   border-left: 10px solid royalblue;
-  margin-left: 30px;
-  height: 530px;
-  width: 216px;
+  width: 100%;
   background-color: white;
-  transform: scaleY(.9724);
   transform-origin: top left;
-}
-
-body[data-value-of-platform="Win32"] .timeline {
-  transform: scaleY(.9125);
 }
 
 .timeline>.node {
   padding-top: 2px;
   padding-bottom: 2px;
-  margin-left: 25px;
+  margin-left: 20px;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 13px;
-  line-height: 17px;
+  line-height: 19px;
   position: relative;
-  opacity: .87;
   cursor: pointer;
 }
 
@@ -62,25 +53,25 @@ body[data-value-of-platform="Win32"] .timeline {
   background-color: transparent;
   position: absolute;
   top: 5px;
-  left: -37px;
+  left: -32px;
   z-index: 10;
 }
 
 .timeline>.node::after {
   width: 25px;
-  height: 5px;
   content: '';
-  background-color: royalblue;
+  border-top: 2px dashed rgba(0, 0, 0, .1);
   position: absolute;
-  top: 9px;
+  top: 11px;
   left: -25px;
-  transition: all .3s;
-  opacity: .5;
+  transition: unset;
 }
 
-.timeline>.node:hover,
 .timeline>.node:hover::after {
-  opacity: 1;
+  top: 10px;
+  background-color: royalblue;
+  border-top: unset;
+  height: 4px;
 }
 
 .timeline>.node:hover::before {
@@ -89,31 +80,24 @@ body[data-value-of-platform="Win32"] .timeline {
 }
 
 .timeline>.node:hover>span>span {
-  transform: scale(1.45);
-  transform-origin: center left;
+  outline: 3px solid royalblue;
 }
 
 .timeline>.node>span::before,
 .timeline>.node>span::after {
-  position: absolute;
-  z-index: 13;
-  left: -586px;
-  display: block;
-  content: '';
-  height: 24px;
-  border: 1px solid transparent;
   display: none;
-}
-
-.timeline>.node>span::before {
-  width: 256px;
+  position: absolute;
   top: 0;
+  left: -556px;
+  z-index: 13;
+  content: '';
+  height: 25px;
+  width: 300px;
 }
 
 .timeline>.node>span::after {
-  width: 329px;
-  top: -2px;
-  border-left-width: 256px;
+  width: 256px;
+  left: -256px;
 }
 
 .timeline:has(:hover)>.node>span::before,
@@ -122,14 +106,13 @@ body[data-value-of-platform="Win32"] .timeline {
 }
 
 .timeline:has(:hover)>.node>span::before {
-  height: 21.155px;
-  background-color: rgba(0, 0, 0, .1);
+  height: 25px;
+  outline: 2px dashed rgba(0, 0, 0, .1);
+  outline-offset: -1px;
 }
 
 .timeline>.node:hover>span::before {
-  border-color: royalblue;
   outline: 2px solid royalblue;
-  background-color: transparent;
 }
 
 .timeline>.divider {
@@ -143,7 +126,6 @@ body[data-value-of-platform="Win32"] .timeline {
 
 .sidebar.rotate:hover {
   transform: unset;
-  left: 0;
   background-color: bisque;
 }
 
@@ -152,6 +134,6 @@ body[data-value-of-platform="Win32"] .timeline {
 }
 
 .sidebar.rotate:hover .timeline>.node::after {
-  width: 328px;
-  left: -328px;
+  width: 253px;
+  left: -256px;
 }

@@ -502,3 +502,5 @@ Dec 11, 2025
 </div>
 <bubble style="display: inline;border: unset;border-radius: unset;background: unset;">Click to View</bubble>
 </div>
+
+@command("enable-image-recognition");

@@ -438,6 +438,8 @@ Dec 11, 2025
 & .footer {
   position: relative;
   width: 100%;
+  padding: 0;
+  overflow: clip;
   animation: mc1z-darken 1ms linear;
   animation-timeline: view();
 }

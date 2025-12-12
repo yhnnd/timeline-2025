@@ -50,23 +50,26 @@ function openFile(link) {
     window.open(link, "_self");
 }
 
-let timelineHtml = "<div style='height: 25px;'></div>";
+function getBookDateRangeByFakeUrl (firstFakeUrl, lastFakeUrl) {
+    let begin = '', end = '';
+    const val = firstFakeUrl.split("/")[2].split('-');
+    if (Number.isNaN(Number(val[2])) || Number.isNaN(Number(val[3]))) {
+        begin = firstFakeUrl.split("/")[3].split(".").slice(0, 2).join(".");
+        end = lastFakeUrl.split("/")[3].split(".").slice(0, 2).join(".");
+    } else {
+        begin = val[2] + '.' + val[3];
+        end = val[4] + '.' + val[5];
+    }
+    return begin + ' - ' + end;
+}
+
+let timelineHtml = "";
 for (const i in bookNames) {
     if (i > 0) {
         const indexList = window.books[i].indexList;
-        let time = '&nbsp;', begin = '', end = '';
-        if (indexList.length > 0) {
-            const segments = indexList[indexList.length - 1].fakeUrl.split("/");
-            const val = segments[2].split('-');
-            if (Number.isNaN(Number(val[2])) || Number.isNaN(Number(val[3]))) {
-                begin = indexList[0].fakeUrl.split("/")[3].split(".").slice(0, 2).join(".");
-                end = indexList[indexList.length - 1].fakeUrl.split("/")[3].split(".").slice(0, 2).join(".");
-            } else {
-                begin = val[2] + '.' + val[3];
-                end = val[4] + '.' + val[5];
-            }
-            time = begin + ' - ' + end;
-        }
+        const time = indexList.length > 0 ?
+            getBookDateRangeByFakeUrl(indexList[0].fakeUrl, indexList[indexList.length - 1].fakeUrl)
+            : "&nbsp;";
         const url = "book.html?book=" + i;
         timelineHtml += "<div class=node onclick='openFile(\"" + url + "\")'><span><span>" + time + "</span></span></div>";
     }

@@ -65,11 +65,11 @@
                 </script>
                 <div class="col first">
                     <ul>
-                        <div class="display-min-width-1200px" style="position: relative;">
-                            <div style="position: absolute; width: 0; right: -1px; top: -30px;">
-                                <div class='sidebar-container'>
-                                    <div class='sidebar rotate'>
-                                        <div class=timeline id=timeline></div>
+                        <div style="position: relative;">
+                            <div style="position: absolute; width: 0; right: -1px; top: -32px;">
+                                <div class="sidebar-container">
+                                    <div class="sidebar rotate">
+                                        <div class="timeline" id="timeline"></div>
                                     </div>
                                 </div>
                             </div>
@@ -453,8 +453,16 @@ function tabClicked(value) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    window.addEventListener("message", (e) => {
-        e.data && e.data.url && openFile(e.data.url)
+    window.addEventListener("message", (event) => {
+        if (event.data && event.data.from === "calendar") {
+            event.data.command === "fetchCalendarEvents" && event.source.postMessage({
+                from: "index.html",
+                command: "setCalendarEvents",
+                value: window.calendarEvents
+            }, event.origin);
+            event.data.command === "gotoUrl" && openFile(event.data.value);
+            event.data.command === "setIframeHeight" && (document.querySelector("iframe[src^=\"calendar.html\"]").style.height = event.data.value);
+        }
     }, false);
     tabClicked(localStorage.getItem('tab') || "books");
     hideTimelineLoading();

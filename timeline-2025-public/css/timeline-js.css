@@ -20,6 +20,7 @@
 .timeline {
   border-left: 10px solid royalblue;
   width: 100%;
+  padding: 25px 0;
   background-color: white;
   transform-origin: top left;
 }

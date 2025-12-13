@@ -1379,7 +1379,7 @@ function _highlightSearchKeywords_(container) {
             return;
         }
         const matched = popup?.querySelector("[matched-marker]");
-        const gotoBtn = popup?.querySelector("[goto-matched]");
+        let gotoBtn = popup?.querySelector("[goto-matched]");
         if (!matched || !gotoBtn) {
             return;
         }
@@ -1391,6 +1391,9 @@ function _highlightSearchKeywords_(container) {
             ad.innerHTML = `&nbsp;&nbsp;and ${highlightedKeywords.length} more`;
             matched.append(ad);
         }
+        let copy = gotoBtn.cloneNode(true);
+        gotoBtn.replaceWith(copy); // Remove All Event Listeners
+        gotoBtn = copy;
         gotoBtn.setAttribute("href", "#" + markerId);
         gotoBtn.addEventListener('click', (event) => {
             event.preventDefault();

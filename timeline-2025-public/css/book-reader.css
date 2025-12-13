@@ -529,6 +529,10 @@ body[data-value-of-enable-no-backdrop="true"] .container-2 .svg-wrapper .backdro
 [onclick="gotoPrevious()"],
 [onclick="gotoNext()"] {
     cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select:none;
+    -khtml-user-select: none;
 }
 
 svg[onclick="gotoPrevious()"][disabled],

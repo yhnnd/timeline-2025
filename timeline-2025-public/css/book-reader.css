@@ -413,6 +413,7 @@ body[data-value-of-enable-dual-article-container="true"] .right {
     display: flex;
     width: 100%;
     justify-content: start;
+    margin-left: 20px;
 }
 
 .badges .title {

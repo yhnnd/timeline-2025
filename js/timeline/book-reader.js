@@ -1392,8 +1392,7 @@ function _highlightSearchKeywords_(container) {
             matched.append(ad);
         }
         let copy = gotoBtn.cloneNode(true);
-        gotoBtn.replaceWith(copy); // Remove All Event Listeners
-        gotoBtn = copy;
+        gotoBtn = (gotoBtn.replaceWith(copy), copy); // Remove All Event Listeners
         gotoBtn.setAttribute("href", "#" + markerId);
         gotoBtn.addEventListener('click', (event) => {
             event.preventDefault();

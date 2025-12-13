@@ -8,21 +8,13 @@
     </div>
     <script src='../js/vendor/full-calendar.min.js'></script>
     <script>
-function getArticleDateByFakeUrl (fakeUrl) {
-    let dateStr = fakeUrl.split("/")[3]?.split(".").slice(0, 3).join("-");
-    let dateObj = new Date(dateStr);
-    return isNaN(dateObj) ? false : dateStr;
-}
-
-function openFileFromCalendar(link) {
+function openFileFromCalendar(link, d) {
     if (!link) {
         return;
     }
     if (window.isIframe) {
         window.parent.postMessage({from: "calendar", command: "gotoUrl", value: link}, "*");
-        (function (d) {
-            d && sessionStorage.setItem("calendar-initial-date", d);
-        })(getArticleDateByFakeUrl(link));
+        d && sessionStorage.setItem("calendar-initial-date", d);
     } else {
         window.open(link, "_self");
     }

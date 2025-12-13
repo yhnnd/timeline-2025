@@ -808,38 +808,37 @@ for (let i = 1; i < window.books.length; ++i) {
 //     start: '2024-05-21'
 // }]
 
+function getArticleDateByFakeUrl (fakeUrl) {
+    const filename = fakeUrl.split("/").pop();
+    const segments = filename.split(".");
+    let Year = 0, Month = 0, MonthDay = 0;
+    if (segments.length > 3) {
+        Year = segments[0];
+        Month = segments[1];
+        if (segments[2].includes("-")) {
+            segments[2] = segments[2].split("-")[0];
+        }
+        MonthDay = segments[2];
+    } else if(segments[0].includes("-")) {
+        const fragments = segments[0].split("-");
+        if (fragments.length >= 3) {
+            Year = fragments[0];
+            Month = fragments[1];
+            MonthDay = fragments[2];
+        }
+    }
+    return {Year, Month, MonthDay};
+}
+
 const calendarEvents = [];
 for (const book of window.books) {
     if (book === undefined || book.indexList === undefined || !book.indexList.length) {
         continue;
     }
     for (const {fakeUrl, realUrl} of book.indexList) {
-        const filename = fakeUrl.split("/").pop();
-        const segments = filename.split(".");
-        let Year = 0, Month = 0, MonthDay = 0;
-        if (segments.length > 3) {
-            Year = segments[0];
-            Month = segments[1];
-            if (segments[2].includes("-")) {
-                segments[2] = segments[2].split("-")[0];
-            }
-            MonthDay = segments[2];
-        } else if(segments[0].includes("-")) {
-            const fragments = segments[0].split("-");
-            if (fragments.length >= 3) {
-                Year = fragments[0];
-                Month = fragments[1];
-                MonthDay = fragments[2];
-            } else {
-                continue;
-            }
-        } else {
-            continue;
-        }
+        const {Year, Month, MonthDay} = getArticleDateByFakeUrl(fakeUrl);
+        if (!Year || !Month || !MonthDay) {continue}
         if (isNaN(parseInt(Year)) || isNaN(parseInt(Month)) || isNaN(parseInt(MonthDay))) {
-            continue;
-        }
-        if (!(parseInt(Year) > 0 && parseInt(Month) > 0 && parseInt(MonthDay) > 0)) {
             continue;
         }
         calendarEvents.push({

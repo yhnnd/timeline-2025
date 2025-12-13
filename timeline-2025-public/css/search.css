@@ -178,6 +178,7 @@ pre {
     outline: 2px solid var(--studio-red);
     outline-offset: 1px;
     outline-style: dashed;
+    scroll-margin-top: 50vh;
 }
 
 .search>.search-result>.link>.text .thumbnail,

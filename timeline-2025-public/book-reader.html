@@ -26,6 +26,121 @@
             <div class="search-result"></div>
         </div>
     </div>
+    <div class="popup" disabled>
+        <div class="notice">
+            <div class="inner-square">
+                <div style="display: flex;flex-direction: column;gap: 8px;margin: 8px 12px 0 12px;align-items: center;height: 100%;">
+                    <div style="color: var(--studio-green-60);">Matched Result</div>
+                    <div matched-marker></div>
+                </div>
+                <div style="display: flex;flex-direction: row;justify-content: center;margin: 0 0 16px 0;">
+                    <div style="color: var(--studio-green-60);margin: auto 20px auto 0;">You can click this to go to the matched result.</div>
+                    <a goto-matched style="font-size: 0;cursor: pointer;white-space: nowrap;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="var(--studio-green-60)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="10"/><path d="M16 12l-4 4-4-4M12 8v7"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="toggle" onclick="this.parentElement.classList.toggle('opened');sessionStorage.setItem('popup-is-closed-by-user', !this.parentElement.classList.contains('opened'));">
+            <div class="inner-circle" style="display: flex;align-items: center;justify-content: center;width: 50px;height: 50px;border-radius: 50%;margin: auto;">
+                <div class="arrow-close" style="position: relative;top: 1px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+                </div>
+                <div class="arrow-open" style="position: relative;top: 3px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="gray" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+.popup[disabled] {
+    display: none;
+}
+.popup {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    min-height: min-content;
+    height: 0;
+    background-color: transparent;
+    transition: height .1s linear, background-color .1s linear;
+}
+.popup:not(.opened) {
+    position: relative;
+}
+.popup:not(.opened) > .toggle {
+    position: absolute;
+    top: 0;
+    transform: scale(.7) translateY(-19.5px);
+}
+.popup:not(.opened) > *:not(.toggle) {
+    display: none!important;
+}
+.popup.opened {
+    background-color: darkgray;
+    height: 280px;
+    box-shadow: inset 0 0 30px 0 gray;
+}
+.popup > .notice {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 512px;
+    height: 215px;
+    box-shadow: inset 0 0 4px 0 gray;
+    border-radius: 5px;
+    margin: 16px auto 10px auto;
+}
+.popup > .notice > .inner-square {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+    width: 496px;
+    height: 200px;
+    box-shadow: 0 0 5px 0 gray;
+    border-radius: 4.5px;
+    background-color: var(--studio-yellow-0);
+}
+.popup > .notice a:active > svg {
+    stroke: var(--studio-yellow-30);
+}
+.popup > .toggle {
+    display: flex;
+    justify-self: flex-end;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    margin-top: 10px;
+    cursor: pointer;
+    box-shadow: inset 0 0 1px 0 darkgray;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
+}
+.popup.opened > .toggle {
+    margin-top: auto;
+    margin-bottom: 10px;
+    box-shadow: inset 0 0 4px 0 gray;
+}
+.popup > .toggle > .inner-circle {
+    box-shadow: 0 0 2px 0 darkgray;
+}
+.popup.opened > .toggle > .inner-circle {
+    box-shadow: 0 0 5px 0 gray;
+}
+.popup > .toggle {
+    .arrow-open {display: block}
+    .arrow-close {display: none}
+}
+.popup.opened > .toggle {
+    .arrow-open {display: none}
+    .arrow-close {display: block}
+}
+    </style>
     <div class="desktop" style="display: none;width: 100%;min-height: calc(100vh - 400px);">
         <div class="buttons-previous-and-next no-print" style="position: relative;width: 0;height: auto;">
             <div style="position: sticky;top: 54px;left: 0;">

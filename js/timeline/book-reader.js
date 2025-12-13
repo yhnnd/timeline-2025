@@ -1353,18 +1353,52 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
 }
 
 function _highlightSearchKeywords_(container) {
+    highlightedKeywords = []
+    const popup = document.querySelector(".popup");
+    popup.setAttribute("disabled", "");
     const q = window.sessionStorage.getItem("q"), conf = window.sessionStorage.getItem("conf");
-    if (q) {
-        const searchKeywords = JSON.parse(q), configs = conf ? JSON.parse(conf) : null;
-        if (!configs || configs.type === "text") {
-            container.childNodes.forEach(pre => {
-                if (pre.tagName === "PRE" && !pre.classList.contains("badges")) {
-                    traverse(pre, {
-                        textHandler: highlightSearchKeywords,
-                        textHandlerParams: {searchKeywords, configs}
-                    });
-                }
-            });
+    if (!q) {
+        return;
+    }
+    const searchKeywords = JSON.parse(q), configs = conf ? JSON.parse(conf) : null;
+    if (!configs || configs.type === "text") {
+        container.childNodes.forEach(pre => {
+            if (pre.tagName === "PRE" && !pre.classList.contains("badges")) {
+                traverse(pre, {
+                    textHandler: highlightSearchKeywords,
+                    textHandlerParams: {searchKeywords, configs}
+                });
+            }
+        });
+        if (!highlightedKeywords.length) {
+            return;
+        }
+        const markerId = highlightedKeywords.shift();
+        const marker = document.getElementById(markerId);
+        if (!marker) {
+            return;
+        }
+        const matched = popup?.querySelector("[matched-marker]");
+        const gotoBtn = popup?.querySelector("[goto-matched]");
+        if (!matched || !gotoBtn) {
+            return;
+        }
+        matched.innerHTML = marker.outerHTML.split(`id="${markerId}"`).join("");
+        if (highlightedKeywords.length){
+            const ad = document.createElement("span");
+            ad.style.color = "var(--studio-yellow-30)";
+            ad.style.fontStyle = "italic";
+            ad.innerHTML = `&nbsp;&nbsp;and ${highlightedKeywords.length} more`;
+            matched.append(ad);
+        }
+        gotoBtn.setAttribute("href", "#" + markerId);
+        gotoBtn.addEventListener('click', (event) => {
+            event.preventDefault();
+            marker.scrollIntoView({behavior: 'instant', block: 'center'});
+        });
+        popup.removeAttribute("disabled");
+        if (sessionStorage.getItem("popup-is-closed-by-user") !== "true") {
+            popup.classList.add("opened");
         }
     }
 }
@@ -1383,6 +1417,8 @@ function traverse(node, {textHandler, textHandlerParams}) {
         child = next;
     }
 }
+
+let highlightedKeywords = []
 
 function highlightSearchKeywords(child, {searchKeywords, configs}) {
     if (child.isNewTextNode || !child.parentElement || child.parentElement.classList.contains('marker-wrapper')) {
@@ -1404,6 +1440,8 @@ function highlightSearchKeywords(child, {searchKeywords, configs}) {
                 newTextNode = document.createElement("code");
                 newTextNode.classList.add("marker-wrapper");
                 newTextNode.innerHTML = "<var class=\"marker\">" + text + "</var>";
+                newTextNode.id = "marker-" + Math.random().toString(36).substring(2);
+                highlightedKeywords.push(newTextNode.id);
             } else {
                 newTextNode = document.createTextNode(text);
             }

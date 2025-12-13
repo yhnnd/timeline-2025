@@ -74,6 +74,12 @@
     top: 0;
     transform: scale(.7) translateY(-19.5px);
 }
+.popup:not(.opened) > .toggle:hover {
+    background-color: limegreen;
+}
+.popup:not(.opened) > .toggle:hover > .inner-circle {
+    background-color: white;
+}
 .popup:not(.opened) > *:not(.toggle) {
     display: none!important;
 }

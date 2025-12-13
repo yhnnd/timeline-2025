@@ -835,15 +835,15 @@ async function runSyncFunctions() {
 
 function hideTimelineLoading (event) {
     event && event.stopPropagation();
-    const loading = document.querySelector(".loading");
     runSyncFunctions(function () {
-        loading.style.opacity = "1";
+        document.querySelector(".loading").style.opacity = "1";
     }, function () {
-        loading.style.transition = "opacity 1s";
+        document.querySelector(".loading").style.transition = "opacity 1s";
     }, function () {
-        loading.style.opacity = "0";
+        document.querySelector(".loading").style.opacity = "0";
     });
     setTimeout(() => {
+        const loading = document.querySelector(".loading");
         loading.style.display = "none";
         loading.style.transition = null;
         loading.style.opacity = null;

@@ -27,19 +27,21 @@
         </div>
     </div>
     <div class="desktop" style="display: none; width: 100%; gap: 20px;">
+        <div class="buttons-previous-and-next no-print" style="position: relative;width: 0;height: auto;">
+            <div style="position: sticky;top: 54px;left: 0;">
+                <div style="position: relative;left: 10px;white-space: nowrap;">
+                    <svg onclick="gotoPrevious()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+                </div>
+            </div>
+        </div>
+        <div class="buttons-previous-and-next no-print" style="position: relative;left: calc(100vw - 50px);width: 0;height: auto;">
+            <div style="position: sticky;top: 54px;right: 0;">
+                <div style="position: relative;right: 10px;white-space: nowrap;">
+                    <svg onclick="gotoNext()" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
+                </div>
+            </div>
+        </div>
         <div class="left">
-            <div class="buttons-previous-and-next no-print" style="position: relative;">
-                <div style="position: absolute;left: -360px;top: 20px;">
-                    <button onclick="gotoPrevious()">previous</button>
-                    <button onclick="gotoNext()">next</button>
-                </div>
-            </div>
-            <div class="buttons-previous-and-next no-print" style="position: relative;">
-                <div style="position: absolute;left: -360px;bottom: 20px;">
-                    <button onclick="gotoPrevious()">previous</button>
-                    <button onclick="gotoNext()">next</button>
-                </div>
-            </div>
             <div class="container container-1">
                 <pre></pre>
             </div>

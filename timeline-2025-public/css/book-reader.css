@@ -525,6 +525,17 @@ body[data-value-of-enable-no-backdrop="true"] .container-2 .svg-wrapper .backdro
     display: none;
 }
 
+[onclick="gotoPrevious()"],
+[onclick="gotoNext()"] {
+    cursor: pointer;
+}
+
+svg[onclick="gotoPrevious()"][disabled],
+svg[onclick="gotoNext()"][disabled] {
+    stroke: lightgray;
+    cursor: not-allowed;
+}
+
 body[data-value-of-enable-button-previous-and-button-next="true"] .buttons-previous-and-next {
     display: block;
 }

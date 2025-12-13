@@ -803,12 +803,6 @@ for (let i = 1; i < window.books.length; ++i) {
     parseRepository(window.books[i]);
 }
 
-// [{
-//     title: 'Read 05.21',
-//     url: 'book-reader.html?src=../yhnnd.wordpress.com/17-diary-2024-01-2024-12-出路4/2024.05.21.txt',
-//     start: '2024-05-21'
-// }]
-
 function getArticleDateByFakeUrl (fakeUrl) {
     const filename = fakeUrl.split("/").pop();
     const segments = filename.split(".");

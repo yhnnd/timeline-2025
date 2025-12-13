@@ -835,15 +835,18 @@ async function runSyncFunctions() {
 
 function hideTimelineLoading (event) {
     event && event.stopPropagation();
+    const loading = document.querySelector(".loading");
+    if (!loading) {
+        return;
+    }
     runSyncFunctions(function () {
-        document.querySelector(".loading").style.opacity = "1";
+        loading.style.opacity = "1";
     }, function () {
-        document.querySelector(".loading").style.transition = "opacity 1s";
+        loading.style.transition = "opacity 1s";
     }, function () {
-        document.querySelector(".loading").style.opacity = "0";
+        loading.style.opacity = "0";
     });
     setTimeout(() => {
-        const loading = document.querySelector(".loading");
         loading.style.display = "none";
         loading.style.transition = null;
         loading.style.opacity = null;

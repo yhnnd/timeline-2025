@@ -19,7 +19,7 @@
 .search-bar>.search-keyword {
     margin-left: auto;
     max-height: 2rem;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .search-bar>.close-button {

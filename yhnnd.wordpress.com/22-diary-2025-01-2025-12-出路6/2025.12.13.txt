@@ -13,3 +13,98 @@
 @base64("5a2m5Lmg56yU6K6w");
 
 @base64("Q1NTIOS4reeahCBvdmVyZmxvdyDlsZ7mgKfmnInkuIDkuKrpl67popjvvIzlpoLmnpzmioogb3ZlcmZsb3cg6K6+572u5oiQIHNjcm9sbO+8jOWcqCBNYWMg57O757uf55qEIENocm9tZSDkuIrmmK/mraPluLjnmoTvvIzljbPvvJrkuI3muqLlh7rml7bkuI3kvJrmmL7npLrmu5rliqjmnaHvvIzmuqLlh7rml7bmmL7npLrmu5rliqjmnaHjgILkvYbmmK/lnKggV2luZG93cyDns7vnu5/nmoQgQ2hyb21lIOWImeaYr+mUmeeahO+8mua7muWKqOadoeS4jeiuuuWGheWuueacieayoeaciea6ouWHuumDveS8muaYvuekuu+8jOWmguaenOayoeaciea6ouWHuuWImeaYvuekuuS4gOS4quS4jeiDvea7muWKqOeahOa7muWKqOadoe+8jOi/meW+iOiEkeaui+OAguino+WGs+aWueazleaYr+WwhiBvdmVyZmxvdyDorr7nva7miJAgYXV0b++8jOi/meagt+WcqOWGheWuuea6ouWHuuaXtuaYvuekuiBzY3JvbGxiYXLvvIjlkowgb3ZlcmZsb3cgc2Nyb2xsIOaYr+S4gOagt+eahOaViOaenO+8ie+8jOiAjOWcqOWGheWuueacqua6ouWHuuaXtuWImeS4jeaYvuekuiBzY3JvbGxiYXLvvIzov5nmiY3mmK/nkIbmg7PnmoTnirbmgIHjgILogIwgb3ZlcmZsb3cgdmlzaWJsZSDlkowgb3ZlcmZsb3cgaGlkZGVuIOaYr+S4pOS4quaegeerr+OAgg==");
+
+2025/12/16
+
+Position Sticky Demo
+
+&lt;div class="container">
+    <div style="box-sizing: border-box;position: absolute;top: 0;left: max(1px, calc(50vw - 256px - 200px));width: 30px;height: 100vh;border: 3px solid red;border-right: none;justify-content: center;align-items: center;display: flex;">
+        <span style="writing-mode: vertical-lr; color: red;">100vh</span>
+    </div>
+    <div class="left">
+        <div class="top">
+            <div class="sticky"></div>
+        </div>
+        <div class="middle"></div>
+        <div class="bottom">
+            <div class="sticky"></div>
+        </div>
+    </div>
+    <div class="main">
+        <div style="box-sizing: border-box;position: absolute;top: 20px;left: 0;width: 512px;height: 30px;border: 3px solid red;border-bottom: none;justify-content: center;align-items: center;display: flex;">
+            <span style="writing-mode: horizontal-tb; color: red;">512px</span>
+        </div>
+        <div style="box-sizing: border-box;position: absolute;top: 100vh;left: 20px;width: 30px;height: calc(100vh - var(--height-of-sticky-element));border: 3px solid red;border-left: none;justify-content: center;align-items: center;display: flex;">
+            <span style="writing-mode: sideways-lr; color: red;">calc(100vh - var(--height-of-sticky-element))</span>
+        </div>
+    </div>
+    <div class="right">
+        <div class="top">
+            <div class="sticky"></div>
+        </div>
+        <div class="middle"></div>
+        <div class="bottom">
+            <div class="sticky"></div>
+        </div>
+    </div>
+&lt;/div>
+
+&lt;style>
+.container {
+    --height-of-sticky-element: 100px;
+    display: flex;
+    justify-content: center;
+    & > .left,
+    & > .right {
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        width: 110px;
+        & > .top,
+        & > .bottom {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100vh;
+            border: 3px solid yellowgreen;
+            & > .sticky {
+                width: auto;
+                height: var(--height-of-sticky-element);
+                background-color: yellow;
+            }
+        }
+        & > .top {
+            background-image:  repeating-linear-gradient(lightblue, white);
+            & > .sticky {
+                position: sticky;
+                top: 0;
+            }
+        }
+        & .middle {
+            box-sizing: border-box;
+            width: 100%;
+            height: calc(100vh - var(--height-of-sticky-element));
+            background-color: transparent;
+            border: 3px dashed yellowgreen;
+            border-top: none;
+            border-bottom: none;
+        }
+        & > .bottom {
+            background-image:  repeating-linear-gradient(white, lightblue);
+            & > .sticky {
+                position: sticky;
+                top: calc(100vh - var(--height-of-sticky-element));
+            }
+        }
+    }
+    & > .main {
+        display: flex;
+        min-width: 512px;
+        width: 512px;
+        height: calc(100vh * 3 - var(--height-of-sticky-element));
+        position: relative;
+        overflow-x: hidden;
+        background: repeating-linear-gradient(-45deg, #f3f3f3, #f3f3f3 25px, transparent 25px, transparent 50px);
+    }
+}
+&lt;/style>

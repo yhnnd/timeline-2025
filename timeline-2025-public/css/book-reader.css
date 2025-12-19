@@ -541,11 +541,11 @@ svg[onclick="gotoNext()"][disabled] {
     cursor: not-allowed;
 }
 
-body[data-value-of-enable-button-previous-and-button-next="true"] .buttons-previous-and-next {
+body[data-value-of-enable-button-previous-and-button-next="true"]:not([is-iframe="true"]) .buttons-previous-and-next {
     display: block;
 }
 
-body[data-value-of-enable-button-previous-and-button-next="false"] .buttons-previous-and-next {
+.buttons-previous-and-next {
     display: none;
 }
 

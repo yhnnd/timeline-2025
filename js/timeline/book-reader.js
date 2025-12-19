@@ -1326,7 +1326,7 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
 }
 
 function getShadowTemplate(line, color, bgColor) {
-    return `<template style="display: flex;">
+    return `<template style="display: inline-flex;">
 <for-container-1>
 <uq-id>
 <color-dot onclick="this.nextElementSibling.classList.toggle('invisible')"></color-dot>

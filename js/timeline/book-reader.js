@@ -616,7 +616,7 @@ function renderArticleParse (responseText, container1ClassName, container2ClassN
     if (isBorderEnabled) {
         responseText = responseText.split("\n").map(line => {
             if (line.includes(patternBdr)) {
-                return line.replace(patternBdr, "<span class='highlight-green'>" + patternBdr + "</span>");
+                return getShadowTemplate(line, "var(--studio-orange)", "orange");
             }
             return line;
         }).join("\n");
@@ -673,7 +673,7 @@ function renderArticleParse (responseText, container1ClassName, container2ClassN
                 return line.replace("@div_end &lt;/div", "</div");
             }
             if (line.includes("@command(\"enable-image-recognition\")")) {
-                return line.replace("@command(\"enable-image-recognition\")", "<span class='highlight-green'>" + "@command(\"enable-image-recognition\")" + "</span>");
+                return getShadowTemplate(line, "red", "pink");
             }
             return line;
         }).join("\n");
@@ -681,35 +681,9 @@ function renderArticleParse (responseText, container1ClassName, container2ClassN
 
     responseText = responseText.split("\n").map(line => {
         if (line.startsWith("@LineUniqueId(")) {
-            return `<template style="display: flex;">
-<for-container-1>
-<uq-id>
-<green-dot onclick="this.nextElementSibling.classList.toggle('invisible')"></green-dot>
-<og-text class="invisible">${line}</og-text>
-</uq-id>
-<style>
-uq-id {
-& {display: flex;flex-direction: row;align-items: center;font-size: 13px;gap: 10px}
-& > green-dot {
-    & {display: block;width: 10px;height: 10px;border-radius: 50%;background: yellowgreen;cursor: pointer}
-    &:hover {box-shadow: 0 0 0 1px green}
-}
-& > og-text {color: green}
-& .invisible {visibility: hidden}
-}
-</style>
-</for-container-1>
-<for-container-2>
-<uq-id><green-dot></green-dot><og-text class="invisible">${line}</og-text></uq-id>
-<style>
-uq-id {
-& {display: flex;flex-direction: row;align-items: center;font-size: 13px;gap: 10px}
-& > green-dot {display: block;width: 10px;height: 10px;border-radius: 50%;background: transparent;box-shadow: 0 0 0 1px green}
-& > og-text {color: green}
-}
-</style>
-</for-container-2>
-</template>`.split("\n").join("");
+            return getShadowTemplate(line, "green", "yellowgreen");
+        } else if (line.startsWith("@command(\"line-width-maximum\")")) {
+            return getShadowTemplate(line, "var(--studio-blue)", "lightblue");
         }
         return line;
     }).join("\n");
@@ -722,7 +696,6 @@ uq-id {
     responseText = responseText.replaceAll('@command("border-end")', "\n</div>");
     responseText = responseText.replaceAll('@command("link-start")', "<div class='link' onclick='openLink(event)'");
     responseText = responseText.replaceAll('@command("link-end")', "</div>");
-    responseText = responseText.replaceAll("@command(\"line-width-maximum\")", "<span class='highlight-green'>@command(\"line-width-maximum\")</span>");
     responseText = responseText.replaceAll("@command(\"small-seal-start\")", "<div class='small-seal-script'>");
     responseText = responseText.replaceAll("@command(\"small-seal-end\")", "\n</div>");
 
@@ -925,7 +898,7 @@ uq-id {
                 const wrapperClose = '</div>';
                 return wrapperOpen + covers + videoOpen + source + videoClose + wrapperClose;
             } else if (line.includes(patternVid)) {
-                return line.replace(patternVid, "<span class='highlight-green'>" + patternVid + "</span>");
+                return getShadowTemplate(line, "var(--studio-purple)", "violet");
             }
             return line;
         }).join("\n");
@@ -1350,6 +1323,39 @@ body[data-value-of-enable-hover-highlight-img="true"]:has([random-id="${randomId
         document.querySelector(".footer").style.display = null;
         _highlightSearchKeywords_(container1);
     }
+}
+
+function getShadowTemplate(line, color, bgColor) {
+    return `<template style="display: flex;">
+<for-container-1>
+<uq-id>
+<color-dot onclick="this.nextElementSibling.classList.toggle('invisible')"></color-dot>
+<og-text class="invisible">${line}</og-text>
+</uq-id>
+<style>
+uq-id {
+& {display: flex;flex-direction: row;align-items: center;font-size: 13px;gap: 10px}
+& > color-dot {
+    & {display: block;width: 10px;height: 10px;border-radius: 50%;background: ${bgColor};cursor: pointer}
+    &:hover {box-shadow: 0 0 0 1px ${color}}
+}
+&:not(:has(.invisible)) color-dot {box-shadow: 0 0 0 1px ${color}}
+& > og-text {color: ${color}}
+& .invisible {visibility: hidden}
+}
+</style>
+</for-container-1>
+<for-container-2>
+<uq-id><color-dot></color-dot><og-text class="invisible">${line}</og-text></uq-id>
+<style>
+uq-id {
+& {display: flex;flex-direction: row;align-items: center;font-size: 13px;gap: 10px}
+& > color-dot {display: block;width: 10px;height: 10px;border-radius: 50%;background: transparent;box-shadow: 0 0 0 1px ${color}}
+& > og-text {color: ${color}}
+}
+</style>
+</for-container-2>
+</template>`.split("\n").join("");
 }
 
 function _highlightSearchKeywords_(container) {

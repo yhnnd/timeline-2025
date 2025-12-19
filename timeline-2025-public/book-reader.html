@@ -92,8 +92,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 512px;
+    width: min(512px, 100%);
     height: 215px;
+    min-height: 215px;
     box-shadow: inset 0 0 4px 0 gray;
     border-radius: 5px;
     margin: 16px auto 10px auto;
@@ -103,8 +104,10 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: stretch;
-    width: 496px;
+    width: min(496px, 100%);
     height: 200px;
+    min-height: 200px;
+    max-height: 200px;
     box-shadow: 0 0 5px 0 gray;
     border-radius: 4.5px;
     background-color: var(--studio-yellow-0);

@@ -121,7 +121,11 @@
     display: flex;
     justify-self: flex-end;
     width: 65px;
+    min-width: 65px;
+    max-width: 65px;
     height: 65px;
+    min-height: 65px;
+    max-height: 65px;
     border-radius: 50%;
     margin-top: 10px;
     cursor: pointer;
@@ -131,25 +135,21 @@
     -moz-user-select: none;
     -ms-user-select: none;
     -webkit-user-drag: none;
+    .arrow-open {display: block}
+    .arrow-close {display: none}
 }
 .popup.opened > .toggle {
     margin-top: auto;
     margin-bottom: 10px;
     box-shadow: inset 0 0 4px 0 gray;
+    .arrow-open {display: none}
+    .arrow-close {display: block}
 }
 .popup > .toggle > .inner-circle {
     box-shadow: 0 0 2px 0 darkgray;
 }
 .popup.opened > .toggle > .inner-circle {
     box-shadow: 0 0 5px 0 gray;
-}
-.popup > .toggle {
-    .arrow-open {display: block}
-    .arrow-close {display: none}
-}
-.popup.opened > .toggle {
-    .arrow-open {display: none}
-    .arrow-close {display: block}
 }
     </style>
     <div class="desktop" style="display: none;width: 100%;min-height: calc(100vh - 400px);">

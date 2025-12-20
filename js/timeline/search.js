@@ -245,8 +245,9 @@ function searchKeywords(keywords, configs) {
                 link.innerHTML = "<a target='_self' href='" + targetUrl + "'>"
                     + "<span class='folder'>" + folder + "</span> / <span>" + filename + "</span></a>"
                     + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('" + targetUrl + "','_self','noopener,noreferrer');\"></div></div>"
-                    + "<div class='text'><pre>" + lines.join("\n") + "</pre></div>";
+                    + "<div class='text' fake-url=\"" + item.fakeUrl + "\"><pre></pre></div>";
                 resultWrapper.appendChild(link);
+                resultWrapper.querySelector(`.text[fake-url="${item.fakeUrl}"]>pre`).innerHTML = lines.join("\n");
             }
         }
         if (resultWrapper.innerHTML === "") {

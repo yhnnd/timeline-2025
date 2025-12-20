@@ -65,6 +65,7 @@
     flex-direction: column;
     max-width: 100%;
     height: fit-content;
+    min-height: 100vh;
     overflow-x: hidden;
     background: rgba(244,244,244,.5);
     padding: 0 10px;
@@ -74,7 +75,7 @@
     margin-top: 80px;
     width: 512px;
     max-width: 100%;
-    padding-bottom: 320px;
+    padding-bottom: 80px;
 }
 
 body[data-value-of-enable-line-width-560px="true"] .search>.search-result {

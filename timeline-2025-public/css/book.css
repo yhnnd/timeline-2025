@@ -54,6 +54,27 @@
     position: relative;
 }
 
+@font-face {
+    font-family: "Linux Libertine Font";
+    src: url("./fonts/LinLibertine_Mah.ttf");
+}
+
+.index-wrapper>.item::before {
+    display: inline-block;
+    content: attr(data-counter);
+    position: absolute;
+    top: -18px;
+    right: 512px;
+    text-align: end;
+    font-size: 13px;
+    font-family: "Linux Libertine Font";
+    color: var(--studio-blue-50);
+    background-color: var(--studio-blue-0);
+    padding: 1px 6px;
+    border: 1px solid var(--studio-blue-40);
+    border-radius: 10px;
+}
+
 .index-wrapper>.item:hover {
     box-shadow: 0 0 4px var(--studio-blue-50);
 }

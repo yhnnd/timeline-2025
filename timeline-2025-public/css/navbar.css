@@ -147,6 +147,11 @@ body[data-value-of-enable-navbar="false"] .fake-navbar {
 
 .tab {
     position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-drag: none;
 }
 
 .tab.focus {

@@ -261,6 +261,10 @@ pre del * {
     src: url("./fonts/LinLibertine_Mah.ttf");
 }
 
+[font-linux] {
+    font-family: "Linux Libertine Font";
+}
+
 @font-face {
     font-family: "small seal script";
     src: url("./fonts/fangzhengxiaozhuan.TTF");

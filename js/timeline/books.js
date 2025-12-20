@@ -11,10 +11,10 @@ if (bookList.length) {
             const link = document.createElement("a");
             link.href = "javascript: openFile(\"book.html?book=" + i + "\");";
             link.innerHTML = "<span>" + i + "</span>";
-            if (bookNames[i] === "致王震書") {
+            if (bookNames[i].startsWith("致王震書")) {
                 link.innerHTML += '&nbsp;<span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-blue-50); position: relative; top: 3px;"></span>';
                 link.innerHTML += '&nbsp;<span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-green-30); position: relative; top: 3px; left: -10px;"></span>';
-            } else if (bookNames[i] === "王震來信") {
+            } else if (bookNames[i].startsWith("王震來信")) {
                 link.innerHTML += '&nbsp;<span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-red-50); position: relative; top: 3px;"></span>';
                 link.innerHTML += '&nbsp;<span class="rounded-circle" style="display: inline-block; width: 1rem; height: 1rem; background: var(--studio-yellow-30); position: relative; top: 3px; left: -10px;"></span>';
             }

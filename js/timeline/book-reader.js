@@ -684,6 +684,8 @@ function renderArticleParse (responseText, container1ClassName, container2ClassN
             return getShadowTemplate(line, "green", "yellowgreen");
         } else if (line.startsWith("@command(\"line-width-maximum\")")) {
             return getShadowTemplate(line, "var(--studio-blue)", "lightblue");
+        } else if (line.startsWith("@command(\"enable-pre-width-fit-content\")")) {
+            return getShadowTemplate(line, "var(--studio-blue-50)", "var(--studio-blue-30)");
         }
         return line;
     }).join("\n");

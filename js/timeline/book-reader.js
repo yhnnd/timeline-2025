@@ -1466,13 +1466,15 @@ function trimArticle({responseText, t0, t1}) {
     if (t0) {
         const startIndex = responseText.indexOf(`@LineUniqueId("${t0}");\n`);
         if (startIndex >= 0) {
-            responseText = responseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
+            const prevCmds = responseText.substring(0, startIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n");
+            responseText = prevCmds + responseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
         }
     }
     if (t1) {
         const endIndex = responseText.indexOf(`@LineUniqueId("${t1}");`);
         if (endIndex >= 0) {
-            responseText = responseText.substring(0, endIndex);
+            const cmdsAfter = responseText.substring(endIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n");
+            responseText = responseText.substring(0, endIndex) + cmdsAfter;
         }
     }
     return responseText;

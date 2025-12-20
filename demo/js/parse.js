@@ -85,6 +85,9 @@ function parseRichText(line, configs) {
                             styleValue += "border:" + labelInfo.attributes.border + " solid gray;";
                             styleValue += "border-radius:3px;";
                         }
+                        if (labelInfo.attributes.display) {
+                            styleValue += "display:" + labelInfo.attributes.display;
+                        }
                         labelInfo.attributesLine = "";
                         if (styleValue.length) {
                             labelInfo.attributesLine += "style=\"" + styleValue + "\"";

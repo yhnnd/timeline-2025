@@ -5,7 +5,7 @@ function decodeBase64(text) {
 function decode(t){if(t.startsWith('@utf("')&&t.endsWith('");')){t=(t=t.replaceAll("&lt;","<")).substr(6,t.length-6-3);const e=[];let s="",n="",r=!1,h=!1;for(let l=0;l<t.length;++l){const o=t[l];"<"===o?(r&&(e.push({text:s,isZh:!0}),s=""),h=!0,r=!1,n=""):">"===o?(h&&(e.push({text:n,isEn:!0}),n=""),h=!1,r=!0,s=""):h||r?r?s+=o:h&&(n+=o):(r=!0,s=o)}s.length&&e.push({text:s,isZh:!0});let l="";for(const t of e)t.isEn?l+=t.text:t.isZh&&(l+=function(t){const e=t.text;let s="";for(let t=0;t<e.length;++t)t%2==0&&(s+="%"),s+=e[t];let n="";try{n=decodeURIComponent(s)}catch{return e}return n}(t));return l}return t.startsWith('@base64("')&&t.endsWith('");')?(t=t.substr(9,t.length-9-3),decodeBase64(t)):t}
 
 // Requires localforage.nopromises.min.js
-window.isCache2Enabled = true;
+window.isCache2Enabled = window.localStorage.getItem("enable-cache") === "true";
 window.db = window["localforage"] || window["localStorage"];
 
 function setCache2(key, value) {
@@ -71,9 +71,9 @@ function openFile(filename, url) {
     if (modal != undefined) {
         modal.classList.add("opened");
         modal.innerHTML = "<div class='scroll'><div class='centered'>" +
-            "<div class='title'>" + filename +
-            "<button class='close float-right' onclick='closeModal()'>Close</button></div>" +
-            "<div class='article-content'></div></div></div>";
+"<div class='title'>" + filename +
+"<button class='close' onclick='closeModal()'>Close</button></div>" +
+"<div class='article-content'></div></div></div>";
         document.body.classList.add("modal-opened");
         ajax(url, function (text) {
             let content = "";
@@ -101,6 +101,10 @@ function openArticle(bookName, number) {
 }
 
 function closeModal() {
+    if (getParameter("fakeUrl")) {
+        history.back();
+        return;
+    }
     const modal = document.getElementsByClassName("modal")[0];
     modal.classList.remove("opened");
     modal.innerHTML = "";
@@ -143,6 +147,11 @@ if (window.onload) {
 window.onload = function () {
     if (window.onloadPrev) {
         window.onloadPrev();
+    }
+    const fakeUrl = getParameter("fakeUrl");
+    if (fakeUrl) {
+        openFile(window.parseFakeUrl(fakeUrl, {"fakeUrl": fakeUrl}));
+        return;
     }
     const container = document.getElementById("books");
     for (const [key, value] of Object.entries(window.books)) {

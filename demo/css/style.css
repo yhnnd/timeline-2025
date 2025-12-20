@@ -172,6 +172,10 @@ img {
     color: white;
     padding: 16px;
     font-size: 48px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .modal.opened .article-content {
@@ -199,10 +203,6 @@ body.modal-opened {
     overflow: hidden;
 }
 
-.float-right {
-    float: right;
-}
-
 button.close {
     padding: 14px;
     font-size: 16px;
@@ -211,6 +211,7 @@ button.close {
     background-color: white;
     border: 0;
     border-radius: 0;
+    height: fit-content;
 }
 
 button.close:hover {

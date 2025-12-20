@@ -1462,18 +1462,18 @@ function highlightSearchKeywords(child, {searchKeywords, configs}) {
     }
 }
 
-function trimArticle({responseText, t0, t1}) {
+function trimArticle({responseText, t0, t1, cmd}) {
     if (t0) {
         const startIndex = responseText.indexOf(`@LineUniqueId("${t0}");\n`);
         if (startIndex >= 0) {
-            const prevCmds = responseText.substring(0, startIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n");
+            const prevCmds = cmd ? responseText.substring(0, startIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n") : "";
             responseText = prevCmds + responseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
         }
     }
     if (t1) {
         const endIndex = responseText.indexOf(`@LineUniqueId("${t1}");`);
         if (endIndex >= 0) {
-            const cmdsAfter = responseText.substring(endIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n");
+            const cmdsAfter = cmd ? responseText.substring(endIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n") : "";
             responseText = responseText.substring(0, endIndex) + cmdsAfter;
         }
     }
@@ -1484,7 +1484,7 @@ function renderArticle(src, container1ClassName, container2ClassName, {isTrim, t
     ajax(src, undefined, window.localStorage.getItem("enable-cache") === "true", function(responseText) {
         window.currentArticle ? window.currentArticle.ogResponseText = responseText : 0;
         if (["true", "1"].includes(isTrim)) {
-            responseText = trimArticle({responseText, t0, t1});
+            responseText = trimArticle({responseText, t0, t1, cmd: true});
         }
         renderArticleParse(responseText, container1ClassName, container2ClassName);
     });

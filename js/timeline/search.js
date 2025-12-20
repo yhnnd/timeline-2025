@@ -248,6 +248,10 @@ function searchKeywords(keywords, configs) {
                     + "<div class='text' fake-url=\"" + item.fakeUrl + "\"><pre></pre></div>";
                 resultWrapper.appendChild(link);
                 resultWrapper.querySelector(`.text[fake-url="${item.fakeUrl}"]>pre`).innerHTML = lines.join("\n");
+                resultWrapper.querySelectorAll(".marker-wrapper").forEach(marker => {
+                    marker.scrollIntoView({behavior: 'instant', block: 'center'});
+                });
+                document.querySelector(".search-backdrop.on").scrollTo({top: 0, left: 0, behavior: "instant"});
             }
         }
         if (resultWrapper.innerHTML === "") {
@@ -345,6 +349,7 @@ function doAdvancedSearch(conditions, keywords) {
         if (isMatched == true) {
             let link = document.createElement("div");
             link.classList.add("link");
+            link.setAttribute("data-times", true);
             const nameSplit = item.fakeUrl.split("/");
             item.filename = nameSplit.pop();
             item.folder = nameSplit.pop();
@@ -367,6 +372,10 @@ function doAdvancedSearch(conditions, keywords) {
                 + "<div class='cover-wrapper'><div class='cover' onclick=\"window.open('book-reader.html?fakeUrl=" + item.fakeUrl + "','_self','noopener,noreferrer');\"></div></div>"
                 + "<div class='text'><pre>" + lines.join("\n") + "</pre></div>";
             resultWrapper.appendChild(link);
+            resultWrapper.querySelectorAll(".marker-wrapper").forEach(marker => {
+                marker.scrollIntoView({behavior: 'instant', block: 'center'});
+            });
+            document.querySelector(".search-backdrop.on").scrollTo({top: 0, left: 0, behavior: "instant"});
         }
     }
     if (resultWrapper.innerHTML === "") {

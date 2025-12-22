@@ -232,3 +232,4 @@ Position Sticky Demo
 <link display="none" style="border: 1px solid var(--studio-blue);padding: 4px 8px;border-radius: 8px;" to="/demo/index.html?fakeUrl=@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.13.txt">Read in Safe Mode</link>
 
 @command("enable-image-recognition")
+@command("enable-border-recognition")

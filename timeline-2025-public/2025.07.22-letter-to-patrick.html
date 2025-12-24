@@ -31,11 +31,8 @@ pre.context {
 pre.context span.og-quote,
 pre.context span[onclick] {
     text-decoration: underline wavy var(--studio-purple);
+    -webkit-text-decoration: underline wavy var(--studio-purple);
     text-underline-offset: 5px;
-}
-body[data-value-of-platform="MacIntel"] pre.context span.og-quote,
-body[data-value-of-platform="MacIntel"] pre.context span[onclick] {
-    text-decoration-style: dashed;
 }
 pre.context span.og-quote:hover,
 pre.context span[onclick]:hover {
@@ -58,6 +55,18 @@ pre.context .only-here {
 pre img {
     width: 100%;
 }
+pre img:not([src$=".svg"]) {
+    min-width: 100px;
+    min-height: 100px;
+    background-color: white;
+    background-image: conic-gradient(
+        from 90deg at 20px 20px,
+        black 0deg 90deg,
+        white 90deg 180deg,
+        black 180deg 270deg,
+        white 270deg 360deg);
+    background-size: 40px 40px;
+}
 pre .thumbnail {
     display: inline-block;
     width: 100px;
@@ -71,6 +80,12 @@ pre .thumbnail-2x {
     min-width: 200px;
     max-width: 200px;
     height: fit-content;
+}
+body[data-value-of-webbrowsername="safari"] img[style*="height:fit-content"],
+body[data-value-of-webbrowsername="safari"] img[style*="height: fit-content"],
+body[data-value-of-webbrowsername="safari"] pre .thumbnail,
+body[data-value-of-webbrowsername="safari"] pre .thumbnail-2x {
+    height: intrinsic!important;
 }
 pre .row {
     display: flex;

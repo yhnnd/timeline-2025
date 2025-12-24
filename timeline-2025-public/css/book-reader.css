@@ -321,9 +321,9 @@ pre .thumbnail-2x {
     height: fit-content;
 }
 
-body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] pre .thumbnail,
-body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] pre .thumbnail-2x {
-    height: unset;
+body[data-value-of-webbrowsername="safari"] pre .thumbnail,
+body[data-value-of-webbrowsername="safari"] pre .thumbnail-2x {
+    height: intrinsic;
 }
 
 pre .row {
@@ -604,14 +604,14 @@ body[data-value-of-enable-dual-article-container="false"] .wecard-table-wrapper>
     background: rgba(0, 0, 0, 0.67) !important;
 }
 
-body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="width:fit-content"],
-body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="width: fit-content"] {
+body[data-value-of-webbrowsername="safari"] img[style*="width:fit-content"],
+body[data-value-of-webbrowsername="safari"] img[style*="width: fit-content"] {
     width: unset!important;
 }
 
-body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="height:fit-content"],
-body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] img[style*="height: fit-content"] {
-    height: unset!important;
+body[data-value-of-webbrowsername="safari"] img[style*="height:fit-content"],
+body[data-value-of-webbrowsername="safari"] img[style*="height: fit-content"] {
+    height: intrinsic!important;
 }
 
 body[is-iframe="true"] {

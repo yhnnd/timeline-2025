@@ -4471,6 +4471,9 @@ document.querySelectorAll(".og-quote").forEach(quote => {
         searchKeywords([quote.innerText]);
     });
 });
+setTimeout(() => {
+    alert("platform: '" + document.body.getAttribute('data-value-of-platform') + "'\nbrowser: '" + document.body.getAttribute('data-value-of-webbrowsername') + "'");
+}, 1000);
     </script>
 </body>
 </html>

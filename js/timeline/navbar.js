@@ -662,6 +662,22 @@ display: none;
                     </div>
                 </div>
             </li>
+            <li>
+                <div class="settings-item" style="height: 36px;">
+                    <div>
+                        <span>Platform</span>
+                    </div>
+                    <div style="color: darkgreen;margin-right: 5px;">${localStorage.getItem("platform")}</div>
+                </div>
+            </li>
+            <li>
+                <div class="settings-item" style="height: 36px;">
+                    <div>
+                        <span>Web Browser Name</span>
+                    </div>
+                    <div style="color: darkgreen;margin-right: 5px;">${localStorage.getItem("webBrowserName")}</div>
+                </div>
+            </li>
         </ul>
     </li>
 </ul>`;

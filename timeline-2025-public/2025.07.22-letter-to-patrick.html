@@ -55,7 +55,8 @@ pre.context .only-here {
 pre img {
     width: 100%;
 }
-pre img:not([src$=".svg"]) {
+pre img:not([src$=".svg"]),
+pre img.still-loading[src$=".svg"] {
     min-width: 100px;
     min-height: 100px;
     background-color: white;
@@ -3183,8 +3184,8 @@ Oct 16, 2025
 <img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/7-headed-dragon.jpg" alt="" loading="lazy" style="width: 262.4px; height: fit-content; margin: auto;">
 </div>
 <div class="row">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/NATO-vs-Warsaw-Pact.svg" alt="" loading="lazy" style="width: 262.4px; height: fit-content;">
-<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Cold_War_alliances_mid-1975.svg" alt="" loading="lazy" style="width: 460px; height: fit-content;">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/NATO-vs-Warsaw-Pact.svg" alt="" loading="lazy" class="still-loading" style="width: 262.4px; height: fit-content;" onload="this.classList.remove('still-loading')">
+<img src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/Cold_War_alliances_mid-1975.svg" alt="" loading="lazy" class="still-loading" style="width: 460px; height: fit-content;" onload="this.classList.remove('still-loading')">
 </div>
 <div class="row">
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-10-04/coldwar.webp" alt="" loading="lazy">

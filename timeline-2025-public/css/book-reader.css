@@ -322,7 +322,9 @@ pre .thumbnail-2x {
 }
 
 body[data-value-of-webbrowsername="safari"] pre .thumbnail,
-body[data-value-of-webbrowsername="safari"] pre .thumbnail-2x {
+body[data-value-of-webbrowsername="safari"] pre .thumbnail-2x,
+body[data-value-of-webbrowsername="undefined"] pre .thumbnail,
+body[data-value-of-webbrowsername="undefined"] pre .thumbnail-2x {
     height: intrinsic;
 }
 
@@ -605,12 +607,16 @@ body[data-value-of-enable-dual-article-container="false"] .wecard-table-wrapper>
 }
 
 body[data-value-of-webbrowsername="safari"] img[style*="width:fit-content"],
-body[data-value-of-webbrowsername="safari"] img[style*="width: fit-content"] {
+body[data-value-of-webbrowsername="safari"] img[style*="width: fit-content"],
+body[data-value-of-webbrowsername="undefined"] img[style*="width:fit-content"],
+body[data-value-of-webbrowsername="undefined"] img[style*="width: fit-content"] {
     width: unset!important;
 }
 
 body[data-value-of-webbrowsername="safari"] img[style*="height:fit-content"],
-body[data-value-of-webbrowsername="safari"] img[style*="height: fit-content"] {
+body[data-value-of-webbrowsername="safari"] img[style*="height: fit-content"],
+body[data-value-of-webbrowsername="undefined"] img[style*="height:fit-content"],
+body[data-value-of-webbrowsername="undefined"] img[style*="height: fit-content"] {
     height: intrinsic!important;
 }
 

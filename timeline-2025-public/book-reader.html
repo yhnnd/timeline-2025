@@ -199,7 +199,7 @@ window.setPreviousAndNextButtonEnabledStatus = function () {
     let noPrevious = false, noNext = false;
     const currentArticle = window.currentArticle;
     let isArticleIndexValid = false;
-    if (currentArticle) {
+    if (currentArticle && !currentArticle.isTrim) {
         for (const book of window.books) {
             if (book === undefined || book.indexList === undefined || !book.indexList.length) {
                 continue;
@@ -218,7 +218,7 @@ window.setPreviousAndNextButtonEnabledStatus = function () {
             }
         }
     }
-    if (!isArticleIndexValid || noPrevious) {
+    if (!isArticleIndexValid || noPrevious || currentArticle.isTrim) {
         document.querySelectorAll('[onclick="gotoPrevious()"]').forEach(btn => {
             btn.setAttribute("disabled", true);
         });
@@ -227,7 +227,7 @@ window.setPreviousAndNextButtonEnabledStatus = function () {
             btn.removeAttribute("disabled");
         });
     }
-    if (!isArticleIndexValid || noNext) {
+    if (!isArticleIndexValid || noNext || currentArticle.isTrim) {
         document.querySelectorAll('[onclick="gotoNext()"]').forEach(btn => {
             btn.setAttribute("disabled", true);
         });
@@ -260,7 +260,7 @@ function setNewSrc(newFakeUrl) {
 
 function gotoPrevious() {
     const currentArticle = window.currentArticle;
-    if (!currentArticle) {
+    if (!currentArticle || currentArticle.isTrim) {
         return;
     }
     for (const book of window.books) {
@@ -283,7 +283,7 @@ function gotoPrevious() {
 
 function gotoNext() {
     const currentArticle = window.currentArticle;
-    if (!currentArticle) {
+    if (!currentArticle || currentArticle.isTrim) {
         return;
     }
     for (const book of window.books) {

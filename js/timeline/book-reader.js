@@ -1462,12 +1462,13 @@ function highlightSearchKeywords(child, {searchKeywords, configs}) {
     }
 }
 
-function trimArticle({responseText, t0, t1, cmd}) {
+function trimArticle({ogResponseText, t0, t1, cmd}) {
+    let responseText;
     if (t0) {
-        const startIndex = responseText.indexOf(`@LineUniqueId("${t0}");\n`);
+        const startIndex = ogResponseText.indexOf(`@LineUniqueId("${t0}");\n`);
         if (startIndex >= 0) {
-            const prevCmds = cmd ? responseText.substring(0, startIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n") : "";
-            responseText = prevCmds + responseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
+            const prevCmds = cmd ? ogResponseText.substring(0, startIndex).split("\n").filter(line => {return line.startsWith("@command(")}).join("\n") : "";
+            responseText = prevCmds + ogResponseText.substring(startIndex + `@LineUniqueId("${t0}");\n`.length);
         }
     }
     if (t1) {
@@ -1480,13 +1481,20 @@ function trimArticle({responseText, t0, t1, cmd}) {
     return responseText;
 }
 
-function renderArticle(src, container1ClassName, container2ClassName, {isTrim, t0, t1}) {
-    ajax(src, undefined, window.localStorage.getItem("enable-cache") === "true", function(responseText) {
-        window.currentArticle ? window.currentArticle.ogResponseText = responseText : 0;
-        if (["true", "1"].includes(isTrim)) {
-            responseText = trimArticle({responseText, t0, t1, cmd: true});
+function renderArticle(src, container1ClassName, container2ClassName) {
+    ajax(src, undefined, window.localStorage.getItem("enable-cache") === "true", function(ogResponseText) {
+        if (!window.currentArticle) {
+            return;
         }
-        renderArticleParse(responseText, container1ClassName, container2ClassName);
+        window.currentArticle.ogResponseText = ogResponseText;
+        if (window.currentArticle.isTrim) {
+            const t0 = window.currentArticle.t0;
+            const t1 = window.currentArticle.t1;
+            window.currentArticle.responseText = trimArticle({ogResponseText, t0, t1, cmd: true});
+        } else {
+            window.currentArticle.responseText = ogResponseText;
+        }
+        renderArticleParse(window.currentArticle.responseText, container1ClassName, container2ClassName);
     });
 }
 
@@ -1505,11 +1513,10 @@ function openFile(src) {
         }
     } else {
         document.querySelector(".desktop-2").style.display = "none";
-        renderArticle(src, "container-1", "container-2", {
-            isTrim: getParameter("trm"),
-            t0: getParameter("t0"),
-            t1: getParameter("t1")
-        });
+        window.currentArticle.isTrim = ["true", "1"].includes(getParameter("trm"));
+        window.currentArticle.t0 = getParameter("t0");
+        window.currentArticle.t1 = getParameter("t1");
+        renderArticle(src, "container-1", "container-2");
     }
 }
 

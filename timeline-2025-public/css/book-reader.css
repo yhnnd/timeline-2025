@@ -537,8 +537,7 @@ body[data-value-of-enable-no-backdrop="true"] .container-2 .svg-wrapper .backdro
     -khtml-user-select: none;
 }
 
-svg[onclick="gotoPrevious()"][disabled],
-svg[onclick="gotoNext()"][disabled] {
+.buttons-previous-and-next svg[disabled] {
     stroke: lightgray;
     cursor: not-allowed;
 }

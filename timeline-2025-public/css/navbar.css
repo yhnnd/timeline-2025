@@ -100,7 +100,7 @@ body[data-value-of-platform="MacIntel"][data-value-of-webbrowsername="safari"] .
     padding-inline-start: 0;
     padding-top: 24px;
     padding-bottom: 24px;
-    overflow: scroll;
+    overflow: auto;
     transition: width .3s;
 }
 

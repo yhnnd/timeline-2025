@@ -96,4 +96,21 @@ https://youtu.be/Uqe-1HanU6Y
 @base64("MjAyNeW5tDEy5pyIMjnml6U=");
 @base64("5pif5pyf5LiA");
 
-@LineUniqueId("pcq3xt30nj");
+<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5188.JPG" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5189.JPG" alt="">
+</div>
+<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5190.JPG" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5194.JPG" alt="">
+</div>
+<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5193.JPG" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5195.JPG" alt="">
+</div>
+<div class="row">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5196.JPG" alt="">
+<img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5199.JPG" alt="">
+</div>
+@LineUniqueId("ww38ojkiz5k");
+@command("enable-image-recognition")

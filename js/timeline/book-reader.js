@@ -1520,6 +1520,7 @@ function openFile(src) {
         window.currentArticle.t0 = getParameter("t0");
         window.currentArticle.t1 = getParameter("t1");
         renderArticle(src, "container-1", "container-2");
+        document.body.scrollIntoView();
     }
 }
 

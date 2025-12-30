@@ -18,6 +18,10 @@
     padding-bottom: 8px !important;
 }
 
+#navbar {
+    overflow-x: auto;
+}
+
 .global-navbar button,
 #navbar button {
     display: inline-block;

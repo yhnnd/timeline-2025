@@ -5,6 +5,7 @@
     left: 0;
     background: black;
     width: calc(100% - 16px);
+    height: calc(48px - 16px);
     padding: 8px;
     color: white;
     display: none;
@@ -44,10 +45,10 @@
 .search-backdrop {
     position: fixed;
     z-index: 1000;
-    top: 0;
+    top: 48px;
     left: 0;
     width: 100vw;
-    height: 100vh;
+    height: calc(100vh - 48px);
     background-color: rgba(0, 0, 0, .5);
     color: black;
     backdrop-filter: blur(2.5px);
@@ -57,7 +58,7 @@
 .search-backdrop.on {
     display: flex;
     justify-content: center;
-    overflow: scroll;
+    overflow-y: auto;
 }
 
 .search {

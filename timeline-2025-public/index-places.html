@@ -13,12 +13,13 @@
     <script src="../js/timeline/ios-button-2024.js"></script>
 </head>
 <body>
+    <div class="search-bar">
+        <div class="search-keyword"></div>
+        <button class="close-button" onclick="closeSearch(this)">close</button>
+    </div>
+
     <div class="search-backdrop">
         <div class="search">
-            <div class="search-bar">
-                <div class="search-keyword"></div>
-                <button class="close-button" onclick="closeSearch(this)">close</button>
-            </div>
             <div class="search-result"></div>
         </div>
     </div>

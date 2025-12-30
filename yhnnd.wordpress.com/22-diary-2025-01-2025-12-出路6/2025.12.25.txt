@@ -113,4 +113,10 @@ https://youtu.be/Uqe-1HanU6Y
 <img class="thumbnail-2x" src="../yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025-12-29/IMG_5199.JPG" alt="">
 </div>
 @LineUniqueId("ww38ojkiz5k");
+
+2025/12/30
+
+中國經濟正面臨全面危機！ 百姓年關難過！｜ #人民報
+https://youtu.be/k8qpmo_as5A
+
 @command("enable-image-recognition")

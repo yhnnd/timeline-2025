@@ -29,8 +29,23 @@
             <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 cursor-pointer tab" id="tab-calendar" onclick="tabClicked('calendar')">Calendar</div>
             <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 cursor-pointer tab" id="tab-books" onclick="tabClicked('books')">Books</div>
             <div class="flex flex-col px-6 xl:px-12 py-4 text-white text-2xl hover:bg-gray-700 cursor-pointer tab" id="tab-tools" onclick="tabClicked('tools')">Tools</div>
+            <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;margin: auto 0 auto auto;gap: 10px;">
+                <input id="search" type="text">
+                <button id="searchbutton" onclick="searchInput(document.getElementById('search'), {type: document.getElementById('searchtype').value})">Search</button>
+                <select id="searchtype">
+                    <option value="text">text</option>
+                    <option value="image">image</option>
+                    <option value="folder">folder</option>
+                    <option value="filename">filename</option>
+                </select>
+            </div>
         </div>
-
+<script>
+if (window.location.href.startsWith("file://")) {
+    document.getElementById("search").setAttribute("disabled", true);
+    document.getElementById("searchbutton").setAttribute("disabled", true);
+}
+</script>
         <div class="tab-content" id="tab-content-calendar" style="display: none;">
             <div class="px-24 py-16 bg-gradient-to-r from-sky-900 via-sky-700 to-sky-400">
                 <div class="text-white text-6xl">Calendar</div>
@@ -45,24 +60,6 @@
                 <p class="text-gray-300 text-2xl mt-2" onclick="openFile('book-reader.html?fakeUrl=@2024/yhnnd.wordpress.com/18-letters-to-patrick-wang-致王震書/2024.12.20.txt')">因为爱能恒久长存，而恐惧与仇恨不久就会消亡。</p>
             </div>
             <div class="row single-col">
-                <div style="display: flex; justify-content: center; align-items: center; margin: auto; margin-bottom: 20px;">
-                    <div style="display: flex; gap: 10px;">
-                        <input id="search" type="text">
-                        <button id="searchbutton" onclick="searchInput(document.getElementById('search'), {type: document.getElementById('searchtype').value})">Search</button>
-                        <select id="searchtype">
-                            <option value="text">text</option>
-                            <option value="image">image</option>
-                            <option value="folder">folder</option>
-                            <option value="filename">filename</option>
-                        </select>
-                    </div>
-                </div>
-                <script>
-                    if (window.location.href.startsWith("file://")) {
-                        document.getElementById("search").setAttribute("disabled", true);
-                        document.getElementById("searchbutton").setAttribute("disabled", true);
-                    }
-                </script>
                 <div class="col first">
                     <ul>
                         <div class="hover-detecting-area-container" style="position: relative;">

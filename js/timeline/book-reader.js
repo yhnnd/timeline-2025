@@ -1078,7 +1078,7 @@ function renderArticleParse (responseText, container1ClassName, container2ClassN
             return wrapper;
         }());
         if (window.currentArticle.isTrim) {
-            container1.querySelector(".badges .badge:last-of-type").innerHTML += `<span style="position: relative;"><span style="display: inline-block;position: absolute;top: -1px;right: -67px;background: var(--studio-green-5);border: 1px solid var(--studio-green-50);border-radius: 20px;color: var(--studio-green-50);font-size: 13px;padding: 1.5px 5px;">trimmed</span></span>`;
+            container1.querySelector(".badges .badge:last-of-type").innerHTML += `<span style="position: relative;"><span style="display: inline-block;position: absolute;top: -1px;right: -67px;background: var(--studio-green-0);border: 1px solid var(--studio-green-50);border-radius: 20px;color: var(--studio-green-50);font-size: 13px;padding: 1.5px 5px;">trimmed</span></span>`;
         }
     }
 

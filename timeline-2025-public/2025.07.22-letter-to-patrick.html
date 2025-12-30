@@ -131,22 +131,22 @@ pre .row {
     }
 }
     </style>
+    <div class="search-bar">
+        <div class="search-keyword"></div>
+        <button class="close-button" onclick="closeSearch(this)">close</button>
+    </div>
     <div class="search-backdrop">
         <div class="search">
-            <div class="search-bar">
-                <div class="search-keyword"></div>
-                <button class="close-button" onclick="closeSearch(this)">close</button>
-            </div>
             <div class="search-result"></div>
         </div>
     </div>
 
-    <script>
-        if (window.location.href.startsWith("file://")) {
-            document.getElementById("search").setAttribute("disabled", true);
-            document.getElementById("searchbutton").setAttribute("disabled", true);
-        }
-    </script>
+<script>
+if (window.location.href.startsWith("file://")) {
+    document.getElementById("search").setAttribute("disabled", true);
+    document.getElementById("searchbutton").setAttribute("disabled", true);
+}
+</script>
 
     <div class="container">
         <pre class="context"><span class="section-title"><a class="section-link" href="#section-childhood-memories">兒時事</a>、<a class="section-link" href="#section-tjpu">天工大</a>、<a class="section-link" href="#section-dreams-in-prison">獄中夢</a>、<a class="section-link" href="#section-letters-to-patrick">書信</a>、<a class="section-link" href="#section-poems">詩</a></span>

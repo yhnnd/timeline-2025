@@ -52,6 +52,7 @@
     background-color: rgba(0, 0, 0, .5);
     color: black;
     backdrop-filter: blur(2.5px);
+    -webkit-backdrop-filter: blur(2.5px);
     display: none;
 }
 
@@ -199,4 +200,31 @@ pre {
     width: 200px;
     min-width: 200px;
     max-width: 200px;
+}
+
+.search>.search-result>.link>.text {
+    .marker-wrapper,.marker {
+        &:has(img) {
+            font-size: 0;
+        }
+    }
+}
+
+body[data-value-of-webbrowsername="safari"],
+body[data-value-of-webbrowsername="undefined"] {
+    .search>.search-result>.link>.text {
+        img[style*="width:fit-content"],
+        img[style*="width: fit-content"] {
+            width: unset!important;
+        }
+        img[style*="height:fit-content"],
+        img[style*="height: fit-content"] {
+            height: intrinsic!important;
+        }
+        .marker-wrapper,.marker {
+            &:has(img) {
+                display: inline-block;
+            }
+        }
+    }
 }

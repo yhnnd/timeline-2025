@@ -1,10 +1,15 @@
+.desktop {
+    width: 100%;
+    min-height: calc(100vh - 400px);
+}
+
 .container {
     display: flex;
     justify-content: start;
     margin-bottom: 219px;
     flex-direction: column;
     align-items: start;
-    max-width: 100vw;
+    max-width: 100%;
 }
 
 .page:not(:first-child) {
@@ -395,9 +400,11 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
 }
 
 .left {
-    overflow-x: hidden;
+    overflow-x: visible;
     display: flex;
     width: 100%;
+    max-width: calc(100% - 64px);
+    margin: 0 auto;
     justify-content: center;
 }
 
@@ -406,7 +413,6 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
 }
 
 body[data-value-of-enable-dual-article-container="true"] .left {
-    overflow-x: visible;
     justify-content: end;
 }
 

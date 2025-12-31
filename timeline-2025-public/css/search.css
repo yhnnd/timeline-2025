@@ -156,7 +156,7 @@ body[data-value-of-platform="MacIntel"] .search>.search-result>.link>.text {
     overflow: hidden;
 }
 
-pre {
+.search>.search-result>.link>.text>pre {
     max-width: 100%;
     white-space: pre-wrap;
     word-wrap: break-word;

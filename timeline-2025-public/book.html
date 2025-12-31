@@ -97,7 +97,7 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         hideTimelineLoading();
-        document.body.scrollIntoView();
+        window.scrollTo({top: 0, behavior: "instant"});
         isLoaded = true;
     }
 });

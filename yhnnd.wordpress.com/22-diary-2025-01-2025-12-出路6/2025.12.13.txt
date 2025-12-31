@@ -331,7 +331,7 @@ Position Sticky Demo
 
 @base64("5oiR6LWw5Zue5Yiw5Zub5Y2V5YWD77yM5LmY55S15qKv5LiK5YiwNuWxgu+8jOWbnuWIsOaIkeeahOS9j+WkhOOAguaIv+S4nOWQtOWnkOW4ruaIkeWPluS6humXqOWklueahOW/q+mAku+8jOaUvuWcqOS6huaIkeenn+eahOWNp+WupOeahOmXqOWPo++8jOWwseaYr+aIkeWcqOa3mOWuneS5sOeahCBBZGlkYXMg55qE6L+Q5Yqo6Z6L5ZKMIE5FWFRPUkNIIOeJjOeahOm7keiJsueahCBQODEg5omL55S1562S44CCQWRpZGFzIOeahOmei+mdnuW4uOWQiOiEmu+8jOaJi+eUteetkueahOi0qOmHj+S5n+S4jemUmeOAgui1nue+juWkqeeItu+8jOaVkeS4u+S7iuWknOmZjeeUn+OAgg==");
 
-<link display="none" style="border: 1px solid var(--studio-blue);padding: 4px 8px;border-radius: 8px;" to="../demo/index.html?fakeUrl=@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.13.txt">Read in Safe Mode</link>
+<link display="none" style="border: 1px solid var(--studio-blue);padding: 4px 8px;border-radius: 8px;" to="../demo/index.html?fakeUrl=@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-%E5%87%BA%E8%B7%AF6/2025.12.13.txt">Read in Safe Mode</link>
 
 @command("enable-image-recognition")
 @command("enable-border-recognition")

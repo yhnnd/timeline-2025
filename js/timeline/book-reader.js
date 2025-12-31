@@ -1521,7 +1521,7 @@ function openFile(src) {
         window.currentArticle.t1 = getParameter("t1");
         renderArticle(src, "container-1", "container-2");
         if (getParameter("is-iframe") !== "true") {
-            document.body.scrollIntoView();
+            window.scrollTo({top: 0, behavior: "instant"});
         }
     }
 }

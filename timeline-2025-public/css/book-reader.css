@@ -408,6 +408,10 @@ body[data-value-of-enable-no-backdrop="true"] .img-wrapper .backdrop-filter {
     justify-content: center;
 }
 
+body[is-iframe="true"] .left {
+    max-width: calc(100% - 16px);
+}
+
 .right {
     display: none;
 }

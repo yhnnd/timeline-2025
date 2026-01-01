@@ -738,12 +738,14 @@ window.books[22].indexList = [
 window.repositoryMap = {
     "@2023/": "https://yhnnd.github.io/timeline-public/docs/",
     "@2024/": "https://yhnnd.github.io/timeline-2024/",
-    "@2025/": "../"
+    "@2025/": "../",
+    "@2026/": "https://yhnnd.github.io/timeline-2026/"
 };
 window.htmlRepositoryMap = {
     "@2023/": "https://yhnnd.github.io/timeline-public/docs/timeline-public/",
     "@2024/": "https://yhnnd.github.io/timeline-2024/timeline-2024-public/",
-    "@2025/": "https://yhnnd.github.io/timeline-2025/timeline-2025-public/"
+    "@2025/": "https://yhnnd.github.io/timeline-2025/timeline-2025-public/",
+    "@2026/": "https://yhnnd.github.io/timeline-2026/timeline-2026-public/"
 };
 window.localRepositoryKey = "@2025/";
 

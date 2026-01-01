@@ -59,6 +59,7 @@
 
 .global-navbar .info,
 #navbar .info {
+    white-space: nowrap;
     align-self: center;
     color: #fff;
 }

@@ -24,6 +24,7 @@ window.bookNames = [
     "出路 5 (2024)",// 20
     "詩 (2024)",// 21
     "出路 6 (2025)",// 22
+    "出路 7 (2026)",// 23
 ];
 
 window.books[1] = {};
@@ -733,6 +734,12 @@ window.books[22].indexList = [
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.13.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.25.txt",
     "@2025/yhnnd.wordpress.com/22-diary-2025-01-2025-12-出路6/2025.12.31.txt",
+];
+
+// 23 出路 7 (2026)
+window.books[23] = {};
+window.books[23].indexList = [
+    "@2026/yhnnd.wordpress.com/23-diary-2026-01-2026-12-wayout7/2026.01.01.txt",
 ];
 
 window.repositoryMap = {

@@ -740,6 +740,7 @@ window.books[22].indexList = [
 window.books[23] = {};
 window.books[23].indexList = [
     "@2026/yhnnd.wordpress.com/23-diary-2026-01-2026-12-wayout7/2026.01.01.txt",
+    "@2026/yhnnd.wordpress.com/23-diary-2026-01-2026-12-wayout7/2026.01.06.txt",
 ];
 
 window.repositoryMap = {
